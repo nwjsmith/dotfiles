@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-for source in $(find . -name \*.symlink); do
+for source in $(find $PWD -name \*.symlink); do
   destination="${HOME}/.$(basename ${source%.*})"
-  echo $destination
 
   if [ -f $destination ] || [ -d $destination ] || [ -L $destination ]; then
     printf "File already exists: ${destination}, do you want to overwrite it? [y/n]: "
@@ -21,7 +20,7 @@ for source in $(find . -name \*.symlink); do
         ;;
     esac
   else
-    echo "Linking ${destination}"
+    echo "Linking ${source} to ${destination}"
     ln -s $source $destination
   fi
 done

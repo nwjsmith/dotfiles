@@ -1,0 +1,38 @@
+# Act like Vim
+setw -g mode-keys vi
+
+# Use the mouse
+set -g mode-mouse on
+set -g mouse-resize-pane on
+set -g mouse-select-pane on
+set -g mouse-select-window on
+
+set -g default-shell "/usr/local/bin/bash"
+set -g default-terminal "xterm-256color"
+set-option -g status on
+set-option -g status-utf8 on
+set-option -g status-bg white
+set-option -g status-fg black
+
+# Big scrollback buffer
+set -g history-limit 100000
+
+# Vim-like pane navigation
+bind C-h select-pane -L
+bind h select-pane -L
+bind H swap-pane -U
+bind C-j select-pane -D
+bind j select-pane -D
+bind C-k select-pane -U
+bind k select-pane -U
+bind C-l select-pane -R
+bind l select-pane -R
+bind L swap-pane -D
+
+# Vim-like splitting
+bind s split-window -v
+bind v split-window -h
+
+# Vim-like copy
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection

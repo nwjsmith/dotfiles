@@ -1,0 +1,8 @@
+.DS_Store
+.ruby-version
+.rbenv-version
+.rvmrc
+.bundle/
+.vagrant/
+tags
+*.pyc

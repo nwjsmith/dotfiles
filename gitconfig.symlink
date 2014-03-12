@@ -1,0 +1,30 @@
+# vim: ft=gitconfig
+
+[alias]
+  st = status
+  co = checkout
+  dc = diff --cached --color
+  di = diff --color
+  unstage = reset -- 
+  l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green) %an, %ar%Creset'
+[core]
+  excludesfile = $HOME/.gitignore
+  editor = vim
+  trustctime = false
+[push]
+  default = current
+[color]
+  ui = true
+[credential]
+  helper = osxkeychain
+[http]
+  sslVerify = false
+[mergetool "fugitive"]
+  cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[merge]
+  tool = fugitive
+[mergetool]
+  keepBackup = false
+[include]
+  path = ~/.github.gitconfig
+  path = ~/.user.gitconfig

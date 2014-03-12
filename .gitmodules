@@ -1,0 +1,88 @@
+[submodule "vim.symlink/bundle/solarized"]
+	path = vim.symlink/bundle/solarized
+	url = https://github.com/altercation/vim-colors-solarized
+	ignore = dirty
+[submodule "vim.symlink/bundle/elixir"]
+	path = vim.symlink/bundle/elixir
+	url = https://github.com/elixir-lang/vim-elixir
+	ignore = dirty
+[submodule "vim.symlink/bundle/highlight"]
+	path = vim.symlink/bundle/highlight
+	url = https://github.com/guns/vim-clojure-highlight
+	ignore = dirty
+[submodule "vim.symlink/bundle/clojure-static"]
+	path = vim.symlink/bundle/clojure-static
+	url = https://github.com/guns/vim-clojure-static
+	ignore = dirty
+[submodule "vim.symlink/bundle/sexp"]
+	path = vim.symlink/bundle/sexp
+	url = https://github.com/guns/vim-sexp
+	ignore = dirty
+[submodule "vim.symlink/bundle/coffee-script"]
+	path = vim.symlink/bundle/coffee-script
+	url = https://github.com/kchmck/vim-coffee-script
+	ignore = dirty
+[submodule "vim.symlink/bundle/varnish"]
+	path = vim.symlink/bundle/varnish
+	url = https://github.com/nwjsmith/vim-varnish
+	ignore = dirty
+[submodule "vim.symlink/bundle/javascript"]
+	path = vim.symlink/bundle/javascript
+	url = https://github.com/pangloss/vim-javascript
+	ignore = dirty
+[submodule "vim.symlink/bundle/puppet"]
+	path = vim.symlink/bundle/puppet
+	url = https://github.com/rodjek/vim-puppet
+	ignore = dirty
+[submodule "vim.symlink/bundle/commentary"]
+	path = vim.symlink/bundle/commentary
+	url = https://github.com/tpope/vim-commentary
+	ignore = dirty
+[submodule "vim.symlink/bundle/rails"]
+	path = vim.symlink/bundle/rails
+	url = https://github.com/tpope/vim-rails
+	ignore = dirty
+[submodule "vim.symlink/bundle/repeat"]
+	path = vim.symlink/bundle/repeat
+	url = https://github.com/tpope/vim-repeat
+	ignore = dirty
+[submodule "vim.symlink/bundle/classpath"]
+	path = vim.symlink/bundle/classpath
+	url = https://github.com/tpope/vim-classpath
+	ignore = dirty
+[submodule "vim.symlink/bundle/endwise"]
+	path = vim.symlink/bundle/endwise
+	url = https://github.com/tpope/vim-endwise
+	ignore = dirty
+[submodule "vim.symlink/bundle/fireplace"]
+	path = vim.symlink/bundle/fireplace
+	url = https://github.com/tpope/vim-fireplace
+	ignore = dirty
+[submodule "vim.symlink/bundle/fugitive"]
+	path = vim.symlink/bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive
+	ignore = dirty
+[submodule "vim.symlink/bundle/haml"]
+	path = vim.symlink/bundle/haml
+	url = https://github.com/tpope/vim-haml
+	ignore = dirty
+[submodule "vim.symlink/bundle/markdown"]
+	path = vim.symlink/bundle/markdown
+	url = https://github.com/tpope/vim-markdown
+	ignore = dirty
+[submodule "vim.symlink/bundle/surround"]
+	path = vim.symlink/bundle/surround
+	url = https://github.com/tpope/vim-surround
+	ignore = dirty
+[submodule "vim.symlink/bundle/pathogen"]
+	path = vim.symlink/bundle/pathogen
+	url = https://github.com/tpope/vim-pathogen
+	ignore = dirty
+[submodule "vim.symlink/bundle/ruby"]
+	path = vim.symlink/bundle/ruby
+	url = https://github.com/vim-ruby/vim-ruby
+	ignore = dirty
+[submodule "vim.symlink/bundle/rust"]
+	path = vim.symlink/bundle/rust
+	url = https://github.com/wting/rust.vim
+	ignore = dirty

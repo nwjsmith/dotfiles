@@ -74,8 +74,12 @@ alias be="bundle exec"
 # Node
 export PATH="/usr/local/share/npm/bin:${PATH}"
 
-# Various utilities
-export PATH="${HOME}/.bin:${PATH}"
-
 # Curl CA certificates
 export SSL_CERT_FILE="/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt"
+
+# Keep up-to-date
+alias brewup="brew update && brew cleanup"
+
+# Exit/enter out of tmux
+alias demux="tmux kill-server && exec env TMUX='nope' ${SHELL}"
+alias remux="exec env TMUX='' ${SHELL}"

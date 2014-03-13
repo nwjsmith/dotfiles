@@ -26,5 +26,4 @@
 [mergetool]
   keepBackup = false
 [include]
-  path = ~/.github.gitconfig
-  path = ~/.user.gitconfig
+  path = ~/.gitconfig.local

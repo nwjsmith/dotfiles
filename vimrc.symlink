@@ -127,3 +127,6 @@ cmap w!! %!sudo tee > /dev/null %
 
 " Make Ctrl-C behave the same as Escape
 imap <C-c> <ESC>
+
+" Keep private things in .vimrc.local
+source ~/.vimrc.local

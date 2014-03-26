@@ -3,15 +3,6 @@
 # All brew everything
 export PATH="/usr/local/sbin:/usr/local/bin:${PATH}"
 
-# Start tmux on log in, or join existing session
-if [[ -z $TMUX ]]; then
-  if (tmux has-session); then
-    tmux -u attach -d && exit
-  else
-    tmux -2 -u && exit
-  fi
-fi
-
 # Use bash completion provided by homebrew
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
@@ -36,6 +27,9 @@ export PROMPT_COMMAND="history -a; history -c; history -r ${PROMPT_COMMAND}"
 
 # Java
 export JAVA_HOME="$(/usr/libexec/java_home)"
+
+# Android
+export ANDROID_HOME="$(brew --prefix android-sdk)"
 
 # Use vim
 export EDITOR="vim"

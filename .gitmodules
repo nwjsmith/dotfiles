@@ -86,3 +86,7 @@
 	path = vim.symlink/bundle/rust
 	url = https://github.com/wting/rust.vim
 	ignore = dirty
+[submodule "vim.symlink/bundle/go"]
+	path = vim.symlink/bundle/go
+	url = https://github.com/jnwhiteh/vim-golang
+	ignore = dirty

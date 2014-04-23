@@ -2,8 +2,9 @@
 CYAN='\[\033[0;36m\]'
 MAGENTA='\[\033[0;35m\]'
 BLUE='\[\033[0;34m\]'
+BROWN='\[\033[0;33m\]'
 NO_COLOR='\[\033[0m\]'
-export PS1="${CYAN}\w${BLUE}\$(__git_ps1 ':(%s)')${NO_COLOR}\n${MAGENTA}λ${NO_COLOR} "
+export PS1="${BROWN}[\h] ${CYAN}\w${BLUE}\$(__git_ps1 ':(%s)')${NO_COLOR}\n${MAGENTA}λ${NO_COLOR} "
 
 # Append history
 shopt -s histappend

@@ -22,7 +22,7 @@ export EDITOR=$VISUAL
 set -o vi
 
 # Colours for ls
-eval "$(dircolors $HOME/.dircolors.ansi-universal)"
+eval "$(dircolors $HOME/.dircolors/dircolors.ansi-universal)"
 
 export CLICOLOR=1
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"

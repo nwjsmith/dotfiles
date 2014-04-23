@@ -99,8 +99,8 @@ set backspace=indent,eol,start
 
 " Restore last location in file
 autocmd BufReadPost *
-  \ if &ft != 'gitcommit' && line("'\"") > 1 && line("'\"") <= line("$")
-  \   exe "normal! g`\""
+  \ if &ft != 'gitcommit' && line("'\"") > 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
   \ endif
 
 " Use the Silver Searcher if available

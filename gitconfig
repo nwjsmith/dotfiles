@@ -21,7 +21,10 @@
   cmd = vim -f -c \"Gdiff\" \"$MERGED\"
 [merge]
   tool = fugitive
+  ff = only
 [mergetool]
   keepBackup = false
 [include]
   path = ~/.gitconfig.local
+[commit]
+  template = ~/.gitmessage

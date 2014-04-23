@@ -6,4 +6,3 @@
 .vagrant/
 tags
 *.pyc
-vim.symlink/.netrwhist

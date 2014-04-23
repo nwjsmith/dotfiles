@@ -1,5 +1,3 @@
-# vim: ft=gitconfig
-
 [alias]
   st = status
   co = checkout

@@ -1,5 +1,3 @@
-# vim: ft=sh
-
 # All brew everything
 export PATH="/usr/local/sbin:/usr/local/bin:${PATH}"
 

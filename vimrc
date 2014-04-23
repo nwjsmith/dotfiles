@@ -13,11 +13,11 @@ filetype plugin indent on
 set modeline
 
 " Relative line numbers in normal mode, absolute in insert mode
-set number
-autocmd FocusLost * :set norelativenumber
-autocmd FocusGained * :set relativenumber
-autocmd InsertEnter * :set norelativenumber
-autocmd InsertLeave * :set relativenumber
+set number relativenumber
+autocmd InsertEnter * :set number norelativenumber
+autocmd InsertLeave * :set number relativenumber
+autocmd WinEnter * :set number relativenumber
+autocmd WinLeave * :set number norelativenumber
 
 " Use 5 characters for the number column
 set numberwidth=5
@@ -25,9 +25,6 @@ set numberwidth=5
 " Solarized is nice
 set background=light
 colorscheme solarized
-
-" Show line numbers
-set number
 
 " Always show status bar
 set laststatus=2

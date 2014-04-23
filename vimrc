@@ -98,16 +98,10 @@ set wildmode=list:longest,list:full
 set backspace=indent,eol,start
 
 " Restore last location in file
-function! RestoreCursor()
-  if line("'\"") <= line("$")
-    normal! g`"
-    return 1
-  endif
-endfunction
-augroup restoreCursor
-  autocmd!
-  autocmd BufWinEnter * call RestoreCursor()
-augroup END
+autocmd BufReadPost *
+  \ if &ft != 'gitcommit' && line("'\"") > 1 && line("'\"") <= line("$")
+  \   exe "normal! g`\""
+  \ endif
 
 " Use the Silver Searcher if available
 if executable('ag')

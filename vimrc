@@ -131,4 +131,6 @@ nnoremap Y y$
 imap <C-c> <ESC>
 
 " Keep private things in .vimrc.local
-source ~/.vimrc.local
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif

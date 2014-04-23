@@ -109,6 +109,18 @@ augroup restoreCursor
   autocmd BufWinEnter * call RestoreCursor()
 augroup END
 
+" Use the Silver Searcher if available
+if executable('ag')
+  " Use ag instead of grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag for ctrlp for listing files
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that we don't need caching
+  let g:ctrlp_use_caching = 0
+endif
+
 " Enable matchit
 runtime macros/matchit.vim
 

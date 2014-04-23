@@ -1,10 +1,9 @@
-" vim: ft=vim
 set shell=$SHELL
 
 " Use Vim's defaults over vi's
 set nocompatible
 
-" Use pathogen to manage plugins
+" Use pathogen to manage runtime path
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
@@ -13,12 +12,15 @@ syntax on
 filetype plugin indent on
 set modeline
 
-" Fancy relative line numbers
-set relativenumber
-autocmd FocusLost * :set number
+" Relative line numbers in normal mode, absolute in insert mode
+set number
+autocmd FocusLost * :set norelativenumber
 autocmd FocusGained * :set relativenumber
-autocmd InsertEnter * :set number
+autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
+
+" Use 5 characters for the number column
+set numberwidth=5
 
 " Solarized is nice
 set background=light
@@ -38,7 +40,7 @@ set statusline+=%=%c/%l/%L
 " Highlight trailing whitespace
 set list listchars=tab:‣\ ,trail:·
 
-" Minimum window size
+" Expand windows when moving into them
 set winwidth=84
 set winheight=10
 set winminheight=10
@@ -63,6 +65,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Write file after every command
+set autowrite
+
 " Don't (visually) wrap lines
 set nowrap
 
@@ -79,7 +84,7 @@ set expandtab
 set hlsearch
 " Underline matches
 highlight Search cterm=underline term=underline gui=underline
-" Show matches 'so far' when typing
+" Show matches incrementally while typing
 set incsearch
 " Ignore case only when all lowercase letters are used
 set ignorecase
@@ -87,7 +92,7 @@ set smartcase
 
 " Shell-like file completion
 set wildmenu
-set wildmode=list:longest
+set wildmode=list:longest,list:full
 
 " Allow backspacing over everything
 set backspace=indent,eol,start
@@ -121,9 +126,6 @@ nnoremap <Leader><Space> :noh<CR>
 
 " Y should behave like C and D in normal mode
 nnoremap Y y$
-
-" :w!! is 'sudo' write
-cmap w!! %!sudo tee > /dev/null %
 
 " Make Ctrl-C behave the same as Escape
 imap <C-c> <ESC>

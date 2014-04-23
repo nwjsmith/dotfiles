@@ -4,3 +4,72 @@
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized
+[submodule "vim/bundles/elixir"]
+	path = vim/bundles/elixir
+	url = https://github.com/elixir-lang/vim-elixir
+[submodule "vim/bundles/clojure-highlight"]
+	path = vim/bundles/clojure-highlight
+	url = https://github.com/guns/vim-clojure-highlight
+[submodule "vim/bundles/clojure-static"]
+	path = vim/bundles/clojure-static
+	url = https://github.com/guns/vim-clojure-static
+[submodule "vim/bundles/sexp"]
+	path = vim/bundles/sexp
+	url = https://github.com/guns/vim-sexp
+[submodule "vim/bundles/coffee-script"]
+	path = vim/bundles/coffee-script
+	url = https://github.com/kchmck/vim-coffee-script
+[submodule "vim/bundles/varnish"]
+	path = vim/bundles/varnish
+	url = https://github.com/nwjsmith/vim-varnish
+[submodule "vim/bundles/javascript"]
+	path = vim/bundles/javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "vim/bundles/puppet"]
+	path = vim/bundles/puppet
+	url = https://github.com/rodjek/vim-puppet
+[submodule "vim/bundles/commentary"]
+	path = vim/bundles/commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "vim/bundles/rails"]
+	path = vim/bundles/rails
+	url = https://github.com/tpope/vim-rails
+[submodule "vim/bundles/repeat"]
+	path = vim/bundles/repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "vim/bundles/classpath"]
+	path = vim/bundles/classpath
+	url = https://github.com/tpope/vim-classpath
+[submodule "vim/bundles/endwise"]
+	path = vim/bundles/endwise
+	url = https://github.com/tpope/vim-endwise
+[submodule "vim/bundles/fireplace"]
+	path = vim/bundles/fireplace
+	url = https://github.com/tpope/vim-fireplace
+[submodule "vim/bundles/fugitive"]
+	path = vim/bundles/fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/bundles/haml"]
+	path = vim/bundles/haml
+	url = https://github.com/tpope/vim-haml
+[submodule "vim/bundles/markdown"]
+	path = vim/bundles/markdown
+	url = https://github.com/tpope/vim-markdown
+[submodule "vim/bundles/surround"]
+	path = vim/bundles/surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vim/bundles/pathogen"]
+	path = vim/bundles/pathogen
+	url = https://github.com/tpope/vim-pathogen
+[submodule "vim/bundles/ruby"]
+	path = vim/bundles/ruby
+	url = https://github.com/vim-ruby/vim-ruby
+[submodule "vim/bundles/rust"]
+	path = vim/bundles/rust
+	url = https://github.com/wting/rust.vim
+[submodule "vim/bundles/golang"]
+	path = vim/bundles/golang
+	url = https://github.com/jnwhiteh/vim-golang
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim

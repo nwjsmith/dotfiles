@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if [ ! -e $HOME/.vim/bundle/pathogen ]; then
+  git submodule init && git submodule sync
+fi

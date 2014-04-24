@@ -1,3 +1,6 @@
+# Path
+export PATH="/usr/local/sbin:/usr/local/bin:${PATH}"
+
 # Prompt
 CYAN='\[\033[0;36m\]'
 MAGENTA='\[\033[0;35m\]'

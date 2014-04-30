@@ -16,8 +16,6 @@ export HISTCONTROL=ignoredups:erasedups
 # Large history
 export HISTSIZE=100000
 export HISTFILESIZE=${HISTSIZE}
-# Append history after each command, clear and reload history
-export PROMPT_COMMAND="history -a; history -c; history -r ${PROMPT_COMMAND}"
 
 # Use vim
 export VISUAL="vim"

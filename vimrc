@@ -68,15 +68,6 @@ set autowrite
 " Don't (visually) wrap lines
 set nowrap
 
-" Number of spaces a tab counts for
-set tabstop=2
-" Number of spaces a soft tab counts for
-set softtabstop=2
-" Number of spaces to use for auto-indent
-set shiftwidth=2
-" Use the right number of spaces to insert a tab
-set expandtab
-
 " Highlight all search matches
 set hlsearch
 " Underline matches

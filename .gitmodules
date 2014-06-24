@@ -88,3 +88,6 @@
 [submodule "vim/bundle/characterize"]
 	path = vim/bundle/characterize
 	url = https://github.com/tpope/vim-characterize
+[submodule "vim/bundle/sleuth"]
+	path = vim/bundle/sleuth
+	url = https://github.com/tpope/vim-sleuth

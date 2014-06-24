@@ -4,67 +4,67 @@
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized
-[submodule "vim/bundles/elixir"]
+[submodule "vim/bundle/elixir"]
 	path = vim/bundle/elixir
 	url = https://github.com/elixir-lang/vim-elixir
-[submodule "vim/bundles/clojure-highlight"]
+[submodule "vim/bundle/clojure-highlight"]
 	path = vim/bundle/clojure-highlight
 	url = https://github.com/guns/vim-clojure-highlight
-[submodule "vim/bundles/clojure-static"]
+[submodule "vim/bundle/clojure-static"]
 	path = vim/bundle/clojure-static
 	url = https://github.com/guns/vim-clojure-static
-[submodule "vim/bundles/sexp"]
+[submodule "vim/bundle/sexp"]
 	path = vim/bundle/sexp
 	url = https://github.com/guns/vim-sexp
-[submodule "vim/bundles/coffee-script"]
+[submodule "vim/bundle/coffee-script"]
 	path = vim/bundle/coffee-script
 	url = https://github.com/kchmck/vim-coffee-script
-[submodule "vim/bundles/varnish"]
+[submodule "vim/bundle/varnish"]
 	path = vim/bundle/varnish
 	url = https://github.com/nwjsmith/vim-varnish
-[submodule "vim/bundles/javascript"]
+[submodule "vim/bundle/javascript"]
 	path = vim/bundle/javascript
 	url = https://github.com/pangloss/vim-javascript
-[submodule "vim/bundles/puppet"]
+[submodule "vim/bundle/puppet"]
 	path = vim/bundle/puppet
 	url = https://github.com/rodjek/vim-puppet
-[submodule "vim/bundles/commentary"]
+[submodule "vim/bundle/commentary"]
 	path = vim/bundle/commentary
 	url = https://github.com/tpope/vim-commentary
-[submodule "vim/bundles/rails"]
+[submodule "vim/bundle/rails"]
 	path = vim/bundle/rails
 	url = https://github.com/tpope/vim-rails
-[submodule "vim/bundles/repeat"]
+[submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
 	url = https://github.com/tpope/vim-repeat
-[submodule "vim/bundles/classpath"]
+[submodule "vim/bundle/classpath"]
 	path = vim/bundle/classpath
 	url = https://github.com/tpope/vim-classpath
-[submodule "vim/bundles/endwise"]
+[submodule "vim/bundle/endwise"]
 	path = vim/bundle/endwise
 	url = https://github.com/tpope/vim-endwise
-[submodule "vim/bundles/fireplace"]
+[submodule "vim/bundle/fireplace"]
 	path = vim/bundle/fireplace
 	url = https://github.com/tpope/vim-fireplace
-[submodule "vim/bundles/fugitive"]
+[submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "vim/bundles/haml"]
+[submodule "vim/bundle/haml"]
 	path = vim/bundle/haml
 	url = https://github.com/tpope/vim-haml
-[submodule "vim/bundles/markdown"]
+[submodule "vim/bundle/markdown"]
 	path = vim/bundle/markdown
 	url = https://github.com/tpope/vim-markdown
-[submodule "vim/bundles/surround"]
+[submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
 	url = https://github.com/tpope/vim-surround
-[submodule "vim/bundles/ruby"]
+[submodule "vim/bundle/ruby"]
 	path = vim/bundle/ruby
 	url = https://github.com/vim-ruby/vim-ruby
-[submodule "vim/bundles/rust"]
+[submodule "vim/bundle/rust"]
 	path = vim/bundle/rust
 	url = https://github.com/wting/rust.vim
-[submodule "vim/bundles/golang"]
+[submodule "vim/bundle/golang"]
 	path = vim/bundle/golang
 	url = https://github.com/jnwhiteh/vim-golang
 [submodule "vim/bundle/ctrlp"]

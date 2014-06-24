@@ -91,3 +91,9 @@
 [submodule "vim/bundle/sleuth"]
 	path = vim/bundle/sleuth
 	url = https://github.com/tpope/vim-sleuth
+[submodule "vim/bundle/projectionist"]
+	path = vim/bundle/projectionist
+	url = https://github.com/tpope/vim-projectionist
+[submodule "vim/bundle/dispatch"]
+	path = vim/bundle/dispatch
+	url = https://github.com/tpope/vim-dispatch

@@ -1,8 +1,3 @@
-" set shell=$SHELL
-
-" Use Vim's defaults over vi's
-set nocompatible
-
 " Use pathogen to manage runtime path
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()

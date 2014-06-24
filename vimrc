@@ -1,4 +1,4 @@
-set shell=$SHELL
+" set shell=$SHELL
 
 " Use Vim's defaults over vi's
 set nocompatible
@@ -6,11 +6,6 @@ set nocompatible
 " Use pathogen to manage runtime path
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
-
-" Syntax highlighting
-syntax on
-filetype plugin indent on
-set modeline
 
 " Relative line numbers in normal mode, absolute in insert mode
 set number relativenumber
@@ -26,16 +21,13 @@ set numberwidth=5
 set background=light
 colorscheme solarized
 
-" Always show status bar
-set laststatus=2
-
 " Show file path, modified, readonly flag, help flag, preview flag on the left
 set statusline=%f%M%R%H%W
 " Show row/column/file length on right
 set statusline+=%=%c/%l/%L
 
-" Highlight trailing whitespace
-set list listchars=tab:‣\ ,trail:·
+" Show list chars
+set list
 
 " Expand windows when moving into them
 set winwidth=84
@@ -48,14 +40,17 @@ if exists('+colorcolumn')
   set colorcolumn=81
 endif
 
-" UTF-8 all the things
-set encoding=utf-8
+" Show matching bracket when one is inserted
+set showmatch
+
+" Round to multiple of shiftwidth when using > or <
+set shiftround
+
+" Help with Press ENTER prompts
+set cmdheight=2
 
 " Remember almost every command
 set history=20000
-
-" Always read file changes
-set autoread
 
 " No need for backups, you are using Git, right?
 set nobackup
@@ -72,18 +67,6 @@ set nowrap
 set hlsearch
 " Underline matches
 highlight Search cterm=underline term=underline gui=underline
-" Show matches incrementally while typing
-set incsearch
-" Ignore case only when all lowercase letters are used
-set ignorecase
-set smartcase
-
-" Shell-like file completion
-set wildmenu
-set wildmode=list:longest,list:full
-
-" Allow backspacing over everything
-set backspace=indent,eol,start
 
 " Restore last location in file
 autocmd BufReadPost *
@@ -103,9 +86,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" Enable matchit
-runtime macros/matchit.vim
-
 " Strip whitespace on save
 autocmd BufWritePre *.{rb,py,js,hs,c,h,haml,erb,rake,txt} :%s/\s\+$//e
 
@@ -114,9 +94,6 @@ let mapleader=","
 
 " Allow the mouse in every mode
 set mouse=a
-
-" Clear search results
-nnoremap <Leader><Space> :noh<CR>
 
 " Y should behave like C and D in normal mode
 nnoremap Y y$

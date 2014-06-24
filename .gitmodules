@@ -79,3 +79,9 @@
 [submodule "vim/bundle/eunuch"]
 	path = vim/bundle/eunuch
 	url = https://github.com/tpope/vim-eunuch
+[submodule "vim/bundle/rake"]
+	path = vim/bundle/rake
+	url = https://github.com/tpope/vim-rake
+[submodule "vim/bundle/leiningen"]
+	path = vim/bundle/leiningen
+	url = https://github.com/tpope/vim-leiningen

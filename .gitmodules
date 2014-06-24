@@ -85,3 +85,6 @@
 [submodule "vim/bundle/leiningen"]
 	path = vim/bundle/leiningen
 	url = https://github.com/tpope/vim-leiningen
+[submodule "vim/bundle/characterize"]
+	path = vim/bundle/characterize
+	url = https://github.com/tpope/vim-characterize

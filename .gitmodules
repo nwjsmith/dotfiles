@@ -73,3 +73,6 @@
 [submodule "dircolors"]
 	path = dircolors
 	url = https://github.com/seebi/dircolors-solarized
+[submodule "vim/bundle/vinegar"]
+	path = vim/bundle/vinegar
+	url = https://github.com/tpope/vim-vinegar

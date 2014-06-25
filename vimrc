@@ -16,10 +16,8 @@ set numberwidth=5
 set background=light
 colorscheme solarized
 
-" Show file path, modified, readonly flag, help flag, preview flag on the left
-set statusline=%f%M%R%H%W
-" Show row/column/file length on right
-set statusline+=%=%c/%l/%L
+" Show path, filetype, modified on right, line and column on left
+set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%)
 
 " Show list chars
 set list

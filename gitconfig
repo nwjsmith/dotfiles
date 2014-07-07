@@ -28,3 +28,5 @@
   path = ~/.gitconfig.local
 [commit]
   template = ~/.gitmessage
+[pull]
+  rebase = true

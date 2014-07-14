@@ -106,3 +106,6 @@
 [submodule "vim/bundle/toml"]
 	path = vim/bundle/toml
 	url = https://github.com/cespare/vim-toml
+[submodule "vim/bundle/sexp-mappings-for-regular-people"]
+	path = vim/bundle/sexp-mappings-for-regular-people
+	url = https://github.com/tpope/vim-sexp-mappings-for-regular-people

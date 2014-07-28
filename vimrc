@@ -94,6 +94,9 @@ nnoremap Y y$
 " Make Ctrl-C behave the same as Escape
 imap <C-c> <ESC>
 
+" Add Wrap command
+command! -nargs=* Wrap set wrap linebreak nolist
+
 " Keep private things in .vimrc.local
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local

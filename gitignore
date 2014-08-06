@@ -6,3 +6,5 @@
 .vagrant/
 tags
 *.pyc
+.idea/
+*.iml

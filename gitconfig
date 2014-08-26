@@ -13,10 +13,6 @@
   default = current
 [color]
   ui = true
-[credential]
-  helper = osxkeychain
-[http]
-  sslVerify = false
 [mergetool "fugitive"]
   cmd = vim -f -c \"Gdiff\" \"$MERGED\"
 [merge]

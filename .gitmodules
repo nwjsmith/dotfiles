@@ -121,3 +121,6 @@
 [submodule "vim/bundle/rubocop"]
 	path = vim/bundle/rubocop
 	url = https://github.com/ngmy/vim-rubocop
+[submodule "vim/bundle/ruby-refactoring"]
+	path = vim/bundle/ruby-refactoring
+	url = https://github.com/ecomba/vim-ruby-refactoring

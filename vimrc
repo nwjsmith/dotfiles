@@ -33,6 +33,10 @@ if exists('+colorcolumn')
   set colorcolumn=81
 endif
 
+" Turn off folding
+set foldmethod=manual
+set nofoldenable
+
 " Show matching bracket when one is inserted
 set showmatch
 

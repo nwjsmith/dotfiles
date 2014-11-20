@@ -124,3 +124,9 @@
 [submodule "vim/bundle/ruby-refactoring"]
 	path = vim/bundle/ruby-refactoring
 	url = https://github.com/ecomba/vim-ruby-refactoring
+[submodule "vim/bundle/jdaddy"]
+	path = vim/bundle/jdaddy
+	url = https://github.com/tpope/vim-jdaddy
+[submodule "vim/bundle/rspec"]
+	path = vim/bundle/rspec
+	url = https://github.com/thoughtbot/vim-rspec

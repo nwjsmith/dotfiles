@@ -133,3 +133,6 @@
 [submodule "vim/bundle/jinja"]
 	path = vim/bundle/jinja
 	url = https://github.com/lepture/vim-jinja
+[submodule "vim/bundle/test"]
+	path = vim/bundle/test
+	url = https://github.com/janko-m/vim-test

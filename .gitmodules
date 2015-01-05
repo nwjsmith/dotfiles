@@ -133,3 +133,6 @@
 [submodule "vim/bundle/test"]
 	path = vim/bundle/test
 	url = https://github.com/janko-m/vim-test
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = https://github.com/ctrlpvim/ctrlp.vim

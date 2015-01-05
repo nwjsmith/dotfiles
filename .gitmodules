@@ -64,9 +64,6 @@
 [submodule "vim/bundle/rust"]
 	path = vim/bundle/rust
 	url = https://github.com/wting/rust.vim
-[submodule "vim/bundle/ctrlp"]
-	path = vim/bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim
 [submodule "dircolors"]
 	path = dircolors
 	url = https://github.com/seebi/dircolors-solarized

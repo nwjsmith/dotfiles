@@ -17,11 +17,10 @@
   cmd = vim -f -c \"Gdiff\" \"$MERGED\"
 [merge]
   tool = fugitive
+  renamelimit = 10000
 [mergetool]
   keepBackup = false
 [include]
   path = ~/.gitconfig.local
 [commit]
   template = ~/.gitmessage
-[pull]
-  rebase = true

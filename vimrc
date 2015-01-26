@@ -102,9 +102,9 @@ imap <C-c> <ESC>
 command! -nargs=* Wrap set wrap linebreak nolist
 
 " Use Enter as your test key
-nmap <silent> <return> :TestNearest<CR>
-nmap <silent> <leader>t :TestFile<CR>
-nmap <silent> <leader>f :TestSuite<CR>
+nnoremap <silent> <leader>, :TestNearest<CR>
+nnoremap <silent> <leader>t :TestFile<CR>
+nnoremap <silent> <leader>f :TestSuite<CR>
 let g:test#strategy = 'dispatch'
 
 " Keep private things in .vimrc.local

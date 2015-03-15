@@ -133,3 +133,6 @@
 [submodule "vim/bundle/test"]
 	path = vim/bundle/test
 	url = https://github.com/janko-m/vim-test
+[submodule "vim/bundle/fish"]
+	path = vim/bundle/fish
+	url = https://github.com/dag/vim-fish

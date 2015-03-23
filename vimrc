@@ -47,7 +47,7 @@ set shiftround
 set cmdheight=2
 
 " Remember almost every command
-set history=20000
+set history=10000
 
 " No need for backups, you are using Git, right?
 set nobackup

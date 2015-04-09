@@ -136,3 +136,6 @@
 [submodule "vim/bundle/fish"]
 	path = vim/bundle/fish
 	url = https://github.com/dag/vim-fish
+[submodule "vim/bundle/mustache"]
+	path = vim/bundle/mustache
+	url = https://github.com/mustache/vim-mustache-handlebars

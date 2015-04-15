@@ -86,6 +86,9 @@ endif
 " Strip whitespace on save
 autocmd BufWritePre *.{rb,py,js,hs,c,h,haml,erb,rake,txt} :%s/\s\+$//e
 
+" Force markdown on *.md
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 " ',' key is easier to reach than the default '\'
 let mapleader=","
 

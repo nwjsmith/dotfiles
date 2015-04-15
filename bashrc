@@ -43,6 +43,3 @@ alias be="bundle exec"
 if [ -f $HOME/.bashrc.local ]; then
   . $HOME/.bashrc.local
 fi
-
-# Colours for ls
-eval "$(dircolors $HOME/.dircolors/dircolors.ansi-universal)"

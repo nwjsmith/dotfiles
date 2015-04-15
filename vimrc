@@ -1,5 +1,5 @@
 " Use pathogen to manage runtime path
-runtime bundle/pathogen/autoload/pathogen.vim
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 " Relative line numbers in normal mode, absolute in insert mode

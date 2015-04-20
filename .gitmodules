@@ -92,3 +92,6 @@
 [submodule "vim/bundle/vim-slamhound"]
 	path = vim/bundle/vim-slamhound
 	url = https://github.com/guns/vim-slamhound
+[submodule "vim/bundle/vim-abolish"]
+	path = vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish

@@ -77,3 +77,18 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic
+[submodule "vim/bundle/vim-leiningen"]
+	path = vim/bundle/vim-leiningen
+	url = https://github.com/tpope/vim-leiningen
+[submodule "vim/bundle/vim-fireplace"]
+	path = vim/bundle/vim-fireplace
+	url = https://github.com/tpope/vim-fireplace
+[submodule "vim/bundle/vim-sexp"]
+	path = vim/bundle/vim-sexp
+	url = https://github.com/guns/vim-sexp
+[submodule "vim/bundle/vim-sexp-mappings-for-regular-people"]
+	path = vim/bundle/vim-sexp-mappings-for-regular-people
+	url = https://github.com/tpope/vim-sexp-mappings-for-regular-people
+[submodule "vim/bundle/vim-slamhound"]
+	path = vim/bundle/vim-slamhound
+	url = https://github.com/guns/vim-slamhound

@@ -13,7 +13,7 @@ autocmd WinLeave * :set number norelativenumber
 set numberwidth=5
 
 " Solarized is nice
-set background=light
+set background=dark
 colorscheme solarized
 
 " Show path, filetype, modified on right, line and column on left

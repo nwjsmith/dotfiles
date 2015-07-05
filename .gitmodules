@@ -95,3 +95,6 @@
 [submodule "vim/bundle/vim-abolish"]
 	path = vim/bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish
+[submodule "vim/bundle/vim-salve"]
+	path = vim/bundle/vim-salve
+	url = https://github.com/tpope/vim-salve

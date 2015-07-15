@@ -110,6 +110,9 @@ nnoremap <silent> <leader>t :TestFile<CR>
 nnoremap <silent> <leader>f :TestSuite<CR>
 let g:test#strategy = 'dispatch'
 
+" Automatically start a Clojure REPL
+let g:salve_auto_start_repl=1
+
 " Keep private things in .vimrc.local
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local

@@ -39,6 +39,9 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 alias be="bundle exec"
 
+# Disable Rails' app preloading
+export DISABLE_SPRING=1
+
 # Keep private things in ~/.bashrc.local
 if [ -f $HOME/.bashrc.local ]; then
   . $HOME/.bashrc.local

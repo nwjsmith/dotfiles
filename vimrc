@@ -57,9 +57,6 @@ set noswapfile
 " Write file after every command
 set autowrite
 
-" Don't (visually) wrap lines
-set nowrap
-
 " Highlight all search matches
 set hlsearch
 " Underline matches

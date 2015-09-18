@@ -98,3 +98,6 @@
 [submodule "vim/bundle/vim-salve"]
 	path = vim/bundle/vim-salve
 	url = https://github.com/tpope/vim-salve
+[submodule "vim/bundle/vim-unimpaired"]
+	path = vim/bundle/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired

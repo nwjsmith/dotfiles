@@ -23,7 +23,7 @@ set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%)
 set list
 
 " Expand windows when moving into them
-set winwidth=84
+set winwidth=87
 set winheight=10
 set winminheight=10
 set winheight=999

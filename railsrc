@@ -1,0 +1,8 @@
+--skip-test-unit
+--skip-bundle
+--database=postgresql
+--skip-keeps
+--skip-turbolinks
+--skip-spring
+--skip-sprockets
+--ruby='/usr/bin/env ruby'

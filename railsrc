@@ -1,8 +1,9 @@
---skip-test-unit
---skip-bundle
 --database=postgresql
+--ruby='/usr/bin/env ruby'
+--skip-bundle
+--skip-javascript
 --skip-keeps
---skip-turbolinks
 --skip-spring
 --skip-sprockets
---ruby='/usr/bin/env ruby'
+--skip-test-unit
+--skip-turbolinks

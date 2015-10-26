@@ -28,6 +28,9 @@ set winheight=10
 set winminheight=10
 set winheight=999
 
+" Wrap on word boundary
+set linebreak
+
 " No lines longer than 80 characters, old man
 if exists('+colorcolumn')
   set colorcolumn=81
@@ -97,9 +100,6 @@ nnoremap Y y$
 
 " Make Ctrl-C behave the same as Escape
 imap <C-c> <ESC>
-
-" Add Wrap command
-command! -nargs=* Wrap set wrap linebreak nolist
 
 " Use Enter as your test key
 nnoremap <silent> <leader>, :TestNearest<CR>

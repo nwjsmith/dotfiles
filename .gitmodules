@@ -101,3 +101,6 @@
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
+[submodule "vim/bundle/vim-classpath"]
+	path = vim/bundle/vim-classpath
+	url = https://github.com/tpope/vim-classpath

@@ -104,3 +104,6 @@
 [submodule "vim/bundle/vim-classpath"]
 	path = vim/bundle/vim-classpath
 	url = https://github.com/tpope/vim-classpath
+[submodule "emacs.d"]
+	path = emacs.d
+	url = https://github.com/bbatsov/prelude

@@ -4,4 +4,4 @@ set -e
 cd $HOME/.dotfiles
 git submodule init
 git submodule update
-mkdir $HOME/.emacs.d/vendor
+mkdir -p $HOME/.emacs.d/vendor

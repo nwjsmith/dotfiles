@@ -107,3 +107,6 @@
 [submodule "emacs.d"]
 	path = emacs.d
 	url = https://github.com/bbatsov/prelude
+[submodule "vim/bundle/vim-rhubarb"]
+	path = vim/bundle/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb.git

@@ -27,6 +27,9 @@ alias be="bundle exec"
 # Disable Rails' app preloading
 export DISABLE_SPRING=1
 
+# Platform-specific bash configuration
+. $HOME/.bashrc.platform
+
 # Keep private things in ~/.bashrc.local
 if [ -f $HOME/.bashrc.local ]; then
   . $HOME/.bashrc.local

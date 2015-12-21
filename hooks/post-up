@@ -1,7 +1,4 @@
 #!/bin/bash
 set -e
 
-cd $HOME/.dotfiles
-git submodule init
-git submodule update
-mkdir -p $HOME/.emacs.d/vendor
+mkdir -p "${HOME}/.emacs.d/vendor"

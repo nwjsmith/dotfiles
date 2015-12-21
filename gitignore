@@ -2,9 +2,14 @@
 .ruby-version
 .rbenv-version
 .rvmrc
-.bundle/
-.vagrant/
+.bundle
+.vagrant
 tags
+!tags/
 *.pyc
 .idea/
 *.iml
+log/*.log
+tmp/**/*
+!tmp/cache/.keep
+.env

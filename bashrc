@@ -31,9 +31,13 @@ export DISABLE_SPRING=1
 export PYTHONSTARTUP="${HOME}/.pythonstartup"
 
 # Platform-specific bash configuration
-. $HOME/.bashrc.platform
+if [ -f "${HOME}/.bashrc.platform" ]; then
+  . "${HOME}/.bashrc.platform"
+else
+  echo "You forgot to link the platform-specific files, 'rcup -t \$PLATFORM'"
+fi
 
 # Keep private things in ~/.bashrc.local
-if [ -f $HOME/.bashrc.local ]; then
-  . $HOME/.bashrc.local
+if [ -f  "${HOME}/.bashrc.local" ]; then
+  . "${HOME}/.bashrc.local"
 fi

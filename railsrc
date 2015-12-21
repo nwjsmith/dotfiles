@@ -1,9 +1,9 @@
---database=postgresql
---ruby='/usr/bin/env ruby'
---skip-bundle
---skip-javascript
---skip-keeps
---skip-spring
---skip-sprockets
---skip-test-unit
+--database=postgresql \
+--ruby="/usr/bin/env ruby" \
+--skip-bundle \
+--skip-javascript \
+--skip-keeps \
+--skip-spring \
+--skip-sprockets \
+--skip-test-unit \
 --skip-turbolinks

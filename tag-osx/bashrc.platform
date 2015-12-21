@@ -2,6 +2,8 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
+alias brewup="brew upgrade && brew cleanup"
+
 # Use chruby for switching Rubies
 . /usr/local/share/chruby/chruby.sh
 chruby ruby-2.2.4

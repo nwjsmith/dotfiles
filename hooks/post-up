@@ -2,3 +2,4 @@
 set -e
 
 mkdir -p "${HOME}/.emacs.d/vendor"
+vim +'call pathogen#helptags()' +qall

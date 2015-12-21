@@ -1,9 +1,30 @@
+# Autocomplete Bash commands
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-alias brewup="brew upgrade && brew cleanup"
-
 # Use chruby for switching Rubies
-. /usr/local/share/chruby/chruby.sh
+. "$(brew --prefix)/share/chruby/chruby.sh"
+export RUBIES=($(brew --prefix)/rubies/*)
 chruby ruby-2.2.4
+
+# Install Ruby to /usr/local/rubies
+alias rubby-install="ruby-install -r /usr/local/rubies"
+
+# Java
+export JAVA_HOME="$(/usr/libexec/java_home)"
+
+# Go lang
+export GOPATH="$(brew --prefix)/lib/go"
+
+# Use the GNU versions of everything
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
+export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:${MANPATH}"
+
+# Keep up-to-date
+alias brewup="brew update && brew upgrade --all && brew cleanup"
+
+# Heroku toolbelt
+export PATH="$(brew --prefix heroku)/bin:$PATH"
+
+export PATH="$HOME/.bin:$PATH"

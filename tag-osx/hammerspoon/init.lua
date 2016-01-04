@@ -1,75 +1,56 @@
-function windowKey(modifier, frameAdjustment)
+hs.window.animationDuration = 0
+
+function windowMovement(modifier, adjustFrameFn)
     hs.hotkey.bind({'cmd', 'shift', 'ctrl'}, modifier, function()
         local window = hs.window.focusedWindow()
-        if window then
-            local frame = window:frame()
+        if window and not window:isFullScreen() then
+            local windowFrame = window:frame()
             local screen = window:screen()
-            local max = screen:frame()
-            frameAdjustment(frame, max)
-            window:setFrame(frame)
+            local screenFrame = screen:frame()
+            adjustFrameFn(windowFrame, screenFrame)
+            window:setFrame(windowFrame)
         end
     end)
 end
 
-windowKey('h', function(frame, max)
-    frame.x = max.x
-    frame.y = max.y
-    frame.w = max.w / 2
-    frame.h = max.h
+windowMovement('h', function(windowFrame, screenFrame)
+    windowFrame.x = screenFrame.x
+    windowFrame.w = screenFrame.w / 2
 end)
 
-windowKey('j', function(frame, max)
-    frame.x = max.x
-    frame.y = max.y + (max.h / 2)
-    frame.w = max.w
-    frame.h = max.h / 2
+windowMovement('j', function(windowFrame, screenFrame)
+    windowFrame.y = screenFrame.h / 2
+    windowFrame.h = screenFrame.h / 2
 end)
 
-windowKey('k', function(frame, max)
-    frame.x = max.x
-    frame.y = max.y
-    frame.w = max.w
-    frame.h = max.h / 2
+windowMovement('k', function(windowFrame, screenFrame)
+    windowFrame.y = screenFrame.y
+    windowFrame.h = screenFrame.h / 2
 end)
 
-windowKey('l', function(frame, max)
-    frame.x = max.x + (max.w / 2)
-    frame.y = max.y
-    frame.w = max.w / 2
-    frame.h = max.h
+windowMovement('l', function(windowFrame, screenFrame)
+    windowFrame.x = screenFrame.w / 2
+    windowFrame.w = screenFrame.w / 2
 end)
 
-windowKey('Space', function(frame, max)
-    frame.x = max.x
-    frame.y = max.y
-    frame.w = max.w
-    frame.h = max.h
+windowMovement('Space', function(windowFrame, screenFrame)
+    windowFrame.x = screenFrame.x
+    windowFrame.y = screenFrame.y
+    windowFrame.w = screenFrame.w
+    windowFrame.h = screenFrame.h
 end)
 
-windowKey('Tab', function(frame, max)
-    frame.x = (max.w / 2) - (frame.w / 2)
-    frame.y = (max.h / 2) - (frame.h / 2)
-end)
-
-windowKey('s', function(frame, max)
-    frame.w = 640
-    frame.h = 480
-    frame.x = (max.w / 2) - (frame.w / 2)
-    frame.y = (max.h / 2) - (frame.h / 2)
-end)
-
-hs.window.animationDuration = 0
-
-function reloadConfig(files)
-    doReload = false
+function reloadConfiguration(files)
     for _,file in pairs(files) do
         if file:sub(-4) == ".lua" then
-            doReload = true
+            hs.alert.show("Reloading Hammerspoon...")
+            hs.reload()
+            return
         end
-    end
-    if doReload then
-        hs.reload()
     end
 end
 
-hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
+hs.pathwatcher.new(
+    os.getenv("HOME") .. "/.dotfiles/tag-osx/hammerspoon/",
+    reloadConfiguration
+):start()

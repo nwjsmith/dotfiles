@@ -1,10 +1,9 @@
 function windowKey(modifier, frameAdjustment)
     hs.hotkey.bind({'cmd', 'shift', 'ctrl'}, modifier, function()
-        local window = hs.window
+        local window = hs.window.focusedWindow()
         if window then
-            local focusedWindow = window.focusedWindow()
-            local frame = focusedWindow:frame()
-            local screen = focusedWindow:screen()
+            local frame = window:frame()
+            local screen = window:screen()
             local max = screen:frame()
             frameAdjustment(frame, max)
             window:setFrame(frame)

@@ -2,6 +2,8 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
+set shell=$SHELL
+
 " Relative line numbers in normal mode, absolute in insert mode
 set number relativenumber
 autocmd InsertEnter * :set number norelativenumber

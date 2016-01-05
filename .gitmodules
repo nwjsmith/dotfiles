@@ -116,3 +116,6 @@
 [submodule "vim/bundle/idris-vim"]
 	path = vim/bundle/idris-vim
 	url = https://github.com/idris-hackers/idris-vim
+[submodule "vim/bundle/vim-clojure-static"]
+	path = vim/bundle/vim-clojure-static
+	url = https://github.com/guns/vim-clojure-static

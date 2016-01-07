@@ -40,6 +40,11 @@ windowMovement('Space', function(windowFrame, screenFrame)
     windowFrame.h = screenFrame.h
 end)
 
+windowMovement('Tab', function(windowFrame, screenFrame)
+    windowFrame.x = screenFrame.w / 2 - windowFrame.w / 2
+    windowFrame.y = screenFrame.h / 2 - windowFrame.h / 2
+end)
+
 function reloadConfiguration(files)
     for _,file in pairs(files) do
         if file:sub(-4) == ".lua" then

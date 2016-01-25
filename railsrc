@@ -1,5 +1,4 @@
 --database=postgresql \
---ruby="/usr/bin/env ruby" \
 --skip-bundle \
 --skip-javascript \
 --skip-keeps \

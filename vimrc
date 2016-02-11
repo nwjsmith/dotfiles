@@ -2,8 +2,6 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
-set shell=$SHELL
-
 " Relative line numbers in normal mode, absolute in insert mode
 set number relativenumber
 autocmd InsertEnter * :set number norelativenumber
@@ -21,7 +19,7 @@ colorscheme solarized
 " Show path, filetype, modified on right, line and column on left
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%)
 
-" Show list chars
+" Show trailing whitespace
 set list
 
 " Expand windows when moving into them
@@ -51,9 +49,6 @@ set shiftround
 " Help with Press ENTER prompts
 set cmdheight=2
 
-" Remember almost every command
-set history=10000
-
 " No need for backups, you are using Git, right?
 set nobackup
 set nowritebackup
@@ -66,6 +61,10 @@ set autowrite
 set hlsearch
 " Underline matches
 highlight Search cterm=underline term=underline gui=underline
+" Ignore case unless the pattern contains uppercase letters
+set smartcase
+" Completion with proper caseing
+set infercase
 
 " Restore last location in file
 autocmd BufReadPost *

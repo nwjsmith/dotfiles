@@ -5,6 +5,7 @@ fi
 
 # Use chruby for switching Rubies
 . "$(brew --prefix)/share/chruby/chruby.sh"
+. "$(brew --prefix)/share/chruby/auto.sh"
 export RUBIES=($(brew --prefix)/rubies/*)
 chruby ruby-2.3.0
 

@@ -6,11 +6,6 @@ fi
 # Use chruby for switching Rubies
 . "$(brew --prefix)/share/chruby/chruby.sh"
 . "$(brew --prefix)/share/chruby/auto.sh"
-RUBIES+=($(brew --prefix)/rubies/*)
-chruby ruby-2.3.0
-
-# Install Ruby to /usr/local/rubies
-alias rubby-install="ruby-install -r /usr/local/rubies"
 
 # Java
 export JAVA_HOME="$(/usr/libexec/java_home)"

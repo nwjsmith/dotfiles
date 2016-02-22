@@ -23,6 +23,7 @@ export EDITOR=$VISUAL
 set -o vi
 
 alias be="bundle exec"
+alias clip="nc localhost 8377"
 
 # Disable Rails' app preloading
 export DISABLE_SPRING=1

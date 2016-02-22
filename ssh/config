@@ -1,1 +1,8 @@
 UseRoaming no
+
+# Forward Clipper connection to remote host
+Host *
+  RemoteForward 8377 localhost:8377
+  ControlMaster auto
+  ControlPath ~/.ssh/%r@%h:%p
+  ControlPersist 240

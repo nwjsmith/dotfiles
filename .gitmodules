@@ -122,3 +122,6 @@
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule "vim/bundle/vim-clipper"]
+	path = vim/bundle/vim-clipper
+	url = https://github.com/wincent/vim-clipper

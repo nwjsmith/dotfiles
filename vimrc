@@ -111,6 +111,9 @@ let g:test#strategy = 'dispatch'
 " Automatically start a Clojure REPL
 let g:salve_auto_start_repl=1
 
+" Store snippets alongside dotfiles
+let g:UltiSnipsSnippetsDir=$HOME . "/.vim/UltiSnips"
+
 " Keep private things in .vimrc.local
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local

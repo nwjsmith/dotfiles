@@ -1,0 +1,21 @@
+snippet mspec
+require 'rails_helper'
+
+RSpec.describe `!p
+snip.rv = ''.join([word.capitalize() for word in snip.basename.split('_')][:-1])
+`, type: :model do
+  it '$2' do
+    $0
+  end
+end
+endsnippet
+
+snippet omspec
+describe `!p
+snip.rv = ''.join([word.capitalize() for word in snip.basename.split('_')][:-1])
+` do
+  it '$2' do
+    $0
+  end
+end
+endsnippet

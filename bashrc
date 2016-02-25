@@ -1,5 +1,5 @@
 # Path
-export PATH="/usr/local/sbin:/usr/local/bin:${PATH}"
+export PATH="/usr/local/sbin:/usr/local/bin:${HOME}/.cargo/bin:${PATH}"
 
 # Prompt
 CYAN='\[\033[0;36m\]'

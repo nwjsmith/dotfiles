@@ -14,8 +14,10 @@ snippet omspec
 describe `!p
 snip.rv = ''.join([word.capitalize() for word in snip.basename.split('_')][:-1])
 ` do
-  it '$2' do
-    $0
+  describe '$2' do
+    it '$3' do
+      $0
+    end
   end
 end
 endsnippet

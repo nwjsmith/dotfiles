@@ -2,6 +2,14 @@ snippet cla
 class `!p
 snip.rv = ''.join([word.capitalize() for word in snip.basename.split('_')])
 `
+  $0
+end
+endsnippet
+
+snippet clai
+class `!p
+snip.rv = ''.join([word.capitalize() for word in snip.basename.split('_')])
+`
   def initialize($1)
     $0
   end
@@ -11,4 +19,18 @@ endsnippet
 snippet fz
 # frozen_string_literal: true
 
+endsnippet
+
+snippet spec
+require 'spec_helper'
+
+RSpec.describe `!p
+snip.rv = ''.join([word.capitalize() for word in snip.basename.split('_')][:-1])
+` do
+  describe '$2' do
+    it '$3' do
+      $0
+    end
+  end
+end
 endsnippet

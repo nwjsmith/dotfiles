@@ -1,4 +1,5 @@
 .DS_Store
+.byebug-history
 .ruby-version
 .rbenv-version
 .rvmrc

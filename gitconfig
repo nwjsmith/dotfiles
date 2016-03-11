@@ -5,7 +5,7 @@
   di = diff --color
   unstage = reset -- 
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green) %an, %ar%Creset'
-  yolo = push -f
+  yolo = push --force-with-lease
 [core]
   excludesfile = $HOME/.gitignore
   editor = vim

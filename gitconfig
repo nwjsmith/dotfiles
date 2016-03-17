@@ -7,7 +7,7 @@
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green) %an, %ar%Creset'
   yolo = push --force-with-lease
 [core]
-  excludesfile = $HOME/.gitignore
+  excludesfile = /Users/nwjsmith/.gitignore
   editor = vim
   trustctime = false
 [push]

@@ -5,6 +5,8 @@
 .rvmrc
 .bundle
 .vagrant
+.floo
+.flooignore
 tags
 !tags/
 *.pyc

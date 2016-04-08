@@ -28,6 +28,7 @@
   path = ~/.gitconfig.local
 [commit]
   template = ~/.gitmessage
+  gpgsign = true
 [user]
   name = Nate Smith
   email = nwjsmith@gmail.com

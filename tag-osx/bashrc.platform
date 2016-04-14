@@ -23,4 +23,7 @@ alias brewup="brew update && brew upgrade --all && brew cleanup"
 # Heroku toolbelt
 export PATH="$(brew --prefix heroku)/bin:$PATH"
 
+# Open from shell
+alias fopen="open -a Finder"
+
 export PATH="$HOME/.bin:$PATH"

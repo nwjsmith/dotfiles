@@ -125,3 +125,6 @@
 [submodule "vim/bundle/vim-clipper"]
 	path = vim/bundle/vim-clipper
 	url = https://github.com/wincent/vim-clipper
+[submodule "vim/bundle/vim-fish"]
+	path = vim/bundle/vim-fish
+	url = https://github.com/dag/vim-fish.git

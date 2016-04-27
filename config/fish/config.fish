@@ -1,12 +1,18 @@
+# Silence greeting
+set fish_greeting ""
+
 # Homebrew
 set --export PATH "/usr/local/sbin" $PATH
 set --export PATH "/usr/local/bin" $PATH
+
+# Colours
+source $HOME/.config/fish/colours.fish
 
 # Rust
 set --export PATH $HOME/.cargo/bin $PATH
 
 # Use vim
-fish_vi_mode
+set --global fish_key_bindings fish_vi_key_bindings
 set --export EDITOR "vim"
 set --export VISUAL $EDITOR
 
@@ -37,7 +43,11 @@ set --export MANPATH (brew --prefix coreutils)/libexec/gnuman $MANPATH
 alias be="bundle exec"
 
 # Keep up-to-date
-alias brewup="brew update and brew upgrade --all and brew cleanup"
+function brewup --description "Upgrade and cleanup Homebrew packages"
+  brew update
+  and brew upgrade --all
+  and brew cleanup
+end
 
 # Open from shell
 alias fopen="open -a Finder"

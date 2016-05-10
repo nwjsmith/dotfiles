@@ -128,3 +128,6 @@
 [submodule "vim/bundle/vim-fish"]
 	path = vim/bundle/vim-fish
 	url = https://github.com/dag/vim-fish.git
+[submodule "vim/bundle/vim-hcl"]
+	path = vim/bundle/vim-hcl
+	url = https://github.com/b4b4r07/vim-hcl

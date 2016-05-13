@@ -9,8 +9,8 @@ autocmd InsertLeave * :set number relativenumber
 autocmd WinEnter * :set number relativenumber
 autocmd WinLeave * :set number norelativenumber
 
-" Use 5 characters for the number column
-set numberwidth=5
+" Use 4 characters for the number column
+set numberwidth=4
 
 " Solarized is nice
 set background=light

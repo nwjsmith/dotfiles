@@ -131,3 +131,6 @@
 [submodule "vim/bundle/vim-hcl"]
 	path = vim/bundle/vim-hcl
 	url = https://github.com/b4b4r07/vim-hcl
+[submodule "vim/bundle/vim-autoformat"]
+	path = vim/bundle/vim-autoformat
+	url = https://github.com/Chiel92/vim-autoformat

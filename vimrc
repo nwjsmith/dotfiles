@@ -108,6 +108,9 @@ nnoremap <silent> <leader>t :TestFile<CR>
 nnoremap <silent> <leader>f :TestSuite<CR>
 let g:test#strategy = 'dispatch'
 
+" Format code
+nnoremap <silent> <leader>c :Autoformat<CR>
+
 " Automatically start a Clojure REPL
 let g:salve_auto_start_repl=1
 

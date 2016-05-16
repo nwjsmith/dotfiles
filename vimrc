@@ -114,8 +114,8 @@ nnoremap <silent> <leader>c :Autoformat<CR>
 " Automatically start a Clojure REPL
 let g:salve_auto_start_repl=1
 
-" Store snippets alongside dotfiles
-let g:UltiSnipsSnippetsDir=$HOME . "/.vim/UltiSnips"
+" Faster UltiSnips lookup
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/vim-snippets/UltiSnips']
 
 " Keep private things in .vimrc.local
 if filereadable($HOME . "/.vimrc.local")

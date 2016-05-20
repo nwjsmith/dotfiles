@@ -115,7 +115,7 @@ nnoremap <silent> <leader>c :Autoformat<CR>
 let g:salve_auto_start_repl=1
 
 " Faster UltiSnips lookup
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/vim-snippets/UltiSnips']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips', $HOME.'/.vim/bundle/vim-snippets/UltiSnips']
 
 " Keep private things in .vimrc.local
 if filereadable($HOME . "/.vimrc.local")

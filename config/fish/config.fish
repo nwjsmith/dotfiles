@@ -2,7 +2,6 @@
 set fish_greeting ""
 
 # Homebrew
-set --export PATH "/usr/local/sbin" $PATH
 set --export PATH "/usr/local/bin" $PATH
 
 # Colours

@@ -36,7 +36,6 @@ set --export GOPATH (brew --prefix)/lib/go
 
 # Use the GNU versions of everything
 set --export PATH (brew --prefix coreutils)/libexec/gnubin $PATH
-set --export MANPATH (brew --prefix coreutils)/libexec/gnuman $MANPATH
 
 # Always a pain to type
 alias be="bundle exec"

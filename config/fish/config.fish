@@ -31,6 +31,9 @@ set --export PATH (brew --prefix heroku)/bin $PATH
 # Java
 set --export JAVA_HOME (/usr/libexec/java_home)
 
+# Android
+set --export ANDROID_HOME (brew --prefix android-sdk)
+
 # Go lang
 set --export GOPATH (brew --prefix)/lib/go
 

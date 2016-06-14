@@ -32,3 +32,5 @@
 [user]
   name = Nate Smith
   email = nwjsmith@gmail.com
+[diff]
+  compactionHeuristic = true

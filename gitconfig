@@ -29,6 +29,7 @@
 [commit]
   template = ~/.gitmessage
   gpgsign = true
+  verbose = true
 [user]
   name = Nate Smith
   email = nwjsmith@gmail.com

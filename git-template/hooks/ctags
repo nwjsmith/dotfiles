@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+GIT_DIRECTORY="$(git rev-parse --git-dir)"
+trap "rm -f '${GIT_DIRECTORY}/$$.tags'" EXIT
+git ls-files | \
+  ctags --tag-relative -L - -f"${GIT_DIRECTORY}/$$.tags" --languages=-javascript,sql
+mv "${GIT_DIRECTORY}/$$.tags" "${GIT_DIRECTORY}/tags"

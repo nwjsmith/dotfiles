@@ -6,6 +6,7 @@
   unstage = reset -- 
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green) %an, %ar%Creset'
   yolo = push --force-with-lease
+  ctags = !.git/hooks/ctags
 [core]
   excludesfile = /Users/nwjsmith/.gitignore
   editor = vim
@@ -26,6 +27,8 @@
 [include]
   path = ~/.gitconfig.platform
   path = ~/.gitconfig.local
+[init]
+  templateDir = ~/.git-template
 [commit]
   template = ~/.gitmessage
   gpgsign = true

@@ -21,11 +21,6 @@ function fish_prompt --description "Write out the prompt"
     set suffix 'λ'
   end
 
-  # Mode is in right prompt
-  set mode_str ""
-
-  # echo -n -s "$USER" @ "$__fish_prompt_hostname" ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) "$suffix "
-
   echo -n -s (set_color brown) "[$__fish_prompt_hostname] " $normal \
     (set_color $color_cwd) (prompt_pwd) $normal \
     (set_color blue) (__fish_git_prompt) $normal \

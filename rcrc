@@ -1,1 +1,2 @@
 EXCLUDES="README.md"
+SYMLINK_DIRS="emacs.d"

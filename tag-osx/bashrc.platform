@@ -10,6 +10,9 @@ fi
 # Java
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
+# Android
+export ANDROID_HOME="$(brew --prefix android-sdk)"
+
 # Go lang
 export GOPATH="$(brew --prefix)/lib/go"
 
@@ -22,8 +25,3 @@ alias brewup="brew update && brew upgrade --all && brew cleanup"
 
 # Heroku toolbelt
 export PATH="$(brew --prefix heroku)/bin:$PATH"
-
-# Open from shell
-alias fopen="open -a Finder"
-
-export PATH="$HOME/.bin:$PATH"

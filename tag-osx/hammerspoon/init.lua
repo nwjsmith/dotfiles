@@ -6,7 +6,7 @@ function windowMovement(modifier, adjustFrameFn)
         if window and not window:isFullScreen() then
             local windowFrame = window:frame()
             local screen = window:screen()
-            local screenFrame = screen:frame()
+            local screenFrame = screen:fullFrame()
             adjustFrameFn(windowFrame, screenFrame)
             window:setFrame(windowFrame)
         end
@@ -15,22 +15,22 @@ end
 
 windowMovement('h', function(windowFrame, screenFrame)
     windowFrame.x = screenFrame.x
-    windowFrame.w = screenFrame.w / 2
+    windowFrame.w = screenFrame.w * 0.5
 end)
 
 windowMovement('j', function(windowFrame, screenFrame)
-    windowFrame.y = screenFrame.h / 2
-    windowFrame.h = screenFrame.h / 2
+    windowFrame.y = screenFrame.y + screenFrame.h * 0.5
+    windowFrame.h = screenFrame.h * 0.5
 end)
 
 windowMovement('k', function(windowFrame, screenFrame)
     windowFrame.y = screenFrame.y
-    windowFrame.h = screenFrame.h / 2
+    windowFrame.h = screenFrame.h * 0.5
 end)
 
 windowMovement('l', function(windowFrame, screenFrame)
-    windowFrame.x = screenFrame.w / 2
-    windowFrame.w = screenFrame.w / 2
+    windowFrame.x = screenFrame.x + screenFrame.w * 0.5
+    windowFrame.w = screenFrame.w * 0.5
 end)
 
 windowMovement('Space', function(windowFrame, screenFrame)
@@ -41,15 +41,15 @@ windowMovement('Space', function(windowFrame, screenFrame)
 end)
 
 windowMovement('Tab', function(windowFrame, screenFrame)
-    windowFrame.x = screenFrame.w / 2 - windowFrame.w / 2
-    windowFrame.y = screenFrame.h / 2 - windowFrame.h / 2
+    windowFrame.x = screenFrame.w * 0.5 - windowFrame.w * 0.5
+    windowFrame.y = screenFrame.h * 0.5 - windowFrame.h * 0.5
 end)
 
 windowMovement('x', function(windowFrame, screenFrame)
     windowFrame.w = 0.5 * 3840
     windowFrame.h = 0.5 * 2160
-    windowFrame.x = screenFrame.w / 2 - windowFrame.w / 2
-    windowFrame.y = screenFrame.h / 2 - windowFrame.h / 2
+    windowFrame.x = screenFrame.w * 0.5 - windowFrame.w * 0.5
+    windowFrame.y = screenFrame.h * 0.5 - windowFrame.h * 0.5
 end)
 
 function reloadConfiguration(files)

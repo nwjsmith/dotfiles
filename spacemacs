@@ -100,7 +100,7 @@ values."
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Operator Mono"
                                :size 14
-                               :weight normal
+                               :weight light
                                :width normal
                                :powerline-scale 1.1)
    ;; The leader key

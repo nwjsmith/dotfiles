@@ -2,5 +2,3 @@
 set -e
 
 vim +'call pathogen#helptags()' +qall
-tic ~/.xterm-256color-italic.terminfo
-tic ~/.tmux-256color-italic.terminfo

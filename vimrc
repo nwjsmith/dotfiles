@@ -13,8 +13,9 @@ autocmd WinLeave * :set number norelativenumber
 set numberwidth=4
 
 " Solarized is nice
+set termguicolors
 set background=light
-colorscheme solarized
+colorscheme solarized8_light
 
 " Show path, filetype, modified on right, line and column on left
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%)

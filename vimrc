@@ -17,6 +17,10 @@ set termguicolors
 set background=light
 colorscheme solarized8_light
 
+" Fixes for tmux
+set t_8f=[38;2;%lu;%lu;%lum
+set t_8b=[48;2;%lu;%lu;%lum
+
 " Show path, filetype, modified on right, line and column on left
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%)
 

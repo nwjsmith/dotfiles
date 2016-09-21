@@ -118,6 +118,13 @@ nnoremap <silent> <leader>c :Autoformat<CR>
 
 " Automatically start a Clojure REPL
 let g:salve_auto_start_repl=1
+" Subforms align to the same column:
+"
+" Good:   Bad:
+"  (foo    (foo
+"   bar      bar
+"   baz)     baz)
+let g:clojure_align_subforms=1
 
 " Faster UltiSnips lookup
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips', $HOME.'/.vim/bundle/vim-snippets/UltiSnips']

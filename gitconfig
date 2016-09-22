@@ -7,6 +7,8 @@
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green) %an, %ar%Creset'
   yolo = push --force-with-lease
   ctags = !.git/hooks/ctags
+  rim = rebase --interactive master
+  rc = rebase --continue
 [core]
   excludesfile = /Users/nwjsmith/.gitignore
   editor = vim
@@ -18,7 +20,7 @@
 [color]
   ui = true
 [mergetool "fugitive"]
-  cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+  cmd = vim --nofork -c \"Gdiff\" \"$MERGED\"
 [merge]
   tool = fugitive
   renamelimit = 10000

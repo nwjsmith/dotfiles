@@ -125,6 +125,11 @@ let g:salve_auto_start_repl=1
 "   bar      bar
 "   baz)     baz)
 let g:clojure_align_subforms=1
+let g:clojure_fuzzy_indent = 1
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let']
+let g:clojure_syntax_keywords = {
+  \ 'clojureMacro': ['defproject', 'deftask'],
+  \ }
 
 " Faster UltiSnips lookup
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips', $HOME.'/.vim/bundle/vim-snippets/UltiSnips']

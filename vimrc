@@ -126,7 +126,7 @@ let g:salve_auto_start_repl=1
 "   baz)     baz)
 let g:clojure_align_subforms=1
 let g:clojure_fuzzy_indent = 1
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let']
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^try']
 let g:clojure_syntax_keywords = {
   \ 'clojureMacro': ['defproject', 'deftask'],
   \ }

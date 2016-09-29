@@ -137,3 +137,6 @@
 [submodule "vim/bundle/vim-solarized8"]
 	path = vim/bundle/vim-solarized8
 	url = https://github.com/lifepillar/vim-solarized8
+[submodule "vim/bundle/vim-jsx"]
+	path = vim/bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx

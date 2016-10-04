@@ -134,6 +134,16 @@ let g:clojure_syntax_keywords = {
 " Faster UltiSnips lookup
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips', $HOME.'/.vim/bundle/vim-snippets/UltiSnips']
 
+function! Figwheel()
+  execute "Eval (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/start-figwheel!))"
+endfunction
+autocmd FileType clojure command! Figwheel :execute Figwheel()
+
+function! Figgyback()
+  execute "Piggieback (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/repl-env))"
+endfunction
+autocmd FileType clojure command! Figgyback :execute Figgyback()
+
 " Keep private things in .vimrc.local
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local

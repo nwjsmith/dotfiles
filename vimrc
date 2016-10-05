@@ -142,7 +142,7 @@ autocmd FileType clojure command! Figwheel :execute Figwheel()
 function! Figgieback()
   execute "Piggieback (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/repl-env))"
 endfunction
-autocmd FileType clojure command! Figgyback :execute Figgieback()
+autocmd FileType clojure command! Figgieback :execute Figgieback()
 
 " Keep private things in .vimrc.local
 if filereadable($HOME . "/.vimrc.local")

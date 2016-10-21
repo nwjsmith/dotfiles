@@ -9,8 +9,6 @@ autocmd WinLeave * :set number norelativenumber
 set numberwidth=4
 
 " Solarized is nice
-syntax enable
-set termguicolors
 set background=light
 colorscheme solarized
 

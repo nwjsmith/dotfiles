@@ -1,7 +1,3 @@
-" Use pathogen to manage runtime path
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-
 " Relative line numbers in normal mode, absolute in insert mode
 set number relativenumber
 autocmd InsertEnter * :set number norelativenumber
@@ -13,13 +9,10 @@ autocmd WinLeave * :set number norelativenumber
 set numberwidth=4
 
 " Solarized is nice
+syntax enable
 set termguicolors
 set background=light
-colorscheme solarized8_light
-
-" Fixes for tmux
-set t_8f=[38;2;%lu;%lu;%lum
-set t_8b=[48;2;%lu;%lu;%lum
+colorscheme solarized
 
 " Show path, filetype, modified on right, line and column on left
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%)

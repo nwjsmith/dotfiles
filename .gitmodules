@@ -4,3 +4,105 @@
 [submodule "emacs.d"]
 	path = emacs.d
 	url = https://github.com/syl20bnr/spacemacs
+[submodule "vim/pack/nwjsmith/start/ctrlp.vim"]
+	path = vim/pack/nwjsmith/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "vim/pack/nwjsmith/start/idris-vim"]
+	path = vim/pack/nwjsmith/start/idris-vim
+	url = https://github.com/idris-hackers/idris-vim
+[submodule "vim/pack/nwjsmith/start/rust.vim"]
+	path = vim/pack/nwjsmith/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim
+[submodule "vim/pack/nwjsmith/start/vim-abolish"]
+	path = vim/pack/nwjsmith/start/vim-abolish
+	url = https://github.com/tpope/vim-abolish
+[submodule "vim/pack/nwjsmith/start/vim-bundler"]
+	path = vim/pack/nwjsmith/start/vim-bundler
+	url = https://github.com/tpope/vim-bundler
+[submodule "vim/pack/nwjsmith/start/vim-classpath"]
+	path = vim/pack/nwjsmith/start/vim-classpath
+	url = https://github.com/tpope/vim-classpath
+[submodule "vim/pack/nwjsmith/start/vim-clojure-static"]
+	path = vim/pack/nwjsmith/start/vim-clojure-static
+	url = https://github.com/guns/vim-clojure-static
+[submodule "vim/pack/nwjsmith/start/vim-commentary"]
+	path = vim/pack/nwjsmith/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "vim/pack/nwjsmith/start/vim-dispatch"]
+	path = vim/pack/nwjsmith/start/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch
+[submodule "vim/pack/nwjsmith/start/vim-elixir"]
+	path = vim/pack/nwjsmith/start/vim-elixir
+	url = https://github.com/elixir-lang/vim-elixir
+[submodule "vim/pack/nwjsmith/start/vim-endwise"]
+	path = vim/pack/nwjsmith/start/vim-endwise
+	url = https://github.com/tpope/vim-endwise
+[submodule "vim/pack/nwjsmith/start/vim-eunuch"]
+	path = vim/pack/nwjsmith/start/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch
+[submodule "vim/pack/nwjsmith/start/vim-fireplace"]
+	path = vim/pack/nwjsmith/start/vim-fireplace
+	url = https://github.com/tpope/vim-fireplace
+[submodule "vim/pack/nwjsmith/start/vim-fish"]
+	path = vim/pack/nwjsmith/start/vim-fish
+	url = https://github.com/dag/vim-fish
+[submodule "vim/pack/nwjsmith/start/vim-fugitive"]
+	path = vim/pack/nwjsmith/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/pack/nwjsmith/start/vim-javascript"]
+	path = vim/pack/nwjsmith/start/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "vim/pack/nwjsmith/start/vim-jinja"]
+	path = vim/pack/nwjsmith/start/vim-jinja
+	url = https://github.com/mitsuhiko/vim-jinja
+[submodule "vim/pack/nwjsmith/start/vim-projectionist"]
+	path = vim/pack/nwjsmith/start/vim-projectionist
+	url = https://github.com/tpope/vim-projectionist
+[submodule "vim/pack/nwjsmith/start/vim-rails"]
+	path = vim/pack/nwjsmith/start/vim-rails
+	url = https://github.com/tpope/vim-rails
+[submodule "vim/pack/nwjsmith/start/vim-rake"]
+	path = vim/pack/nwjsmith/start/vim-rake
+	url = https://github.com/tpope/vim-rake
+[submodule "vim/pack/nwjsmith/start/vim-repeat"]
+	path = vim/pack/nwjsmith/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "vim/pack/nwjsmith/start/vim-rhubarb"]
+	path = vim/pack/nwjsmith/start/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb
+[submodule "vim/pack/nwjsmith/start/vim-ruby"]
+	path = vim/pack/nwjsmith/start/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby
+[submodule "vim/pack/nwjsmith/start/vim-salve"]
+	path = vim/pack/nwjsmith/start/vim-salve
+	url = https://github.com/tpope/vim-salve
+[submodule "vim/pack/nwjsmith/start/vim-sensible"]
+	path = vim/pack/nwjsmith/start/vim-sensible
+	url = https://github.com/tpope/vim-sensible
+[submodule "vim/pack/nwjsmith/start/vim-sexp"]
+	path = vim/pack/nwjsmith/start/vim-sexp
+	url = https://github.com/guns/vim-sexp
+[submodule "vim/pack/nwjsmith/start/vim-sexp-mappings-for-regular-people"]
+	path = vim/pack/nwjsmith/start/vim-sexp-mappings-for-regular-people
+	url = https://github.com/tpope/vim-sexp-mappings-for-regular-people
+[submodule "vim/pack/nwjsmith/start/vim-sleuth"]
+	path = vim/pack/nwjsmith/start/vim-sleuth
+	url = https://github.com/tpope/vim-sleuth
+[submodule "vim/pack/nwjsmith/start/vim-surround"]
+	path = vim/pack/nwjsmith/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vim/pack/nwjsmith/start/vim-test"]
+	path = vim/pack/nwjsmith/start/vim-test
+	url = https://github.com/janko-m/vim-test
+[submodule "vim/pack/nwjsmith/start/vim-toml"]
+	path = vim/pack/nwjsmith/start/vim-toml
+	url = https://github.com/cespare/vim-toml
+[submodule "vim/pack/nwjsmith/start/vim-unimpaired"]
+	path = vim/pack/nwjsmith/start/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
+[submodule "vim/pack/nwjsmith/start/vim-vinegar"]
+	path = vim/pack/nwjsmith/start/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar
+[submodule "vim/pack/nwjsmith/start/vim-colors-solarized"]
+	path = vim/pack/nwjsmith/start/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized

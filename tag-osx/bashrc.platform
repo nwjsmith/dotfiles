@@ -14,7 +14,8 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 export ANDROID_HOME="$(brew --prefix android-sdk)"
 
 # Go lang
-export GOPATH="$(brew --prefix)/lib/go"
+export GOPATH="$(brew --prefix)/lib/go:/Users/nwjsmith/Code"
+export PATH="${GOPATH}/bin:${PATH}"
 
 # Use the GNU versions of everything
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"

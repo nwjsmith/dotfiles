@@ -10,4 +10,4 @@ $ cd ~/.dotfiles
 $ RCRC="rcrc" rcup -t $PLATFORM
 ```
 
-Where `$PLATFORM` should be one of `osx` or `linux`. Subsequent runs of `rcup` should forego setting `RCRC`.
+Where `$PLATFORM` should be one of `macos` or `linux`. Subsequent runs of `rcup` should forego setting `RCRC`.

@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-vim +'call pathogen#helptags()' +qall
+vim +':helptags ALL' +qall

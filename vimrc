@@ -125,6 +125,9 @@ let g:clojure_syntax_keywords = {
 " Faster UltiSnips lookup
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips', $HOME.'/.vim/bundle/vim-snippets/UltiSnips']
 
+" Use a minimal shell for running commands
+set shell=/bin/sh
+
 function! Figwheel()
   execute "Eval (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/start-figwheel!))"
 endfunction

@@ -35,8 +35,8 @@ set --export JAVA_HOME (/usr/libexec/java_home)
 set --export ANDROID_HOME (brew --prefix android-sdk)
 
 # Go lang
-set --export GOPATH (brew --prefix)/lib/go
-set --export PATH $GOPATH/bin $PATH
+set --export GOPATH (brew --prefix)/lib/go /Users/nwjsmith/Code
+set --export PATH (brew --prefix)/lib/go/bin $PATH
 
 # Use the GNU versions of everything
 set --export PATH (brew --prefix coreutils)/libexec/gnubin $PATH

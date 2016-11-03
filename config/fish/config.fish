@@ -47,7 +47,7 @@ alias be="bundle exec"
 # Keep up-to-date
 function brewup --description "Upgrade and cleanup Homebrew packages"
   brew update
-  and brew upgrade --all
+  and brew upgrade
   and brew cleanup
 end
 

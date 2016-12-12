@@ -6,4 +6,6 @@
         :plugins [[jonase/eastwood "0.2.3"]
                   [lein-ancient "0.6.10"]
                   [lein-kibit "0.1.2"]
-                  [slamhound "1.5.5"]]}}
+                  [slamhound "1.5.5"]
+                  [lein-zprint  "0.1.9"]]
+        :aliases {"slamhound" ["run" "-m" "slam.hound"]}}}

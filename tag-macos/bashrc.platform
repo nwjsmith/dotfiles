@@ -22,7 +22,7 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:${MANPATH}"
 
 # Keep up-to-date
-alias brewup="brew update && brew upgrade --all && brew cleanup"
+alias brewup="brew update && brew upgrade && brew cleanup"
 
 # Heroku toolbelt
 export PATH="$(brew --prefix heroku)/bin:$PATH"

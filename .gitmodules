@@ -106,3 +106,6 @@
 [submodule "vim/pack/nwjsmith/start/vim-colors-solarized"]
 	path = vim/pack/nwjsmith/start/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
+[submodule "vim/pack/nwjsmith/start/vim-clipper"]
+	path = vim/pack/nwjsmith/start/vim-clipper
+	url = https://github.com/wincent/vim-clipper

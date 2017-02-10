@@ -109,3 +109,6 @@
 [submodule "vim/pack/nwjsmith/start/vim-clipper"]
 	path = vim/pack/nwjsmith/start/vim-clipper
 	url = https://github.com/wincent/vim-clipper
+[submodule "vim/pack/nwjsmith/start/vim-elm"]
+	path = vim/pack/nwjsmith/start/vim-elm
+	url = https://github.com/ElmCast/elm-vim

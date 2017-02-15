@@ -17,4 +17,4 @@ tmp/**/*
 !tmp/cache/.keep
 .env
 .sass-cache/
-.lein-repl-history
+.lein-*

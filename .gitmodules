@@ -112,3 +112,6 @@
 [submodule "vim/pack/nwjsmith/start/vim-elm"]
 	path = vim/pack/nwjsmith/start/vim-elm
 	url = https://github.com/ElmCast/elm-vim
+[submodule "vim/pack/nwjsmith/start/pony-vim-syntax"]
+	path = vim/pack/nwjsmith/start/pony-vim-syntax
+	url = https://github.com/dleonard0/pony-vim-syntax

@@ -9,6 +9,10 @@
   ctags = !.git/hooks/ctags
   rim = rebase --interactive master
   rc = rebase --continue
+  dci = duet-commit
+  drv = duet-revert
+  dmg = duet-merge
+  drb = rebase -i --exec 'git duet-commit --amend --reset-author'
 [core]
   excludesfile = /Users/nwjsmith/.gitignore
   editor = vim

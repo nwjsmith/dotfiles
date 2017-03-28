@@ -10,9 +10,6 @@ fi
 # Java
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
-# Android
-export ANDROID_HOME="$(brew --prefix android-sdk)"
-
 # Go lang
 export GOPATH="$(brew --prefix)/lib/go:/Users/nwjsmith/Code"
 export PATH="${GOPATH}/bin:${PATH}"

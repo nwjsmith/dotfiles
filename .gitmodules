@@ -75,7 +75,7 @@
 	url = https://github.com/vim-ruby/vim-ruby
 [submodule "vim/pack/nwjsmith/start/vim-salve"]
 	path = vim/pack/nwjsmith/start/vim-salve
-	url = https://github.com/tpope/vim-salve
+	url = https://github.com/tpope/vim-salve.git
 [submodule "vim/pack/nwjsmith/start/vim-sensible"]
 	path = vim/pack/nwjsmith/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible

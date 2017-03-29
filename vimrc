@@ -108,7 +108,7 @@ let g:test#strategy = 'dispatch'
 nnoremap <silent> <leader>c :Autoformat<CR>
 
 " Automatically start a Clojure REPL
-let g:salve_auto_start_repl=1
+" let g:salve_auto_start_repl=1
 " Subforms align to the same column:
 "
 " Good:   Bad:

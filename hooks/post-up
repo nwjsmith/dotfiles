@@ -1,4 +1,7 @@
 #!/bin/bash
 set -e
 
-vim +':helptags ALL' +qall
+vim -E -s <<-EOF
+:helptags ALL
+:qall
+EOF

@@ -124,12 +124,12 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips', $HOME.'/.vim/bundle/
 set shell=/bin/sh
 
 function! Figwheel()
-  execute "Eval (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/start-figwheel!))"
+  execute "Eval (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/start-figwheel! \"dev\" \"devcards\"))"
 endfunction
 autocmd FileType clojure command! Figwheel :execute Figwheel()
 
 function! Figgieback()
-  execute "Piggieback (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/repl-env))"
+  execute "Piggieback (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/repl-env \"dev\"))"
 endfunction
 autocmd FileType clojure command! Figgieback :execute Figgieback()
 

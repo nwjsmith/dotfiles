@@ -1,14 +1,12 @@
 [alias]
   st = status
   co = checkout
-  dc = diff --cached --color
-  di = diff --color
+  dc = diff --cached --word-diff=color
+  di = diff --word-diff=color
   unstage = reset -- 
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green) %an, %ar%Creset'
   yolo = push --force-with-lease
   ctags = !.git/hooks/ctags
-  rim = rebase --interactive master
-  rc = rebase --continue
   dci = duet-commit
   drv = duet-revert
   dmg = duet-merge

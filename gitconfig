@@ -11,6 +11,8 @@
   drv = duet-revert
   dmg = duet-merge
   drb = rebase -i --exec 'git duet-commit --amend --reset-author'
+  delete-merged-branches = !git branch --merged master | grep -v -e 'master' -e '\\*' | xargs -n 1 git branch -d && git remote prune origin
+  list-branches = branch --sort=committerdate
 [core]
   excludesfile = /Users/nwjsmith/.gitignore
   editor = vim

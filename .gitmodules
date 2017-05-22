@@ -115,3 +115,6 @@
 [submodule "vim/pack/nwjsmith/start/pony-vim-syntax"]
 	path = vim/pack/nwjsmith/start/pony-vim-syntax
 	url = https://github.com/dleonard0/pony-vim-syntax
+[submodule "vim/pack/nwjsmith/start/sslsecure.vim"]
+	path = vim/pack/nwjsmith/start/sslsecure.vim
+	url = https://github.com/chr4/sslsecure.vim

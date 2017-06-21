@@ -68,15 +68,15 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
-" Use the Silver Searcher if available
-if executable('ag')
-  " Use ag instead of grep
-  set grepprg=ag\ --nogroup\ --nocolor
+" Use the ripgrep if available
+if executable('rg')
+  " Use rg instead of grep
+  set grepprg=rg\ --color=never
 
-  " Use ag for ctrlp for listing files
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " Use rg for ctrlp for listing files
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
 
-  " ag is fast enough that we don't need caching
+  " rg is fast enough that we don't need caching
   let g:ctrlp_use_caching = 0
 endif
 

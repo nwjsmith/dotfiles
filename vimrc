@@ -120,9 +120,6 @@ let g:clojure_syntax_keywords = {
   \ 'clojureMacro': ['defproject', 'deftask'],
   \ }
 
-" Faster UltiSnips lookup
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips', $HOME.'/.vim/bundle/vim-snippets/UltiSnips']
-
 " Use a minimal shell for running commands
 set shell=/bin/sh
 

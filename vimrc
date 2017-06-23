@@ -74,7 +74,7 @@ autocmd BufReadPost *
 " Use the ripgrep if available
 if executable('rg')
   " Use rg instead of grep
-  set grepprg=rg\ --color=never
+  set grepprg=rg\ --column\ --color=never
 
   " Use rg for ctrlp for listing files
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'

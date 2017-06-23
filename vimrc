@@ -50,6 +50,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Ignore some files in completion menu
+set wildignore+=*.pyc,*/__pycache__/
+
 " Write file after every command
 set autowrite
 

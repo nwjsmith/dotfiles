@@ -121,7 +121,7 @@ let g:clojure_syntax_keywords = {
   \ }
 
 " Use a minimal shell for running commands
-set shell=/bin/sh
+set shell=$SHELL
 
 function! Figwheel()
   execute "Eval (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/start-figwheel! \"dev\" \"devcards\"))"

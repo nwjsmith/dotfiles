@@ -1,0 +1,3 @@
+console_palette_transparent: true
+console_palette: solarized_light
+listen_port: 8090

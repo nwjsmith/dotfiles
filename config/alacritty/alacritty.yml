@@ -1,3 +1,14 @@
+env:
+  TERM: xterm-256color
+
+dimensions:
+  columns: 80
+  lines: 24
+
+padding:
+  x: 6
+  y: 6
+
 dpi:
   x: 96.0
   y: 96.0
@@ -8,16 +19,16 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: Menlo
-    style: Regular
+    family: Fira Code
+    style: Retina
 
   bold:
-    family: Menlo
-    style: Bold
+    family: Fira Code
+    style: Retina
 
   italic:
-    family: Menlo
-    style: Italic
+    family: Fira Code
+    style: Light
 
   size: 14.0
 
@@ -25,41 +36,63 @@ font:
     x: 0.0
     y: 0.0
 
+  glyph_offset:
+    x: 0.0
+    y: 0.0
+
+  use_thin_strokes: true
+
 render_timer: false
+
+custom_cursor_colors: false
 
 colors:
   primary:
     background: '0xfdf6e3'
-    foreground: '0x657b83'
+    foreground: '0x586e75'
+
+  cursor:
+    text: '0x93a1a1'
+    cursor: '0x586e75'
 
   normal:
-    black:   '0x073642'
-    red:     '0xdc322f'
-    green:   '0x859900'
-    yellow:  '0xb58900'
-    blue:    '0x268bd2'
+    black: '0x073642'
+    red: '0xdc322f'
+    green: '0x859900'
+    yellow: '0xb58900'
+    blue: '0x268bd2'
     magenta: '0xd33682'
-    cyan:    '0x2aa198'
-    white:   '0xeee8d5'
+    cyan: '0x2aa198'
+    white: '0xeee8d5'
 
   bright:
-    black:   '0x002b36'
-    red:     '0xcb4b16'
-    green:   '0x586e75'
-    yellow:  '0x657b83'
-    blue:    '0x839496'
+    black: '0x002b36'
+    red: '0xcb4b16'
+    green: '0x586e75'
+    yellow: '0x657b83'
+    blue: '0x839496'
     magenta: '0x6c71c4'
-    cyan:    '0x93a1a1'
-    white:   '0xfdf6e3'
+    cyan: '0x93a1a1'
+    white: '0xfdf6e3'
+
+visual_bell:
+  animation: EaseOutExpo
+  duration: 0
 
 key_bindings:
   - { key: V,        mods: Command, action: Paste                        }
   - { key: C,        mods: Command, action: Copy                         }
-  - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
-  - { key: Home,                    chars: "\x1b[1~",  mode: AppCursor   }
-  - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
-  - { key: End,                     chars: "\x1b[4~",  mode: AppCursor   }
+  - { key: Q,        mods: Command, action: Quit                         }
+  - { key: W,        mods: Command, action: Quit                         }
+  - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
+  - { key: Home,                    chars: "\x1b[1~",  mode: ~AppCursor  }
+  - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
+  - { key: End,                     chars: "\x1b[4~",  mode: ~AppCursor  }
+  - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~"                   }
+  - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                   }
   - { key: PageUp,                  chars: "\x1b[5~"                     }
+  - { key: PageDown, mods: Shift,   chars: "\x1b[6;2~"                   }
+  - { key: PageDown, mods: Control, chars: "\x1b[6;5~"                   }
   - { key: PageDown,                chars: "\x1b[6~"                     }
   - { key: Left,     mods: Shift,   chars: "\x1b[1;2D"                   }
   - { key: Left,     mods: Control, chars: "\x1b[1;5D"                   }
@@ -95,10 +128,23 @@ key_bindings:
   - { key: F11,                     chars: "\x1b[23~"                    }
   - { key: F12,                     chars: "\x1b[24~"                    }
   - { key: Back,                    chars: "\x7f"                        }
-  - { key: Delete,                  chars: "\x1b[3~",  mode: AppKeypad   }
-  - { key: Delete,                  chars: "\x1b[P",   mode: ~AppKeypad  }
+  - { key: Back,     mods: Alt,     chars: "\x1b\x7f"                    }
+  - { key: Insert,                  chars: "\x1b[2~"                     }
+  - { key: Delete,                  chars: "\x1b[3~"                     }
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
-shell: /usr/local/bin/bash
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+hide_cursor_when_typing: false
+
+shell:
+  program: /usr/local/bin/bash
+  args:
+    - --login

@@ -6,8 +6,8 @@ CYAN='\[\033[0;36m\]'
 MAGENTA='\[\033[0;35m\]'
 BLUE='\[\033[0;34m\]'
 BROWN='\[\033[0;33m\]'
-NO_COLOR='\[\033[0m\]'
-export PS1="${BROWN}[\h] ${CYAN}\w${BLUE}\$(__git_ps1 ':(%s)')${NO_COLOR}\n${MAGENTA}λ${NO_COLOR} "
+NO_COLOUR='\[\033[0m\]'
+export PS1="${CYAN}\w${BLUE}\$(__git_ps1 ':(%s)')${NO_COLOUR} ${MAGENTA}λ${NO_COLOUR} "
 
 # Do not overwrite files on stdout redirection
 set -o noclobber

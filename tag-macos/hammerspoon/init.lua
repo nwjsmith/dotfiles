@@ -46,10 +46,10 @@ windowMovement('Tab', function(windowFrame, screenFrame)
 end)
 
 windowMovement('x', function(windowFrame, screenFrame)
-    windowFrame.w = 0.5 * 3840
-    windowFrame.h = 0.5 * 2160
-    windowFrame.x = screenFrame.w * 0.5 - windowFrame.w * 0.5
-    windowFrame.y = screenFrame.h * 0.5 - windowFrame.h * 0.5
+    windowFrame.w = 0.5 * 2560.0
+    windowFrame.h = 0.5 * 1400.0
+    windowFrame.x = 0.0
+    windowFrame.y = 0.0
 end)
 
 function reloadConfiguration(files)

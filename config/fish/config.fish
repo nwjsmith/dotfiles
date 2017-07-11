@@ -53,6 +53,3 @@ end
 
 # Open from shell
 alias fopen="open -a Finder"
-
-# Copy to clipboard by piping to the `clip` alias
-alias clip="nc localhost 8377"

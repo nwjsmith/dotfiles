@@ -57,9 +57,6 @@ set -o vi
 # Always a pain to type
 alias be="bundle exec"
 
-# Copy to clipboard by piping to the `clip` alias
-alias clip="nc localhost 8377"
-
 # Disable Rails' app preloading
 export DISABLE_SPRING=1
 

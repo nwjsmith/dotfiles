@@ -120,6 +120,9 @@ let g:clojure_syntax_keywords = {
   \ 'clojureMacro': ['defproject', 'deftask'],
   \ }
 
+" Use system clipboard
+set clipboard=unnamed
+
 function! Figwheel()
   execute "Eval (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/start-figwheel! \"dev\" \"devcards\"))"
 endfunction

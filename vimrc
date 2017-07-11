@@ -120,9 +120,6 @@ let g:clojure_syntax_keywords = {
   \ 'clojureMacro': ['defproject', 'deftask'],
   \ }
 
-" Use a minimal shell for running commands
-set shell=$SHELL
-
 function! Figwheel()
   execute "Eval (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/start-figwheel! \"dev\" \"devcards\"))"
 endfunction

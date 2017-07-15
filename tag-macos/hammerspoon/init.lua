@@ -42,20 +42,24 @@ end)
 
 windowMovement('Tab', function(windowFrame, screenFrame)
     windowFrame.x = screenFrame.w * 0.5 - windowFrame.w * 0.5
-    windowFrame.y = screenFrame.h * 0.5 - windowFrame.h * 0.5
+    windowFrame.y = (screenFrame.h * 0.5 - windowFrame.h * 0.5) - 24.0
 end)
 
 windowMovement('x', function(windowFrame, screenFrame)
     windowFrame.w = 0.5 * 2560.0
-    windowFrame.h = 0.5 * 1400.0
-    windowFrame.x = 0.0
-    windowFrame.y = 0.0
+    windowFrame.h = (0.5 * 1440.0) - 24.0
+    windowFrame.x = 0
+    windowFrame.y = 0
+end)
+
+windowMovement('c', function(windowFrame, screenFrame)
+    windowFrame.x = 640 - windowFrame.w * 0.5
+    windowFrame.y = 360 - windowFrame.h * 0.5
 end)
 
 function reloadConfiguration(files)
     for _,file in pairs(files) do
         if file:sub(-4) == ".lua" then
-            hs.alert.show("Reloading Hammerspoon...")
             hs.reload()
             return
         end
@@ -63,6 +67,6 @@ function reloadConfiguration(files)
 end
 
 hs.pathwatcher.new(
-    os.getenv("HOME") .. "/.dotfiles/tag-osx/hammerspoon/",
+    os.getenv("HOME") .. "/.dotfiles/tag-macos/hammerspoon/",
     reloadConfiguration
 ):start()

@@ -1,18 +1,19 @@
 [alias]
-  st = status
   co = checkout
-  dc = diff --cached --word-diff=color
-  di = diff --word-diff=color
-  unstage = reset -- 
-  l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green) %an, %ar%Creset'
-  yolo = push --force-with-lease
   ctags = !.git/hooks/ctags
+  dc = diff --cached --word-diff=color
   dci = duet-commit
-  drv = duet-revert
+  delete-merged-branches = !git branch --merged master | grep -v -e 'master' -e '\\*' | xargs -n 1 git branch -d && git remote prune origin
+  di = diff --word-diff=color
   dmg = duet-merge
   drb = rebase -i --exec 'git duet-commit --amend --reset-author'
-  delete-merged-branches = !git branch --merged master | grep -v -e 'master' -e '\\*' | xargs -n 1 git branch -d && git remote prune origin
+  drv = duet-revert
+  l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green) %an, %ar%Creset'
   list-branches = branch --sort=committerdate
+  spp = !git stash && git pull && git stash pop
+  st = status
+  unstage = reset -- 
+  yolo = push --force-with-lease
 [core]
   excludesfile = /Users/nwjsmith/.gitignore
   editor = vim
@@ -26,8 +27,8 @@
 [mergetool "fugitive"]
   cmd = vim --nofork -c \"Gdiff\" \"$MERGED\"
 [merge]
-  tool = fugitive
   renamelimit = 10000
+  tool = fugitive
 [mergetool]
   keepBackup = false
 [include]
@@ -36,11 +37,11 @@
 [init]
   templateDir = ~/.git-template
 [commit]
-  template = ~/.gitmessage
   gpgsign = true
+  template = ~/.gitmessage
   verbose = true
 [user]
-  name = Nate Smith
   email = nwjsmith@gmail.com
+  name = Nate Smith
 [diff]
   compactionHeuristic = true

@@ -1,9 +1,5 @@
-" Relative line numbers in normal mode, absolute in insert mode
+" Relative line numbers in normal mode
 set number relativenumber
-autocmd InsertEnter * :set number norelativenumber
-autocmd InsertLeave * :set number relativenumber
-autocmd WinEnter * :set number relativenumber
-autocmd WinLeave * :set number norelativenumber
 
 " Use 4 characters for the number column
 set numberwidth=4
@@ -65,11 +61,6 @@ set smartcase
 " Completion with proper caseing
 set infercase
 
-" Restore last location in file
-autocmd BufReadPost *
-  \ if &ft != 'gitcommit' && line("'\"") > 1 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
 
 " Use the ripgrep if available
 if executable('rg')
@@ -83,14 +74,8 @@ if executable('rg')
   let g:ctrlp_use_caching = 0
 endif
 
-" Strip whitespace on save
-autocmd BufWritePre *.{rb,py,js,hs,c,h,haml,erb,rake,txt} :%s/\s\+$//e
-
-" Force markdown on *.md
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
 " ',' key is easier to reach than the default '\'
-let mapleader=","
+let mapleader=','
 
 " Allow the mouse in every mode
 set mouse=a
@@ -126,14 +111,35 @@ set clipboard=unnamed
 function! Figwheel()
   execute "Eval (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/start-figwheel! \"dev\" \"devcards\"))"
 endfunction
-autocmd FileType clojure command! Figwheel :execute Figwheel()
 
 function! Figgieback()
   execute "Piggieback (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/repl-env \"dev\"))"
 endfunction
-autocmd FileType clojure command! Figgieback :execute Figgieback()
+
+augroup vimrc
+  autocmd FileType clojure command! Figwheel :execute Figwheel()
+  autocmd FileType clojure command! Figgieback :execute Figgieback()
+
+  " Absolute line numbers in insert mode
+  autocmd InsertEnter * :set number norelativenumber
+  autocmd InsertLeave * :set number relativenumber
+  autocmd WinEnter * :set number relativenumber
+  autocmd WinLeave * :set number norelativenumber
+
+  " Restore last location in file
+  autocmd BufReadPost *
+    \ if &ft != 'gitcommit' && line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+  " Strip whitespace on save
+  autocmd BufWritePre *.{rb,py,js,hs,c,h,haml,erb,rake,txt} :%s/\s\+$//e
+
+  " Force markdown on *.md
+  autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+augroup END
 
 " Keep private things in .vimrc.local
-if filereadable($HOME . "/.vimrc.local")
+if filereadable($HOME . '/.vimrc.local')
   source ~/.vimrc.local
 endif

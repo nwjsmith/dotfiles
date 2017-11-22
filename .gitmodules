@@ -118,3 +118,6 @@
 [submodule "vim/pack/nwjsmith/start/vim-graphql"]
 	path = vim/pack/nwjsmith/start/vim-graphql
 	url = https://github.com/jparise/vim-graphql
+[submodule "vim/pack/nwjsmith/start/vim-prettier"]
+	path = vim/pack/nwjsmith/start/vim-prettier
+	url = https://github.com/prettier/vim-prettier

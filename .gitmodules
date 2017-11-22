@@ -115,3 +115,6 @@
 [submodule "vim/pack/nwjsmith/start/vim-flow"]
 	path = vim/pack/nwjsmith/start/vim-flow
 	url = https://github.com/flowtype/vim-flow
+[submodule "vim/pack/nwjsmith/start/vim-graphql"]
+	path = vim/pack/nwjsmith/start/vim-graphql
+	url = https://github.com/jparise/vim-graphql

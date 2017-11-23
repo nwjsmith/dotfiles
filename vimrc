@@ -105,6 +105,9 @@ let g:clojure_syntax_keywords = {
   \ 'clojureMacro': ['defproject', 'deftask'],
   \ }
 
+" Do not open quickfix window if there are no Flow errors
+let g:flow#autoclose = 1
+
 " Use system clipboard
 set clipboard=unnamed
 

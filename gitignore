@@ -21,3 +21,4 @@ tmp/**/*
 .nrepl-port
 *.jar
 *.class
+.cpcache/

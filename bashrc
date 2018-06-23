@@ -44,7 +44,7 @@ HISTCONTROL="erasedups:ignoreboth"
 export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 
 # Correct spelling in tab-completion
-shopt -s dirspell
+shopt -s direxpand dirspell
 
 # Correct spelling in cd
 shopt -s cdspell

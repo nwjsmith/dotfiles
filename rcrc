@@ -1,2 +1,2 @@
-EXCLUDES="README.md"
+EXCLUDES="README.md Brewfile"
 SYMLINK_DIRS="emacs.d"

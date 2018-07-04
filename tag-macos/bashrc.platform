@@ -13,7 +13,7 @@ export PATH="${JAVA_HOME}/bin:${PATH}"
 
 # Go lang
 export GOPATH="$(brew --prefix)/lib/go:/Users/nwjsmith/Code"
-export PATH="${GOPATH}/bin:${PATH}"
+export PATH="$(brew --prefix)/lib/go/bin:${GOROOT}/bin:${PATH}"
 
 # Use the GNU versions of everything
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"

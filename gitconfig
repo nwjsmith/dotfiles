@@ -10,7 +10,6 @@
   drv = duet-revert
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green) %an, %ar%Creset'
   list-branches = branch --sort=committerdate
-  spp = !git stash && git pull && git stash pop
   st = status
   unstage = reset -- 
   yolo = push --force-with-lease

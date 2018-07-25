@@ -1,9 +1,6 @@
 [submodule "dircolors"]
 	path = dircolors
 	url = https://github.com/seebi/dircolors-solarized
-[submodule "emacs.d"]
-	path = emacs.d
-	url = https://github.com/syl20bnr/spacemacs
 [submodule "vim/pack/nwjsmith/start/ctrlp.vim"]
 	path = vim/pack/nwjsmith/start/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim

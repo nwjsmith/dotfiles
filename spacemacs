@@ -37,6 +37,7 @@ values."
      emacs-lisp
      evil-cleverparens
      git
+     github
      helm
      markdown
      org

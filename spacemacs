@@ -315,6 +315,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq yas-triggers-in-field nil)
   (setq cider-save-file-on-load t)
+  (setq cljr-warn-on-eval nil)
   (spacemacs/toggle-evil-cleverparens-on)
   (add-hook 'clojure-mode-hook #'evil-cleverparens-mode))
 

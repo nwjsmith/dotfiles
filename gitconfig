@@ -13,6 +13,8 @@
   st = status
   unstage = reset -- 
   yolo = push --force-with-lease
+[branch]
+  autoSetupMerge = true
 [core]
   excludesfile = /Users/nwjsmith/.gitignore
   editor = vim

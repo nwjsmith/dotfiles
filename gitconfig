@@ -53,3 +53,5 @@
   required = true
 [rebase]
   autoStash = true
+[github]
+  user = nwjsmith

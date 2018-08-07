@@ -124,3 +124,7 @@
 [submodule "vim/pack/nwjsmith/start/vim-jsx"]
 	path = vim/pack/nwjsmith/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
+[submodule "emacs.d"]
+	path = emacs.d
+	url = https://github.com/syl20bnr/spacemacs.git
+	branch = develop

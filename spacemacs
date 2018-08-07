@@ -41,7 +41,6 @@ values."
      github
      helm
      markdown
-     org
      osx
      react
      (shell :variables

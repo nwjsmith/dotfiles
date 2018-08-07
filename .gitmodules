@@ -121,9 +121,6 @@
 [submodule "vim/pack/nwjsmith/start/vim-go"]
 	path = vim/pack/nwjsmith/start/vim-go
 	url = https://github.com/fatih/vim-go
-[submodule "emacs.d"]
-	path = emacs.d
-	url = https://github.com/syl20bnr/spacemacs.git
 [submodule "vim/pack/nwjsmith/start/vim-jsx"]
 	path = vim/pack/nwjsmith/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git

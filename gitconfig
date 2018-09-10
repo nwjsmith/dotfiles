@@ -55,3 +55,9 @@
   autoStash = true
 [github]
   user = nwjsmith
+[magithub]
+	online = false
+[magithub "status"]
+	includeStatusHeader = false
+	includePullRequestsSection = false
+	includeIssuesSection = false

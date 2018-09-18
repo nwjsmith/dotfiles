@@ -1,29 +1,32 @@
+# Calculate once
+BREW_PREFIX="$(brew --prefix)"
+
 # Autocomplete Bash commands
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+if [ -f ${BREW_PREFIX}/etc/bash_completion ]; then
+  . ${BREW_PREFIX}/etc/bash_completion
 fi
 
 # Use chruby for switching Rubies
-. "$(brew --prefix)/share/chruby/chruby.sh"
-. "$(brew --prefix)/share/chruby/auto.sh"
+. "${BREW_PREFIX}/share/chruby/chruby.sh"
+. "${BREW_PREFIX}/share/chruby/auto.sh"
 
 # Java
 export JAVA_HOME="$(/usr/libexec/java_home)"
 export PATH="${JAVA_HOME}/bin:${PATH}"
 
 # Go lang
-export GOPATH="$(brew --prefix)/lib/go"
-export PATH="$(brew --prefix)/lib/go/bin:${GOROOT}/bin:${PATH}"
+export GOPATH="${BREW_PREFIX}/lib/go"
+export PATH="${BREW_PREFIX}/lib/go/bin:${GOROOT}/bin:${PATH}"
 
 # Use the GNU versions of everything
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
-export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:${MANPATH}"
+export PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH}"
+export MANPATH="${BREW_PREFIX}/opt/coreutils/libexec/gnuman:${MANPATH}"
 
 # Keep up-to-date
 alias brewup="brew update && brew upgrade && brew cleanup"
 
 # Heroku toolbelt
-export PATH="$(brew --prefix heroku)/bin:$PATH"
+export PATH="${BREW_PREFIX}/opt/heroku/bin:$PATH"
 
 # Node.JS LTS
-export PATH="$(brew --prefix node@8)/bin:$PATH"
+export PATH="${BREW_PREFIX}/opt/node@8/bin:$PATH"

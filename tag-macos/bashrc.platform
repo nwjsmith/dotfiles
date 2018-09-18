@@ -24,3 +24,6 @@ alias brewup="brew update && brew upgrade && brew cleanup"
 
 # Heroku toolbelt
 export PATH="$(brew --prefix heroku)/bin:$PATH"
+
+# Node.JS LTS
+export PATH="$(brew --prefix node@8)/bin:$PATH"

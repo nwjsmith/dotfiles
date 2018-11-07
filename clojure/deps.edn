@@ -1,5 +1,4 @@
-{:deps {org.clojure/clojure {:mvn/version "1.9.0"}
-        org.clojure/test.check {:mvn/version "0.9.0"}
-        org.clojure/core.async {:mvn/version "0.3.465"}}
- :providers {:mvn {:repos {"central" {:url "https://repo1.maven.org/maven2/"}
-                           "clojars" {:url "https://clojars.org/repo/"}}}}}
+{:deps {org.clojure/clojure {:mvn/version "1.9.0"}}
+ :paths ["src"]
+ :mvn/repos {"central" {:url "https://repo1.maven.org/maven2/"}
+             "clojars" {:url "https://repo.clojars.org/"}}}

@@ -8,6 +8,7 @@
 .bundle
 .byebug_history
 .cpcache/
+.dir-locals.el
 .env
 .floo
 .flooignore

@@ -1,6 +1,9 @@
 # Calculate once
 BREW_PREFIX="$(brew --prefix)"
 
+# Opt-in to Homebrew 2 behaviour
+export HOMEBREW_INSTALL_CLEANUP=1
+
 # Autocomplete Bash commands
 if [ -f ${BREW_PREFIX}/etc/bash_completion ]; then
   . ${BREW_PREFIX}/etc/bash_completion
@@ -27,9 +30,6 @@ export PATH="${BREW_PREFIX}/lib/go/bin:${GOROOT}/bin:${PATH}"
 # Use the GNU versions of everything
 export PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH}"
 export MANPATH="${BREW_PREFIX}/opt/coreutils/libexec/gnuman:${MANPATH}"
-
-# Keep up-to-date
-alias brewup="brew update && brew upgrade && brew cleanup"
 
 # Heroku toolbelt
 export PATH="${BREW_PREFIX}/opt/heroku/bin:$PATH"

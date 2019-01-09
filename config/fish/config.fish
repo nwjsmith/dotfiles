@@ -44,12 +44,5 @@ set --export PATH (brew --prefix coreutils)/libexec/gnubin $PATH
 # Always a pain to type
 alias be="bundle exec"
 
-# Keep up-to-date
-function brewup --description "Upgrade and cleanup Homebrew packages"
-  brew update
-  and brew upgrade
-  and brew cleanup
-end
-
 # Open from shell
 alias fopen="open -a Finder"

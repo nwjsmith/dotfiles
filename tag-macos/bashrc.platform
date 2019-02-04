@@ -1,9 +1,6 @@
 # Calculate once
 BREW_PREFIX="$(brew --prefix)"
 
-# Opt-in to Homebrew 2 behaviour
-export HOMEBREW_INSTALL_CLEANUP=1
-
 # Autocomplete Bash commands
 if [ -f ${BREW_PREFIX}/etc/bash_completion ]; then
   . ${BREW_PREFIX}/etc/bash_completion

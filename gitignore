@@ -6,6 +6,7 @@
 *.jar
 *.pyc
 .DS_Store
+.eastwood
 .bundle
 .byebug_history
 .cpcache/

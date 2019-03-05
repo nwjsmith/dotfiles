@@ -1,0 +1,25 @@
+#!/bin/bash
+
+set -e
+
+git submodule update --remote --merge -- vim/pack/nwjsmith/start/
+
+if ! git diff --shortstat --exit-code -- vim/pack/nwjsmith/start/; then
+  git add vim/pack/nwjsmith/start
+  git commit -m "Update Vim pack"
+fi
+
+git submodule update --remote --merge -- emacs.d
+
+if ! git diff --shortstat --exit-code -- emacs.d; then
+  git add emacs.d
+  emacs \
+    --batch \
+    -l ~/.emacs.d/init.el \
+    --eval="(configuration-layer/update-packages t)"
+  if ! git diff --shortstat --exit-code -- spacemacs; then
+    git add spacemacs
+  fi
+  git commit -m "Update Spacemacs"
+fi
+

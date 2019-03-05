@@ -1,3 +1,5 @@
+[absorb]
+  maxStack = 200
 [alias]
   co = checkout
   ctags = !.git/hooks/ctags

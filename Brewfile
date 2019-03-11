@@ -102,6 +102,7 @@ cask "transmission"
 cask "visual-studio-code"
 cask "zoomus"
 mas "Amphetamine", id: 937984704
+mas "Be Focused Pro", id: 961632517
 mas "Bear", id: 1091189122
 mas "Day One", id: 1055511498
 mas "Deliveries", id: 924726344

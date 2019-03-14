@@ -1,2 +1,2 @@
-EXCLUDES="Brewfile README.md update"
+EXCLUDES="README.md update"
 SYMLINK_DIRS="emacs.d"

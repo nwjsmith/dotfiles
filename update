@@ -11,15 +11,23 @@ fi
 
 git submodule update --remote --merge -- emacs.d
 
+update_spacemacs=0
+
 if ! git diff --shortstat --exit-code -- emacs.d; then
   git add emacs.d
-  emacs \
-    --batch \
-    -l ~/.emacs.d/init.el \
-    --eval="(configuration-layer/update-packages t)"
-  if ! git diff --shortstat --exit-code -- spacemacs; then
-    git add spacemacs
-  fi
-  git commit -m "Update Spacemacs"
+  update_spacemacs=1
 fi
 
+emacs \
+  --batch \
+  -l ~/.emacs.d/init.el \
+  --eval="(configuration-layer/update-packages t)"
+
+if ! git diff --shortstat --exit-code -- spacemacs; then
+  git add spacemacs
+  update_spacemacs=1
+fi
+
+if [ $update_spacemacs -eq 1 ]; then
+  git commit -m "Update Spacemacs"
+fi

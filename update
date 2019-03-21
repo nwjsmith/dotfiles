@@ -24,7 +24,9 @@ if ! git diff --shortstat --exit-code -- emacs.d spacemacs; then
 fi
 
 brew update
+brew upgrade
 brew bundle --global
 brew cask upgrade
+brew cleanup
 
 softwareupdate --background --download

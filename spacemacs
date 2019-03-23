@@ -39,6 +39,7 @@ This function should only modify configuration layer settings."
      auto-completion
      better-defaults
      (clojure :variables clojure-enable-clj-refactor t)
+     docker
      emacs-lisp
      evil-commentary
      git

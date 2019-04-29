@@ -108,8 +108,8 @@ cask "transmission"
 cask "visual-studio-code"
 cask "zoomus"
 mas "Amphetamine", id: 937984704
-mas "Be Focused Pro", id: 961632517
 mas "Bear", id: 1091189122
+mas "Cardhop", id: 1290358394
 mas "Day One", id: 1055511498
 mas "Deliveries", id: 924726344
 mas "Fantastical 2", id: 975937182
@@ -121,4 +121,5 @@ mas "Pages", id: 409201541
 mas "Slack", id: 803453959
 mas "Soulver", id: 413965349
 mas "Spark", id: 1176895641
+mas "Tadam", id: 531349534
 mas "Things3", id: 904280696

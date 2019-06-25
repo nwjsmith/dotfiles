@@ -102,6 +102,7 @@ cask "plex-media-server"
 cask "slack"
 cask "sloth"
 cask "sonos"
+cask "soulver"
 cask "steam"
 cask "spotify"
 cask "the-unarchiver"
@@ -121,7 +122,6 @@ mas "OmniFocus", id: 1346203938
 mas "Pages", id: 409201541
 mas "Reeder", id: 1449412482
 mas "Slack", id: 803453959
-mas "Soulver", id: 413965349
 mas "Spark", id: 1176895641
 mas "Tadam", id: 531349534
 mas "Things3", id: 904280696

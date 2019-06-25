@@ -47,8 +47,6 @@ font:
 
   use_thin_strokes: true
 
-render_timer: false
-
 draw_bold_text_with_bright_colors: true
 
 colors:

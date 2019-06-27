@@ -460,13 +460,13 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (setq cider-save-file-on-load t)
-  (setq cljr-warn-on-eval nil)
   (setq ispell-local-dictionary "en_CA")
-  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
+  (setq cider-save-file-on-load t)
+  (setq cider-prefer-local-resources t)
+  (setq cljr-warn-on-eval nil)
   (use-package clojure-mode
-    :ensure t
-    :config (require 'flycheck-clj-kondo)))
+    :config (require 'flycheck-clj-kondo))
+  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

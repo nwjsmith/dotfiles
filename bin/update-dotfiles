@@ -23,6 +23,9 @@ if ! git diff --shortstat --exit-code -- emacs.d spacemacs; then
   git commit -m "Update Spacemacs"
 fi
 
+if [ -f "${HOME}/bin/update-dotfiles.platform" ]; then
+  . "${HOME}/bin/update-dotfiles.platform"
+fi
 brew update
 brew upgrade
 brew bundle --global

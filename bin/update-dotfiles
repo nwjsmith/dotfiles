@@ -2,14 +2,18 @@
 
 set -e
 
-git submodule update --remote --merge -- vim/pack/nwjsmith/start
+GIT="git -C ${HOME}/.dotfiles"
 
-if ! git diff --shortstat --exit-code -- vim/pack/nwjsmith/start; then
-  git add vim/pack/nwjsmith/start
-  git commit -m "Update Vim pack"
+# Update Vim
+$GIT submodule update --remote --merge -- vim/pack/nwjsmith/start
+
+if ! $GIT diff --shortstat --exit-code -- vim/pack/nwjsmith/start; then
+  $GIT add vim/pack/nwjsmith/start
+  $GIT commit -m "Update Vim pack"
 fi
 
-git submodule update --remote --merge -- emacs.d
+# Update Spacemacs
+$GIT submodule update --remote --merge -- emacs.d
 
 emacs \
   --batch \
@@ -18,18 +22,15 @@ emacs \
 
 emacs --batch --load ~/.emacs.d/init.el
 
-if ! git diff --shortstat --exit-code -- emacs.d spacemacs; then
-  git add emacs.d spacemacs
-  git commit -m "Update Spacemacs"
+if ! $GIT diff --shortstat --exit-code -- emacs.d spacemacs; then
+  $GIT add emacs.d spacemacs
+  $GIT commit -m "Update Spacemacs"
 fi
 
-if [ -f "${HOME}/bin/update-dotfiles.platform" ]; then
-  . "${HOME}/bin/update-dotfiles.platform"
+# Run platform-specific updates
+if [ -f "${HOME}/.bin/update-dotfiles.platform" ]; then
+  # shellcheck source=tag-macos/bin/update-dotfiles.platform
+  . "${HOME}/.bin/update-dotfiles.platform"
+else
+  echo "You forgot to link the platform-specific files, 'rcup -t \$PLATFORM'"
 fi
-brew update
-brew upgrade
-brew bundle --global
-brew cask upgrade
-brew cleanup
-
-softwareupdate --background --download

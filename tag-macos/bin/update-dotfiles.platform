@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+brew update
+brew upgrade
+brew bundle --global
+brew cask upgrade
+brew cleanup
+
+softwareupdate --download --all

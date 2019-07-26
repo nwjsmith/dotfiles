@@ -4,14 +4,8 @@
   co = checkout
   ctags = !.git/hooks/ctags
   dc = diff --cached --word-diff=color
-  dci = duet-commit
-  delete-merged-branches = !git branch --merged master | grep -v -e 'master' -e '\\*' | xargs -n 1 git branch -d && git remote prune origin
   di = diff --word-diff=color
-  dmg = duet-merge
-  drb = rebase -i --exec 'git duet-commit --amend --reset-author'
-  drv = duet-revert
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green) %an, %ar%Creset'
-  list-branches = branch --sort=committerdate
   st = status
   unstage = reset -- 
   yolo = push --force-with-lease
@@ -58,8 +52,8 @@
 [github]
   user = nwjsmith
 [magithub]
-	online = false
+  online = false
 [magithub "status"]
-	includeStatusHeader = false
-	includePullRequestsSection = false
-	includeIssuesSection = false
+  includeStatusHeader = false
+  includePullRequestsSection = false
+  includeIssuesSection = false

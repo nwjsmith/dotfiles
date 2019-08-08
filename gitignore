@@ -24,5 +24,6 @@
 .vagrant
 docker-compose.override.yml
 log/*.log
+node_modules/
 tags
 tmp/**/*

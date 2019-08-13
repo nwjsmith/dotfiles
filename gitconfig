@@ -9,6 +9,7 @@
   st = status
   unstage = reset -- 
   yolo = push --force-with-lease
+  push-each = !git rev-list HEAD...master | xargs -n1 -I{} git push origin {}:$(git symbolic-ref HEAD)-{}
 [branch]
   autoSetupMerge = true
 [core]

@@ -10,6 +10,7 @@
   unstage = reset -- 
   yolo = push --force-with-lease
   push-each = !git rev-list HEAD...master | xargs -n1 -I{} git push origin {}:$(git symbolic-ref HEAD)-{}
+  clean-each = !git ls-remote --quiet --heads origin $(git symbolic-ref HEAD)-* | cut -f2 | xargs -n1 -I{} git push origin :{}
 [branch]
   autoSetupMerge = true
 [core]

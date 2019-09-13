@@ -16,9 +16,9 @@ fi
 . "${BREW_PREFIX}/share/chruby/chruby.sh"
 . "${BREW_PREFIX}/share/chruby/auto.sh"
 
-# Java
-export JAVA_HOME="$(/usr/libexec/java_home)"
-export PATH="${JAVA_HOME}/bin:${PATH}"
+# Use jEnv for switching Javas
+export PATH="${HOME}/.jenv/bin:${PATH}"
+eval "$(jenv init -)"
 
 # Go lang
 export GOPATH="${BREW_PREFIX}/lib/go"

@@ -12,6 +12,8 @@ if type brew 2&>/dev/null; then
   done
 fi
 
+complete -C /usr/local/bin/vault vault
+
 # Use chruby for switching Rubies
 . "${BREW_PREFIX}/share/chruby/chruby.sh"
 . "${BREW_PREFIX}/share/chruby/auto.sh"

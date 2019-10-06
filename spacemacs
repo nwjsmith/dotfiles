@@ -68,7 +68,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(flycheck-clj-kondo)
+   dotspacemacs-additional-packages '()
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -464,8 +464,7 @@ before packages are loaded."
   (setq cider-save-file-on-load t)
   (setq cider-prefer-local-resources t)
   (setq cljr-warn-on-eval nil)
-  (use-package clojure-mode
-    :config (require 'flycheck-clj-kondo))
+  (use-package clojure-mode)
   (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks))
 
 ;; Do not write anything past this comment. This is where Emacs will

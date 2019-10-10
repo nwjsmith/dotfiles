@@ -8,4 +8,5 @@
 # * How does it address the problem?
 # * Are there any side effects?
 #
-# Include a link to the issue, if any.
+# Write in the imperative, as if this were a request. e.g. "Fix bug" not
+# "Fixed bug" or "Fixes bug".

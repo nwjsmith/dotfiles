@@ -1,12 +1,14 @@
+live_config_reload: true
+
 window:
-  decorations: full
+  decorations: none
 
   dimensions:
     columns: 80
     lines: 24
 
   padding:
-    x: 1
+    x: 0
     y: 0
 
   dynamic_padding: true

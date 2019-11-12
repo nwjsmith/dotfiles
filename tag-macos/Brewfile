@@ -120,6 +120,7 @@ cask "the-unarchiver"
 cask "transmission"
 cask "visual-studio-code"
 cask "zoomus"
+cask "zotero"
 mas "Amphetamine", id: 937984704
 mas "Bear", id: 1091189122
 mas "Cardhop", id: 1290358394

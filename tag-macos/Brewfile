@@ -118,6 +118,7 @@ cask "steam"
 cask "the-unarchiver"
 cask "transmission"
 cask "visual-studio-code"
+cask "visualvm"
 cask "zoomus"
 cask "zotero"
 mas "Amphetamine", id: 937984704

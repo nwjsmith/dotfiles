@@ -1538,14 +1538,6 @@
           }
         }
       },
-      "microsoft-office": {
-        "version": "16.22.19021100",
-        "options": {
-          "args": {
-            "appdir": "/Applications"
-          }
-        }
-      },
       "muzzle": {
         "version": "1.5,304",
         "options": {

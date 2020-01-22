@@ -8,7 +8,7 @@ fi
 
 if type brew 2&>/dev/null; then
   for completion_file in $(brew --prefix)/etc/bash_completion.d/*; do
-    source "$completion_file"
+    source "${completion_file}"
   done
 fi
 
@@ -22,6 +22,11 @@ complete -C /usr/local/bin/vault vault
 export PATH="${HOME}/.jenv/bin:${PATH}"
 eval "$(jenv init -)"
 
+# Use nvm for managing Node.js
+export NVM_DIR="${HOME}/.nvm"
+. "${NVM_DIR}/nvm.sh"
+. "${NVM_DIR}/bash_completion"
+
 # Go lang
 export GOPATH="${BREW_PREFIX}/lib/go"
 export PATH="${BREW_PREFIX}/lib/go/bin:${GOROOT}/bin:${PATH}"
@@ -31,7 +36,4 @@ export PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH}"
 export MANPATH="${BREW_PREFIX}/opt/coreutils/libexec/gnuman:${MANPATH}"
 
 # Heroku toolbelt
-export PATH="${BREW_PREFIX}/opt/heroku/bin:$PATH"
-
-# Node.JS LTS
-export PATH="${BREW_PREFIX}/opt/node@8/bin:$PATH"
+export PATH="${BREW_PREFIX}/opt/heroku/bin:${PATH}"

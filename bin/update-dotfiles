@@ -1,19 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
 GIT="git -C ${HOME}/.dotfiles"
 
 # Update Vim
-$GIT submodule update --remote --merge -- vim/pack/nwjsmith/start
+${GIT} submodule update --remote --merge -- vim/pack/nwjsmith/start
 
-if ! $GIT diff --shortstat --exit-code -- vim/pack/nwjsmith/start; then
-  $GIT add vim/pack/nwjsmith/start
-  $GIT commit -m "Update Vim pack"
+if ! ${GIT} diff --shortstat --exit-code -- vim/pack/nwjsmith/start; then
+  ${GIT} add vim/pack/nwjsmith/start
+  ${GIT} commit -m "Update Vim pack"
 fi
 
 # Update Spacemacs
-$GIT submodule update --remote --merge -- emacs.d
+${GIT} submodule update --remote --merge -- emacs.d
 
 emacs \
   --batch \
@@ -22,9 +22,9 @@ emacs \
 
 emacs --batch --load ~/.emacs.d/init.el
 
-if ! $GIT diff --shortstat --exit-code -- emacs.d spacemacs; then
-  $GIT add emacs.d spacemacs
-  $GIT commit -m "Update Spacemacs"
+if ! ${GIT} diff --shortstat --exit-code -- emacs.d spacemacs; then
+  ${GIT} add emacs.d spacemacs
+  ${GIT} commit -m "Update Spacemacs"
 fi
 
 # Run platform-specific updates

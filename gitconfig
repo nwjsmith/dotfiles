@@ -14,7 +14,7 @@
 [branch]
   autoSetupMerge = true
 [core]
-  excludesfile = /Users/nwjsmith/.gitignore
+  excludesfile = ~/.gitignore
   editor = vim
   trustctime = false
 [push]

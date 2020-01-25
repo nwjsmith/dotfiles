@@ -128,3 +128,6 @@
 	path = emacs.d
 	url = https://github.com/syl20bnr/spacemacs.git
 	branch = develop
+[submodule "vim/pack/nwjsmith/start/vim-shfmt.git"]
+	path = vim/pack/nwjsmith/start/vim-shfmt.git
+	url = https://github.com/z0mbix/vim-shfmt.git

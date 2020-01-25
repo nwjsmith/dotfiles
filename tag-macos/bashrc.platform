@@ -27,10 +27,6 @@ export NVM_DIR="${HOME}/.nvm"
 . "${NVM_DIR}/nvm.sh"
 . "${NVM_DIR}/bash_completion"
 
-# Go lang
-export GOPATH="${BREW_PREFIX}/lib/go"
-export PATH="${BREW_PREFIX}/lib/go/bin:${GOROOT}/bin:${PATH}"
-
 # Use the GNU versions of everything
 export PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH}"
 export MANPATH="${BREW_PREFIX}/opt/coreutils/libexec/gnuman:${MANPATH}"

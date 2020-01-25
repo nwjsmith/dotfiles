@@ -131,3 +131,6 @@
 [submodule "vim/pack/nwjsmith/start/vim-shfmt.git"]
 	path = vim/pack/nwjsmith/start/vim-shfmt.git
 	url = https://github.com/z0mbix/vim-shfmt.git
+[submodule "vim/pack/nwjsmith/start/vim-shellcheck"]
+	path = vim/pack/nwjsmith/start/vim-shellcheck
+	url = https://github.com/itspriddle/vim-shellcheck.git

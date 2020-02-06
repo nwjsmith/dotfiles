@@ -71,6 +71,6 @@ else
 fi
 
 # Keep private things in ~/.bashrc.local
-if [ -f  "${HOME}/.bashrc.local" ]; then
+if [ -f "${HOME}/.bashrc.local" ]; then
   source "${HOME}/.bashrc.local"
 fi

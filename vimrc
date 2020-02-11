@@ -112,7 +112,6 @@ set clipboard=unnamed
 
 " Format shell scripts on save with spaces
 let g:shfmt_extra_args='-i 2'
-let g:shfmt_fmt_on_save=1
 
 function! Figwheel()
   execute "Eval (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/start-figwheel! \"dev\" \"devcards\"))"

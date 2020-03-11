@@ -125,6 +125,7 @@ cask "intellij-idea"
 cask "keybase"
 cask "kindle"
 cask "kitty"
+cask "netnewswire"
 cask "phantomjs"
 cask "plex-media-server"
 cask "pritunl"
@@ -164,7 +165,6 @@ mas "Marked 2", id: 890031187
 mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
 mas "Pages", id: 409201541
-mas "Reeder", id: 1449412482
 mas "Slack", id: 803453959
 mas "Spark", id: 1176895641
 mas "Tadam", id: 531349534

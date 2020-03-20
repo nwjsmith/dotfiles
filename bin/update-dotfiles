@@ -12,21 +12,6 @@ if ! ${GIT} diff --shortstat --exit-code -- vim/pack/nwjsmith/start; then
   ${GIT} commit -m "Update Vim pack"
 fi
 
-# Update Spacemacs
-${GIT} submodule update --remote --merge -- emacs.d
-
-emacs \
-  --batch \
-  --load ~/.emacs.d/init.el \
-  --eval="(configuration-layer/update-packages t)"
-
-emacs --batch --load ~/.emacs.d/init.el
-
-if ! ${GIT} diff --shortstat --exit-code -- emacs.d spacemacs; then
-  ${GIT} add emacs.d spacemacs
-  ${GIT} commit -m "Update Spacemacs"
-fi
-
 # Run platform-specific updates
 if [ -f "${HOME}/.bin/update-dotfiles.platform" ]; then
   # shellcheck source=tag-macos/bin/update-dotfiles.platform

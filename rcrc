@@ -1,2 +1,1 @@
 EXCLUDES="README.md update"
-SYMLINK_DIRS="emacs.d"

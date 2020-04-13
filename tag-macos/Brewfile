@@ -1,5 +1,6 @@
 cask_args appdir: "/Applications"
 tap "borkdude/brew"
+
 tap "heroku/brew"
 tap "github/gh"
 tap "homebrew/bundle"
@@ -42,6 +43,7 @@ brew "gist"
 brew "git"
 brew "git-absorb"
 brew "git-lfs"
+brew "glpk"
 brew "go"
 brew "gpgme"
 brew "graphviz"
@@ -148,6 +150,7 @@ cask "spotify"
 cask "steam"
 cask "sweet-home3d"
 cask "textmate"
+cask "tla-plus-toolbox"
 cask "thingsmacsandboxhelper"
 cask "the-unarchiver"
 cask "transmission"
@@ -168,6 +171,7 @@ mas "Keynote", id: 409183694
 mas "Marked 2", id: 890031187
 mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
+mas "Okta Extension App", id: 1439967473
 mas "Pages", id: 409201541
 mas "Slack", id: 803453959
 mas "Spark", id: 1176895641

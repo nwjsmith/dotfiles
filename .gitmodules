@@ -130,3 +130,6 @@
 [submodule "vim/pack/nwjsmith/start/vim-shellcheck"]
 	path = vim/pack/nwjsmith/start/vim-shellcheck
 	url = https://github.com/itspriddle/vim-shellcheck.git
+[submodule "vim/pack/nwjsmith/start/tla.vim"]
+	path = vim/pack/nwjsmith/start/tla.vim
+	url = https://github.com/hwayne/tla.vim

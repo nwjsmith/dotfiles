@@ -7,7 +7,6 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "AdoptOpenJDK/openjdk"
 tap "homebrew/core"
 tap "homebrew/services"
@@ -16,7 +15,7 @@ tap "thoughtbot/formulae"
 
 # Java is a prerequisite for some applications
 cask "adoptopenjdk/openjdk/adoptopenjdk8"
-cask "adoptopenjdk11"
+cask "adoptopenjdk/openjdk/adoptopenjdk11"
 cask "corretto8"
 cask "corretto"
 

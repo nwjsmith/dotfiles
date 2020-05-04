@@ -5,6 +5,7 @@
 *.iml
 *.jar
 *.pyc
+.adr-dir
 .DS_Store
 .eastwood
 .bundle
@@ -22,6 +23,7 @@
 .rvmrc
 .sass-cache/
 .vagrant
+.vscode/
 docker-compose.override.yml
 log/*.log
 node_modules/

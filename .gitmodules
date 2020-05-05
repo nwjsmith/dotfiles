@@ -133,3 +133,6 @@
 [submodule "vim/pack/nwjsmith/start/tla.vim"]
 	path = vim/pack/nwjsmith/start/tla.vim
 	url = https://github.com/hwayne/tla.vim
+[submodule "vim/pack/nwjsmith/start/vim-shfmt"]
+	path = vim/pack/nwjsmith/start/vim-shfmt
+	url = https://github.com/z0mbix/vim-shfmt.git

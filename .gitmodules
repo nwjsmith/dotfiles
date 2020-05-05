@@ -124,9 +124,6 @@
 [submodule "vim/pack/nwjsmith/start/vim-jsx"]
 	path = vim/pack/nwjsmith/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
-[submodule "vim/pack/nwjsmith/start/vim-shfmt.git"]
-	path = vim/pack/nwjsmith/start/vim-shfmt.git
-	url = https://github.com/z0mbix/vim-shfmt.git
 [submodule "vim/pack/nwjsmith/start/vim-shellcheck"]
 	path = vim/pack/nwjsmith/start/vim-shellcheck
 	url = https://github.com/itspriddle/vim-shellcheck.git
@@ -136,3 +133,9 @@
 [submodule "vim/pack/nwjsmith/start/vim-shfmt"]
 	path = vim/pack/nwjsmith/start/vim-shfmt
 	url = https://github.com/z0mbix/vim-shfmt.git
+[submodule "vim/pack/nwjsmith/start/typescript-vim"]
+	path = vim/pack/nwjsmith/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "vim/pack/nwjsmith/start/vim-jsx-pretty"]
+	path = vim/pack/nwjsmith/start/vim-jsx-pretty
+	url = https://github.com/MaxMEllon/vim-jsx-pretty.git

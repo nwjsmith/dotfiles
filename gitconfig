@@ -3,8 +3,8 @@
 [alias]
   co = checkout
   ctags = !.git/hooks/ctags
-  dc = diff --cached --word-diff=color
-  di = diff --word-diff=color
+  dc = diff --cached
+  di = diff
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green) %an, %ar%Creset'
   st = status
   unstage = reset -- 
@@ -16,6 +16,7 @@
 [core]
   excludesfile = ~/.gitignore
   editor = vim
+  pager = delta --theme='Solarized (light)'
   trustctime = false
 [push]
   default = current
@@ -35,6 +36,8 @@
   path = ~/.gitconfig.local
 [init]
   templateDir = ~/.git-template
+[interactive]
+  diffFilter = delta --color-only
 [commit]
   gpgsign = true
   template = ~/.gitmessage
@@ -51,9 +54,3 @@
   autoStash = true
 [github]
   user = nwjsmith
-[magithub]
-  online = false
-[magithub "status"]
-  includeStatusHeader = false
-  includePullRequestsSection = false
-  includeIssuesSection = false

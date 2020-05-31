@@ -57,12 +57,6 @@ set -o vi
 # Always a pain to type
 alias be="bundle exec"
 
-# Disable Rails' app preloading
-export DISABLE_SPRING=1
-
-# Better Python REPL
-export PYTHONSTARTUP="${HOME}/.pythonstartup"
-
 # Platform-specific bash configuration
 if [ -f "${HOME}/.bashrc.platform" ]; then
   . "${HOME}/.bashrc.platform"

@@ -14,19 +14,6 @@ fi
 
 complete -C /usr/local/bin/vault vault
 
-# Use chruby for switching Rubies
-. "${BREW_PREFIX}/share/chruby/chruby.sh"
-. "${BREW_PREFIX}/share/chruby/auto.sh"
-
-# Use jEnv for switching Javas
-export PATH="${HOME}/.jenv/bin:${PATH}"
-eval "$(jenv init -)"
-
-# Use nvm for managing Node.js
-export NVM_DIR="${HOME}/.nvm"
-. "${NVM_DIR}/nvm.sh"
-. "${NVM_DIR}/bash_completion"
-
 # Use the GNU versions of everything
 export PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH}"
 export MANPATH="${BREW_PREFIX}/opt/coreutils/libexec/gnuman:${MANPATH}"
@@ -36,3 +23,5 @@ export PATH="${BREW_PREFIX}/opt/heroku/bin:${PATH}"
 
 # Trust safe repositories
 export PATH=".git/safe/../../bin:${PATH}"
+
+. "$(brew --prefix asdf)/asdf.sh"

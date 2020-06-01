@@ -1,6 +1,9 @@
 " Relative line numbers in normal mode
 set number relativenumber
 
+" Use Bash for shell
+set shell=/usr/bin/env\ bash
+
 " Use 4 characters for the number column
 set numberwidth=4
 
@@ -46,9 +49,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Ignore some files in completion menu
-set wildignore+=*.pyc,*/__pycache__/
-
 " Write file after every command
 set autowrite
 
@@ -58,7 +58,7 @@ set hlsearch
 highlight Search cterm=underline term=underline gui=underline
 " Ignore case unless the pattern contains uppercase letters
 set smartcase
-" Completion with proper caseing
+" Completion with proper casing
 set infercase
 
 " Use the ripgrep if available
@@ -91,19 +91,6 @@ nnoremap <silent> <leader>t :TestFile<CR>
 nnoremap <silent> <leader>f :TestSuite<CR>
 let g:test#strategy = 'dispatch'
 
-" Subforms align to the same column:
-"
-" Good:   Bad:
-"  (foo    (foo
-"   bar      bar
-"   baz)     baz)
-let g:clojure_align_subforms=1
-let g:clojure_fuzzy_indent = 1
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^try']
-let g:clojure_syntax_keywords = {
-  \ 'clojureMacro': ['defproject', 'deftask'],
-  \ }
-
 " Do not open quickfix window if there are no Flow errors
 let g:flow#autoclose = 1
 
@@ -113,18 +100,7 @@ set clipboard=unnamed
 " Format shell scripts on save with spaces
 let g:shfmt_extra_args='-i 2'
 
-function! Figwheel()
-  execute "Eval (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/start-figwheel! \"dev\" \"devcards\"))"
-endfunction
-
-function! Figgieback()
-  execute "Piggieback (do (require '[figwheel-sidecar.repl-api]) (figwheel-sidecar.repl-api/repl-env \"dev\"))"
-endfunction
-
 augroup vimrc
-  autocmd FileType clojure command! Figwheel :execute Figwheel()
-  autocmd FileType clojure command! Figgieback :execute Figgieback()
-
   " Absolute line numbers in insert mode
   autocmd InsertEnter * :set number norelativenumber
   autocmd InsertLeave * :set number relativenumber

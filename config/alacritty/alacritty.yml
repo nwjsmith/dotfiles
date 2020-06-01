@@ -78,7 +78,7 @@ mouse:
     launcher: open
 
 shell:
-  program: /usr/local/bin/bash
+  program: /usr/local/bin/fish
   args:
     - --login
 

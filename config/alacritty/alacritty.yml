@@ -27,9 +27,9 @@ font:
   glyph_offset:
     x: 0
     y: 0
-  use_thin_strokes: false
+  use_thin_strokes: true
 
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
 
 colors:
   primary:
@@ -60,7 +60,7 @@ colors:
     cyan: '0x93a1a1'
     white: '0xfdf6e3'
 
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 100
   color: '0xeee8d5'
@@ -76,9 +76,3 @@ mouse:
     threshold: 300
   url:
     launcher: open
-
-shell:
-  program: /usr/local/bin/fish
-  args:
-    - --login
-

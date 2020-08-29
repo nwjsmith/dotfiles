@@ -23,5 +23,3 @@ export PATH="${BREW_PREFIX}/opt/heroku/bin:${PATH}"
 
 # Trust safe repositories
 export PATH=".git/safe/../../bin:${PATH}"
-
-. "$(brew --prefix asdf)/asdf.sh"

@@ -14,11 +14,9 @@ tap "homebrew/services"
 tap "InstantClientTap/instantclient"
 tap "thoughtbot/formulae"
 tap "universal-ctags/universal-ctags"
-tap "unused-code/formulae"
 
 brew "adr-tools"
 brew "ansible"
-brew "asdf"
 brew "automake"
 brew "awscli"
 brew "bash"
@@ -31,34 +29,29 @@ brew "cmake"
 brew "comby"
 brew "coreutils"
 brew "cowsay"
+brew "dive"
 brew "docker-credential-helper-ecr"
-brew "dust"
 brew "ffmpeg"
 brew "fish"
-brew "flyway"
 brew "gawk"
 brew "gdbm"
 brew "gh"
-brew "gimme-aws-creds"
 brew "gist"
 brew "git"
 brew "git-absorb"
 brew "git-lfs"
 brew "glpk"
+brew "gnupg"
 brew "go"
-brew "gpgme"
 brew "graphviz"
 brew "hadolint"
 brew "heroku"
 brew "heroku/brew/heroku-node"
-brew "httpie"
-brew "hub"
 brew "imagemagick"
 brew "imagemagick@6"
 brew "instantclient-basic"
 brew "instantclient-sdk"
 brew "ispell"
-brew "jenv"
 brew "jq"
 brew "kafka"
 brew "kotlin"
@@ -72,8 +65,8 @@ brew "maven"
 brew "mitmproxy"
 brew "nginx"
 brew "openssl"
-brew "overmind"
 brew "pandoc"
+brew "pinentry-mac"
 brew "pkg-config"
 brew "postgresql"
 brew "pv"
@@ -89,10 +82,10 @@ brew "shellcheck"
 brew "shfmt"
 brew "terraform"
 brew "thoughtbot/formulae/rcm"
+brew "tmate"
 brew "tmux"
 brew "tree"
 brew "universal-ctags", args: %w(HEAD)
-brew "unused"
 brew "vault"
 brew "vim"
 brew "watch"
@@ -113,6 +106,7 @@ cask "appcleaner"
 cask "atom"
 cask "bartender"
 cask "basictex"
+cask "camo-studio"
 cask "cleanshot"
 cask "colorpicker-skalacolor"
 cask "dash"
@@ -128,18 +122,17 @@ cask "font-jetbrains-mono"
 cask "font-source-code-pro"
 cask "google-chrome"
 cask "google-hangouts"
-cask "gpg-suite"
 cask "grammarly"
 cask "imageoptim"
-cask "inkscape"
 cask "insomnia"
 cask "intellij-idea"
 cask "kindle"
 cask "mochi"
 cask "microsoft-edge"
 cask "netnewswire"
+cask "obs"
+cask "obs-virtualcam"
 cask "obsidian"
-cask "phantomjs"
 cask "plex-media-server"
 cask "pritunl"
 cask "qlcolorcode"
@@ -174,17 +167,20 @@ cask "zsa-wally"
 mas "1Blocker", id: 1107421413
 mas "Amphetamine", id: 937984704
 mas "Bear", id: 1091189122
+mas "DaisyDisk", id: 411643860
 mas "Day One", id: 1055511498
 mas "Deliveries", id: 924726344
-mas "Fantastical 2", id: 975937182
+mas "Disk Care", id: 913724705
+mas "Fantastical", id: 975937182
 mas "Keynote", id: 409183694
 mas "Marked 2", id: 890031187
 mas "Numbers", id: 409203825
-mas "OmniFocus", id: 1346203938
 mas "Okta Extension App", id: 1439967473
+mas "OmniFocus", id: 1346203938
 mas "Pages", id: 409201541
 mas "Slack", id: 803453959
 mas "Spark", id: 1176895641
 mas "Tadam", id: 531349534
-mas "Things3", id: 904280696
+mas "Things", id: 904280696
 mas "Xcode", id: 497799835
+mas "iA Writer", id: 775737590

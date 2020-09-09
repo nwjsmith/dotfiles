@@ -1,3 +1,3 @@
-ruby 2.7.1 2.6.6 2.6.5 2.5.8 system
-nodejs 12.17.0 12.16.3 12.16.1 10.20.1
-java adopt-openjdk-11.0.6+10 adopt-openjdk-8u252-b09.1
+ruby 2.7.1 2.6.6 2.5.8 2.5.3 system
+nodejs 12.18.3 12.18.2 10.22.0
+java adoptopenjdk-11.0.8+10 adoptopenjdk-8.0.265+1

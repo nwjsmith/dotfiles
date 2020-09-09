@@ -21,5 +21,8 @@ export MANPATH="${BREW_PREFIX}/opt/coreutils/libexec/gnuman:${MANPATH}"
 # Heroku toolbelt
 export PATH="${BREW_PREFIX}/opt/heroku/bin:${PATH}"
 
+# asdf-vm for managing language versions
+. "${BREW_PREFIX}/opt/asdf/asdf.sh"
+
 # Trust safe repositories
 export PATH=".git/safe/../../bin:${PATH}"

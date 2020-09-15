@@ -5,7 +5,7 @@ set -e
 brew update
 brew upgrade
 brew bundle --global
-brew cask upgrade
+brew upgrade --cask
 brew cleanup
 
 softwareupdate --download --all

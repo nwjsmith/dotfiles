@@ -138,7 +138,6 @@ cask "kindle"
 cask "lunar"
 cask "mochi"
 cask "microsoft-edge"
-cask "netnewswire"
 cask "obs"
 cask "obs-virtualcam"
 cask "obsidian"
@@ -186,6 +185,7 @@ mas "Numbers", id: 409203825
 mas "Okta Extension App", id: 1439967473
 mas "OmniFocus", id: 1346203938
 mas "Pages", id: 409201541
+mas "Reeder", id: 1529448980
 mas "Slack", id: 803453959
 mas "Spark", id: 1176895641
 mas "Tadam", id: 531349534

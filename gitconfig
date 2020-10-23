@@ -3,8 +3,8 @@
 [alias]
   co = checkout
   ctags = !.git/hooks/ctags
-  dc = diff --cached --word-diff=color
-  di = diff --word-diff=color
+  dc = diff --cached
+  di = diff
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green) %an, %ar%Creset'
   st = status
   unstage = reset -- 
@@ -15,6 +15,7 @@
 [branch]
   autoSetupMerge = true
 [core]
+  attributesfile = ~/.gitattributes
   excludesfile = ~/.gitignore
   editor = vim
   trustctime = false

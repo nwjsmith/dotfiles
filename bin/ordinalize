@@ -1,0 +1,22 @@
+#!/bin/bash
+set -euo pipefail
+awk '{
+  number=$1
+  if ((11 <= (number % 100) && (number % 100) <= 13))  {
+    printf "%dth\n", number
+  } else {
+    switch (number % 10) {
+    case 1:
+      printf "%dst\n", number
+      break
+    case 2:
+      printf "%dnd\n", number
+      break
+    case 3:
+      printf "%drd\n", number
+      break
+    default:
+      printf "%dth\n", number
+    }
+  }
+}'

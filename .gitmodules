@@ -139,3 +139,6 @@
 [submodule "vim/pack/nwjsmith/start/vim-jsx-pretty"]
 	path = vim/pack/nwjsmith/start/vim-jsx-pretty
 	url = https://github.com/MaxMEllon/vim-jsx-pretty.git
+[submodule "vim/pack/nwjsmith/start/alloy.vim"]
+	path = vim/pack/nwjsmith/start/alloy.vim
+	url = https://github.com/whybin/alloy.vim

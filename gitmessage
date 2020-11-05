@@ -10,3 +10,8 @@
 #
 # Write in the imperative, as if this were a request. e.g. "Fix bug" not
 # "Fixed bug" or "Fixes bug".
+#
+# Add co-authors if you worked on this code with others:
+#
+# Co-authored-by: Full Name <email@example.com>
+# Co-authored-by: Full Name <email@example.com>

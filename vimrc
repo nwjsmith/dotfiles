@@ -79,9 +79,6 @@ let mapleader=','
 " Allow the mouse in every mode
 set mouse=a
 
-" Y should behave like C and D in normal mode
-nnoremap Y y$
-
 " Make Ctrl-C behave the same as Escape
 imap <C-c> <ESC>
 
@@ -89,9 +86,6 @@ nnoremap <silent> <leader>, :TestNearest<CR>
 nnoremap <silent> <leader>t :TestFile<CR>
 nnoremap <silent> <leader>f :TestSuite<CR>
 let g:test#strategy = 'dispatch'
-
-" Do not open quickfix window if there are no Flow errors
-let g:flow#autoclose = 1
 
 " Use system clipboard
 set clipboard=unnamed

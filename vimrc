@@ -27,9 +27,7 @@ set winheight=999
 set linebreak
 
 " No lines longer than 80 characters, old man
-if exists('+colorcolumn')
-  set colorcolumn=81
-endif
+set colorcolumn=81
 
 " Turn off folding
 set foldmethod=manual
@@ -79,12 +77,8 @@ let mapleader=','
 " Allow the mouse in every mode
 set mouse=a
 
-" Make Ctrl-C behave the same as Escape
-imap <C-c> <ESC>
-
-nnoremap <silent> <leader>, :TestNearest<CR>
-nnoremap <silent> <leader>t :TestFile<CR>
-nnoremap <silent> <leader>f :TestSuite<CR>
+" Use Enter as your test key
+nnoremap <silent> <CR> :TestFile<CR>
 let g:test#strategy = 'dispatch'
 
 " Use system clipboard
@@ -92,26 +86,6 @@ set clipboard=unnamed
 
 " Format shell scripts on save with spaces
 let g:shfmt_extra_args='-i 2'
-
-augroup vimrc
-  " Absolute line numbers in insert mode
-  autocmd InsertEnter * :set number norelativenumber
-  autocmd InsertLeave * :set number relativenumber
-  autocmd WinEnter * :set number relativenumber
-  autocmd WinLeave * :set number norelativenumber
-
-  " Restore last location in file
-  autocmd BufReadPost *
-    \ if &ft != 'gitcommit' && line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-
-  " Strip whitespace on save
-  autocmd BufWritePre *.{rb,py,js,hs,c,h,haml,erb,rake,txt} :%s/\s\+$//e
-
-  " Force markdown on *.md
-  autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-augroup END
 
 " Keep private things in .vimrc.local
 if filereadable($HOME . '/.vimrc.local')

@@ -85,7 +85,6 @@ nnoremap Y y$
 " Make Ctrl-C behave the same as Escape
 imap <C-c> <ESC>
 
-" Use Enter as your test key
 nnoremap <silent> <leader>, :TestNearest<CR>
 nnoremap <silent> <leader>t :TestFile<CR>
 nnoremap <silent> <leader>f :TestSuite<CR>

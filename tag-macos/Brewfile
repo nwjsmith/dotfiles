@@ -1,7 +1,5 @@
 # vim: set ft=ruby
 
-cask_args appdir: "/Applications"
-
 tap "borkdude/brew"
 tap "github/gh"
 tap "heroku/brew"
@@ -41,7 +39,6 @@ brew "gist"
 brew "git"
 brew "git-absorb"
 brew "git-lfs"
-brew "glpk"
 brew "gnupg"
 brew "gpgme"
 brew "go"
@@ -101,12 +98,12 @@ brew "zsh-completions"
 brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
 
+cask_args appdir: "/Applications"
+
 cask "1password"
 cask "1password-cli"
 cask "alacritty"
-cask "alfred"
 cask "alloy"
-cask "amazon-workspaces"
 cask "anaconda"
 cask "android-studio"
 cask "anylist"
@@ -133,7 +130,6 @@ cask "google-hangouts"
 cask "grammarly"
 cask "hey"
 cask "imageoptim"
-cask "insomnia"
 cask "intellij-idea"
 cask "kindle"
 cask "lunar"
@@ -150,7 +146,7 @@ cask "qlvideo"
 cask "quicklookase"
 cask "quip"
 cask "rectangle"
-cask "servo"
+cask "screenflow"
 cask "signal"
 cask "slack"
 cask "sonos"
@@ -173,18 +169,16 @@ cask "zoomus"
 cask "zsa-wally"
 
 mas "1Blocker", id: 1107421413
-mas "Amphetamine", id: 937984704
 mas "Bear", id: 1091189122
 mas "DaisyDisk", id: 411643860
 mas "Day One", id: 1055511498
 mas "Deliveries", id: 924726344
-mas "Disk Care", id: 913724705
 mas "Fantastical", id: 975937182
+mas "Instapaper", id: 288545208
 mas "Keynote", id: 409183694
 mas "Marked 2", id: 890031187
 mas "Numbers", id: 409203825
 mas "Okta Extension App", id: 1439967473
-mas "OmniFocus", id: 1346203938
 mas "Pages", id: 409201541
 mas "Reeder", id: 1529448980
 mas "Slack", id: 803453959

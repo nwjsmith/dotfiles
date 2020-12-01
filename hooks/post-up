@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-set -euo pipefail
-
-vim -E -s <<-EOF
-:helptags ALL
-:qall
-EOF

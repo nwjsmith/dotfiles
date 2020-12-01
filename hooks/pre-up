@@ -1,6 +1,0 @@
-#!/bin/bash
-set -e
-
-cd "${HOME}/.dotfiles"
-git submodule init
-git submodule update

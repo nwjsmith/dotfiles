@@ -1,5 +1,6 @@
 " Live in the present
 set nocompatible
+set termguicolors
 
 " Relative line numbers in normal mode
 set number relativenumber
@@ -12,10 +13,10 @@ set numberwidth=4
 
 " Solarized is nice
 set background=light
-colorscheme solarized
+colorscheme solarized8
 
-" Show path, filetype, modified on right, line and column on left
-set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%)
+set noshowmode
+let g:lightline={'colorscheme':'solarized'}
 
 " Show trailing whitespace
 set list

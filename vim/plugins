@@ -1,6 +1,5 @@
 ElmCast/elm-vim
 MaxMEllon/vim-jsx-pretty
-altercation/vim-colors-solarized
 cespare/vim-toml
 ctrlpvim/ctrlp.vim
 dag/vim-fish
@@ -12,10 +11,12 @@ guns/vim-clojure-static
 guns/vim-sexp
 hwayne/tla.vim
 idris-hackers/idris-vim
+itchyny/lightline.vim
 itspriddle/vim-shellcheck
 janko-m/vim-test
 jparise/vim-graphql
 leafgarland/typescript-vim
+lifepillar/vim-solarized8
 mitsuhiko/vim-jinja
 mxw/vim-jsx
 ngmy/vim-rubocop

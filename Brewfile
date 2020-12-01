@@ -74,10 +74,7 @@ brew "wget"
 brew "yarn"
 brew "youtube-dl"
 brew "zsh"
-brew "zsh-autosuggestions"
-brew "zsh-completions"
-brew "zsh-history-substring-search"
-brew "zsh-syntax-highlighting"
+brew "zplug"
 
 cask_args appdir: "/Applications"
 

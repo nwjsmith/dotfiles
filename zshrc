@@ -1,15 +1,15 @@
 # Calculate once
 export BREW_PREFIX="$(brew --prefix)"
 
-# Plugins
-source "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "${BREW_PREFIX}/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
-source "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+export ZPLUG_HOME="${BREW_PREFIX}/opt/zplug"
+source "${ZPLUG_HOME}/init.zsh"
 
-# Completions
-FPATH="${BREW_PREFIX}/share/zsh-completions:$FPATH"
-autoload -Uz compinit
-compinit
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search", defer:2
+
+zplug load
 
 for configuration in ${HOME}/.zsh/**/*.zsh; do
   source "${configuration}"

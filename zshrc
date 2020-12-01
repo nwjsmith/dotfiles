@@ -1,5 +1,4 @@
-# Calculate once
-export BREW_PREFIX="$(brew --prefix)"
+export BREW_PREFIX="$(cd "${$(which brew)%/*/*}" && pwd -P)"
 
 export ZPLUG_HOME="${BREW_PREFIX}/opt/zplug"
 source "${ZPLUG_HOME}/init.zsh"

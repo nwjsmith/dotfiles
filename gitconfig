@@ -5,28 +5,35 @@
   ctags = !.git/hooks/ctags
   dc = diff --cached
   di = diff
+  fix = commit --amend --no-edit
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(green) %an, %ar%Creset'
   st = status
   unstage = reset -- 
   yolo = push --force-with-lease
-  push-each = !git rev-list HEAD...master | xargs -n1 -I{} git push origin {}:$(git symbolic-ref HEAD)-{}
-  clean-each = !git ls-remote --quiet --heads origin $(git symbolic-ref HEAD)-* | cut -f2 | xargs -n1 -I{} git push origin :{}
-  fix = commit --amend --no-edit
-[branch]
-  autoSetupMerge = true
+[color]
+  ui = auto
+[commit]
+  gpgsign = true
+  template = ~/.gitmessage
 [core]
   attributesfile = ~/.gitattributes
   excludesfile = ~/.gitignore
-  editor = vim
-  trustctime = false
 [credential]
   helper = osxkeychain
-[push]
-  default = current
-[pull]
-  rebase = true
-[color]
-  ui = true
+[fetch]
+  prune = true
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  process = git-lfs filter-process
+  required = true
+  smudge = git-lfs smudge -- %f
+[github]
+  user = nwjsmith
+[include]
+  path = ~/.gitconfig.local
+[init]
+  defaultBranch = main
+  templateDir = ~/.git-template
 [mergetool "fugitive"]
   cmd = vim --nofork -c \"Gdiff\" \"$MERGED\"
 [merge]
@@ -34,23 +41,13 @@
   tool = fugitive
 [mergetool]
   keepBackup = false
-[include]
-  path = ~/.gitconfig.local
-[init]
-  templateDir = ~/.git-template
-[commit]
-  gpgsign = true
-  template = ~/.gitmessage
-  verbose = true
+[push]
+  default = current
+[pull]
+  rebase = true
+[rebase]
+  autoSquash = true
+  autoStash = true
 [user]
   email = nwjsmith@gmail.com
   name = Nate Smith
-[filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
-[rebase]
-  autoStash = true
-[github]
-  user = nwjsmith

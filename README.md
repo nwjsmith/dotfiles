@@ -7,5 +7,8 @@ These are my dotfiles.
 ```
 $ git clone https://github.com/nwjsmith/dotfiles ~/.dotfiles
 $ cd ~/.dotfiles
-$ RCRC="rcrc" rcup
+$ EXCLUDES="README.md" rcup
 ```
+
+I highly recommend creating a `~/.rcrc` file with at least
+`EXCLUDES="README.md"` in it.

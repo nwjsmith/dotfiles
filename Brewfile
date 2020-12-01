@@ -9,7 +9,6 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "InstantClientTap/instantclient"
 tap "thoughtbot/formulae"
 tap "universal-ctags/universal-ctags"
 
@@ -22,39 +21,23 @@ brew "bash"
 brew "bash-completion"
 brew "bison"
 brew "borkdude/brew/clj-kondo"
-brew "circleci"
 brew "clojure"
 brew "cmake"
-brew "comby"
 brew "coreutils"
 brew "cowsay"
-brew "dive"
-brew "docker-credential-helper-ecr"
 brew "ffmpeg"
 brew "fish"
 brew "gawk"
 brew "gdbm"
-brew "gh"
-brew "gimme-aws-creds"
 brew "gist"
 brew "git"
 brew "git-absorb"
 brew "git-lfs"
 brew "gnupg"
-brew "gpgme"
-brew "go"
-brew "graphviz"
-brew "hadolint"
 brew "heroku"
 brew "heroku/brew/heroku-node"
-brew "imagemagick"
-brew "imagemagick@6"
-brew "instantclient-basic"
-brew "instantclient-sdk"
 brew "ispell"
 brew "jq"
-brew "kafka"
-brew "kotlin"
 brew "leiningen"
 brew "libffi"
 brew "libxml2"
@@ -78,12 +61,10 @@ brew "ripgrep"
 brew "rtmpdump"
 brew "rustup"
 brew "scc"
-brew "shellcheck"
 brew "shfmt"
 brew "starship"
 brew "terraform"
 brew "thoughtbot/formulae/rcm"
-brew "tmate"
 brew "tmux"
 brew "tree"
 brew "universal-ctags", args: %w(HEAD)
@@ -141,7 +122,6 @@ cask "obs"
 cask "obs-virtualcam"
 cask "obsidian"
 cask "plex-media-server"
-cask "pritunl"
 cask "qlcolorcode"
 cask "qlimagesize"
 cask "qlvideo"
@@ -167,7 +147,6 @@ cask "virtualbox"
 cask "visual-studio-code"
 cask "visualvm"
 cask "vlc"
-cask "zoomus"
 cask "zsa-wally"
 
 mas "1Blocker", id: 1107421413
@@ -179,7 +158,6 @@ mas "Instapaper", id: 288545208
 mas "Keynote", id: 409183694
 mas "Marked 2", id: 890031187
 mas "Numbers", id: 409203825
-mas "Okta Extension App", id: 1439967473
 mas "Pages", id: 409201541
 mas "Reeder", id: 1529448980
 mas "Slack", id: 803453959
@@ -188,3 +166,6 @@ mas "Tadam", id: 531349534
 mas "Things", id: 904280696
 mas "Xcode", id: 497799835
 mas "iA Writer", id: 775737590
+
+host_brews = File.expand_path(".Brewfile.host", __dir__)
+instance_eval(File.read(host_brews), host_brews) if File.exist?(host_brews)

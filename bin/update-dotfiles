@@ -12,10 +12,8 @@ if ! ${GIT} diff --shortstat --exit-code -- vim/pack/nwjsmith/start; then
   ${GIT} commit -m "Update Vim pack"
 fi
 
-# Run platform-specific updates
-if [ -f "${HOME}/.bin/update-dotfiles.platform" ]; then
-  # shellcheck source=tag-macos/bin/update-dotfiles.platform
-  . "${HOME}/.bin/update-dotfiles.platform"
-else
-  echo "You forgot to link the platform-specific files, 'rcup -t \$PLATFORM'"
-fi
+brew update
+brew upgrade
+brew bundle --global
+brew upgrade --cask
+brew cleanup

@@ -57,12 +57,34 @@ set -o vi
 # Always a pain to type
 alias be="bundle exec"
 
-# Platform-specific bash configuration
-if [ -f "${HOME}/.bashrc.platform" ]; then
-  . "${HOME}/.bashrc.platform"
-else
-  echo "You forgot to link the platform-specific files, 'rcup -t \$PLATFORM'"
+# Calculate once
+BREW_PREFIX="$(brew --prefix)"
+
+# Autocomplete Bash commands
+if [ -f ${BREW_PREFIX}/etc/bash_completion ]; then
+  . ${BREW_PREFIX}/etc/bash_completion
 fi
+
+if type brew 2 &>/dev/null; then
+  for completion_file in ${BREW_PREFIX}/etc/bash_completion.d/*; do
+    source "${completion_file}"
+  done
+fi
+
+complete -C /usr/local/bin/vault vault
+
+# Use the GNU versions of everything
+export PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH}"
+export MANPATH="${BREW_PREFIX}/opt/coreutils/libexec/gnuman:${MANPATH}"
+
+# Heroku toolbelt
+export PATH="${BREW_PREFIX}/opt/heroku/bin:${PATH}"
+
+# asdf-vm for managing language versions
+. "${BREW_PREFIX}/opt/asdf/asdf.sh"
+
+# Trust safe repositories
+export PATH=".git/safe/../../bin:${PATH}"
 
 # Keep private things in ~/.bashrc.local
 if [ -f "${HOME}/.bashrc.local" ]; then

@@ -19,6 +19,8 @@
   excludesfile = ~/.gitignore
   editor = vim
   trustctime = false
+[credential]
+  helper = osxkeychain
 [push]
   default = current
 [pull]
@@ -33,7 +35,6 @@
 [mergetool]
   keepBackup = false
 [include]
-  path = ~/.gitconfig.platform
   path = ~/.gitconfig.local
 [init]
   templateDir = ~/.git-template

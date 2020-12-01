@@ -20,8 +20,26 @@ export EDITOR="${VISUAL}"
 # Trust safe repositories
 export PATH=".git/safe/../../bin:${PATH}"
 
-if [ -f "${HOME}/.zshrc.platform" ]; then
-  source "${HOME}/.zshrc.platform"
-else
-  echo "You forgot to link the platform-specific files, 'rcup -t \$PLATFORM'"
-fi
+# Calculate once
+BREW_PREFIX="$(brew --prefix)"
+
+# Use the GNU versions of everything
+export PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH}"
+export MANPATH="${BREW_PREFIX}/opt/coreutils/libexec/gnuman:${MANPATH}"
+
+# Heroku toolbelt
+export PATH="${BREW_PREFIX}/opt/heroku/bin:${PATH}"
+
+# asdf-vm for managing language versions
+. "${BREW_PREFIX}/opt/asdf/asdf.sh"
+
+# Plugins
+source "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "${BREW_PREFIX}/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
+source "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+# Completions
+FPATH="${BREW_PREFIX}/share/zsh-completions:$FPATH"
+autoload -Uz compinit
+compinit
+

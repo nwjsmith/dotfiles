@@ -6,3 +6,8 @@ if [ ! -d "${HOME}/.tmux/plugins/tpm/.git" ]; then
     "${HOME}/.tmux/plugins/tpm"
   ${HOME}/.tmux/plugins/tpm/bin/install_plugins
 fi
+
+if ! infocmp xterm-truecolor-italic 2>/dev/null; then
+  tic -x -o "${HOME}/.terminfo" \
+    "${HOME}/.config/terminfo/xterm-truecolor-italic.terminfo"
+fi

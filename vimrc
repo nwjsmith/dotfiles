@@ -1,3 +1,6 @@
+" Live in the present
+set nocompatible
+
 " Relative line numbers in normal mode
 set number relativenumber
 
@@ -71,14 +74,14 @@ if executable('rg')
   let g:ctrlp_use_caching = 0
 endif
 
-" ',' key is easier to reach than the default '\'
-let mapleader=','
+" Key is easier to reach than the default '\'
+let mapleader=' '
 
 " Allow the mouse in every mode
 set mouse=a
 
 " Use Enter as your test key
-nnoremap <silent> <CR> :TestFile<CR>
+nnoremap <silent> <Leader> :TestFile<CR>
 let g:test#strategy = 'dispatch'
 
 " Use system clipboard

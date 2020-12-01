@@ -4,13 +4,7 @@ set -euo pipefail
 
 GIT="git -C ${HOME}/.dotfiles"
 
-# Update Vim
-${GIT} submodule update --remote --merge -- vim/pack/nwjsmith/start
-
-if ! ${GIT} diff --shortstat --exit-code -- vim/pack/nwjsmith/start; then
-  ${GIT} add vim/pack/nwjsmith/start
-  ${GIT} commit -m "Update Vim pack"
-fi
+voom
 
 brew update
 brew upgrade

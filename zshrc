@@ -1,4 +1,4 @@
-source "${HOME}/.zsh/brew_prefix.zsh"
+source "${HOME}/.zsh/brew-prefix.zsh"
 
 export ZPLUG_HOME="${BREW_PREFIX}/opt/zplug"
 source "${ZPLUG_HOME}/init.zsh"

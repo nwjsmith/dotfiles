@@ -1,0 +1,24 @@
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+
+brew "asdf"
+brew "git", args: %w(build-from-source)
+brew "multimarkdown", args: %w(build-from-source)
+brew "openssl", args: %w(build-from-source)
+brew "rcm"
+brew "readline", args: %w(build-from-source)
+brew "reattach-to-user-namespace", args: %w(build-from-source)
+brew "rust", args: %w(build-from-source HEAD)
+brew "starship", args: %w(build-from-source HEAD)
+brew "sqlite3", args: %w(build-from-source)
+brew "tmux", args: %w(build-from-source)
+brew "tree", args: %w(build-from-source)
+brew "vim", args: %w(build-from-source)
+brew "zplug"
+brew "zsh", args: %w(build-from-source)
+
+cask "bartender"
+cask "hey"
+cask "iterm2"
+cask "font-cascadia-code-pl"
+cask "rectangle"

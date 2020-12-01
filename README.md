@@ -1,6 +1,10 @@
 # dotfiles
 
-These are my dotfiles.
+These are my dotfiles. They work on both Intel and ARM Macs.
+
+## Pre-requisites
+
+macOS with Homebrew installed.
 
 ## Installation
 

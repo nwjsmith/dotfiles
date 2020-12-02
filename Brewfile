@@ -1,5 +1,6 @@
 # vim: set ft=ruby
 
+tap "d12frosted/emacs-plus"
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "homebrew/cask"

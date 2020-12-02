@@ -2,13 +2,18 @@
 set -e
 
 if [ ! -d "${HOME}/.tmux/plugins/tpm/.git" ]; then
-  git clone --depth 1 https://github.com/tmux-plugins/tpm \
+  git clone --depth 1 https://github.com/tmux-plugins/tpm.git \
     "${HOME}/.tmux/plugins/tpm"
-  ${HOME}/.tmux/plugins/tpm/bin/install_plugins
+  "${HOME}"/.tmux/plugins/tpm/bin/install_plugins
 fi
 
 if ! infocmp xterm-truecolor-italic 1>/dev/null 2>&1; then
   mkdir "${HOME}/.terminfo"
   tic -x -o "${HOME}/.terminfo" \
     "${HOME}/.config/terminfo/xterm-truecolor-italic.terminfo"
+fi
+
+if [ ! -d "${HOME}/.emacs.d/.git" ]; then
+  git clone --depth 1 https://github.com/hlissner/doom-emacs.git \
+    "${HOME}/.emacs.d"
 fi

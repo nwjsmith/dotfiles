@@ -1,5 +1,8 @@
 source "${HOME}/.zsh/brew-prefix.zsh"
 
+PATH="${BREW_PREFIX}/bin:${BREW_PREFIX}/sbin:${PATH}"
+export -U PATH
+
 export ZPLUG_HOME="${BREW_PREFIX}/opt/zplug"
 source "${ZPLUG_HOME}/init.zsh"
 

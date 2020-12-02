@@ -6,6 +6,13 @@ These are my dotfiles. They work on both Intel and ARM Macs.
 
 macOS with Homebrew installed.
 
+On ARM, you'll need to install [rustup] along with a beta Rust toolchain, then:
+
+```
+$ cargo install starship --git https://github.com/starship/starship.git
+$ cargo install git-absorb fd-find ripgrep topgrade
+```
+
 ## Installation
 
 ```

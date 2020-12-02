@@ -3,14 +3,11 @@ tap "homebrew/cask-versions"
 
 brew "asdf", args: %w(build-from-source)
 brew "git", args: %w(build-from-source)
-brew "multimarkdown", args: %w(build-from-source)
 brew "openssl", args: %w(build-from-source)
 brew "oniguruma", args: %w(build-from-source)
 brew "python", args: %w(build-from-source)
 brew "readline", args: %w(build-from-source)
 brew "reattach-to-user-namespace", args: %w(build-from-source)
-brew "rust", args: %w(build-from-source HEAD)
-brew "starship", args: %w(build-from-source HEAD)
 brew "sqlite3", args: %w(build-from-source)
 brew "tmux", args: %w(build-from-source)
 brew "tree", args: %w(build-from-source)
@@ -19,3 +16,4 @@ brew "zsh", args: %w(build-from-source)
 
 cask "1password-beta"
 cask "slack-beta"
+cask "gpg-suite-no-mail"

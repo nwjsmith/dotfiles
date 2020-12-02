@@ -1,0 +1,19 @@
+add_newline = false
+
+[aws]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[java]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[python]
+disabled = true
+
+[ruby]
+disabled = true

@@ -28,6 +28,8 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-solarized-light)
 
+(setq +doom-dashboard-banner-file "~/.doom.d/doom.svg")
+
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Library/Mobile Documents/com~apple~CloudDocs/Org")

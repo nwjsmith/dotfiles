@@ -33,6 +33,11 @@
 (setq org-directory "~/Library/Mobile Documents/com~apple~CloudDocs/Org")
 (setq org-roam-directory (concat org-directory "/Roam"))
 
+(after! org-pomodoro
+  (setq org-pomodoro-length 30)
+  (setq org-pomodoro-short-break-length 5)
+  (setq org-pomodoro-long-break-frequency 8))
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)

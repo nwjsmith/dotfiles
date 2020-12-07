@@ -20,6 +20,12 @@ the Rust formula in Homebrew to include ninja.
 depends_on "ninja" => :build
 ```
 
+Download the Zulu JDK for macOS/ARM64 and then link it into Homebrew:
+
+```
+$ ln -s /Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home /opt/homebrew/opt/openjdk
+```
+
 ## Installation
 
 ```

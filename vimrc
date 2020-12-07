@@ -13,10 +13,10 @@ set numberwidth=4
 
 " Solarized is nice
 set background=light
-colorscheme solarized8
+colorscheme gruvbox
 
 set noshowmode
-let g:lightline={'colorscheme':'solarized'}
+let g:lightline={'colorscheme':'gruvbox'}
 
 " Show trailing whitespace
 set list

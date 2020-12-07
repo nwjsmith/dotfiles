@@ -18,6 +18,6 @@ brew "tmate"
 
 cask "microsoft-edge"
 cask "pritunl"
-cask "zoomus"
+cask "zoom"
 
 mas "Okta Extension App", id: 1439967473

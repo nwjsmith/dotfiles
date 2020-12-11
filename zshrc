@@ -6,6 +6,7 @@ export -U PATH
 export ZPLUG_HOME="${BREW_PREFIX}/opt/zplug"
 source "${ZPLUG_HOME}/init.zsh"
 
+zplug "rupa/z", use:z.sh
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2

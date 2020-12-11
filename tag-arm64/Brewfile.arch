@@ -1,21 +1,13 @@
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
 
-brew "asdf", args: %w(build-from-source)
+brew "rust", args: %w(build-from-source HEAD fetch-HEAD)
 brew "emacs-plus@27", args: %w(build-from-source)
-brew "git", args: %w(build-from-source)
 brew "multimarkdown", args: %w(build-from-source)
-brew "openssl", args: %w(build-from-source)
 brew "oniguruma", args: %w(build-from-source)
-brew "python", args: %w(build-from-source)
-brew "readline", args: %w(build-from-source)
 brew "reattach-to-user-namespace", args: %w(build-from-source)
-brew "sqlite3", args: %w(build-from-source)
-brew "rust", args: %w(build-from-source HEAD --fetch-HEAD)
 brew "tmux", args: %w(build-from-source)
 brew "tree", args: %w(build-from-source)
-brew "vim", args: %w(build-from-source)
-brew "zsh", args: %w(build-from-source)
 
 brew "rlwrap", args: %w(build-from-source)
 brew "clojure", args: %w(ignore-dependencies)

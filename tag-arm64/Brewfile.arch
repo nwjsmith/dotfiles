@@ -3,6 +3,9 @@ tap "homebrew/cask-versions"
 
 brew "rust", args: %w(build-from-source HEAD fetch-HEAD)
 brew "emacs-plus@27", args: %w(build-from-source)
+
+brew "gnupg", args: %w(build-from-source)
+brew "pinentry-mac", args: %w(build-from-source)
 brew "multimarkdown", args: %w(build-from-source)
 brew "oniguruma", args: %w(build-from-source)
 brew "reattach-to-user-namespace", args: %w(build-from-source)
@@ -15,4 +18,3 @@ brew "maven", args: %w(ignore-dependencies)
 
 cask "1password-beta"
 cask "slack-beta"
-cask "gpg-suite-no-mail"

@@ -14,3 +14,6 @@
   (setq org-pomodoro-length 30
         org-pomodoro-short-break-length 5
         org-pomodoro-long-break-frequency 8))
+
+(after! vterm
+  (setq vterm-term-environment-variable "eterm-color"))

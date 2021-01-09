@@ -7,7 +7,9 @@
 
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
-;(package! some-package)
+(package! org-roam-bibtex :pin "9ba150")
+(unpin! org-roam company-org-roam)
+(unpin! bibtex-completion ivy-bibtex)
 
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:

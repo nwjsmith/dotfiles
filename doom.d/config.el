@@ -8,7 +8,12 @@
       +doom-dashboard-banner-file "~/.doom.d/doom.png"
       auth-sources '("~/.netrc")
       org-directory "~/Library/Mobile Documents/com~apple~CloudDocs/Org"
-      org-roam-directory (concat org-directory "/Roam"))
+      org-roam-directory (concat org-directory "/Roam")
+      bibtex-completion-bibliography (concat org-directory "/bibliography.bib"))
+
+(use-package! org-roam-bibtex
+  :after org-roam
+  :hook (org-roam-mode . org-roam-bibtex-mode))
 
 (after! org-pomodoro
   (setq org-pomodoro-length 30

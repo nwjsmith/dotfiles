@@ -7,6 +7,7 @@
       doom-theme 'doom-gruvbox-light
       +doom-dashboard-banner-file "~/.doom.d/doom.png"
       auth-sources '("~/.netrc")
+      orb-insert-interface 'ivy-bibtex
       org-directory "~/Library/Mobile Documents/com~apple~CloudDocs/Org"
       org-roam-directory (concat org-directory "/Roam")
       bibtex-completion-bibliography (concat org-directory "/bibliography.bib"))

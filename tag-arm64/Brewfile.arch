@@ -1,18 +1,6 @@
 tap "homebrew/cask"
-tap "homebrew/cask-versions"
 
 brew "emacs-plus@27", args: %w(build-from-source)
 
-brew "pinentry-mac", args: %w(build-from-source)
-brew "multimarkdown", args: %w(build-from-source)
-brew "oniguruma", args: %w(build-from-source)
-brew "reattach-to-user-namespace", args: %w(build-from-source)
-brew "tree", args: %w(build-from-source)
-
-brew "rlwrap", args: %w(build-from-source)
 brew "clojure", args: %w(ignore-dependencies)
 brew "maven", args: %w(ignore-dependencies)
-brew "languagetool", args: %w(ignore-dependencies)
-
-cask "1password-beta"
-cask "slack-beta"

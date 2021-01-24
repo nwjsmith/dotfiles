@@ -7,7 +7,8 @@
 
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
-(package! org-roam-bibtex :pin "9ba150")
+(package! org-roam-bibtex
+  :recipe (:host github :repo "org-roam/org-roam-bibtex"))
 (unpin! org-roam company-org-roam)
 (unpin! bibtex-completion helm-bibtex ivy-bibtex)
 

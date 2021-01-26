@@ -3,16 +3,15 @@ source "${HOME}/.zsh/brew-prefix.zsh"
 PATH="${BREW_PREFIX}/bin:${BREW_PREFIX}/sbin:${PATH}"
 export -U PATH
 
-export ZPLUG_HOME="${BREW_PREFIX}/opt/zplug"
-source "${ZPLUG_HOME}/init.zsh"
+source "${BREW_PREFIX}/share/antigen/antigen.zsh"
 
-zplug "rupa/z", use:z.sh
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:2
+antigen bundle "rupa/z"
+antigen bundle "zsh-users/zsh-autosuggestions"
+antigen bundle "zsh-users/zsh-completions"
+antigen bundle "zsh-users/zsh-syntax-highlighting"
+antigen bundle "zsh-users/zsh-history-substring-search"
 
-zplug load
+antigen apply
 
 for configuration in ${HOME}/.zsh/**/*.zsh; do
   source "${configuration}"

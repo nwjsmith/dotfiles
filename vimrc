@@ -63,17 +63,11 @@ set smartcase
 " Completion with proper casing
 set infercase
 
-" Use the ripgrep if available
-if executable('rg')
-  " Use rg instead of grep
-  set grepprg=rg\ --column\ --color=never
+" Use rg instead of grep
+set grepprg=rg\ --column\ --color=never
 
-  " Use rg for ctrlp for listing files
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-
-  " rg is fast enough that we don't need caching
-  let g:ctrlp_use_caching = 0
-endif
+" Use fzf for fuzzy-find
+map <C-p> :Files<CR>
 
 " Key is easier to reach than the default '\'
 let mapleader=' '

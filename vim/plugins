@@ -1,7 +1,8 @@
+junegunn/fzf
+junegunn/fzf.vim
 ElmCast/elm-vim
 MaxMEllon/vim-jsx-pretty
 cespare/vim-toml
-ctrlpvim/ctrlp.vim
 dag/vim-fish
 dleonard0/pony-vim-syntax
 elixir-lang/vim-elixir

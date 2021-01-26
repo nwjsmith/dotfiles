@@ -6,6 +6,7 @@ dleonard0/pony-vim-syntax
 elixir-lang/vim-elixir
 fatih/vim-go
 flowtype/vim-flow
+gruvbox-community/gruvbox
 guns/vim-clojure-static
 guns/vim-sexp
 hwayne/tla.vim
@@ -19,7 +20,6 @@ junegunn/fzf.vim
 leafgarland/typescript-vim
 lifepillar/vim-solarized8
 mitsuhiko/vim-jinja
-morhetz/gruvbox
 mxw/vim-jsx
 ngmy/vim-rubocop
 pangloss/vim-javascript

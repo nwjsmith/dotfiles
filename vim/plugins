@@ -1,5 +1,3 @@
-junegunn/fzf
-junegunn/fzf.vim
 ElmCast/elm-vim
 MaxMEllon/vim-jsx-pretty
 cespare/vim-toml
@@ -16,6 +14,8 @@ itchyny/lightline.vim
 itspriddle/vim-shellcheck
 janko-m/vim-test
 jparise/vim-graphql
+junegunn/fzf
+junegunn/fzf.vim
 leafgarland/typescript-vim
 lifepillar/vim-solarized8
 mitsuhiko/vim-jinja

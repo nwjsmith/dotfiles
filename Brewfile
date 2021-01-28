@@ -1,6 +1,7 @@
 # vim: set ft=ruby
 
 tap "d12frosted/emacs-plus"
+tap "clojure/tools"
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "homebrew/cask"
@@ -23,6 +24,7 @@ brew "antigen"
 brew "asdf"
 brew "fd"
 brew "fzf"
+brew "clojure/tools/clojure"
 brew "cmake"
 brew "git"
 brew "git-absorb"

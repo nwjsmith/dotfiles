@@ -1,3 +1,5 @@
+# vim: set ft=ruby
+
 tap "borkdude/brew"
 tap "github/gh"
 tap "heroku/brew"

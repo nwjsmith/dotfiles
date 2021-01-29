@@ -3,6 +3,8 @@ source "${HOME}/.zsh/brew-prefix.zsh"
 PATH="${BREW_PREFIX}/bin:${BREW_PREFIX}/sbin:${PATH}"
 export -U PATH
 
+FPATH="${BREW_PREFIX}/share/zsh/site-functions:${FPATH}"
+
 source "${BREW_PREFIX}/share/antigen/antigen.zsh"
 
 antigen bundle "rupa/z"

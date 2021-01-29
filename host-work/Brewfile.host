@@ -14,9 +14,7 @@ brew "instantclient-basic"
 brew "instantclient-sdk"
 brew "kafka"
 brew "kotlin"
-brew "tmate"
 
-cask "microsoft-edge"
 cask "pritunl"
 cask "zoom"
 

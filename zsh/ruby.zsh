@@ -1,0 +1,1 @@
+export RUBY_CONFIGURE_OPTS="--with-zlib-dir=${BREW_PREFIX}/opt/zlib --with-openssl-dir=${BREW_PREFIX}/opt/openssl@1.1 --with-readline-dir=${BREW_PREFIX}/opt/readline --with-libyaml-dir=${BREW_PREFIX}/opt/libyaml"

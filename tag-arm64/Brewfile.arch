@@ -1,7 +1,2 @@
 # vim: set ft=ruby
 
-tap "homebrew/cask"
-
-brew "emacs-plus@27", args: %w(build-from-source)
-
-brew "maven", args: %w(ignore-dependencies)

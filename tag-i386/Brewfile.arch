@@ -1,83 +1,12 @@
 # vim: set ft=ruby
 
 tap "borkdude/brew"
-tap "heroku/brew"
 
-brew "automake"
-brew "bison"
 brew "borkdude/brew/clj-kondo"
-brew "cmake"
-brew "emacs-plus"
-brew "gdbm"
-brew "git-lfs"
-brew "heroku"
-brew "heroku/brew/heroku-node"
-brew "ispell"
-brew "libffi"
-brew "libxml2"
-brew "libyaml"
-brew "lua"
-brew "mas"
-brew "maven"
-brew "pandoc"
-brew "pkg-config"
-brew "pv"
-brew "rtmpdump"
-brew "scc"
-brew "shellcheck"
-brew "terraform"
-brew "vault"
 
-cask "1password"
-cask "alacritty"
-cask "alloy"
-cask "appcleaner"
-cask "atom"
-cask "basictex"
-cask "colorpicker-skalacolor"
-cask "dash"
-cask "docker"
-cask "dropbox"
-cask "dynamodb-local"
-cask "google-chrome"
-cask "imageoptim"
-cask "kindle"
-cask "lunar"
-cask "obs"
-cask "obs-virtualcam"
-cask "obsidian"
-cask "plex-media-server"
-cask "quip"
-cask "signal"
-cask "slack"
-cask "soulver"
-cask "steam"
-cask "sweet-home3d"
-cask "tla-plus-toolbox"
-cask "thingsmacsandboxhelper"
-cask "the-unarchiver"
-cask "transmission"
-cask "tweetbot"
-cask "vagrant"
-cask "virtualbox"
-cask "visual-studio-code"
-cask "visualvm"
-cask "zsa-wally"
+brew "pandoc" # Move to common Brewfile once GHC is ARM-compatible
+brew "scc" # Move to common after the Go 1.6 release
+brew "shellcheck" # Move to common Brewfile once GHC is ARM-compatible
 
-mas "1Blocker", id: 1107421413
-mas "Bear", id: 1091189122
-mas "DaisyDisk", id: 411643860
-mas "Deliveries", id: 924726344
-mas "Fantastical", id: 975937182
-mas "Instapaper", id: 288545208
-mas "Keynote", id: 409183694
-mas "Marked 2", id: 890031187
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Reeder", id: 1529448980
-mas "Slack", id: 803453959
-mas "Spark", id: 1176895641
-mas "Tadam", id: 531349534
-mas "Things", id: 904280696
-mas "Xcode", id: 497799835
-mas "iA Writer", id: 775737590
+cask "docker" # Move to common once out of preview
+cask "dropbox" # Get off of Dropbox, it's become terrible

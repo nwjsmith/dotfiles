@@ -18,12 +18,10 @@ brew "kotlin"
 cask "appcleaner"
 cask "dash"
 cask "dynamodb-local"
-cask "google-chrome"
 cask "lunar"
 cask "pritunl"
 cask "vagrant"
 cask "quip"
 cask "virtualbox"
-cask "zoom"
 
 mas "Okta Extension App", id: 1439967473

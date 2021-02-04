@@ -1,18 +1,5 @@
 {:deps {org.clojure/clojure {:mvn/version "1.10.2"}
         org.clojure/test.check {:mvn/version "1.1.0"}}
  :paths ["src"]
- :aliases
- {:rebl
-  {:extra-deps {com.cognitect/rebl {:mvn/version "0.9.241"}
-                org.openjfx/javafx-fxml {:mvn/version "15-ea+6"}
-                org.openjfx/javafx-controls {:mvn/version "15-ea+6"}
-                org.openjfx/javafx-swing {:mvn/version "15-ea+6"}
-                org.openjfx/javafx-base {:mvn/version "15-ea+6"}
-                org.openjfx/javafx-web {:mvn/version "15-ea+6"}}
-   :main-opts ["-m" "cognitect.rebl"]}
-  :rebl-jdk8
-  {:extra-deps {com.cognitect/rebl  {:mvn/version "0.9.241"}}
-   :main-opts ["-m" "cognitect.rebl"]}}
  :mvn/repos {"central" {:url "https://repo1.maven.org/maven2/"}
-             "clojars" {:url "https://repo.clojars.org/"}
-             "wealthsimple" {:url "https://nexus.iad.w10external.com/repository/maven-public/"}}}
+             "clojars" {:url "https://repo.clojars.org/"}}}

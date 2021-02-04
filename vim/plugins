@@ -17,6 +17,7 @@ janko-m/vim-test
 jparise/vim-graphql
 junegunn/fzf
 junegunn/fzf.vim
+jvirtanen/vim-hcl
 leafgarland/typescript-vim
 lifepillar/vim-solarized8
 mitsuhiko/vim-jinja

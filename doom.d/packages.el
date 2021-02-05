@@ -5,12 +5,7 @@
 ;; on the command line, then restart Emacs for the changes to take effect -- or
 ;; use 'M-x doom/reload'.
 
-
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
-(package! org-roam-bibtex
-  :recipe (:host github :repo "org-roam/org-roam-bibtex"))
-(unpin! org-roam company-org-roam)
-(unpin! bibtex-completion helm-bibtex ivy-bibtex)
 
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:

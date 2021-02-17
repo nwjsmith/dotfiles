@@ -1,0 +1,8 @@
+disable = ["gem", "node", "tlmgr"]
+
+[git]
+max_concurrency = 12
+repos = ["~/Code/*/*"]
+
+[brew]
+greedy_cask = true

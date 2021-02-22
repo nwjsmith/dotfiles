@@ -1,4 +1,1 @@
-ruby 2.7.2 2.6.6 2.5.8 2.4.6
-nodejs 15.9.0 14.15.5
-java adoptopenjdk-11.0.8+10 adoptopenjdk-8.0.265+1
-python 3.8.5 3.7.9 3.6.12 3.5.10 2.7.17
+ruby 3.0.0 2.7.2

@@ -5,8 +5,8 @@ set termguicolors
 " Relative line numbers in normal mode
 set number relativenumber
 
-" Use Bash for shell
-set shell=/usr/bin/env\ bash
+" Use ZSH for shell
+set shell=/usr/bin/env\ zsh
 
 " Use 4 characters for the number column
 set numberwidth=4

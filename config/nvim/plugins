@@ -1,0 +1,14 @@
+Olical/conjure
+clojure-vim/vim-jack-in
+itchyny/lightline.vim
+npxbr/gruvbox.nvim
+nvim-treesitter/nvim-treesitter
+nvim-treesitter/nvim-treesitter-textobjects
+rktjmp/lush.nvim
+tpope/vim-commentary
+tpope/vim-dispatch
+tpope/vim-endwise
+tpope/vim-eunuch
+tpope/vim-fugitive
+tpope/vim-sleuth
+tpope/vim-surround

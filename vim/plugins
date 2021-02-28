@@ -4,6 +4,7 @@ cespare/vim-toml
 dag/vim-fish
 dleonard0/pony-vim-syntax
 elixir-lang/vim-elixir
+eraserhd/parinfer-rust
 fatih/vim-go
 flowtype/vim-flow
 gruvbox-community/gruvbox

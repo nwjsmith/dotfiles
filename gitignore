@@ -29,3 +29,4 @@ log/*.log
 node_modules/
 tags
 tmp/**/*
+.lsp/

@@ -1,7 +1,14 @@
 Olical/conjure
 clojure-vim/vim-jack-in
+eraserhd/parinfer-rust
 itchyny/lightline.vim
+neovim/nvim-lspconfig
 npxbr/gruvbox.nvim
+nvim-lua/completion-nvim
+nvim-lua/plenary.nvim
+nvim-lua/popup.nvim
+nvim-telescope/telescope.nvim
+nvim-treesitter/completion-treesitter
 nvim-treesitter/nvim-treesitter
 nvim-treesitter/nvim-treesitter-textobjects
 rktjmp/lush.nvim

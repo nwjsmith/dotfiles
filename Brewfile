@@ -59,6 +59,7 @@ brew "maven"
 brew "mitmproxy"
 brew "multimarkdown"
 brew "nomad"
+brew "neovim", args: %w(HEAD)
 brew "oniguruma"
 brew "openjdk"
 brew "openssl@1.1"

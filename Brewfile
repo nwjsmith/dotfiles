@@ -60,6 +60,7 @@ brew "mitmproxy"
 brew "multimarkdown"
 brew "nomad"
 brew "neovim", args: %w(HEAD)
+brew "nodejs"
 brew "oniguruma"
 brew "openjdk"
 brew "openssl@1.1"

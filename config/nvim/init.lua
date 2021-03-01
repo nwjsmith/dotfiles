@@ -89,7 +89,6 @@ telemap("fr", "live_grep")
 -- Use LSP
 local completion = require("completion")
 local lspconfig = require("lspconfig")
-local servers = { "clojure_lsp", "rust_analyzer" }
 
 function on_attach(client, bufnr)
   function bufmap(trigger, command)
@@ -145,6 +144,7 @@ function on_attach(client, bufnr)
   end
 end
 
+local servers = { "clojure_lsp", "rust_analyzer", "solargraph", "tsserver" }
 for _, server in ipairs(servers) do
   lspconfig[server].setup { on_attach = on_attach }
 end

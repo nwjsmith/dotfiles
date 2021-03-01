@@ -19,8 +19,7 @@ vim.o.background = "light"
 vim.cmd("colorscheme gruvbox")
 
 -- A more useful modeline
-vim.o.showmode = false
-vim.g.lightline = { colorscheme = "gruvbox" }
+require("modeline")
 
 -- Show trailing whitespace
 vim.wo.list = true

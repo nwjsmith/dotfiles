@@ -1,6 +1,5 @@
 # vim: set ft=ruby
 
-tap "d12frosted/emacs-plus"
 tap "clojure/tools"
 tap "clojure-lsp/brew"
 tap "github/gh"
@@ -34,7 +33,6 @@ brew "clojure/tools/clojure"
 brew "clojure-lsp/brew/clojure-lsp-native"
 brew "cmake"
 brew "coreutils"
-brew "emacs-plus@27"
 brew "fd"
 brew "ffmpeg"
 brew "fzf"

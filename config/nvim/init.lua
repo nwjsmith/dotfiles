@@ -61,7 +61,6 @@ vim.o.completeopt = "menuone,noinsert,noselect"
 
 -- Treesitter is the reason we're all here
 require("nvim-treesitter.configs").setup {
-  ensure_installed = "maintained",
   highlight = { enable = true },
 }
 

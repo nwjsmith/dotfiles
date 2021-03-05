@@ -8,5 +8,6 @@ brew "pandoc" # Move to common Brewfile once GHC is ARM-compatible
 brew "scc" # Move to common after the Go 1.6 release
 brew "shellcheck" # Move to common Brewfile once GHC is ARM-compatible
 
+cask "alacritty"
 cask "docker" # Move to common once out of preview
 cask "dropbox" # Get off of Dropbox, it's become terrible

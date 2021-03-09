@@ -36,3 +36,11 @@ $ EXCLUDES="README.md" rcup -t $(arch)
 
 I highly recommend creating a `~/.rcrc` file with at least
 `EXCLUDES="README.md"` and `TAGS="$(arch)"` in it.
+
+## etc.
+
+### Slack theme
+
+```
+#fbf1c7,#ebdbb2,#d79921,#665c54,#d5c4a1,#3c3836,#98971a,#9d0006,#ebdbb2,#2828282
+```

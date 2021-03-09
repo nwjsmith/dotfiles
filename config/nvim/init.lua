@@ -20,7 +20,7 @@ vim.o.background = "light"
 vim.cmd("colorscheme gruvbox8")
 
 -- A more useful modeline
-vim.g.lightline = { colorscheme = "gruvbox8" }
+vim.g.lightline = { colorscheme = "gruvbox8_light" }
 vim.cmd("set noshowmode")
 
 -- Show trailing whitespace

@@ -14,8 +14,6 @@ brew "instantclient-sdk"
 brew "kafka"
 brew "kotlin"
 
-cask "appcleaner"
-cask "dash"
 cask "dynamodb-local"
 cask "intellij-idea"
 cask "lunar"

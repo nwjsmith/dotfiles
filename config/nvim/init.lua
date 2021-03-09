@@ -1,5 +1,6 @@
 -- Spacemacs is right
 vim.g.mapleader = " "
+vim.g.maplocalleader = " m"
 
 -- Live in the present
 vim.o.termguicolors = true
@@ -16,10 +17,11 @@ vim.wo.numberwidth = 4
 
 -- Gruvbox is nice
 vim.o.background = "light"
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme gruvbox8")
 
 -- A more useful modeline
-require("modeline")
+vim.g.lightline = { colorscheme = "gruvbox8" }
+vim.cmd("set noshowmode")
 
 -- Show trailing whitespace
 vim.wo.list = true

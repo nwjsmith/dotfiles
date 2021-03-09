@@ -3,7 +3,7 @@ clojure-vim/vim-jack-in
 eraserhd/parinfer-rust
 itchyny/lightline.vim
 neovim/nvim-lspconfig
-npxbr/gruvbox.nvim
+lifepillar/vim-gruvbox8
 nvim-lua/completion-nvim
 nvim-lua/plenary.nvim
 nvim-lua/popup.nvim

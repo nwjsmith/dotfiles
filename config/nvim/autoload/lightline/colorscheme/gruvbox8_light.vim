@@ -1,16 +1,32 @@
-let s:bg0 = [ '#fbf1c7', 230 ]
-let s:bg1 = [ '#ebdbb2', 187 ]
-let s:bg2 = [ '#d5c4a1', 187 ]
-let s:bg4 = [ '#a89984', 137 ]
+if &background ==# 'dark'
+  let s:bg0 = [ '#282828', 235 ]
+  let s:bg1 = [ '#3c3836', 237 ]
+  let s:bg2 = [ '#504945', 239 ]
+  let s:bg4 = [ '#7c6f64', 243 ]
 
-let s:fg1 = [ '#3c3836', 237 ]
-let s:fg4 = [ '#7c6f64', 243 ]
+  let s:fg1 = [ '#ebdbb2', 187 ]
+  let s:fg4 = [ '#a89984', 137 ]
 
-let s:green = [ '#79740e', 100 ]
-let s:yellow = [ '#b57614', 172 ]
-let s:blue = [ '#076678', 23 ]
-let s:aqua = [ '#427b58', 29 ]
-let s:orange = [ '#af3a03', 124 ]
+  let s:green  = [ '#98971a', 100 ]
+  let s:yellow = [ '#d79921', 172 ]
+  let s:blue   = [ '#458588', 66 ]
+  let s:aqua   = [ '#689d6a', 71 ]
+  let s:orange = [ '#d65d0e', 166 ]
+else
+  let s:bg0 = [ '#fbf1c7', 230 ]
+  let s:bg1 = [ '#ebdbb2', 187 ]
+  let s:bg2 = [ '#d5c4a1', 187 ]
+  let s:bg4 = [ '#a89984', 137 ]
+
+  let s:fg1 = [ '#3c3836', 237 ]
+  let s:fg4 = [ '#7c6f64', 243 ]
+
+  let s:green  = [ '#79740e', 100 ]
+  let s:yellow = [ '#b57614', 172 ]
+  let s:blue   = [ '#076678', 23 ]
+  let s:aqua   = [ '#427b58', 29 ]
+  let s:orange = [ '#af3a03', 124 ]
+end
 
 let s:p = { 'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}, 'terminal': {} }
 

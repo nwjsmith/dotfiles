@@ -17,4 +17,4 @@ end
 telemap("ff", "fd")
 telemap("fb", "git_branches")
 telemap("ft", "treesitter")
-telemap("fr", "live_grep")
+telemap("/", "live_grep")

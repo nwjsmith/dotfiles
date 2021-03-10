@@ -12,3 +12,7 @@ if ! infocmp xterm-truecolor-italic 1>/dev/null 2>&1; then
   tic -x -o "${HOME}/.terminfo" \
     "${HOME}/.config/terminfo/xterm-truecolor-italic.terminfo"
 fi
+
+if [ ! -f "${HOME}/.nvim/lua/local.lua" ]; then
+  touch "${HOME}/.nvim/lua/local.lua"
+fi

@@ -6,29 +6,10 @@ These are my dotfiles. They work on both Intel and ARM Macs.
 
 macOS with Homebrew installed.
 
-On ARM, you'll need to install rustup along with a beta Rust toolchain, then:
-
-```
-$ cargo install starship --git https://github.com/starship/starship.git
-$ cargo install git-absorb fd-find ripgrep topgrade
-```
-
-We might be able to skip this or the step above later, but you'll need to edit
-the Rust formula in Homebrew to include ninja.
-
-```
-depends_on "ninja" => :build
-```
-
-Download the Zulu JDK for macOS/ARM64 and then link it into Homebrew:
-
-```
-$ ln -s /Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home /opt/homebrew/opt/openjdk
-```
-
 ## Installation
 
 ```
+$ brew install rcm
 $ git clone https://github.com/nwjsmith/dotfiles ~/.dotfiles
 $ cd ~/.dotfiles
 $ EXCLUDES="README.md" rcup -t $(arch)
@@ -39,8 +20,32 @@ I highly recommend creating a `~/.rcrc` file with at least
 
 ## etc.
 
+### `sudo` and TouchID
+
+To use TouchID or your Apple Watch with `sudo`, add the following lines to `/etc/pam.d/sudo`:
+
+**ARM**
+
+```
+auth       optional       /opt/homebrew/lib/pam/pam_reattach.so
+auth       sufficient     pam_tid.so
+```
+
+**Intel**
+
+```
+auth       optional       /usr/local/lib/pam/pam_reattach.so
+auth       sufficient     pam_tid.so
+```
+
+### iTerm 2
+
+Install the [gruvbox theme][gruvbox-iterm].
+
 ### Slack theme
 
 ```
 #fbf1c7,#ebdbb2,#d79921,#665c54,#d5c4a1,#3c3836,#98971a,#9d0006,#ebdbb2,#2828282
 ```
+
+[gruvbox-iterm]: https://github.com/gruvbox-community/gruvbox-contrib/tree/master/iterm2

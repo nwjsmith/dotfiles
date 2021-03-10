@@ -1,4 +1,1 @@
-function pyenv() {
-  eval "$(pyenv init -)"
-  pyenv "$@"
-}
+_evalcache pyenv init -

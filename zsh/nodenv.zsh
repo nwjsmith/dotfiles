@@ -1,4 +1,1 @@
-function nodenv() {
-  eval "$(nodenv init -)"
-  nodenv "$@"
-}
+_evalcache nodenv init -

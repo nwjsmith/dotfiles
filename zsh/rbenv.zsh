@@ -1,4 +1,1 @@
-function rbenv() {
-  eval "$(rbenv init -)"
-  rbenv "$@"
-}
+_evalcache rbenv init -

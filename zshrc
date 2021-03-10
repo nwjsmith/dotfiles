@@ -7,6 +7,7 @@ FPATH="${BREW_PREFIX}/share/zsh/site-functions:${FPATH}"
 
 source "${BREW_PREFIX}/share/antigen/antigen.zsh"
 
+antigen bundle "mroth/evalcache"
 antigen bundle "rupa/z"
 antigen bundle "zsh-users/zsh-autosuggestions"
 antigen bundle "zsh-users/zsh-completions"

@@ -38,10 +38,6 @@ auth       optional       /usr/local/lib/pam/pam_reattach.so
 auth       sufficient     pam_tid.so
 ```
 
-### iTerm 2
-
-Install the [gruvbox theme][gruvbox-iterm].
-
 ### Slack theme
 
 ```

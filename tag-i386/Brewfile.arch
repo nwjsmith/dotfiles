@@ -10,3 +10,4 @@ brew "shellcheck" # Move to common Brewfile once GHC is ARM-compatible
 
 cask "docker" # Move to common once out of preview
 cask "dropbox" # Get off of Dropbox, it's become terrible
+cask "kitty"

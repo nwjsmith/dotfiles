@@ -1,1 +1,4 @@
-eval "$(nodenv init -)"
+function nodenv() {
+  eval "$(nodenv init -)"
+  nodenv "$@"
+}

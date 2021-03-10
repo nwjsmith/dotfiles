@@ -14,8 +14,8 @@ window:
 font:
   size: 13.0
   normal:
-    family: JetBrains Mono NL
-    style: Light
+    family: Rec Mono Linear
+    style: Regular
   bold:
     style: Bold
   bold_italic:

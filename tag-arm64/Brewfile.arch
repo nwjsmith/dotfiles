@@ -1,0 +1,5 @@
+# vim: set ft=ruby
+
+brew "harfbuzz"
+brew "libpng"
+brew "liblcms2"

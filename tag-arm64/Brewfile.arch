@@ -2,4 +2,4 @@
 
 brew "harfbuzz"
 brew "libpng"
-brew "liblcms2"
+brew "little-cms2"

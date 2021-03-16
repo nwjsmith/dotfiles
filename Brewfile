@@ -127,7 +127,7 @@ cask "zoom"
 cask "zotero"
 cask "zsa-wally"
 
-mas "1Blocker", id: 1107421413
+mas "1Blocker", id: 1365531024
 mas "Bear", id: 1091189122
 mas "DaisyDisk", id: 411643860
 mas "Deliveries", id: 924726344

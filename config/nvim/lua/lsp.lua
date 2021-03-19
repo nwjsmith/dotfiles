@@ -57,7 +57,7 @@ function on_attach(client, bufnr)
   end
 end
 
-local servers = { "clojure_lsp", "rust_analyzer", "solargraph", "tsserver" }
+local servers = { "clojure_lsp", "rust_analyzer", "solargraph", "sorbet", "tsserver" }
 for _, server in ipairs(servers) do
   lspconfig[server].setup { on_attach = on_attach }
 end

@@ -61,6 +61,8 @@ vim.o.clipboard = "unnamedplus"
 -- Don't start completing without my consent
 vim.o.completeopt = "menuone,noinsert,noselect"
 
+vim.g['prettier#autoformat_config_present'] = 1
+
 require("treesitter")
 require("telescope-configuration")
 require("lsp")

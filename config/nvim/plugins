@@ -11,6 +11,7 @@ nvim-telescope/telescope.nvim
 nvim-treesitter/completion-treesitter
 nvim-treesitter/nvim-treesitter
 nvim-treesitter/nvim-treesitter-textobjects
+prettier/vim-prettier
 rktjmp/lush.nvim
 tpope/vim-commentary
 tpope/vim-dispatch

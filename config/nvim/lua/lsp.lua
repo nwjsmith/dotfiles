@@ -77,7 +77,24 @@ function on_attach(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 end
 
-local servers = { "clojure_lsp", "rust_analyzer", "solargraph", "sorbet", "tsserver" }
-for _, server in ipairs(servers) do
-  lspconfig[server].setup { on_attach = on_attach }
+local servers = {
+  clojure_lsp = {},
+  rust_analyzer = {},
+  solargraph = {},
+  sorbet = {},
+  tsserver = {
+    on_attach = function(client, _bufnr)
+      client.resolved_capabilities.document_formatting = false
+    end,
+  },
+}
+for server, overrides in pairs(servers) do
+  lspconfig[server].setup {
+    on_attach = function(client, bufnr)
+      if overrides.on_attach then
+        overrides.on_attach(client, bufnr)
+      end
+      on_attach(client, bufnr)
+    end,
+  }
 end

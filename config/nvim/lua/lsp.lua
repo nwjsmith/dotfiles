@@ -35,15 +35,15 @@ function on_attach(client, bufnr)
     telemap("fs", "lsp_workspace_symbols")
   end
 
-  if capabilities.code_actions then
-    telemap("aa", "lsp_code_actions")
+  if capabilities.code_action then
     vim.api.nvim_buf_set_keymap(
       bufnr,
       "v",
-      "<Leader>ca",
+      "<Leader>fa",
       [[<Cmd>lua require("telescope.builtin").lsp_range_code_actions()<CR>]],
       { noremap = true, silent = true }
     )
+    telemap("fa", "lsp_code_actions")
   end
 
   if capabilities.declaration then
@@ -59,7 +59,7 @@ function on_attach(client, bufnr)
   end
 
   if capabilities.rename then
-    bufmap("<Leader>cr", "<Cmd>lua vim.lsp.buf.rename()<CR>")
+    bufmap("<Leader>s", "<Cmd>lua vim.lsp.buf.rename()<CR>")
   end
 
   if capabilities.signature_help then
@@ -67,7 +67,7 @@ function on_attach(client, bufnr)
   end
 
   if capabilities.document_formatting then
-    bufmap("<Leader>f", "<Cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+    bufmap("<Leader>gq", "<Cmd>lua vim.lsp.buf.formatting()<CR>", opts)
   end
 
   bufmap("[d", "<Cmd>lua vim.lsp.diagnostic.goto_prev()<CR>")

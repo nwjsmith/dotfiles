@@ -130,19 +130,19 @@ cask "zoom"
 cask "zotero"
 cask "zsa-wally"
 
-mas "1Blocker", id: 1365531024
-mas "Bear", id: 1091189122
-mas "DaisyDisk", id: 411643860
-mas "Deliveries", id: 924726344
-mas "Fantastical", id: 975937182
-mas "Flow", id: 1423210932
-mas "Grammarly for Safari", id: 1462114288
-mas "Instapaper Save", id: 1481302432
-mas "Instapaper", id: 288545208
-mas "Keynote", id: 409183694
-mas "Marked 2", id: 890031187
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Reeder", id: 1529448980
-mas "Things", id: 904280696
-mas "Xcode", id: 497799835
+# mas "1Blocker", id: 1365531024
+# mas "Bear", id: 1091189122
+# mas "DaisyDisk", id: 411643860
+# mas "Deliveries", id: 924726344
+# mas "Fantastical", id: 975937182
+# mas "Flow", id: 1423210932
+# mas "Grammarly for Safari", id: 1462114288
+# mas "Instapaper Save", id: 1481302432
+# mas "Instapaper", id: 288545208
+# mas "Keynote", id: 409183694
+# mas "Marked 2", id: 890031187
+# mas "Numbers", id: 409203825
+# mas "Pages", id: 409201541
+# mas "Reeder", id: 1529448980
+# mas "Things", id: 904280696
+# mas "Xcode", id: 497799835

@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+if [ -z "${TMUX}" ]; then
+  echo "Must run from within an existing tmux session"
+  exit 1
+else
+  tmux rename-window $(basename "${PWD}")
+fi

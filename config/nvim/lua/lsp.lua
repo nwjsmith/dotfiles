@@ -43,7 +43,7 @@ function on_attach(client, bufnr)
       [[<Cmd>lua require("telescope.builtin").lsp_range_code_actions()<CR>]],
       { noremap = true, silent = true }
     )
-    telemap("fa", "lsp_code_actions")
+    telemap("ca", "lsp_code_actions")
   end
 
   if capabilities.declaration then

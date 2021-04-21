@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+GEM="${1}"
+
+gem search "^${GEM}$" |
+  grep "${GEM}" |
+  sed -E "s/${GEM} \((.+)\.(.+)\..+\)$/'~> \1.\2'/"

@@ -16,3 +16,8 @@ fi
 if [ ! -e "${HOME}/.config/nvim/lua/local.lua" ]; then
   touch "${HOME}/.config/nvim/lua/local.lua"
 fi
+
+if [ ! -d "${HOME}/.emacs.d/.git" ]; then
+  git clone --depth 1 https://github.com/hlissner/doom-emacs.git \
+    "${HOME}/.emacs.d"
+fi

@@ -9,9 +9,6 @@ vim.o.termguicolors = true
 vim.wo.number = true
 vim.wo.relativenumber = true
 
--- Use ZSH for shell
-vim.o.shell = "/usr/bin/env zsh"
-
 -- Relative line numbers in normal mode
 vim.wo.numberwidth = 4
 

@@ -9,5 +9,7 @@
 
 (setq display-line-numbers-type t)
 
+(setq-hook! 'typescript-mode-hook +format-with-lsp nil)
+
 (after! vterm
   (setq vterm-term-environment-variable "eterm-color"))

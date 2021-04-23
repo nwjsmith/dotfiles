@@ -10,6 +10,8 @@
 (setq display-line-numbers-type t)
 
 (setq-hook! 'typescript-mode-hook +format-with-lsp nil)
+(add-hook 'js2-mode-hook #'format-all-mode)
+(add-hook 'typescript-mode-hook #'format-all-mode)
 
 (after! vterm
   (setq vterm-term-environment-variable "eterm-color"))

@@ -2,7 +2,6 @@
   maxStack = 200
 [alias]
   co = checkout
-  ctags = !.git/hooks/ctags
   dc = diff --cached
   di = diff
   fix = commit --amend --no-edit
@@ -33,14 +32,6 @@
   path = ~/.gitconfig.local
 [init]
   defaultBranch = main
-  templateDir = ~/.git-template
-[mergetool "fugitive"]
-  cmd = vim --nofork -c \"Gdiff\" \"$MERGED\"
-[merge]
-  renamelimit = 10000
-  tool = fugitive
-[mergetool]
-  keepBackup = false
 [push]
   default = current
 [pull]

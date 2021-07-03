@@ -24,6 +24,9 @@
 (package! alloy-mode
   :recipe (:host github :repo "dwwmmn/alloy-mode"))
 
+(package! org-roam
+  :recipe (:host github :repo "org-roam/org-roam" :branch "v2"))
+
 ;; If you'd like to disable a package included with Doom, you can do so here
 ;; with the `:disable' property:
 ;(package! builtin-package :disable t)

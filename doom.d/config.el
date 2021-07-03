@@ -1,7 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 (setq display-line-numbers-type t
-      doom-font (font-spec :family "Rec Mono Linear" :size 12)
+      doom-font (font-spec :family "Cascadia Mono PL" :size 12)
       doom-theme 'doom-gruvbox-light
       doom-variable-pitch-font (font-spec :family "Avenir Next")
       org-directory "~/Documents/org"

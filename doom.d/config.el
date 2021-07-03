@@ -12,6 +12,8 @@
 (add-hook 'js2-mode-hook #'format-all-mode)
 (add-hook 'typescript-mode-hook #'format-all-mode)
 
+(add-to-list 'auto-mode-alist '("\\.als\\'" . alloy-mode))
+
 (setq-hook! 'typescript-mode-hook +format-with-lsp nil)
 
 (after! lsp-ui

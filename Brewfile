@@ -58,7 +58,7 @@ brew "mas"
 brew "maven"
 brew "mitmproxy"
 brew "multimarkdown"
-brew "neovim", args: %w(HEAD)
+brew "neovim"
 brew "node-build"
 brew "nodenv"
 brew "nomad"

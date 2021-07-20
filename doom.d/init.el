@@ -94,7 +94,7 @@
        gist              ; interacting with github gists
        (lookup +dictionary
                +docsets) ; navigate your code and its documentation
-       lsp
+       lsp               ; M-x vscode
        (magit +forge)    ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds

@@ -7,21 +7,20 @@ window:
   dimensions:
     columns: 80
     lines: 24
-  padding:
-    x: 4
-    y: 1
+  dynamic_padding: true
+  startup_mode: SimpleFullScreen
 
 font:
-  size: 13.0
+  size: 12.0
   normal:
-    family: Rec Mono Linear
-    style: Regular
+    family: Cascadia Mono PL
+    style: SemiLight
   bold:
-    style: Bold
+    style: Regular
   bold_italic:
-    style: Bold Italic
-  italic:
     style: Italic
+  italic:
+    style: SemiLight Italic
 
 colors:
   primary:
@@ -52,3 +51,6 @@ bell:
   animation: Ease
   duration: 100
   color: '0xfbf1c7'
+
+key_bindings:
+  - { key: Return, mods: Command, action: ToggleSimpleFullscreen }

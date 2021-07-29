@@ -19,7 +19,7 @@ vim.g.gruvbox_italicize_strings = 0
 
 -- A more useful modeline
 vim.g.lightline = { colorscheme = "gruvbox8_light" }
-vim.cmd("set noshowmode")
+vim.opt.showmode = false
 
 -- Show trailing whitespace
 vim.wo.list = true

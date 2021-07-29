@@ -145,6 +145,7 @@ cask "zsa-wally"
 
 mas "1Blocker", id: 1365531024
 mas "Bear", id: 1091189122
+mas "Craft", id: 1487937127
 mas "DaisyDisk", id: 411643860
 mas "Deliveries", id: 924726344
 mas "Fantastical", id: 975937182

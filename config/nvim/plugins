@@ -1,9 +1,9 @@
 Olical/conjure
 clojure-vim/vim-jack-in
-eraserhd/parinfer-rust
 itchyny/lightline.vim
-neovim/nvim-lspconfig
+justinmk/vim-sneak
 lifepillar/vim-gruvbox8
+neovim/nvim-lspconfig
 nvim-lua/completion-nvim
 nvim-lua/plenary.nvim
 nvim-lua/popup.nvim
@@ -12,7 +12,6 @@ nvim-treesitter/completion-treesitter
 nvim-treesitter/nvim-treesitter
 nvim-treesitter/nvim-treesitter-textobjects
 prettier/vim-prettier
-rktjmp/lush.nvim
 tpope/vim-commentary
 tpope/vim-dispatch
 tpope/vim-endwise

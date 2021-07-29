@@ -14,7 +14,11 @@ vim.wo.numberwidth = 4
 
 -- Gruvbox is nice
 vim.o.background = "light"
-vim.cmd [[colorscheme gruvbox8]]
+vim.cmd [[
+  colorscheme gruvbox8
+  autocmd ColorScheme * highlight Sneak guifg=#fbf1c7 guibg=#b16286 ctermfg=229 ctermbg=237
+  autocmd ColorScheme * highlight SneakScope guifg=#3c3836 guibg=#ebdbb2 ctermfg=237 ctermbg=223
+]]
 vim.g.gruvbox_italicize_strings = 0
 
 -- A more useful modeline

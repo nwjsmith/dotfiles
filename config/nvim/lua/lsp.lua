@@ -1,7 +1,7 @@
 -- Use LSP
 -- TODO do I need to unmap conjure's K when clojure LSP is activated?
-local completion = require("completion")
-local lspconfig = require("lspconfig")
+local completion = require"completion"
+local lspconfig = require"lspconfig"
 
 function on_attach(client, bufnr)
   function bufmap(trigger, command)
@@ -17,7 +17,7 @@ function on_attach(client, bufnr)
   function telemap(mnemonic, builtin)
     bufmap(
       "<Leader>" .. mnemonic,
-      [[<Cmd>lua require("telescope.builtin").]] .. builtin .. "()<CR>"
+      [[<Cmd>lua require"telescope.builtin".]] .. builtin .. "()<CR>"
     )
   end
 
@@ -40,10 +40,10 @@ function on_attach(client, bufnr)
       bufnr,
       "v",
       "<Leader>fa",
-      [[<Cmd>lua require("telescope.builtin").lsp_range_code_actions()<CR>]],
+      [[:<C-U>Telescope lsp_range_code_actions<CR>]],
       { noremap = true, silent = true }
     )
-    telemap("ca", "lsp_code_actions")
+    telemap("fa", "lsp_code_actions")
   end
 
   if capabilities.declaration then

@@ -1,5 +1,6 @@
 Olical/conjure
 clojure-vim/vim-jack-in
+guns/vim-sexp
 itchyny/lightline.vim
 justinmk/vim-sneak
 lifepillar/vim-gruvbox8
@@ -8,9 +9,7 @@ nvim-lua/completion-nvim
 nvim-lua/plenary.nvim
 nvim-lua/popup.nvim
 nvim-telescope/telescope.nvim
-nvim-treesitter/completion-treesitter
 nvim-treesitter/nvim-treesitter
-nvim-treesitter/nvim-treesitter-textobjects
 prettier/vim-prettier
 tpope/vim-commentary
 tpope/vim-dispatch
@@ -18,6 +17,8 @@ tpope/vim-endwise
 tpope/vim-eunuch
 tpope/vim-fugitive
 tpope/vim-repeat
+tpope/vim-sexp-mappings-for-regular-people
 tpope/vim-sleuth
 tpope/vim-surround
+tpope/vim-unimpaired
 tpope/vim-vinegar

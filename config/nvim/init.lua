@@ -16,8 +16,11 @@ vim.wo.numberwidth = 4
 vim.o.background = "light"
 vim.cmd [[
   colorscheme gruvbox8
-  autocmd ColorScheme * highlight Sneak guifg=#fbf1c7 guibg=#b16286 ctermfg=229 ctermbg=237
-  autocmd ColorScheme * highlight SneakScope guifg=#3c3836 guibg=#ebdbb2 ctermfg=237 ctermbg=223
+  augroup sneak_color_adjustments
+    autocmd!
+    autocmd ColorScheme * highlight Sneak guifg=#fbf1c7 guibg=#b16286 ctermfg=229 ctermbg=237
+    autocmd ColorScheme * highlight SneakScope guifg=#3c3836 guibg=#ebdbb2 ctermfg=237 ctermbg=223
+  augroup END
 ]]
 vim.g.gruvbox_italicize_strings = 0
 

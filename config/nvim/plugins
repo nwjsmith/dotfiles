@@ -1,5 +1,4 @@
 Olical/conjure
-clojure-vim/vim-jack-in
 guns/vim-sexp
 itchyny/lightline.vim
 justinmk/vim-sneak
@@ -16,7 +15,9 @@ tpope/vim-dispatch
 tpope/vim-endwise
 tpope/vim-eunuch
 tpope/vim-fugitive
+tpope/vim-projectionist
 tpope/vim-repeat
+tpope/vim-salve
 tpope/vim-sexp-mappings-for-regular-people
 tpope/vim-sleuth
 tpope/vim-surround

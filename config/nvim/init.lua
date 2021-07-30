@@ -1,6 +1,6 @@
 -- Spacemacs is right
 vim.g.mapleader = " "
-vim.g.maplocalleader = " m"
+vim.g.maplocalleader = " "
 
 -- Live in the present
 vim.o.termguicolors = true

@@ -23,3 +23,14 @@
 
 (after! cider
   (setq cider-clojure-cli-aliases "dev"))
+
+(use-package! kaocha-runner
+  :config
+  (map! (:localleader
+         (:map (clojure-mode-map clojurescript-mode-map)
+          (:prefix ("k" . "kaocha")
+           "a" #'kaocha-runner-run-all-tests
+           "h" #'kaocha-runner-hide-windows
+           "r" #'kaocha-runner-run-tests
+           "t" #'kaocha-runner-run-test-at-point
+           "w" #'kaocha-runner-show-warnings)))))

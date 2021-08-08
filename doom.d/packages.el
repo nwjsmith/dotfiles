@@ -3,3 +3,5 @@
 
 (package! alloy-mode
   :recipe (:host github :repo "dwwmmn/alloy-mode"))
+
+(package! kaocha-runner)

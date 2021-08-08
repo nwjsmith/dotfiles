@@ -22,7 +22,8 @@
   (setq vterm-term-environment-variable "eterm-color"))
 
 (after! cider
-  (setq cider-clojure-cli-aliases "dev"))
+  (setq cider-clojure-cli-aliases "dev")
+  (setq cider-save-file-on-load nil))
 
 (use-package! kaocha-runner
   :config

@@ -22,8 +22,13 @@
   (setq vterm-term-environment-variable "eterm-color"))
 
 (after! cider
-  (setq cider-clojure-cli-aliases "dev")
-  (setq cider-save-file-on-load nil))
+  (setq cider-clojure-cli-aliases "dev"
+        cider-save-file-on-load nil))
+
+(after! lispy
+  (lispy-set-key-theme '(lispy c-digits))
+  (define-key lispy-mode-map-lispy "[" #'lispy-brackets)
+  (define-key lispy-mode-map-lispy "]" #'lispy-close-square))
 
 (use-package! kaocha-runner
   :config

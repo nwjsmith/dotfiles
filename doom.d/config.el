@@ -10,25 +10,9 @@
 
 (add-hook 'js2-mode-hook #'format-all-mode)
 (add-hook 'typescript-mode-hook #'format-all-mode)
-
-(add-to-list 'auto-mode-alist '("\\.als\\'" . alloy-mode))
-
 (setq-hook! 'typescript-mode-hook +format-with-lsp nil)
 
-(after! lsp-ui
-  (setq lsp-ui-sideline-show-code-actions nil))
-
-(after! vterm
-  (setq vterm-term-environment-variable "eterm-color"))
-
-(after! cider
-  (setq cider-clojure-cli-aliases "dev"
-        cider-save-file-on-load nil))
-
-(after! lispy
-  (lispy-set-key-theme '(lispy c-digits))
-  (define-key lispy-mode-map-lispy "[" #'lispy-brackets)
-  (define-key lispy-mode-map-lispy "]" #'lispy-close-square))
+(add-to-list 'auto-mode-alist '("\\.als\\'" . alloy-mode))
 
 (use-package! kaocha-runner
   :config
@@ -40,3 +24,24 @@
            "r" #'kaocha-runner-run-tests
            "t" #'kaocha-runner-run-test-at-point
            "w" #'kaocha-runner-show-warnings)))))
+
+(after! cider
+  (setq cider-clojure-cli-aliases "dev"
+        cider-save-file-on-load nil))
+
+(after! clojure
+  (define-clojure-indent
+    (checking 1)
+    (for-all 1)))
+
+(after! lispy
+  (lispy-set-key-theme '(lispy c-digits))
+  (define-key lispy-mode-map-lispy "[" #'lispy-brackets)
+  (define-key lispy-mode-map-lispy "]" #'lispy-close-square)
+  (define-key lispy-mode-map-lispy "}" #'lispy-close-curly))
+
+(after! lsp-ui
+  (setq lsp-ui-sideline-show-code-actions nil))
+
+(after! vterm
+  (setq vterm-term-environment-variable "eterm-color"))

@@ -10,6 +10,7 @@
 
 (add-hook 'js2-mode-hook #'format-all-mode)
 (add-hook 'typescript-mode-hook #'format-all-mode)
+(add-hook 'clojure-mode-hook #'format-all-mode)
 (setq-hook! 'typescript-mode-hook +format-with-lsp nil)
 
 (add-to-list 'auto-mode-alist '("\\.als\\'" . alloy-mode))
@@ -25,14 +26,27 @@
            "t" #'kaocha-runner-run-test-at-point
            "w" #'kaocha-runner-show-warnings)))))
 
+(use-package! html-to-hiccup
+  :config
+  (map! (:localleader
+         (:map (clojure-mode-map clojurescript-mode-map)
+          "H" #'html-to-hiccup-convert-region))))
+
 (after! cider
   (setq cider-clojure-cli-aliases "dev"
-        cider-save-file-on-load nil))
+        cider-save-file-on-load nil
+        cider-font-lock-dynamically nil
+        cider-eldoc-display-for-symbol-at-point nil
+        cider-prompt-for-symbol nil))
 
-(after! clojure
-  (define-clojure-indent
-    (checking 1)
-    (for-all 1)))
+(after! clj-refactor
+  (setq cljr-warn-on-eval nil
+        cljr-add-ns-to-blank-clj-files nil
+        cljr-eagerly-build-asts-on-startup nil)
+  (set-lookup-handlers! 'clj-refactor-mode nil))
+
+(after! clojure-mode
+  (setq clojure-thread-all-but-last t))
 
 (after! lispy
   (lispy-set-key-theme '(lispy c-digits))
@@ -40,8 +54,20 @@
   (define-key lispy-mode-map-lispy "]" #'lispy-close-square)
   (define-key lispy-mode-map-lispy "}" #'lispy-close-curly))
 
+(after! lsp-mode
+  (setq lsp-lens-enable t
+        lsp-enable-file-watchers t
+        lsp-semantic-tokens-enable t
+        lsp-idle-delay 0.3
+        lsp-completion-no-cache t
+        lsp-completion-use-last-result nil))
+
+(after! lsp-treemacs
+  (setq lsp-treemacs-error-list-current-project-only t))
+
 (after! lsp-ui
-  (setq lsp-ui-sideline-show-code-actions nil))
+  (setq lsp-ui-peek-fontify 'always
+        lsp-ui-sideline-show-code-actions nil))
 
 (after! vterm
   (setq vterm-term-environment-variable "eterm-color"))

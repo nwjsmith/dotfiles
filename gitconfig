@@ -39,6 +39,5 @@
 [rebase]
   autoSquash = true
   autoStash = true
-[user]
-  email = nate@theinternate.com
-  name = Nate Smith
+[include]
+  path = ~/.gitconfig.local

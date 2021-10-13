@@ -18,8 +18,9 @@ cask "dynamodb-local"
 cask "intellij-idea"
 cask "lunar"
 cask "pritunl"
-cask "vagrant"
 cask "quip"
+cask "tuple"
+cask "vagrant"
 cask "virtualbox"
 
 mas "Okta Extension App", id: 1439967473

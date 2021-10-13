@@ -13,6 +13,9 @@
 (add-hook 'clojure-mode-hook #'format-all-mode)
 (setq-hook! 'typescript-mode-hook +format-with-lsp nil)
 
+(setq js-indent-level 2)
+(setq typescript-indent-level 2)
+
 (add-to-list 'auto-mode-alist '("\\.als\\'" . alloy-mode))
 
 (use-package! kaocha-runner

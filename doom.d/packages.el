@@ -8,4 +8,3 @@
 
 (package! html-to-hiccup)
 
-(package! map :pin "bb50dba")

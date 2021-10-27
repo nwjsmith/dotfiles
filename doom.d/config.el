@@ -1,34 +1,20 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-(setq display-line-numbers-type nil
+(setq company-idle-delay nil
+      display-line-numbers-type nil
       doom-font (font-spec :family "Cascadia Mono PL" :size 12)
       doom-theme 'doom-gruvbox-light
       doom-variable-pitch-font (font-spec :family "Inter")
       user-full-name "Nate Smith"
       user-mail-address "nate@theinternate.com")
 
-(add-hook 'js2-mode-hook #'format-all-mode)
-(add-hook 'typescript-mode-hook #'format-all-mode)
-(add-hook 'clojure-mode-hook #'format-all-mode)
-(setq-hook! 'typescript-mode-hook +format-with-lsp nil)
-
-(setq js-indent-level 2)
-(setq typescript-indent-level 2)
-
-(add-to-list 'auto-mode-alist '("\\.als\\'" . alloy-mode))
-
-(use-package! blamer
-  :defer 20
+(use-package! jest
+  :commands (jest-popup)
   :custom
-  (blamer-idle-time 0.3)
-  (blamer-min-offset 70)
-  :custom-face
-  (blamer-face ((t :foreground ,(doom-color 'base4)
-                   :background nil
-                   :height 90
-                   :italic t)))
-  :config
-  (global-blamer-mode 1))
+  (jest-executable "yarn test")
+  :init
+  (pushnew! evil-collection-mode-list 'jest-mode)
+  (pushnew! evil-normal-state-modes 'jest-mode))
 
 (use-package! kaocha-runner
   :config
@@ -40,12 +26,6 @@
            "r" #'kaocha-runner-run-tests
            "t" #'kaocha-runner-run-test-at-point
            "w" #'kaocha-runner-show-warnings)))))
-
-(use-package! html-to-hiccup
-  :config
-  (map! (:localleader
-         (:map (clojure-mode-map clojurescript-mode-map)
-          "H" #'html-to-hiccup-convert-region))))
 
 (after! cider
   (setq cider-clojure-cli-aliases "dev"
@@ -62,6 +42,9 @@
 
 (after! clojure-mode
   (setq clojure-thread-all-but-last t))
+(add-hook 'clojure-mode-hook #'format-all-mode)
+
+(add-hook 'js2-mode-hook #'format-all-mode)
 
 (after! lispy
   (lispy-set-key-theme '(lispy c-digits))
@@ -69,20 +52,14 @@
   (define-key lispy-mode-map-lispy "]" #'lispy-close-square)
   (define-key lispy-mode-map-lispy "}" #'lispy-close-curly))
 
-(after! lsp-mode
-  (setq lsp-lens-enable t
-        lsp-enable-file-watchers t
-        lsp-semantic-tokens-enable t
-        lsp-idle-delay 0.3
-        lsp-completion-no-cache t
-        lsp-completion-use-last-result nil))
-
-(after! lsp-treemacs
-  (setq lsp-treemacs-error-list-current-project-only t))
-
 (after! lsp-ui
-  (setq lsp-ui-peek-fontify 'always
-        lsp-ui-sideline-show-code-actions nil))
+  (setq lsp-ui-sideline-enable nil
+        lsp-ui-doc-enable nil))
+
+(after! typescript-mode
+  (setq typescript-indent-level 2))
+(add-hook 'typescript-mode-hook #'format-all-mode)
+(setq-hook! 'typescript-mode-hook +format-with-lsp nil)
 
 (after! vterm
   (setq vterm-term-environment-variable "eterm-color"))

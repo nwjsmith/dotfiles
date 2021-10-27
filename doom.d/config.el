@@ -4,7 +4,6 @@
       doom-font (font-spec :family "Cascadia Mono PL" :size 12)
       doom-theme 'doom-gruvbox-light
       doom-variable-pitch-font (font-spec :family "Inter")
-      org-directory "~/Documents/org"
       user-full-name "Nate Smith"
       user-mail-address "nate@theinternate.com")
 

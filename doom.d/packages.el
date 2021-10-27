@@ -8,3 +8,4 @@
 
 (package! html-to-hiccup)
 
+(package! blamer :recipe (:host github :repo "artawower/blamer.el"))

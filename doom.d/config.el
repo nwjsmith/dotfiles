@@ -18,6 +18,19 @@
 
 (add-to-list 'auto-mode-alist '("\\.als\\'" . alloy-mode))
 
+(use-package! blamer
+  :defer 20
+  :custom
+  (blamer-idle-time 0.3)
+  (blamer-min-offset 70)
+  :custom-face
+  (blamer-face ((t :foreground ,(doom-color 'base5)
+                   :background nil
+                   :height 90
+                   :italic t)))
+  :config
+  (global-blamer-mode 1))
+
 (use-package! kaocha-runner
   :config
   (map! (:localleader

@@ -19,13 +19,14 @@
 (add-to-list 'auto-mode-alist '("\\.als\\'" . alloy-mode))
 
 (use-package! blamer
+  :defer 20
   :custom
   (blamer-idle-time 0.3)
   (blamer-min-offset 70)
   :custom-face
   (blamer-face ((t :foreground ,(doom-color 'base4)
                    :background nil
-                   :height 100
+                   :height 90
                    :italic t)))
   :config
   (global-blamer-mode 1))

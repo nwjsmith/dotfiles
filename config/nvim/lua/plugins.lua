@@ -1,0 +1,7 @@
+require("packer").startup(function()
+  use("neovim/nvim-lspconfig")
+  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+  use("shaunsingh/nord.nvim")
+  use("tpope/vim-fugitive")
+  use("wbthomason/packer.nvim")
+end)

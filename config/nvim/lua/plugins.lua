@@ -1,4 +1,5 @@
 require("packer").startup(function()
+  use({ "ibhagwan/fzf-lua", requires = { "vijaymarupudi/nvim-fzf" } })
   use("neovim/nvim-lspconfig")
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   use("shaunsingh/nord.nvim")

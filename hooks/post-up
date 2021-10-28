@@ -1,10 +1,15 @@
 #!/bin/sh
 set -e
 
-if [ ! -e "${HOME}/.tmux/plugins/tpm/.git" ]; then
-  git clone --depth 1 https://github.com/tmux-plugins/tpm.git \
-    "${HOME}/.tmux/plugins/tpm"
-  "${HOME}"/.tmux/plugins/tpm/bin/install_plugins
+tpm_path="${HOME}/.tmux/plugins/tpm"
+if [ ! -e "${tpm_path}" ]; then
+  git clone --depth 1 https://github.com/tmux-plugins/tpm.git "${tpm_path}"
+  "${tpm_path}/bin/install_plugins"
+fi
+
+packer_path="${HOME}/.local/share/nvim/site/pack/packer/start/packer.nvim" 
+if [ ! -e "${packer_path}" ]; then
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim "${packer_path}"
 fi
 
 if ! infocmp xterm-truecolor-italic 1>/dev/null 2>&1; then
@@ -13,7 +18,7 @@ if ! infocmp xterm-truecolor-italic 1>/dev/null 2>&1; then
     "${HOME}/.config/terminfo/xterm-truecolor-italic.terminfo"
 fi
 
-if [ ! -d "${HOME}/.emacs.d/.git" ]; then
-  git clone --depth 1 https://github.com/hlissner/doom-emacs.git \
-    "${HOME}/.emacs.d"
+doom_path="${HOME}/.emacs.d"
+if [ ! -d "${doom_path}" ]; then
+  git clone --depth 1 https://github.com/hlissner/doom-emacs.git "${doom_path}"
 fi

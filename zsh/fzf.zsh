@@ -1,9 +1,10 @@
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
 
 export FZF_DEFAULT_OPTS='
-  --color=bg+:#ebdbb2,bg:#fbf1c7,spinner:#b57614,hl:#b57614
-  --color=fg:#3c3836,header:#bdae93,info:#076678,pointer:#076678
-  --color=marker:#af3a03,fg+:#3c3836,prompt:#7c6f64,hl+:#b57614
+  --color=fg:#e5e9f0,bg:#3b4252,hl:#81a1c1
+  --color=fg+:#e5e9f0,bg+:#3b4252,hl+:#81a1c1
+  --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
+  --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b
 '
 
 [[ $- == *i* ]] && source "${BREW_PREFIX}/opt/fzf/shell/completion.zsh" 2> /dev/null

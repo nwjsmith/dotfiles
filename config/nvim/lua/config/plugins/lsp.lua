@@ -1,7 +1,14 @@
 local lspconfig = require("lspconfig")
 
-local on_attach = function(client, bufnr)
-  vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+local on_attach = function(client, buffer)
+  vim.api.nvim_buf_set_option(buffer, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  vim.api.nvim_buf_set_keymap(
+    buffer,
+    "n",
+    "<Leader>cr",
+    "<Cmd>lua vim.lsp.buf.rename()<CR>",
+    { noremap = true, silent = true }
+  )
 end
 
 for _, server in ipairs({ "clojure_lsp", "tsserver" }) do

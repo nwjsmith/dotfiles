@@ -1,5 +1,8 @@
 require("packer").startup(function()
-  use({ "ibhagwan/fzf-lua", requires = { "vijaymarupudi/nvim-fzf" } })
+  use({
+    "ibhagwan/fzf-lua",
+    requires = { "vijaymarupudi/nvim-fzf", "kyazdani42/nvim-web-devicons" },
+  })
   use("neovim/nvim-lspconfig")
   use("norcalli/nvim-colorizer.lua")
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
@@ -7,6 +10,10 @@ require("packer").startup(function()
   use("shaunsingh/nord.nvim")
   use("tpope/vim-apathy")
   use("tpope/vim-commentary")
+  use({
+    "nvim-lualine/lualine.nvim",
+    requires = { "kyazdani42/nvim-web-devicons" },
+  })
   use("tpope/vim-fugitive")
   use("tpope/vim-repeat")
   use("tpope/vim-rhubarb")

@@ -35,3 +35,9 @@ for _, server in ipairs({ "clojure_lsp", "tsserver" }) do
     flags = { debounce_text_changes = 150 },
   })
 end
+
+lspconfig["denols"].setup({
+  autostart = false,
+  on_attach = on_attach,
+  flags = { debounce_text_changes = 150 },
+})

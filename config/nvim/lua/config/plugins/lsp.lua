@@ -22,6 +22,13 @@ local on_attach = function(client, buffer)
   )
 
   buf_set_keymap(
+    "v",
+    "<Leader>ca",
+    '<Cmd>lua require("fzf-lua").lsp_code_actions()<CR>',
+    { noremap = true, silent = true }
+  )
+
+  buf_set_keymap(
     "n",
     "<Leader>cj",
     '<Cmd>lua require("fzf-lua").lsp_live_workspace_symbols()<CR>',

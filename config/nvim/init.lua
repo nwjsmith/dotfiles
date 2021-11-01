@@ -7,6 +7,8 @@ vim.g.swapfile = false
 
 vim.o.mouse = "a"
 
+vim.o.clipboard = "unnamedplus"
+
 require("plugins")
 require("colours")
 

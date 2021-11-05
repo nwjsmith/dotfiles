@@ -16,11 +16,8 @@ brew "kotlin"
 
 cask "dynamodb-local"
 cask "intellij-idea"
-cask "lunar"
 cask "pritunl"
 cask "quip"
 cask "tuple"
-cask "vagrant"
-cask "virtualbox"
 
 mas "Okta Extension App", id: 1439967473

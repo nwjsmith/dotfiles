@@ -1,4 +1,4 @@
-disable = ["gem", "node", "tlmgr"]
+disable = ["gem", "node", "tlmgr", "mas"]
 
 [git]
 max_concurrency = 12

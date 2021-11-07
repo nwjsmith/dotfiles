@@ -1,4 +1,4 @@
-require('telescope').setup({})
+require("telescope").setup({})
 
 options = { noremap = true, silent = true }
 
@@ -19,13 +19,22 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
   "n",
   "<Leader>cj",
-  "<Cmd>Telescope lsp_definitions<CR>",
+  "<Cmd>Telescope lsp_workspace_symbols<CR>",
   options
 )
 
 vim.api.nvim_set_keymap(
   "n",
-  "<Leader>cd",
+  "gD",
+  "<Cmd>Telescope lsp_definitions<CR>",
+  options
+)
+
+vim.api.nvim_set_keymap("n", "cD", "<Cmd>Telescope lsp_references<CR>", options)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "ct",
   "<Cmd>Telescope lsp_type_definitions<CR>",
   options
 )

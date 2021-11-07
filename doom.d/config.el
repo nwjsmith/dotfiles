@@ -2,7 +2,7 @@
 
 (setq company-idle-delay nil
       display-line-numbers-type nil
-      doom-font (font-spec :family "Cascadia Mono PL" :size 12)
+      doom-font (font-spec :family "FiraCode Nerd Font" :size 12)
       doom-theme 'doom-gruvbox-light
       doom-variable-pitch-font (font-spec :family "Inter")
       user-full-name "Nate Smith"

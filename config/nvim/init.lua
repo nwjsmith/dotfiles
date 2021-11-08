@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- You are using Git, right?
 vim.g.backup = false

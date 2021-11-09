@@ -10,13 +10,6 @@ vim.api.nvim_set_keymap(
 )
 
 vim.api.nvim_set_keymap(
-  "v",
-  "<Leader>ca",
-  "<Cmd>Telescope lsp_range_code_actions<CR>",
-  options
-)
-
-vim.api.nvim_set_keymap(
   "n",
   "<Leader>cj",
   "<Cmd>Telescope lsp_workspace_symbols<CR>",

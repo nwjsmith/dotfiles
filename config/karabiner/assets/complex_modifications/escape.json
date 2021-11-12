@@ -26,6 +26,27 @@
           "type": "basic"
         }
       ]
+    },
+    {
+      "description": "Change escape to grave_accent",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "escape",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
     }
   ]
 }

@@ -5,5 +5,4 @@ return {
   require("config.plugins.lualine"),
   require("config.plugins.telescope"),
   require("config.plugins.treesitter"),
-  require("config.plugins.trouble")
 }

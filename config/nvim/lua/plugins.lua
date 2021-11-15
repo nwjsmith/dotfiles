@@ -1,5 +1,6 @@
 require("packer").startup(function()
   use("clojure-vim/vim-jack-in")
+  use({"jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" }})
   use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
   use("Olical/conjure")
   use("neovim/nvim-lspconfig")

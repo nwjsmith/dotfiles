@@ -1,36 +1,68 @@
 local lspconfig = require("lspconfig")
+local null_ls = require("null-ls")
 
-local on_attach = function(client, buffer)
+function bufmap(buffer, mode, lhs, rhs)
+  options = { noremap = true, silent = true }
+  vim.api.nvim_buf_set_keymap(buffer, mode, lhs, rhs, options)
+end
+
+local set_bindings = function(client, buffer)
   vim.api.nvim_buf_set_option(buffer, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-  function map(mode, lhs, rhs)
-    options = { noremap = true, silent = true }
-    vim.api.nvim_buf_set_keymap(buffer, mode, lhs, rhs, options)
-  end
-
-  map("n", "<Leader>cX", "<Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>")
-  map("n", "<Leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<CR>")
-  map("n", "<Leader>cf", "<Cmd>lua vim.lsp.buf.formatting()<CR>")
-  map("n", "<Leader>ci", "<Cmd>lua vim.lsp.buf.implementation()<CR>")
-  map("n", "<Leader>cr", "<Cmd>lua vim.lsp.buf.rename()<CR>")
-  map("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>")
-  map("n", "[e", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>")
-  map("n", "]e", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>")
-  map("n", "gD", "<cmd>lua vim.lsp.buf.references()<CR>")
-  map("n", "gI", "<Cmd>lua vim.lsp.buf.implementation()<CR>")
-  map("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>")
-  map("v", "<Leader>ca", ":<C-U>lua vim.lsp.buf.range_code_action()<CR>")
+  bufmap(buffer, "n", "<Leader>cX", "<Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>")
+  bufmap(buffer, "n", "<Leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<CR>")
+  bufmap(buffer, "n", "<Leader>cf", "<Cmd>lua vim.lsp.buf.formatting()<CR>")
+  bufmap(buffer, "n", "<Leader>ci", "<Cmd>lua vim.lsp.buf.implementation()<CR>")
+  bufmap(buffer, "n", "<Leader>cr", "<Cmd>lua vim.lsp.buf.rename()<CR>")
+  bufmap(buffer, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>")
+  bufmap(buffer, "n", "[e", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>")
+  bufmap(buffer, "n", "]e", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>")
+  bufmap(buffer, "n", "gD", "<cmd>lua vim.lsp.buf.references()<CR>")
+  bufmap(buffer, "n", "gI", "<Cmd>lua vim.lsp.buf.implementation()<CR>")
+  bufmap(buffer, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>")
+  bufmap(buffer, "v", "<Leader>ca", ":<C-U>lua vim.lsp.buf.range_code_action()<CR>")
 end
 
-for _, server in ipairs({ "clojure_lsp", "tsserver" }) do
-  lspconfig[server].setup({
-    on_attach = on_attach,
-    flags = { debounce_text_changes = 150 },
-  })
-end
+local flags = { debounce_text_changes = 150 }
+
+lspconfig["clojure_lsp"].setup({
+  on_attach = set_bindings,
+  flags = flags,
+})
 
 lspconfig["denols"].setup({
   autostart = false,
-  on_attach = on_attach,
-  flags = { debounce_text_changes = 150 },
+  on_attach = set_bindings,
+  flags = flags,
+})
+
+lspconfig["pyright"].setup({
+  on_attach = function(client, buffer)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+    set_bindings(client, buffer)
+  end,
+  flags = flags,
+})
+
+lspconfig["tsserver"].setup({
+  on_attach = function(client, buffer)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+    set_bindings(client, buffer)
+  end,
+  flags = flags,
+})
+
+null_ls.config({
+  sources = {
+    null_ls.builtins.formatting.eslint_d,
+    null_ls.builtins.formatting.black,
+    null_ls.builtins.diagnostics.eslint_d,
+  }
+})
+
+lspconfig["null-ls"].setup({
+  on_attach = set_bindings,
+  flags = flags,
 })

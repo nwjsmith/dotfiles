@@ -1,5 +1,6 @@
 local lspconfig = require("lspconfig")
 local null_ls = require("null-ls")
+local util = require("lspconfig/util")
 
 function bufmap(buffer, mode, lhs, rhs)
   options = { noremap = true, silent = true }
@@ -31,8 +32,8 @@ lspconfig["clojure_lsp"].setup({
 })
 
 lspconfig["denols"].setup({
-  autostart = false,
   on_attach = set_bindings,
+  root_dir = util.root_pattern("deno.json", "deno.jsonc", ".git"),
   flags = flags,
 })
 
@@ -46,6 +47,15 @@ lspconfig["pyright"].setup({
 })
 
 lspconfig["tsserver"].setup({
+  on_attach = function(client, buffer)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+    set_bindings(client, buffer)
+  end,
+  flags = flags,
+})
+
+lspconfig["solargraph"].setup({
   on_attach = function(client, buffer)
     client.resolved_capabilities.document_formatting = false
     client.resolved_capabilities.document_range_formatting = false

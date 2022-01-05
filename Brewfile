@@ -164,7 +164,7 @@ cask "zsa-wally"
 mas "1Blocker", id: 1365531024
 mas "Craft", id: 1487937127
 mas "DaisyDisk", id: 411643860
-mas "Deliveries", id: 924726344
+mas "Deliveries", id: 290986013
 mas "Fantastical", id: 975937182
 mas "Flow", id: 1423210932
 mas "Grammarly for Safari", id: 1462114288

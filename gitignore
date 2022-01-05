@@ -10,6 +10,7 @@
 .eastwood
 .bundle
 .byebug_history
+.clj-kondo/
 .cpcache/
 .dir-locals.el
 .env

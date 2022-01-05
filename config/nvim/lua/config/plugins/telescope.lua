@@ -15,3 +15,18 @@ vim.api.nvim_set_keymap(
   "<Cmd>Telescope find_files<CR>",
   options
 )
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<Leader>fb",
+  "<Cmd>Telescope file_browser<CR>",
+  options
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<Leader>ft",
+  "<Cmd>Telescope builtins<CR>",
+  options
+)
+

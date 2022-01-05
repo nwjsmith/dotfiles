@@ -32,15 +32,14 @@ lspconfig["clojure_lsp"].setup({
 })
 
 lspconfig["denols"].setup({
+  autostart = false,
   on_attach = set_bindings,
   root_dir = util.root_pattern("deno.json", "deno.jsonc", ".git"),
   flags = flags,
 })
 
-lspconfig["pyright"].setup({
+lspconfig["pylsp"].setup({
   on_attach = function(client, buffer)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
     set_bindings(client, buffer)
   end,
   flags = flags,
@@ -64,17 +63,13 @@ lspconfig["solargraph"].setup({
   flags = flags,
 })
 
-null_ls.config({
+null_ls.setup({
   sources = {
     null_ls.builtins.formatting.eslint_d,
-    null_ls.builtins.formatting.black,
     null_ls.builtins.formatting.rubocop,
     null_ls.builtins.diagnostics.eslint_d,
     null_ls.builtins.diagnostics.rubocop,
-  }
-})
-
-lspconfig["null-ls"].setup({
+  },
   on_attach = set_bindings,
-  flags = flags,
+  debounce = 150,
 })

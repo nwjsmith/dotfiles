@@ -2,6 +2,10 @@ require("packer").startup(function()
   use("clojure-vim/vim-jack-in")
   use("elixir-editors/vim-elixir")
   use("guns/vim-sexp")
+  use({
+    'ibhagwan/fzf-lua',
+    requires = { 'vijaymarupudi/nvim-fzf', 'kyazdani42/nvim-web-devicons' }
+  })
   use("janet-lang/janet.vim")
   use({"jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" }})
   use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
@@ -11,7 +15,6 @@ require("packer").startup(function()
     requires = { "kyazdani42/nvim-web-devicons" },
   })
   use("norcalli/nvim-colorizer.lua")
-  use({ "nvim-telescope/telescope.nvim", requires = "nvim-lua/plenary.nvim" })
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   use("Olical/conjure")
   use("shaunsingh/nord.nvim")

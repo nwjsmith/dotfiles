@@ -9,6 +9,7 @@ require("packer").startup(function()
   use("janet-lang/janet.vim")
   use({"jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" }})
   use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
+  use("nanotee/zoxide.vim")
   use("neovim/nvim-lspconfig")
   use({
     "nvim-lualine/lualine.nvim",

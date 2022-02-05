@@ -118,6 +118,7 @@ brew "wget"
 brew "yamllint"
 brew "youtube-dl"
 brew "zlib"
+brew "zoxide"
 brew "zsh"
 
 cask "1password"

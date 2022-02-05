@@ -1,5 +1,3 @@
-tap "InstantClientTap/instantclient"
-
 cask "android-studio"
 brew "ansible"
 brew "circleci"
@@ -9,8 +7,6 @@ brew "gpgme"
 brew "go"
 brew "hadolint"
 brew "imagemagick@6"
-brew "instantclient-basic"
-brew "instantclient-sdk"
 brew "kafka"
 brew "kotlin"
 

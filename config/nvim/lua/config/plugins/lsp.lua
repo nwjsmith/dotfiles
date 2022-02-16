@@ -26,40 +26,28 @@ end
 
 local flags = { debounce_text_changes = 150 }
 
-lspconfig["clojure_lsp"].setup({
-  on_attach = set_bindings,
-  flags = flags,
-})
+for _, ls in pairs({ "clojure_lsp", "pylsp", "rust_analyzer" }) do
+  lspconfig[ls].setup({
+    on_attach = set_bindings,
+    flags = flags,
+  })
+end
+
+for _, ls_with_formatting_disabled in pairs({ "solargraph", "tsserver" }) do
+  lspconfig[ls_with_formatting_disabled].setup({
+    on_attach = function(client, buffer)
+      client.resolved_capabilities.document_formatting = false
+      client.resolved_capabilities.document_range_formatting = false
+      set_bindings(client, buffer)
+    end,
+    flags = flags,
+  })
+end
 
 lspconfig["denols"].setup({
   autostart = false,
   on_attach = set_bindings,
   root_dir = util.root_pattern("deno.json", "deno.jsonc", ".git"),
-  flags = flags,
-})
-
-lspconfig["pylsp"].setup({
-  on_attach = function(client, buffer)
-    set_bindings(client, buffer)
-  end,
-  flags = flags,
-})
-
-lspconfig["tsserver"].setup({
-  on_attach = function(client, buffer)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
-    set_bindings(client, buffer)
-  end,
-  flags = flags,
-})
-
-lspconfig["solargraph"].setup({
-  on_attach = function(client, buffer)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
-    set_bindings(client, buffer)
-  end,
   flags = flags,
 })
 

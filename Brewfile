@@ -4,6 +4,7 @@ tap "borkdude/brew"
 tap "clojure/tools"
 tap "clojure-lsp/brew"
 tap "fabianishere/personal"
+tap "federico-terzi/espanso"
 tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/core"
@@ -42,6 +43,7 @@ brew "deno"
 brew "direnv"
 brew "editorconfig"
 brew "elixir"
+brew "federico-terzi/espanso/espanso"
 brew "fabianishere/personal/pam_reattach"
 brew "fd"
 brew "ffmpeg"
@@ -162,7 +164,6 @@ cask "zoom"
 cask "zotero"
 cask "zsa-wally"
 
-mas "1Blocker", id: 1365531024
 mas "Craft", id: 1487937127
 mas "DaisyDisk", id: 411643860
 mas "Deliveries", id: 290986013

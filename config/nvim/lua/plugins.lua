@@ -1,6 +1,7 @@
 require("packer").startup(function()
   use("clojure-vim/vim-jack-in")
   use("elixir-editors/vim-elixir")
+  use("gruvbox-community/gruvbox")
   use("guns/vim-sexp")
   use({
     'ibhagwan/fzf-lua',

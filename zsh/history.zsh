@@ -1,3 +1,0 @@
-setopt hist_ignore_all_dups inc_append_history
-export HISTSIZE=4096
-export SAVEHIST=4096

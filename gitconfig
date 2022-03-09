@@ -17,8 +17,15 @@
 [core]
   attributesfile = ~/.gitattributes
   excludesfile = ~/.gitignore
+  pager = delta
 [credential]
   helper = osxkeychain
+[delta]
+  light = true
+  navigate = true
+  syntax-theme = gruvbox-light
+[diff]
+  colorMoved = default
 [fetch]
   prune = true
 [filter "lfs"]
@@ -30,8 +37,12 @@
   user = nwjsmith
 [include]
   path = ~/.gitconfig.local
+[interactive]
+  diffFilter = delta --color-only
 [init]
   defaultBranch = main
+[merge]
+  conflictStyle = diff3
 [push]
   default = current
 [pull]

@@ -87,8 +87,9 @@ export -U PATH
 # descriptions.
 setopt interactivecomments
 
-# Use Starship as the prompt
-eval "$(starship init zsh)"
+# Use Pure for prompt
+autoload -U promptinit && promptinit
+prompt pure
 
 # Manage Puppeteer's Chromium installation with Homebrew.
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true

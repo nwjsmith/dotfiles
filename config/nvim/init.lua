@@ -10,6 +10,8 @@ vim.o.mouse = "a"
 
 vim.o.clipboard = "unnamedplus"
 
+vim.o.number = true
+
 require("plugins")
 require("colours")
 

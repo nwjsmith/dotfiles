@@ -33,7 +33,7 @@ for _, ls in pairs({ "clojure_lsp", "pylsp", "rust_analyzer" }) do
   })
 end
 
-for _, ls_with_formatting_disabled in pairs({ "solargraph", "tsserver" }) do
+for _, ls_with_formatting_disabled in pairs({ "tsserver" }) do
   lspconfig[ls_with_formatting_disabled].setup({
     on_attach = function(client, buffer)
       client.resolved_capabilities.document_formatting = false
@@ -56,7 +56,6 @@ null_ls.setup({
     null_ls.builtins.formatting.eslint_d,
     null_ls.builtins.formatting.rubocop,
     null_ls.builtins.diagnostics.eslint_d,
-    null_ls.builtins.diagnostics.rubocop,
   },
   on_attach = set_bindings,
   debounce = 150,

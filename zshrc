@@ -96,7 +96,7 @@ export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=$(command -v chromium)
 
 # Ruby should link against the OpenSSL installed via Homebrew
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=${BREW_PREFIX}/opt/openssl@1.1"
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=${BREW_PREFIX}/opt/openssl@1.1"
 
 # Use zoxide to move quickly around directories.
 eval "$(zoxide init zsh)"

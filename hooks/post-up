@@ -17,8 +17,3 @@ if ! infocmp xterm-truecolor-italic 1>/dev/null 2>&1; then
   tic -x -o "${HOME}/.terminfo" \
     "${HOME}/.config/terminfo/xterm-truecolor-italic.terminfo"
 fi
-
-doom_path="${HOME}/.emacs.d"
-if [ ! -d "${doom_path}" ]; then
-  git clone --depth 1 https://github.com/hlissner/doom-emacs.git "${doom_path}"
-fi

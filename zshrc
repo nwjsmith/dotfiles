@@ -29,17 +29,6 @@ antigen bundle "zsh-users/zsh-syntax-highlighting"
 
 antigen apply
 
-# DOOM Emacs includes a program for managing its configuration
-PATH="${HOME}/.emacs.d/bin:${PATH}"
-export -U PATH
-
-# DOOM Emacs' terminal plugin is improved by using its shell integration
-if [[ "${INSIDE_EMACS}" = "vterm" ]] \
-    && [[ -n "${EMACS_VTERM_PATH}" ]] \
-    && [[ -f "${EMACS_VTERM_PATH}/etc/emacs-vterm-zsh.sh" ]]; then
-  source "${EMACS_VTERM_PATH}/etc/emacs-vterm-zsh.sh"
-fi
-
 # Use Neovim as the default editor and man pager
 export VISUAL="nvim"
 export EDITOR="${VISUAL}"

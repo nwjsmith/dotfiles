@@ -18,6 +18,19 @@ $ EXCLUDES="README.md" rcup -t $(arch)
 I highly recommend creating a `~/.rcrc` file with at least
 `EXCLUDES="README.md"` and `TAGS="$(arch)"` in it.
 
+## The Nix bits
+
+I'm gradually transitioning over to using nix for management. To use this, make
+sure nix is installed and then bootstrap nix-darwin with:
+
+```
+nix build ~/.dotfiles\#darwinConfigurations.$(hostname).system
+./result/sw/bin/darwin-rebuild switch --flake .
+```
+
+Then start a new shell. This should have `darwin-rebuild` available for more
+iteration.
+
 ## etc.
 
 ### `sudo` and TouchID

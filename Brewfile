@@ -17,14 +17,6 @@ tap "shopify/shopify"
 
 cask_args appdir: "/Applications"
 
-def load_brewfile(brewfile)
-  path = File.expand_path(brewfile, __dir__)
-  instance_eval(File.read(brewfile), path) if File.exist?(brewfile)
-end
-
-load_brewfile ".Brewfile.arch"
-load_brewfile ".Brewfile.host"
-
 brew "adr-tools"
 brew "antigen"
 brew "aspell"

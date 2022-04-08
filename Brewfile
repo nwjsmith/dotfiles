@@ -15,8 +15,6 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "shopify/shopify"
 
-cask_args appdir: "/Applications"
-
 brew "adr-tools"
 brew "antigen"
 brew "aspell"
@@ -124,51 +122,3 @@ brew "yt-dlp"
 brew "zlib"
 brew "zoxide"
 brew "zsh"
-
-cask "1password"
-cask "1password-cli"
-cask "alloy"
-cask "appcleaner"
-cask "bartender"
-cask "camo-studio"
-cask "chromium"
-cask "cleanshot"
-cask "dash"
-cask "deckset"
-cask "docker"
-cask "firefox"
-cask "font-jetbrains-mono-nerd-font"
-cask "google-chrome"
-cask "grammarly"
-cask "hey"
-cask "insomnia"
-cask "karabiner-elements"
-cask "keyboard-maestro"
-cask "kindle"
-cask "kitty"
-cask "mochi"
-cask "ngrok"
-cask "raycast"
-cask "screenflow"
-cask "signal"
-cask "slack"
-cask "sonos"
-cask "soulver"
-cask "spotify"
-cask "steam"
-cask "the-unarchiver"
-cask "thingsmacsandboxhelper"
-cask "tla-plus-toolbox"
-cask "vlc"
-cask "zoom"
-cask "zotero"
-cask "zsa-wally"
-
-mas "Craft", id: 1487937127
-mas "DaisyDisk", id: 411643860
-mas "Deliveries", id: 290986013
-mas "Fantastical", id: 975937182
-mas "Flow", id: 1423210932
-mas "Grammarly for Safari", id: 1462114288
-mas "Reeder", id: 1529448980
-mas "Things", id: 904280696

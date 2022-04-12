@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   home.packages = with pkgs; [
@@ -53,11 +53,11 @@
 
   programs.direnv.enable = true;
 
-  xdg.configFile."nvim/nvim.lua".text = builtins.readFile ./nvim.lua;
+  xdg.configFile."nvim/nvim.lua".source = ./nvim.lua;
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      nvim-treesitter
+      (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
       conjure
       copilot-vim
       direnv-vim
@@ -74,6 +74,7 @@
       vim-fugitive
       vim-git
       vim-jack-in
+      vim-nix
       vim-repeat
       vim-rhubarb
       vim-sexp
@@ -87,8 +88,10 @@
       zoxide-vim
     ];
     extraConfig = ''
-      let s:nvim = expand("<sfile>:p:h") . "/nvim.lua"
-      execute "luafile " . s:nvim
+      set termguicolors
+      set background=light
+      colorscheme gruvbox
+      execute "luafile ${config.xdg.configHome}/nvim/nvim.lua"
     '';
     extraPackages = with pkgs; [
       rubyPackages.solargraph
@@ -135,10 +138,11 @@
 
   programs.zoxide.enable = true;
 
-  home.file."Code/wealthsimple/gitconfig".text = ''
+  xdg.configFile."git/wealthsimple.gitconfig".text = ''
     [user]
       email = nsmith@wealthsimple.com
   '';
+  xdg.configFile."git/gitmessage".source = ./gitmessage;
   programs.git = {
     enable = true;
     userName = "Nate Smith";
@@ -151,14 +155,24 @@
       unstage = "reset --";
       yolo = "push --force-with-lease";
     };
-    extraConfig.init.defaultBranch = "main";
+    extraConfig = {
+      commit.template = "${config.xdg.configHome}/git/gitmessage";
+      init.defaultBranch = "main";
+    };
     delta = {
       enable = true;
       options = { syntax-theme = "gruvbox-light"; };
     };
+    ignores = [
+      ".#*"
+      ".DS_Store"
+      ".dir-locals.el"
+      ".idea/"
+      ".vscode/"
+    ];
     includes = [
       {
-        path = "~/Code/wealthsimple/gitconfig";
+        path = "${config.xdg.configHome}/git/wealthsimple.gitconfig";
         condition = "gitdir:~/Code/wealthsimple/";
       }
     ];

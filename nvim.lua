@@ -9,11 +9,7 @@ vim.o.mouse = 'a'
 
 vim.o.clipboard = 'unnamedplus'
 
-vim.opt.termguicolors = true
-vim.g.gruvbox_italic = true
-vim.g.background = 'light'
-vim.cmd('colorscheme gruvbox')
-require('lualine').setup({ theme = 'gruvbox_dark' })
+require('lualine').setup({ theme = 'gruvbox_light' })
 
 local options = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<Leader>ff', ':Files<CR>', options)
@@ -22,7 +18,7 @@ vim.api.nvim_set_keymap('n', '<Leader>/', ':Rg<CR>', options)
 require'gitsigns'.setup()
 
 require'nvim-treesitter.configs'.setup {
-  highlight = { enable = true },
+  highlight = { enable = true, disable = { "nix" } },
   incremental_selection = { enable = true },
 }
 

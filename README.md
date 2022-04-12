@@ -8,7 +8,7 @@ macOS with Homebrew installed.
 
 ## Installation
 
-```
+```bash
 $ brew install rcm
 $ git clone https://github.com/nwjsmith/dotfiles ~/.dotfiles
 $ cd ~/.dotfiles

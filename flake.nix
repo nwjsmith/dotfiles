@@ -45,7 +45,7 @@
             inherit (nixpkgsConfig) config;
           };
           # TODO: remove when https://github.com/NixOS/nixpkgs/pull/166661 hits `nixpkgs-unstable`.
-          inherit (final.pkgs-master) kitty;
+          inherit (final.pkgs-master) kitty topgrade;
         };
       };
     };

@@ -6,10 +6,7 @@
     awscli
     fd
     gh
-    git
     git-absorb
-    delta
-    gnupg
     jq
     microplane
     pure-prompt
@@ -185,4 +182,28 @@
     max-cache-ttl 86400
     pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac
   '';
+
+  programs.topgrade = {
+    # TODO re-enable when Topgrade is fixed on darwin
+    enable = false;
+    settings = {
+      disable = [
+        "git_repos"
+        "gem"
+        "github_cli_extensions"
+        "node"
+        "tlmgr"
+        "mas"
+        "nix"
+        "pipx"
+        "pip3"
+      ];
+      max_concurrency = 12;
+      repos = ["~/Code/*/*"];
+    };
+  };
+
+  xdg.configFile."shellcheckrc".source = ./shellcheckrc;
+  xdg.configFile."karabiner/assets/complex_modifications/escape.json".source = ./escape.json;
+  xdg.configFile."espanso/default.yml".source = ./espanso.yml;
 }

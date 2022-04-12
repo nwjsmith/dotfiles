@@ -1,6 +1,0 @@
---database=postgresql \
---skip-bundle \
---skip-javascript \
---skip-keeps \
---skip-spring \
---skip-test-unit \

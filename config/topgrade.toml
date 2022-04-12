@@ -1,5 +1,0 @@
-disable = ["git_repos", "gem", "github_cli_extensions", "node", "tlmgr", "mas", "nix", "pipx", "pip3"]
-
-[git]
-max_concurrency = 12
-repos = ["~/Code/*/*"]

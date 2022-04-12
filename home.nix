@@ -135,10 +135,14 @@
 
   programs.zoxide.enable = true;
 
+  home.file."Code/wealthsimple/gitconfig".text = ''
+    [user]
+      email = nsmith@wealthsimple.com
+  '';
   programs.git = {
     enable = true;
-    userEmail = "nsmith@wealthsimple.com";
     userName = "Nate Smith";
+    userEmail = "nate@theinternate.com";
     aliases = {
       co = "checkout";
       dc = "diff --cached";
@@ -152,6 +156,12 @@
       enable = true;
       options = { syntax-theme = "gruvbox-light"; };
     };
+    includes = [
+      {
+        path = "~/Code/wealthsimple/gitconfig";
+        condition = "gitdir:~/Code/wealthsimple/";
+      }
+    ];
   };
 
   programs.gpg.enable = true;

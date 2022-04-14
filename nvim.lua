@@ -18,7 +18,7 @@ vim.api.nvim_set_keymap('n', '<Leader>/', ':Rg<CR>', options)
 require'gitsigns'.setup()
 
 require'nvim-treesitter.configs'.setup {
-  highlight = { enable = true, disable = { "nix" } },
+  highlight = { enable = true },
   incremental_selection = { enable = true },
 }
 

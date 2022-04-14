@@ -3,18 +3,19 @@
 {
   home.packages = with pkgs; [
     asciinema
-    awscli
+    awscli2
+    curl
     fd
     gh
     git-absorb
+    jless
     jq
     microplane
+    niv
     pure-prompt
-    rbenv
     ripgrep
     scc
     shellcheck
-    shfmt
     sqlite
     stylua
     yt-dlp
@@ -71,7 +72,6 @@
       vim-fugitive
       vim-git
       vim-jack-in
-      vim-nix
       vim-repeat
       vim-rhubarb
       vim-sexp
@@ -160,19 +160,11 @@
       enable = true;
       options = { syntax-theme = "gruvbox-light"; };
     };
-    ignores = [
-      ".#*"
-      ".DS_Store"
-      ".dir-locals.el"
-      ".idea/"
-      ".vscode/"
-    ];
-    includes = [
-      {
-        path = "${config.xdg.configHome}/git/wealthsimple.gitconfig";
-        condition = "gitdir:~/Code/wealthsimple/";
-      }
-    ];
+    ignores = [ ".#*" ".DS_Store" ".dir-locals.el" ".idea/" ".vscode/" ];
+    includes = [{
+      path = "${config.xdg.configHome}/git/wealthsimple.gitconfig";
+      condition = "gitdir:~/Code/wealthsimple/";
+    }];
   };
 
   programs.gpg.enable = true;
@@ -199,11 +191,12 @@
         "pip3"
       ];
       max_concurrency = 12;
-      repos = ["~/Code/*/*"];
+      repos = [ "~/Code/*/*" ];
     };
   };
 
   xdg.configFile."shellcheckrc".source = ./shellcheckrc;
-  xdg.configFile."karabiner/assets/complex_modifications/escape.json".source = ./escape.json;
+  xdg.configFile."karabiner/assets/complex_modifications/escape.json".source =
+    ./escape.json;
   xdg.configFile."espanso/default.yml".source = ./espanso.yml;
 }

@@ -20,10 +20,7 @@
   };
 
   environment = {
-    systemPackages = with pkgs; [
-      kitty
-      terminal-notifier
-    ];
+    systemPackages = with pkgs; [ kitty terminal-notifier ];
     shells = with pkgs; [ bashInteractive zsh ];
     variables = {
       SHELL = "${pkgs.zsh}/bin/zsh";

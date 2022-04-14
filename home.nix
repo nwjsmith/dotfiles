@@ -129,6 +129,7 @@
     enableSyntaxHighlighting = true;
     defaultKeymap = "viins";
     initExtra = builtins.readFile ./zshrc;
+    sessionVariables.RPROMPT = "";
   };
 
   programs.bash.enable = true;

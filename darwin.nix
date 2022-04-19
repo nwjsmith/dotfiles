@@ -14,9 +14,12 @@
   # Ensure nix-darwin configures ZSH with a Nix-aware PATH
   programs.zsh = {
     enable = true;
-    shellInit = ''
+    enableBashCompletion = false;
+    enableCompletion = false;
+    loginShellInit = ''
       eval "$(${config.homebrew.brewPrefix}/brew shellenv)"
     '';
+    promptInit = "";
   };
 
   environment = {

@@ -1,4 +1,4 @@
-prompt pure
+autoload -U promptinit && promptinit && prompt pure
 
 setopt interactivecomments
 

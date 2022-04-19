@@ -153,8 +153,18 @@
       yolo = "push --force-with-lease";
     };
     extraConfig = {
-      commit.template = "${config.xdg.configHome}/git/gitmessage";
+      commit = {
+        gpgsign = true;
+        template = "${config.xdg.configHome}/git/gitmessage";
+      };
+      fetch.prune = true;
       init.defaultBranch = "main";
+      push.default = "current";
+      pull.rebase = true;
+      rebase = {
+        autoSquash = true;
+        autoStash = true;
+      };
     };
     delta = {
       enable = true;

@@ -1,13 +1,16 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
-vim.g.backup = false
-vim.g.writebackup = false
-vim.g.swapfile = false
+vim.o.backup = false
+vim.o.writebackup = false
+vim.o.swapfile = false
 
 vim.o.mouse = 'a'
 
 vim.o.clipboard = 'unnamedplus'
+
+vim.o.title = true
+vim.o.titlestring = "%<%F - nvim"
 
 require('lualine').setup({ theme = 'gruvbox_light' })
 

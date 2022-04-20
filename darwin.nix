@@ -41,10 +41,6 @@
     };
     brews = [
       "docker-credential-helper-ecr"
-      "node-build"
-      "nodenv"
-      "pyenv"
-      "ruby-build"
     ];
     taps = [
       "homebrew/bundle"
@@ -56,7 +52,6 @@
       "1password"
       "1password-cli"
       "alloy"
-      "appcleaner"
       "bartender"
       "camo-studio"
       "chromium"
@@ -70,15 +65,18 @@
       "hey"
       "intellij-idea"
       "karabiner-elements"
+      "keyboard-maestro"
       "kindle"
       "mochi"
       "pritunl"
       "raycast"
+      "rescuetime"
       "screenflow"
       "signal"
       "slack"
       "sonos"
       "soulver"
+      "timing"
       "the-unarchiver"
       "thingsmacsandboxhelper"
       "tla-plus-toolbox"

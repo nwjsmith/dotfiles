@@ -4,15 +4,16 @@
   home.packages = with pkgs; [
     asciinema
     awscli2
+    babashka
     curl
     fd
+    dsq
     gh
     git-absorb
     jless
     jq
     microplane
     niv
-    pure-prompt
     ripgrep
     scc
     shellcheck
@@ -185,6 +186,21 @@
     pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac
   '';
 
+  programs.starship = {
+    enable = true;
+    settings = {
+      add_newline = false;
+      aws = { disabled = true; };
+      docker_context = { disabled = true; };
+      git_state = { disabled = true; };
+      git_status = { disabled = true; };
+      java = { disabled = true; };
+      nodejs = { disabled = true; };
+      python = { disabled = true; };
+      ruby = { disabled = true; };
+    };
+  };
+
   programs.topgrade = {
     # TODO re-enable when Topgrade is fixed on darwin
     enable = false;
@@ -208,5 +224,4 @@
   xdg.configFile."shellcheckrc".source = ./shellcheckrc;
   xdg.configFile."karabiner/assets/complex_modifications/escape.json".source =
     ./escape.json;
-  xdg.configFile."espanso/default.yml".source = ./espanso.yml;
 }

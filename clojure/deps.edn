@@ -1,8 +1,5 @@
-{:deps {org.clojure/clojure {:mvn/version "1.10.3"}
-        org.clojure/test.check {:mvn/version "1.1.0"}}
- :aliases
- {:ion-dev {:deps {com.datomic/ion-dev {:mvn/version "0.9.276"}}
-            :main-opts ["-m" "datomic.ion.dev"]}}
+{:deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        org.clojure/test.check {:mvn/version "1.1.1"}}
  :paths ["src"]
  :mvn/repos {"central" {:url "https://repo1.maven.org/maven2/"}
              "clojars" {:url "https://repo.clojars.org/"}}}

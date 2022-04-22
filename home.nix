@@ -28,6 +28,10 @@
     PAGER = "less -FR";
   };
 
+  home.sessionPath = [
+    ".local/bin"
+  ];
+
   programs.exa = {
     enable = true;
     enableAliases = true;
@@ -52,7 +56,7 @@
 
   programs.direnv.enable = true;
 
-  xdg.configFile."nvim/nvim.lua".source = ./nvim.lua;
+  xdg.configFile."nvim/nvim.lua".source = ./config/nvim/nvim.lua;
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
@@ -140,7 +144,7 @@
     [user]
       email = nsmith@wealthsimple.com
   '';
-  xdg.configFile."git/gitmessage".source = ./gitmessage;
+  xdg.configFile."git/gitmessage".source = ./config/git/gitmessage;
   programs.git = {
     enable = true;
     userName = "Nate Smith";
@@ -223,5 +227,35 @@
 
   xdg.configFile."shellcheckrc".source = ./shellcheckrc;
   xdg.configFile."karabiner/assets/complex_modifications/escape.json".source =
-    ./escape.json;
+    ./config/karabiner/assets/complex_modifications/escape.json;
+
+  home.file.".local/bin/gem-constraint" = {
+    source = ./local/bin/gem-constraint;
+    executable = true;
+  };
+
+  home.file.".local/bin/gem-latest" = {
+    source = ./local/bin/gem-latest;
+    executable = true;
+  };
+
+  home.file.".local/bin/git-churn" = {
+    source = ./local/bin/git-churn;
+    executable = true;
+  };
+
+  home.file.".local/bin/git-original-branch" = {
+    source = ./local/bin/git-original-branch;
+    executable = true;
+  };
+
+  home.file.".local/bin/ordinalize" = {
+    source = ./local/bin/ordinalize;
+    executable = true;
+  };
+
+  home.file.".lsp/config.edn".source = ./lsp/config.edn;
+  home.file.".clojure/deps.edn".source = ./clojure/deps.edn;
+  home.file.".clj-kondo/config.edn".source = ./clj-kondo/config.edn;
+  home.file.".clj-kondo/hooks/checking.clj".source = ./clj-kondo/hooks/checking.clj;
 }

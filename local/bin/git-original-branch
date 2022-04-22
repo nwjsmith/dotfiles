@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Usage: git original-branch [<commit>]
+# Checkout the branch originally created for the pull request associated with
+# the given commit. The branch will be named `pull/<number>`, where the number
+# is found in the commit message for the commit. If no commit is given, `HEAD`
+# is used.
+
+function commit_subject() {
+  local commit="${1}"
+
+  git log --max-count=1 --pretty=format:%s "${commit}"
+}
+
+function pull_request_number() {
+  local commit="${1}"
+
+  commit_subject "${commit}" |
+    egrep --only-matching "\(#[[:digit:]]+\)" |
+    sed -E 's/\(#([[:digit:]]+)\)/\1/'
+}
+
+function main() {
+  local merge_commit="${1:-"HEAD"}"
+  local number="$(pull_request_number "${merge_commit}")"
+  local branch="pull/${number}" 
+
+  git fetch origin "pull/${number}/head"
+  git checkout -b "${branch}" FETCH_HEAD
+}
+
+main "$@"

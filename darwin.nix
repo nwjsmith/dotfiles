@@ -4,7 +4,7 @@
   users.nix.configureBuildUsers = true;
 
   fonts = {
-    enableFontDir = true;
+    fontDir.enable = true;
     fonts = [ (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
   };
 

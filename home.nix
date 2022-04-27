@@ -1,6 +1,12 @@
 { pkgs, config, ... }:
 
-{
+let
+  configuredVimPlugin = pkg: {
+    plugin = pkg;
+    config = builtins.readFile ./config/nvim/${pkg.pname}.lua;
+    type = "lua";
+  };
+in {
   home.packages = with pkgs; [
     asciinema
     awscli2
@@ -28,9 +34,7 @@
     PAGER = "less -FR";
   };
 
-  home.sessionPath = [
-    ".local/bin"
-  ];
+  home.sessionPath = [ ".local/bin" ];
 
   programs.exa = {
     enable = true;
@@ -60,16 +64,17 @@
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
-      conjure
+      (configuredVimPlugin
+        (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars)))
+      (configuredVimPlugin conjure)
       copilot-vim
       direnv-vim
-      fzf-vim
-      gitsigns-nvim
-      gruvbox-nvim
-      lualine-nvim
+      (configuredVimPlugin fzf-vim)
+      (configuredVimPlugin gitsigns-nvim)
+      (configuredVimPlugin gruvbox-nvim)
+      (configuredVimPlugin lualine-nvim)
       nvim-colorizer-lua
-      nvim-lspconfig
+      (configuredVimPlugin nvim-lspconfig)
       vim-commentary
       vim-dispatch
       vim-elixir
@@ -90,9 +95,6 @@
       zoxide-vim
     ];
     extraConfig = ''
-      set termguicolors
-      set background=light
-      colorscheme gruvbox
       execute "luafile ${config.xdg.configHome}/nvim/nvim.lua"
     '';
     extraPackages = with pkgs; [
@@ -257,5 +259,6 @@
   home.file.".lsp/config.edn".source = ./lsp/config.edn;
   home.file.".clojure/deps.edn".source = ./clojure/deps.edn;
   home.file.".clj-kondo/config.edn".source = ./clj-kondo/config.edn;
-  home.file.".clj-kondo/hooks/checking.clj".source = ./clj-kondo/hooks/checking.clj;
+  home.file.".clj-kondo/hooks/checking.clj".source =
+    ./clj-kondo/hooks/checking.clj;
 }

@@ -12,8 +12,8 @@ in {
     awscli2
     babashka
     curl
-    fd
     dsq
+    fd
     gh
     git-absorb
     jless
@@ -139,6 +139,21 @@ in {
   };
 
   programs.bash.enable = true;
+
+  programs.doom-emacs = {
+    enable = true;
+    doomPrivateDir = ./doom.d;
+    package = pkgs.emacsNativeComp;
+    emacsPackagesOverlay = self: super: {
+      lsp-mode = super.lsp-mode.overrideAttrs (esuper: {
+        buildInputs = esuper.buildInputs ++ [
+          pkgs.nodePackages.typescript-language-server
+          pkgs.nodePackages.eslint
+          pkgs.nodePackages.eslint_d
+        ];
+      });
+    };
+  };
 
   programs.zoxide.enable = true;
 

@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   # Have nix-darwin manage the Nix daemon
   services.nix-daemon.enable = true;
+
   users.nix.configureBuildUsers = true;
 
   fonts = {
@@ -31,6 +32,11 @@
     };
   };
 
+  services.emacs = {
+    enable = false;
+    package = pkgs.emacsNativeComp;
+  };
+
   homebrew = {
     enable = true;
     autoUpdate = true;
@@ -39,9 +45,7 @@
       brewfile = true;
       noLock = true;
     };
-    brews = [
-      "docker-credential-helper-ecr"
-    ];
+    brews = [ "docker-credential-helper-ecr" ];
     taps = [
       "homebrew/bundle"
       "homebrew/cask"

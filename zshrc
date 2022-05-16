@@ -1,3 +1,5 @@
+autoload -U promptinit && promptinit && prompt pure
+
 setopt interactivecomments
 
 if test -n "${KITTY_INSTALLATION_DIR}"; then

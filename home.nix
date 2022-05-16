@@ -1,11 +1,13 @@
 { pkgs, config, ... }:
 
 let
-  configuredVimPlugin = pkg: {
-    plugin = pkg;
-    config = builtins.readFile ./config/nvim/${pkg.pname}.lua;
-    type = "lua";
-  };
+  configuredVimPlugin = pkg:
+    let pkgConfig = "${pkg.pname}.lua";
+    in {
+      plugin = pkg;
+      config = builtins.readFile ./config/nvim/${pkgConfig};
+      type = "lua";
+    };
 in {
   home.packages = with pkgs; [
     asciinema
@@ -20,6 +22,7 @@ in {
     jq
     microplane
     niv
+    pure-prompt
     ripgrep
     scc
     shellcheck

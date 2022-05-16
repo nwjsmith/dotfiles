@@ -100,6 +100,7 @@ in {
     extraPackages = with pkgs; [
       rubyPackages.solargraph
       nodePackages.typescript-language-server
+      rnix-lsp
     ];
   };
 

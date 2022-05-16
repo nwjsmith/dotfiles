@@ -33,3 +33,10 @@ for _, ls_with_formatting_disabled in pairs({ "tsserver" }) do
     flags = flags,
   })
 end
+
+for _, ls in pairs({ "rnix" }) do
+  lspconfig[ls].setup({
+    on_attach = set_bindings,
+    flags = flags,
+  })
+end

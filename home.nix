@@ -100,11 +100,6 @@ in {
     extraConfig = ''
       execute "luafile ${config.xdg.configHome}/nvim/nvim.lua"
     '';
-    extraPackages = with pkgs; [
-      rubyPackages.solargraph
-      nodePackages.typescript-language-server
-      rnix-lsp
-    ];
   };
 
   programs.kitty = {

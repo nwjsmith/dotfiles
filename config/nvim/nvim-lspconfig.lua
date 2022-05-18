@@ -22,17 +22,17 @@ local set_bindings = function(client, buffer)
   bufmap("v", "<Leader>ca", vim.lsp.buf.range_code_action)
 end
 
-function nixcmd(pkg) do
-  { "nix", "run", "nixpkgs#" .. pkg, "--" }
+function nixcmd(pkg)
+  return { "nix", "run", "nixpkgs#" .. pkg, "--" }
 end
 
 local flags = { debounce_text_changes = 150 }
 
-local servers = { rnix = "rnix-lsp", ruby = "rubyPackages.solargraph" }
+local servers = { rnix = "rnix-lsp", solargraph = "rubyPackages.solargraph" }
 for server, package in pairs(servers) do
-  lspconfig[ls].setup({
+  lspconfig[server].setup({
     on_attach = set_bindings,
-    cmd = nixcmd(ls),
+    cmd = nixcmd(package),
     flags = flags,
   })
 end

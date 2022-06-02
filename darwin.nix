@@ -94,7 +94,6 @@
       Fantastical = 975937182;
       Flow = 1423210932;
       "Grammarly for Safari" = 1462114288;
-      Reeder = 1529448980;
       Things = 904280696;
     };
   };

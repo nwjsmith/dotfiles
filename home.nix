@@ -146,7 +146,7 @@ in {
   programs.bash.enable = true;
 
   programs.doom-emacs = {
-    enable = true;
+    enable = false;
     doomPrivateDir = ./doom.d;
     package = pkgs.emacsNativeComp;
     emacsPackagesOverlay = self: super: {

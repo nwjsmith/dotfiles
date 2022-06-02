@@ -74,7 +74,6 @@
       "mochi"
       "pritunl"
       "raycast"
-      "rescuetime"
       "screenflow"
       "signal"
       "slack"

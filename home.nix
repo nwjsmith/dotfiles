@@ -15,6 +15,9 @@ let
     discount
     editorconfig-core-c
     fontconfig
+    nodePackages.js-beautify
+    nodePackages.stylelint
+    ktlint
     libtool
     libvterm-neovim
     nixfmt

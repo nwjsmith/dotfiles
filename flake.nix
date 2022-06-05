@@ -9,15 +9,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
-    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
-    nix-doom-emacs.inputs = {
-      nixpkgs.follows = "nixpkgs";
-      emacs-overlay.follows = "emacs-overlay";
-    };
   };
 
   outputs =
-    { self, darwin, emacs-overlay, home-manager, nixpkgs, nix-doom-emacs }:
+    { self, darwin, emacs-overlay, home-manager, nixpkgs }:
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -38,7 +33,7 @@
             home-manager = {
               useGlobalPkgs = true;
               users.nsmith = {
-                imports = [ ./home.nix nix-doom-emacs.hmModule ];
+                imports = [ ./home.nix ];
               };
             };
           })

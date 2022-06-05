@@ -6,7 +6,11 @@
 
   fonts = {
     fontDir.enable = true;
-    fonts = [ (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
+    fonts = with pkgs; [
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      emacs-all-the-icons-fonts
+      inter
+    ];
   };
 
   # We use Nix flakes
@@ -30,11 +34,6 @@
       SHELL = "${pkgs.zsh}/bin/zsh";
       TERMINFO_DIRS = "${pkgs.kitty.terminfo.outPath}/share/terminfo";
     };
-  };
-
-  services.emacs = {
-    enable = false;
-    package = pkgs.emacsNativeComp;
   };
 
   homebrew = {

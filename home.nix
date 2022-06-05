@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 
 let
   configuredVimPlugin = pkg:
@@ -8,6 +8,17 @@ let
       config = builtins.readFile ./config/nvim/${pkgConfig};
       type = "lua";
     };
+  emacsPackages = with pkgs; [
+    clj-kondo
+    cmake
+    coreutils
+    discount
+    editorconfig-core-c
+    fontconfig
+    libtool
+    libvterm-neovim
+    nixfmt
+  ];
 in {
   home.packages = with pkgs; [
     asciinema
@@ -23,13 +34,13 @@ in {
     microplane
     niv
     pure-prompt
-    ripgrep
+    (ripgrep.override { withPCRE2 = true; })
     scc
     shellcheck
     sqlite
     stylua
     yt-dlp
-  ];
+  ] ++ emacsPackages;
 
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -37,11 +48,20 @@ in {
     PAGER = "less -FR";
   };
 
-  home.sessionPath = [ ".local/bin" ];
+  home.sessionPath = [
+    "${config.home.homeDirectory}/.local/bin"
+    "${config.home.homeDirectory}/.emacs.d/bin"
+  ];
 
   programs.exa = {
     enable = true;
     enableAliases = true;
+  };
+
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacsNativeComp;
+    extraPackages = (epkgs: [ epkgs.vterm ]);
   };
 
   programs.fzf = {
@@ -67,8 +87,31 @@ in {
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      (configuredVimPlugin
-        (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars)))
+      (configuredVimPlugin (nvim-treesitter.withPlugins (p:
+        with p; [
+          tree-sitter-bash
+          tree-sitter-c
+          tree-sitter-clojure
+          tree-sitter-dockerfile
+          tree-sitter-elixir
+          tree-sitter-go
+          tree-sitter-graphql
+          tree-sitter-html
+          tree-sitter-javascript
+          tree-sitter-json
+          tree-sitter-kotlin
+          tree-sitter-lua
+          tree-sitter-python
+          tree-sitter-regex
+          tree-sitter-ruby
+          tree-sitter-rust
+          tree-sitter-tlaplus
+          tree-sitter-tsx
+          tree-sitter-typescript
+          tree-sitter-vim
+          tree-sitter-yaml
+          tree-sitter-zig
+        ])))
       (configuredVimPlugin conjure)
       copilot-vim
       direnv-vim
@@ -85,6 +128,7 @@ in {
       vim-fugitive
       vim-git
       vim-jack-in
+      vim-nix
       vim-repeat
       vim-rhubarb
       vim-sexp
@@ -144,21 +188,6 @@ in {
   };
 
   programs.bash.enable = true;
-
-  programs.doom-emacs = {
-    enable = false;
-    doomPrivateDir = ./doom.d;
-    package = pkgs.emacsNativeComp;
-    emacsPackagesOverlay = self: super: {
-      lsp-mode = super.lsp-mode.overrideAttrs (esuper: {
-        buildInputs = esuper.buildInputs ++ [
-          pkgs.nodePackages.typescript-language-server
-          pkgs.nodePackages.eslint
-          pkgs.nodePackages.eslint_d
-        ];
-      });
-    };
-  };
 
   programs.zoxide.enable = true;
 
@@ -250,6 +279,26 @@ in {
   xdg.configFile."shellcheckrc".source = ./shellcheckrc;
   xdg.configFile."karabiner/assets/complex_modifications/escape.json".source =
     ./config/karabiner/assets/complex_modifications/escape.json;
+
+  home.activation = {
+    installDoom = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      DOOM="${config.home.homeDirectory}/.emacs.d"
+      [ ! -d $DOOM ] && \
+        $DRY_RUN_CMD ${pkgs.git}/bin/git clone --depth 1 https://github.com/doomemacs/doomemacs $DOOM
+    '';
+  };
+
+  home.file.".doom.d/init.el" = {
+    source = ./doom.d/init.el;
+  };
+
+  home.file.".doom.d/packages.el" = {
+    source = ./doom.d/packages.el;
+  };
+
+  home.file.".doom.d/config.el" = {
+    source = ./doom.d/config.el;
+  };
 
   home.file.".local/bin/gem-constraint" = {
     source = ./local/bin/gem-constraint;

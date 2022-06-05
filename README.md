@@ -1,66 +1,30 @@
 # dotfiles
 
-These are my dotfiles. They work on both Intel and ARM Macs.
+These are my dotfiles. They work on macOS.
 
 ## Pre-requisites
 
-macOS with Homebrew installed.
+macOS with Homebrew and Nix installed with Flakes enabled.
 
 ## Installation
 
-```bash
-$ brew install rcm
-$ git clone https://github.com/nwjsmith/dotfiles ~/.dotfiles
-$ cd ~/.dotfiles
-$ EXCLUDES="README.md" rcup -t $(arch)
-```
-
-I highly recommend creating a `~/.rcrc` file with at least
-`EXCLUDES="README.md"` and `TAGS="$(arch)"` in it.
-
-## The Nix bits
-
-I'm gradually transitioning over to using nix for management. To use this, make
-sure nix is installed and then bootstrap nix-darwin with:
-
-```
-nix build ~/.dotfiles\#darwinConfigurations.$(hostname).system
-./result/sw/bin/darwin-rebuild switch --flake .
-```
-
-Then start a new shell. This should have `darwin-rebuild` available for more
-iteration.
+  $ git clone https://github.com/nwjsmith/dotfiles ~/.dotfiles
+  $ nix build ~/.dotfiles\#darwinConfigurations.$(hostname).system
+  $ ./result/sw/bin/darwin-rebuild switch --flake .
 
 ## etc.
 
-### `sudo` and TouchID
-
-To use TouchID or your Apple Watch with `sudo`, add the following lines to `/etc/pam.d/sudo`:
-
-**ARM**
-
-```
-auth       optional       /opt/homebrew/lib/pam/pam_reattach.so
-auth       sufficient     pam_tid.so
-```
-
-**Intel**
-
-```
-auth       optional       /usr/local/lib/pam/pam_reattach.so
-auth       sufficient     pam_tid.so
-```
-
 ### Slack theme
 
-```
-#fbf1c7,#ebdbb2,#d79921,#665c54,#d5c4a1,#3c3836,#98971a,#9d0006,#ebdbb2,#2828282
-```
+  #fbf1c7,#ebdbb2,#d79921,#665c54,#d5c4a1,#3c3836,#98971a,#9d0006,#ebdbb2,#2828282
 
-### Java
+### Emacs
 
-```
-sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
-```
+Managing Emacs and DOOM through Nix is a huge pain in the ass, so it's all done
+via Homebrew still. After running an install, re-install emacs to pick up
+native comp and a better icon.
 
-[gruvbox-iterm]: https://github.com/gruvbox-community/gruvbox-contrib/tree/master/iterm2
+  $ brew install emacs-plus --with-native-comp --with-modern-doom-icon
+
+Getting Emacs built through Nix is a big TODO on my part, but this works for
+now.

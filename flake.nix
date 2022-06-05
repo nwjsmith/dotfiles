@@ -11,8 +11,7 @@
     emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    { self, darwin, emacs-overlay, home-manager, nixpkgs }:
+  outputs = { self, darwin, emacs-overlay, home-manager, nixpkgs }:
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -32,9 +31,7 @@
             users.users.nsmith.home = "/Users/nsmith";
             home-manager = {
               useGlobalPkgs = true;
-              users.nsmith = {
-                imports = [ ./home.nix ];
-              };
+              users.nsmith = { imports = [ ./home.nix ]; };
             };
           })
         ];

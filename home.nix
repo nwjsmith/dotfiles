@@ -23,27 +23,28 @@ let
     nixfmt
   ];
 in {
-  home.packages = with pkgs; [
-    asciinema
-    awscli2
-    babashka
-    curl
-    dsq
-    fd
-    gh
-    git-absorb
-    jless
-    jq
-    microplane
-    niv
-    pure-prompt
-    (ripgrep.override { withPCRE2 = true; })
-    scc
-    shellcheck
-    sqlite
-    stylua
-    yt-dlp
-  ] ++ emacsPackages;
+  home.packages = with pkgs;
+    [
+      asciinema
+      awscli2
+      babashka
+      curl
+      dsq
+      fd
+      gh
+      git-absorb
+      jless
+      jq
+      microplane
+      niv
+      pure-prompt
+      (ripgrep.override { withPCRE2 = true; })
+      scc
+      shellcheck
+      sqlite
+      stylua
+      yt-dlp
+    ] ++ emacsPackages;
 
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -291,23 +292,14 @@ in {
     '';
   };
 
-  home.file.".doom.d/init.el" = {
-    source = ./doom.d/init.el;
-  };
-
-  home.file.".doom.d/packages.el" = {
-    source = ./doom.d/packages.el;
-  };
-
-  home.file.".doom.d/config.el" = {
-    source = ./doom.d/config.el;
-  };
+  home.file.".doom.d/init.el" = { source = ./doom.d/init.el; };
+  home.file.".doom.d/packages.el" = { source = ./doom.d/packages.el; };
+  home.file.".doom.d/config.el" = { source = ./doom.d/config.el; };
 
   home.file.".local/bin/gem-constraint" = {
     source = ./local/bin/gem-constraint;
     executable = true;
   };
-
   home.file.".local/bin/gem-latest" = {
     source = ./local/bin/gem-latest;
     executable = true;
@@ -317,7 +309,6 @@ in {
     source = ./local/bin/git-churn;
     executable = true;
   };
-
   home.file.".local/bin/git-original-branch" = {
     source = ./local/bin/git-original-branch;
     executable = true;

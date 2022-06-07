@@ -26,7 +26,8 @@ in {
   home.packages = with pkgs;
     [
       asciinema
-      awscli2
+      # FIXME this is broken because of pyopenssl
+      # awscli2
       babashka
       curl
       dsq

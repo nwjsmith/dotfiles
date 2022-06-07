@@ -103,31 +103,7 @@ in {
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      (configuredVimPlugin (nvim-treesitter.withPlugins (p:
-        with p; [
-          tree-sitter-bash
-          tree-sitter-c
-          tree-sitter-clojure
-          tree-sitter-dockerfile
-          tree-sitter-elixir
-          tree-sitter-go
-          tree-sitter-graphql
-          tree-sitter-html
-          tree-sitter-javascript
-          tree-sitter-json
-          tree-sitter-kotlin
-          tree-sitter-lua
-          tree-sitter-python
-          tree-sitter-regex
-          tree-sitter-ruby
-          tree-sitter-rust
-          tree-sitter-tlaplus
-          tree-sitter-tsx
-          tree-sitter-typescript
-          tree-sitter-vim
-          tree-sitter-yaml
-          tree-sitter-zig
-        ])))
+      (configuredVimPlugin (nvim-treesitter.withPlugins (p: lib.attrValues (removeAttrs p [ "tree-sitter-nix" ]))))
       (configuredVimPlugin conjure)
       copilot-vim
       direnv-vim

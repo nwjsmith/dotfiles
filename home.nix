@@ -68,6 +68,17 @@ in {
     package = pkgs.emacsNativeComp;
     extraPackages = (epkgs: [ epkgs.vterm ]);
   };
+  launchd.agents.emacs = {
+    enable = false;
+    config = {
+      KeepAlive = true;
+      ProgramArguments = [
+        "${pkgs.emacsNativeComp}/bin/emacs"
+        "--fg-daemon"
+      ];
+      RunAtLoad = true;
+    };
+  };
 
   programs.fzf = {
     enable = true;

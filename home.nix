@@ -15,8 +15,10 @@ let
     discount
     editorconfig-core-c
     fontconfig
+    gnuplot
     nodePackages.js-beautify
     nodePackages.stylelint
+    nodePackages.mermaid-cli
     ktlint
     libtool
     libvterm-neovim

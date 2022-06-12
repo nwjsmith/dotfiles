@@ -50,6 +50,7 @@
       "homebrew/cask"
       "homebrew/cask-drivers"
       "homebrew/core"
+      "railwaycat/emacsmacport"
     ];
     casks = [
       "1password"
@@ -87,6 +88,9 @@
       "zoom"
       "zsa-wally"
     ];
+    extraConfig = ''
+      brew "emacs-mac", args: ["with-native-comp", "with-natural-title-bar"]
+    '';
     masApps = {
       Craft = 1487937127;
       Deliveries = 290986013;

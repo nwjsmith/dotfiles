@@ -66,7 +66,7 @@ in {
   };
 
   programs.emacs = {
-    enable = true;
+    enable = false;
     package = pkgs.emacsNativeComp;
     extraPackages = (epkgs: [ epkgs.vterm ]);
   };

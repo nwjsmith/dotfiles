@@ -3,3 +3,5 @@
       doom-theme 'doom-gruvbox-light
       doom-variable-pitch-font (font-spec :family "Inter")
       typescript-indent-level 2)
+
+(setq company-idle-delay nil)

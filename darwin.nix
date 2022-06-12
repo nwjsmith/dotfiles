@@ -98,6 +98,7 @@
       Flow = 1423210932;
       "Grammarly for Safari" = 1462114288;
       Things = 904280696;
+      Tailscale = 1475387142;
     };
   };
 }

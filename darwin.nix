@@ -69,7 +69,6 @@
       "hey"
       "intellij-idea"
       "karabiner-elements"
-      "keyboard-maestro"
       "kindle"
       "mochi"
       "pritunl"

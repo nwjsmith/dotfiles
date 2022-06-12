@@ -78,6 +78,7 @@
       "slack"
       "sonos"
       "soulver"
+      "syncthing"
       "timing"
       "the-unarchiver"
       "thingsmacsandboxhelper"

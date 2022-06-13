@@ -219,21 +219,6 @@ in {
     pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac
   '';
 
-  programs.starship = {
-    enable = true;
-    settings = {
-      add_newline = false;
-      aws = { disabled = true; };
-      docker_context = { disabled = true; };
-      git_state = { disabled = true; };
-      git_status = { disabled = true; };
-      java = { disabled = true; };
-      nodejs = { disabled = true; };
-      python = { disabled = true; };
-      ruby = { disabled = true; };
-    };
-  };
-
   xdg.configFile."shellcheckrc".source = ./shellcheckrc;
   xdg.configFile."karabiner/assets/complex_modifications/escape.json".source =
     ./config/karabiner/assets/complex_modifications/escape.json;

@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: Project with Notes and Tasks
+# uuid: project
+# key: pnt
+# condition: t
+# --
+* *$1* [/]
+:PROPERTIES:
+:COOKIE_DATA: recursive todo
+:END:
+** *Notes*
+** *Tasks*

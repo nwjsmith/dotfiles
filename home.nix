@@ -65,23 +65,6 @@ in {
     enableAliases = true;
   };
 
-  programs.emacs = {
-    enable = false;
-    package = pkgs.emacsNativeComp;
-    extraPackages = (epkgs: [ epkgs.vterm ]);
-  };
-  launchd.agents.emacs = {
-    enable = false;
-    config = {
-      KeepAlive = true;
-      ProgramArguments = [
-        "${pkgs.emacsNativeComp}/bin/emacs"
-        "--fg-daemon"
-      ];
-      RunAtLoad = true;
-    };
-  };
-
   programs.fzf = {
     enable = true;
     defaultCommand = "${pkgs.fd}/bin/fd --type f";
@@ -105,7 +88,8 @@ in {
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      (configuredVimPlugin (nvim-treesitter.withPlugins (p: lib.attrValues (removeAttrs p [ "tree-sitter-nix" ]))))
+      (configuredVimPlugin (nvim-treesitter.withPlugins
+        (p: lib.attrValues (removeAttrs p [ "tree-sitter-nix" ]))))
       (configuredVimPlugin conjure)
       copilot-vim
       direnv-vim
@@ -250,26 +234,6 @@ in {
     };
   };
 
-  programs.topgrade = {
-    # TODO re-enable when Topgrade is fixed on darwin
-    enable = false;
-    settings = {
-      disable = [
-        "git_repos"
-        "gem"
-        "github_cli_extensions"
-        "node"
-        "tlmgr"
-        "mas"
-        "nix"
-        "pipx"
-        "pip3"
-      ];
-      max_concurrency = 12;
-      repos = [ "~/Code/*/*" ];
-    };
-  };
-
   xdg.configFile."shellcheckrc".source = ./shellcheckrc;
   xdg.configFile."karabiner/assets/complex_modifications/escape.json".source =
     ./config/karabiner/assets/complex_modifications/escape.json;
@@ -285,6 +249,7 @@ in {
   home.file.".doom.d/init.el" = { source = ./doom.d/init.el; };
   home.file.".doom.d/packages.el" = { source = ./doom.d/packages.el; };
   home.file.".doom.d/config.el" = { source = ./doom.d/config.el; };
+  home.file.".doom.d/snippets/org-mode/project" = { source = ./doom.d/snippets/org-mode/project; };
 
   home.file.".local/bin/gem-constraint" = {
     source = ./local/bin/gem-constraint;

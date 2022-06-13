@@ -7,11 +7,9 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
-    emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, darwin, emacs-overlay, home-manager, nixpkgs }:
+  outputs = { self, darwin, home-manager, nixpkgs }:
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -24,10 +22,7 @@
           home-manager.darwinModules.home-manager
           ./darwin.nix
           ({ ... }: {
-            nixpkgs = {
-              config = { allowUnfree = true; };
-              overlays = [ emacs-overlay.overlay ];
-            };
+            nixpkgs.config.allowUnfree = true;
             users.users.nsmith.home = "/Users/nsmith";
             home-manager = {
               useGlobalPkgs = true;

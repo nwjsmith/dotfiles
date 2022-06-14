@@ -25,7 +25,14 @@
            ,(concat "* Note (%a)\n"
                     "/Entered on/ %U\n"
                     "\n"
-                    "%?"))))
+                    "%?"))
+          ("p" "Project" entry (file "projects.org")
+           ,(concat "* *%?* [/]\n"
+                    ":PROPERTIES:\n"
+                    ":COOKIE_DATA: recursive todo\n"
+                    ":END:\n"
+                    "** *Tasks* \n"
+                    "** *Notes* \n"))))
 
   (setq org-agenda-hide-tags-regexp ".")
 

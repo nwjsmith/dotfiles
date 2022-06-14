@@ -227,7 +227,7 @@ in {
     installDoom = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       DOOM="${config.home.homeDirectory}/.emacs.d"
       [ ! -d $DOOM ] && \
-        $DRY_RUN_CMD ${pkgs.git}/bin/git clone --depth 1 https://github.com/doomemacs/doomemacs $DOOM
+        $DRY_RUN_CMD ${pkgs.git}/bin/git clone --depth 1 https://github.com/doomemacs/doomemacs.git $DOOM
     '';
   };
 

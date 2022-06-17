@@ -10,8 +10,9 @@ macOS, Homebrew and Nix installed with Flakes enabled.
 
 ## Installation
 
-  $ git clone https://github.com/nwjsmith/dotfiles ~/.dotfiles
-  $ nix build ~/.dotfiles\#darwinConfigurations.$(hostname).system
+  $ git clone https://github.com/nwjsmith/dotfiles.git ~/.dotfiles
+  $ cd ~/.dotfiles
+  $ nix build .#darwinConfigurations.$(hostname).system
   $ ./result/sw/bin/darwin-rebuild switch --flake .
 
 ## etc.

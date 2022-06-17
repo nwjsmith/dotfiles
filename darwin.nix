@@ -10,6 +10,7 @@
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       emacs-all-the-icons-fonts
       inter
+      roboto-mono
     ];
   };
 

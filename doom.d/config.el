@@ -12,7 +12,7 @@
 
 (after! org
   (setq org-directory "~/org")
-  (setq org-agenda-files '("inbox.org" "agenda.org"))
+  (setq org-agenda-files '("inbox.org" "agenda.org" "notes.org" "projects.org"))
 
   (setq org-capture-templates
         `(("i" "Inbox" entry  (file "inbox.org")

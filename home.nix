@@ -8,9 +8,10 @@ let
       config = builtins.readFile ./config/nvim/${pkgConfig};
       type = "lua";
     };
+  treesitter = pkgs.tree-sitter.withPlugins
+    (p: lib.attrValues (removeAttrs p [ "tree-sitter-nix" ]));
   emacsPackages = with pkgs; [
     clj-kondo
-    cmake
     coreutils
     discount
     editorconfig-core-c
@@ -20,9 +21,8 @@ let
     nodePackages.stylelint
     nodePackages.mermaid-cli
     ktlint
-    libtool
-    libvterm-neovim
     nixfmt
+    treesitter
   ];
 in {
   home.packages = with pkgs;
@@ -57,7 +57,7 @@ in {
 
   home.sessionPath = [
     "${config.home.homeDirectory}/.local/bin"
-    "${config.home.homeDirectory}/.emacs.d/bin"
+    "${config.home.homeDirectory}/.doom.emacs.d/bin"
   ];
 
   programs.exa = {
@@ -88,8 +88,7 @@ in {
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      (configuredVimPlugin (nvim-treesitter.withPlugins
-        (p: lib.attrValues (removeAttrs p [ "tree-sitter-nix" ]))))
+      nvim-treesitter
       (configuredVimPlugin conjure)
       copilot-vim
       direnv-vim
@@ -240,7 +239,8 @@ in {
   home.file.".doom.d/init.el".source = ./doom.d/init.el;
   home.file.".doom.d/packages.el".source = ./doom.d/packages.el;
   home.file.".doom.d/config.el".source = ./doom.d/config.el;
-  home.file.".doom.d/snippets/org-mode/project".source = ./doom.d/snippets/org-mode/project;
+  home.file.".doom.d/snippets/org-mode/project".source =
+    ./doom.d/snippets/org-mode/project;
 
   home.file.".nano.emacs.d/init.el".source = ./nano.emacs.d/init.el;
 

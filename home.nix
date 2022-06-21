@@ -12,16 +12,19 @@ let
     (p: lib.attrValues (removeAttrs p [ "tree-sitter-nix" ]));
   emacsPackages = with pkgs; [
     clj-kondo
+    clojure-lsp
     coreutils
     discount
     editorconfig-core-c
     fontconfig
     gnuplot
-    nodePackages.js-beautify
-    nodePackages.stylelint
-    nodePackages.mermaid-cli
     ktlint
     nixfmt
+    nodePackages.js-beautify
+    nodePackages.mermaid-cli
+    nodePackages.stylelint
+    nodePackages.typescript-language-server
+    rubyPackages.solargraph
     treesitter
   ];
 in {
@@ -121,12 +124,6 @@ in {
     extraConfig = ''
       execute "luafile ${config.xdg.configHome}/nvim/nvim.lua"
     '';
-    extraPackages = with pkgs; [
-      clojure-lsp
-      nodePackages.typescript-language-server
-      rnix-lsp
-      rubyPackages.solargraph
-    ];
   };
 
   programs.kitty = {
@@ -265,6 +262,11 @@ in {
 
   home.file.".local/bin/ordinalize" = {
     source = ./local/bin/ordinalize;
+    executable = true;
+  };
+
+  home.file.".local/bin/doom-everywhere" = {
+    source = ./local/bin/doom-everywhere;
     executable = true;
   };
 

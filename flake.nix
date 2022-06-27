@@ -14,7 +14,11 @@
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      devShell.${system} = pkgs.mkShell { buildInputs = [ pkgs.nixfmt ]; };
+      devShell.${system} = pkgs.mkShell {
+        buildInputs = [
+          pkgs.nixfmt
+        ];
+      };
       darwinConfigurations.nsmith165b = darwin.lib.darwinSystem {
         inherit system;
 
@@ -22,7 +26,11 @@
           home-manager.darwinModules.home-manager
           ./darwin.nix
           ({ ... }: {
-            nixpkgs.config.allowUnfree = true;
+            nixpkgs.config = {
+              # FIXME disable once pyopenssl is fixed
+              allowBroken = true;
+              allowUnfree = true;
+            };
             users.users.nsmith.home = "/Users/nsmith";
             home-manager = {
               useGlobalPkgs = true;

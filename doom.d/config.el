@@ -56,6 +56,8 @@
 
   (add-hook 'org-after-todo-state-change-hook #'log-todo-next-creation-date)
 
+  (setq org-log-done 'time)
+
   (setq org-agenda-custom-commands
         '(("g" "Get Things Done (GTD)"
            ((agenda ""

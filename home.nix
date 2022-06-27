@@ -195,7 +195,7 @@ in {
         autoSquash = true;
         autoStash = true;
       };
-      merge.conflictStyle = "zdiff3";
+      merge.conflictStyle = "diff3";
     };
     delta = {
       enable = true;

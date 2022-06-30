@@ -31,7 +31,7 @@ in {
   home.packages = with pkgs;
     [
       asciinema
-      awscli2
+      # awscli2
       babashka
       curl
       dsq

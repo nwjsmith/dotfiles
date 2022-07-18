@@ -45,7 +45,7 @@
       brewfile = true;
       noLock = true;
     };
-    brews = [ "docker-credential-helper-ecr" ];
+    brews = [ "awscli" "docker-credential-helper-ecr" ];
     taps = [
       "homebrew/bundle"
       "homebrew/cask"

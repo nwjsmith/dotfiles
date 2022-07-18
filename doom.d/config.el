@@ -2,13 +2,38 @@
 (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 13))
 (setq doom-variable-pitch-font (font-spec :family "Inter"))
 
-(after! typescript-mode
-  ;; TypeScript's default indent level is 4
-  (setq typescript-indent-level 2))
-
 (after! company
   ;; Only complete when asked
   (setq company-idle-delay nil))
+
+(after! cider
+  (setq cider-clojure-cli-aliases "dev"
+        cider-save-file-on-load nil
+        cider-font-lock-dynamically nil
+        cider-eldoc-display-for-symbol-at-point nil
+        cider-prompt-for-symbol nil))
+
+(after! clj-refactor
+  (setq cljr-warn-on-eval nil
+        cljr-add-ns-to-blank-clj-files nil
+        cljr-eagerly-build-asts-on-startup nil)
+  (set-lookup-handlers! 'clj-refactor-mode nil))
+
+(after! clojure-mode
+  (setq clojure-thread-all-but-last t))
+
+(after! lispy
+  (lispy-set-key-theme '(lispy c-digits))
+  (define-key lispy-mode-map-lispy "[" #'lispy-brackets)
+  (define-key lispy-mode-map-lispy "]" #'lispy-close-square)
+  (define-key lispy-mode-map-lispy "}" #'lispy-close-curly))
+
+(after! lsp-ui
+  (setq lsp-ui-sideline-enable nil
+        lsp-ui-doc-enable nil))
+
+(after! typescript-mode
+  (setq typescript-indent-level 2))
 
 (after! org
   (setq org-directory "~/org")

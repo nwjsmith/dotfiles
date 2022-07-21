@@ -23,8 +23,6 @@
           ./darwin.nix
           ({ ... }: {
             nixpkgs.config = {
-              # FIXME disable once pyopenssl is fixed
-              allowBroken = true;
               allowUnfree = true;
             };
             users.users.nsmith.home = "/Users/nsmith";

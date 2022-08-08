@@ -92,14 +92,14 @@
     extraConfig = ''
       brew "emacs-mac", args: ["with-native-comp", "with-natural-title-bar"]
     '';
-    masApps = {
-      Craft = 1487937127;
-      Deliveries = 290986013;
-      Fantastical = 975937182;
-      Flow = 1423210932;
-      "Grammarly for Safari" = 1462114288;
-      Things = 904280696;
-      Tailscale = 1475387142;
-    };
+    # masApps = {
+    #   Craft = 1487937127;
+    #   Deliveries = 290986013;
+    #   Fantastical = 975937182;
+    #   Flow = 1423210932;
+    #   "Grammarly for Safari" = 1462114288;
+    #   Things = 904280696;
+    #   Tailscale = 1475387142;
+    # };
   };
 }

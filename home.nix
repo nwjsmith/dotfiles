@@ -18,6 +18,7 @@ let
     editorconfig-core-c
     fontconfig
     gnuplot
+    gopls
     ktlint
     nixfmt
     nodePackages.js-beautify
@@ -41,7 +42,9 @@ in {
       jless
       jq
       microplane
+      neil
       niv
+      nodejs
       pure-prompt
       (ripgrep.override { withPCRE2 = true; })
       scc

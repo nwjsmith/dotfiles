@@ -13,6 +13,7 @@ let
   emacsPackages = with pkgs; [
     clj-kondo
     clojure-lsp
+    cmake
     coreutils
     discount
     editorconfig-core-c

@@ -35,6 +35,23 @@
 (after! typescript-mode
   (setq typescript-indent-level 2))
 
+(setq-hook! 'typescript-mode-hook +format-with-lsp nil)
+
+(use-package! jest-test-mode
+  :hook (typescript-mode js-mode typescript-tsx-mode)
+  :config
+  (set-popup-rule! "^\\*\\(rspec-\\)?compilation" :size 0.3 :ttl nil :select t)
+  (map! (:localleader
+         (:map (typescript-mode-map js-mode-map typescript-tsx-mode-map)
+          (:prefix ("t" . "jest")
+           "a" #'jest-test-run-all-tests
+           "t" #'jest-test-run-at-point
+           "f" #'jest-test-run
+           "r" #'jest-test-rerun-test)))))
+
+(after! jest-test-mode
+  (setq jest-test-command-string "yarn %s jest %s %s"))
+
 (after! org
   (setq org-directory "~/org")
   (setq org-agenda-files '("inbox.org" "agenda.org" "notes.org" "projects.org"))

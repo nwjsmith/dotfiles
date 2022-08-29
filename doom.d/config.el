@@ -106,13 +106,13 @@
             (tags "CLOSED>=\"<today>\""
                   ((org-agenda-overriding-header "\nCompleted today\n")))))))
 
-  (defun log-todo-next-creation-date (&rest ignore)
+  (defun nwjsmith/log-todo-next-creation-date (&rest ignore)
     "Log NEXT creation time in the property drawer under the key 'ACTIVATED'"
     (when (and (string= (org-get-todo-state) "NEXT")
                (not (org-entry-get nil "ACTIVATED")))
       (org-entry-put nil "ACTIVATED" (format-time-string "[%Y-%m-%d]"))))
 
-  (add-hook 'org-after-todo-state-change-hook #'log-todo-next-creation-date))
+  (add-hook 'org-after-todo-state-change-hook #'nwjsmith/log-todo-next-creation-date))
 
 (after! evil-org
   (remove-hook 'org-tab-first-hook #'+org-cycle-only-current-subtree-h))

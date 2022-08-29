@@ -2,7 +2,7 @@
   # Have nix-darwin manage the Nix daemon
   services.nix-daemon.enable = true;
 
-  users.nix.configureBuildUsers = true;
+  nix.configureBuildUsers = true;
 
   fonts = {
     fontDir.enable = true;

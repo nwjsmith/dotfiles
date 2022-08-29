@@ -1,6 +1,6 @@
-(setq doom-theme 'doom-gruvbox-light)
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 13))
-(setq doom-variable-pitch-font (font-spec :family "Inter"))
+(setq doom-theme 'doom-gruvbox-light
+      doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
+      doom-variable-pitch-font (font-spec :family "Inter"))
 
 (after! company
   ;; Only complete when asked
@@ -33,13 +33,13 @@
         lsp-ui-doc-enable nil))
 
 (after! typescript-mode
-  (setq typescript-indent-level 2))
-
-(setq-hook! 'typescript-mode-hook +format-with-lsp nil)
+  (setq typescript-indent-level 2)
+  (setq-hook! 'typescript-mode-hook +format-with-lsp nil))
 
 (use-package! jest-test-mode
   :hook (typescript-mode js-mode typescript-tsx-mode)
   :config
+  (setq jest-test-command-string "yarn %s jest %s %s")
   (set-popup-rule! "^\\*\\(rspec-\\)?compilation" :size 0.3 :ttl nil :select t)
   (map! (:localleader
          (:map (typescript-mode-map js-mode-map typescript-tsx-mode-map)
@@ -49,14 +49,10 @@
            "f" #'jest-test-run
            "r" #'jest-test-rerun-test)))))
 
-(after! jest-test-mode
-  (setq jest-test-command-string "yarn %s jest %s %s"))
-
 (after! org
-  (setq org-directory "~/org")
-  (setq org-agenda-files '("inbox.org" "agenda.org" "notes.org" "projects.org"))
-
-  (setq org-capture-templates
+  (setq org-directory "~/org"
+        org-agenda-files '("inbox.org" "agenda.org" "notes.org" "projects.org")
+        org-capture-templates
         `(("i" "Inbox" entry  (file "inbox.org")
            ,(concat "* TODO %?\n"
                     "/Entered on/ %U"))
@@ -74,43 +70,29 @@
                     ":COOKIE_DATA: recursive todo\n"
                     ":END:\n"
                     "** *Tasks* \n"
-                    "** *Notes* \n"))))
-
-  (setq org-agenda-hide-tags-regexp ".")
-
-  (setq org-agenda-prefix-format
+                    "** *Notes* \n")))
+        org-agenda-hide-tags-regexp "."
+        org-agenda-prefix-format
         '((agenda . " %i %-12:c%?-12t% s")
           (todo   . " ")
           (tags   . " %i %-12:c")
-          (search . " %i %-12:c")))
-
-  (setq org-refile-targets
-        '(("projects.org" :regexp . "\\(?:\\(?:Note\\|Task\\)s\\)")))
-
-  (setq org-todo-keywords
-        '((sequence "TODO(t)" "NEXT(n)" "WAIT(w)" "|" "DONE(d)")))
-
-  (defun log-todo-next-creation-date (&rest ignore)
-    "Log NEXT creation time in the property drawer under the key 'ACTIVATED'"
-    (when (and (string= (org-get-todo-state) "NEXT")
-               (not (org-entry-get nil "ACTIVATED")))
-      (org-entry-put nil "ACTIVATED" (format-time-string "[%Y-%m-%d]"))))
-
-  (add-hook 'org-after-todo-state-change-hook #'log-todo-next-creation-date)
-
-  (setq org-log-done 'time)
-
-  (setq org-agenda-custom-commands
+          (search . " %i %-12:c"))
+        org-refile-targets
+        '(("projects.org" :regexp . "\\(?:\\(?:Note\\|Task\\)s\\)"))
+        org-todo-keywords
+        '((sequence "TODO(t)" "NEXT(n)" "WAIT(w)" "|" "DONE(d)"))
+        org-log-done 'time
+        org-agenda-custom-commands
         '(("g" "Get Things Done (GTD)"
            ((agenda ""
                     ((org-agenda-skip-function
                       '(org-agenda-skip-entry-if 'deadline))
                      (org-deadline-warning-days 0)))
-            (todo "NEXT"
-                  ((org-agenda-skip-function
-                    '(org-agenda-skip-entry-if 'deadline))
-                   (org-agenda-prefix-format "  %i %-12:c [%e] ")
-                   (org-agenda-overriding-header "\nTasks\n")))
+            ("NEXT" todo
+             ((org-agenda-skip-function
+               '(org-agenda-skip-entry-if 'deadline))
+              (org-agenda-prefix-format "  %i %-12:c [%e] ")
+              (org-agenda-overriding-header "\nTasks\n")))
             (agenda nil
                     ((org-agenda-entry-types '(:deadline))
                      (org-agenda-format-date "")
@@ -122,7 +104,15 @@
                        ((org-agenda-prefix-format "  %?-12t% s")
                         (org-agenda-overriding-header "\nInbox\n")))
             (tags "CLOSED>=\"<today>\""
-                  ((org-agenda-overriding-header "\nCompleted today\n"))))))))
+                  ((org-agenda-overriding-header "\nCompleted today\n")))))))
+
+  (defun log-todo-next-creation-date (&rest ignore)
+    "Log NEXT creation time in the property drawer under the key 'ACTIVATED'"
+    (when (and (string= (org-get-todo-state) "NEXT")
+               (not (org-entry-get nil "ACTIVATED")))
+      (org-entry-put nil "ACTIVATED" (format-time-string "[%Y-%m-%d]"))))
+
+  (add-hook 'org-after-todo-state-change-hook #'log-todo-next-creation-date))
 
 (after! evil-org
   (remove-hook 'org-tab-first-hook #'+org-cycle-only-current-subtree-h))

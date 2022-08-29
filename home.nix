@@ -63,7 +63,7 @@ in {
 
   home.sessionPath = [
     "${config.home.homeDirectory}/.local/bin"
-    "${config.home.homeDirectory}/.doom.emacs.d/bin"
+    "${config.home.homeDirectory}/.emacs.d/bin"
   ];
 
   programs.exa = {
@@ -224,26 +224,20 @@ in {
     ./config/karabiner/assets/complex_modifications/escape.json;
 
   home.activation = {
-    installChemacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      CHEMACS="${config.home.homeDirectory}/.emacs.d"
-      [ ! -d $CHEMACS ] && \
-        $DRY_RUN_CMD ${pkgs.git}/bin/git clone --depth 1 https://github.com/plexus/chemacs2.git $CHEMACS
-    '';
     installDoom = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      DOOM="${config.home.homeDirectory}/.doom.emacs.d"
+      DOOM="${config.home.homeDirectory}/.emacs.d"
       [ ! -d $DOOM ] && \
         $DRY_RUN_CMD ${pkgs.git}/bin/git clone --depth 1 https://github.com/doomemacs/doomemacs.git $DOOM
     '';
   };
-
-  home.file.".emacs-profiles.el".source = ./emacs-profiles.el;
   home.file.".doom.d/init.el".source = ./doom.d/init.el;
   home.file.".doom.d/packages.el".source = ./doom.d/packages.el;
   home.file.".doom.d/config.el".source = ./doom.d/config.el;
   home.file.".doom.d/snippets/org-mode/project".source =
     ./doom.d/snippets/org-mode/project;
+  home.file.".emacs.d/profiles.el".source = ./emacs.d/profiles.el;
 
-  home.file.".nano.emacs.d/init.el".source = ./nano.emacs.d/init.el;
+  xdg.configFile."emacs/init.el".source = ./config/emacs/init.el;
 
   home.file.".local/bin/gem-constraint" = {
     source = ./local/bin/gem-constraint;

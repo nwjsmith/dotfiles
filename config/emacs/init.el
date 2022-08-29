@@ -1,0 +1,1 @@
+;; A vanilla Emacs configuration

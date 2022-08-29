@@ -11,22 +11,16 @@ let
   treesitter = pkgs.tree-sitter.withPlugins
     (p: lib.attrValues (removeAttrs p [ "tree-sitter-nix" ]));
   emacsPackages = with pkgs; [
-    clj-kondo
-    clojure-lsp
     cmake
     coreutils
     discount
     editorconfig-core-c
     fontconfig
     gnuplot
-    gopls
-    ktlint
     nixfmt
     nodePackages.js-beautify
     nodePackages.mermaid-cli
     nodePackages.stylelint
-    nodePackages.typescript-language-server
-    rubyPackages.solargraph
     treesitter
   ];
 in {
@@ -36,22 +30,17 @@ in {
       awscli2
       babashka
       curl
-      dsq
       fd
       gh
-      git-absorb
-      jless
       jq
-      microplane
       neil
+      ngrok
       niv
       nodejs
       pure-prompt
       (ripgrep.override { withPCRE2 = true; })
       scc
-      shellcheck
       sqlite
-      stylua
       yt-dlp
     ] ++ emacsPackages;
 

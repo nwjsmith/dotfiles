@@ -39,13 +39,20 @@
 
   homebrew = {
     enable = true;
-    autoUpdate = true;
-    cleanup = "zap";
-    global = {
-      brewfile = true;
-      noLock = true;
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "zap";
+      upgrade = true;
     };
-    brews = [ "docker-credential-helper-ecr" "watchman" ];
+    global.brewfile = true;
+    brews = [
+      "docker-credential-helper-ecr"
+      "watchman"
+      {
+        name = "emacs-mac";
+        args = ["with-native-comp" "with-natural-title-bar"];
+      }
+    ];
     taps = [
       "homebrew/bundle"
       "homebrew/cask"
@@ -72,7 +79,6 @@
       "karabiner-elements"
       "kindle"
       "mochi"
-      "pritunl"
       "raycast"
       "screenflow"
       "signal"
@@ -89,17 +95,15 @@
       "zoom"
       "zsa-wally"
     ];
-    extraConfig = ''
-      brew "emacs-mac", args: ["with-native-comp", "with-natural-title-bar"]
-    '';
-    # masApps = {
-    #   Craft = 1487937127;
-    #   Deliveries = 290986013;
-    #   Fantastical = 975937182;
-    #   Flow = 1423210932;
-    #   "Grammarly for Safari" = 1462114288;
-    #   Things = 904280696;
-    #   Tailscale = 1475387142;
-    # };
+    masApps = {
+      # "Craft" = 1487937127;
+      "DaisyDisk" = 411643860;
+      "Deliveries" = 290986013;
+      "Fantastical" = 975937182;
+      "Flow" = 1423210932;
+      "Grammarly for Safari" = 1462114288;
+      "Tailscale" = 1475387142;
+      "Things" = 904280696;
+    };
   };
 }

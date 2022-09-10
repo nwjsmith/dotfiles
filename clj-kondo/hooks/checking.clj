@@ -3,7 +3,7 @@
 
 (defn checking
   [{:keys [node]}]
-  (let [[name & body] (rest (:children node))
+  (let [[_checking name & body] (:children node)
         [options bindings & prop] (if (api/vector-node? (first body))
                                     (list* (api/map-node {}) body)
                                     body)

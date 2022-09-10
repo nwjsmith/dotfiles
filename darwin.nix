@@ -1,4 +1,6 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+
+{
   # Have nix-darwin manage the Nix daemon
   services.nix-daemon.enable = true;
 
@@ -45,10 +47,7 @@
       upgrade = true;
     };
     global.brewfile = true;
-    brews = [
-      "docker-credential-helper-ecr"
-      "watchman"
-    ];
+    brews = [ "docker-credential-helper-ecr" "watchman" ];
     taps = [
       "homebrew/bundle"
       "homebrew/cask"

@@ -14,7 +14,7 @@
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      devShell.${system} = pkgs.mkShell { buildInputs = [ ]; };
+      devShell.${system} = pkgs.mkShell {};
       darwinConfigurations.nsmith165b = darwin.lib.darwinSystem {
         inherit system;
 

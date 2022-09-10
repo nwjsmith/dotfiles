@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ config, ... }:
 
 {
   xdg.configFile."git/wealthsimple.gitconfig".text = ''

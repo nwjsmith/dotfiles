@@ -48,10 +48,6 @@
     brews = [
       "docker-credential-helper-ecr"
       "watchman"
-      {
-        name = "emacs-mac";
-        args = ["with-native-comp" "with-natural-title-bar"];
-      }
     ];
     taps = [
       "homebrew/bundle"
@@ -71,6 +67,7 @@
       "dash"
       "deckset"
       "docker"
+      "emacs-mac"
       "firefox"
       "google-chrome"
       "grammarly"
@@ -97,8 +94,8 @@
     ];
     masApps = {
       # "Craft" = 1487937127;
-      "DaisyDisk" = 411643860;
-      "Deliveries" = 290986013;
+      # "DaisyDisk" = 411643860;
+      # "Deliveries" = 290986013;
       "Fantastical" = 975937182;
       "Flow" = 1423210932;
       "Grammarly for Safari" = 1462114288;

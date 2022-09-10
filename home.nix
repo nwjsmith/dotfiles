@@ -1,46 +1,26 @@
 { pkgs, config, lib, ... }:
 
-let
-  treesitter = pkgs.tree-sitter.withPlugins
-    (p: lib.attrValues (removeAttrs p [ "tree-sitter-nix" ]));
-  emacsPackages = with pkgs; [
-    cmake
-    coreutils
-    discount
-    editorconfig-core-c
-    fontconfig
-    gnuplot
-    glib
-    nixfmt
-    nodePackages.js-beautify
-    nodePackages.mermaid-cli
-    nodePackages.stylelint
-    treesitter
-  ];
-in {
-  imports = [
-    ./neovim.nix
-  ];
+{
+  imports = [ ./emacs.nix ./git.nix ./neovim.nix ];
 
-  home.packages = with pkgs;
-    [
-      asciinema
-      awscli2
-      babashka
-      curl
-      fd
-      gh
-      jq
-      neil
-      ngrok
-      niv
-      nodejs
-      pure-prompt
-      (ripgrep.override { withPCRE2 = true; })
-      scc
-      sqlite
-      yt-dlp
-    ] ++ emacsPackages;
+  home.packages = with pkgs; [
+    asciinema
+    awscli2
+    babashka
+    curl
+    fd
+    gh
+    jq
+    neil
+    ngrok
+    niv
+    nodejs
+    pure-prompt
+    (ripgrep.override { withPCRE2 = true; })
+    scc
+    sqlite
+    yt-dlp
+  ];
 
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -48,10 +28,7 @@ in {
     PAGER = "less -FR";
   };
 
-  home.sessionPath = [
-    "${config.home.homeDirectory}/.local/bin"
-    "${config.home.homeDirectory}/.emacs.d/bin"
-  ];
+  home.sessionPath = [ "${config.home.homeDirectory}/.local/bin" ];
 
   programs.exa = {
     enable = true;
@@ -116,49 +93,6 @@ in {
 
   programs.zoxide.enable = true;
 
-  xdg.configFile."git/wealthsimple.gitconfig".text = ''
-    [user]
-      email = nsmith@wealthsimple.com
-  '';
-  xdg.configFile."git/gitmessage".source = ./config/git/gitmessage;
-  programs.git = {
-    enable = true;
-    userName = "Nate Smith";
-    userEmail = "nate@theinternate.com";
-    aliases = {
-      co = "checkout";
-      dc = "diff --cached";
-      di = "diff";
-      st = "status";
-      unstage = "reset --";
-      yolo = "push --force-with-lease";
-    };
-    extraConfig = {
-      commit = {
-        gpgsign = true;
-        template = "${config.xdg.configHome}/git/gitmessage";
-      };
-      fetch.prune = true;
-      init.defaultBranch = "main";
-      push.default = "current";
-      pull.rebase = true;
-      rebase = {
-        autoSquash = true;
-        autoStash = true;
-      };
-      merge.conflictStyle = "diff3";
-    };
-    delta = {
-      enable = true;
-      options = { syntax-theme = "gruvbox-light"; };
-    };
-    ignores = [ ".#*" ".DS_Store" ".dir-locals.el" ".idea/" ".vscode/" ];
-    includes = [{
-      path = "${config.xdg.configHome}/git/wealthsimple.gitconfig";
-      condition = "gitdir:~/Code/wealthsimple/";
-    }];
-  };
-
   programs.gpg.enable = true;
   xdg.configFile."gnupg/gpg-agent.conf".text = ''
     enable-ssh-support
@@ -170,22 +104,6 @@ in {
   xdg.configFile."shellcheckrc".source = ./shellcheckrc;
   xdg.configFile."karabiner/assets/complex_modifications/escape.json".source =
     ./config/karabiner/assets/complex_modifications/escape.json;
-
-  home.activation = {
-    installDoom = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      DOOM="${config.home.homeDirectory}/.emacs.d"
-      [ ! -d $DOOM ] && \
-        $DRY_RUN_CMD ${pkgs.git}/bin/git clone --depth 1 https://github.com/doomemacs/doomemacs.git $DOOM
-    '';
-  };
-  home.file.".doom.d/init.el".source = ./doom.d/init.el;
-  home.file.".doom.d/packages.el".source = ./doom.d/packages.el;
-  home.file.".doom.d/config.el".source = ./doom.d/config.el;
-  home.file.".doom.d/snippets/org-mode/project".source =
-    ./doom.d/snippets/org-mode/project;
-  home.file.".emacs.d/profiles.el".source = ./emacs.d/profiles.el;
-
-  xdg.configFile."emacs/init.el".source = ./config/emacs/init.el;
 
   home.file.".local/bin/gem-constraint" = {
     source = ./local/bin/gem-constraint;
@@ -207,11 +125,6 @@ in {
 
   home.file.".local/bin/ordinalize" = {
     source = ./local/bin/ordinalize;
-    executable = true;
-  };
-
-  home.file.".local/bin/doom-everywhere" = {
-    source = ./local/bin/doom-everywhere;
     executable = true;
   };
 

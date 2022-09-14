@@ -5,13 +5,11 @@ let
     (p: lib.attrValues (removeAttrs p [ "tree-sitter-nix" ]));
 in {
   home.packages = with pkgs; [
-    cmake
     coreutils
     discount
     editorconfig-core-c
     fontconfig
     gnuplot
-    glib
     nixfmt
     nodePackages.js-beautify
     nodePackages.mermaid-cli

@@ -53,7 +53,6 @@
       "homebrew/cask"
       "homebrew/cask-drivers"
       "homebrew/core"
-      "railwaycat/emacsmacport"
     ];
     casks = [
       "1password"
@@ -66,7 +65,6 @@
       "dash"
       "deckset"
       "docker"
-      "emacs-mac"
       "firefox"
       "google-chrome"
       "grammarly"
@@ -76,6 +74,7 @@
       "kindle"
       "mochi"
       "raycast"
+      "reflect"
       "screenflow"
       "signal"
       "slack"

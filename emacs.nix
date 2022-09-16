@@ -5,6 +5,7 @@ let
     (p: lib.attrValues (removeAttrs p [ "tree-sitter-nix" ]));
 in {
   home.packages = with pkgs; [
+    cmake
     coreutils
     discount
     editorconfig-core-c
@@ -35,11 +36,6 @@ in {
   home.file.".local/bin/doom-everywhere" = {
     source = ./local/bin/doom-everywhere;
     executable = true;
-  };
-
-  programs.emacs = {
-    enable = true;
-    package = pkgs.emacsGitNativeComp;
   };
 
   xdg.configFile."emacs/init.el".source = ./config/emacs/init.el;

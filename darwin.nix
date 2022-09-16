@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ ./overlays ];
   # Have nix-darwin manage the Nix daemon
   services.nix-daemon.enable = true;
 
@@ -31,6 +32,7 @@
   };
 
   environment = {
+    darwinConfig = "$HOME/.dotfiles/darwin.nix";
     systemPackages = with pkgs; [ kitty terminal-notifier ];
     shells = with pkgs; [ bashInteractive zsh ];
     variables = {
@@ -47,12 +49,13 @@
       upgrade = true;
     };
     global.brewfile = true;
-    brews = [ "docker-credential-helper-ecr" "watchman" ];
+    brews = [ "watchman" ];
     taps = [
       "homebrew/bundle"
       "homebrew/cask"
       "homebrew/cask-drivers"
       "homebrew/core"
+      "railwaycat/emacsmacport"
     ];
     casks = [
       "1password"
@@ -65,6 +68,7 @@
       "dash"
       "deckset"
       "docker"
+      "emacs-mac"
       "firefox"
       "google-chrome"
       "grammarly"

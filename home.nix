@@ -7,12 +7,14 @@
     ./git.nix
     ./gpg.nix
     ./kitty.nix
+    ./overlays
     ./neovim.nix
     ./zsh.nix
   ];
 
   home.packages = with pkgs; [
     asciinema
+    amazon-ecr-credential-helper
     awscli2
     curl
     fd

@@ -30,6 +30,7 @@ in {
   home.file.".doom.d/init.el".source = ./doom.d/init.el;
   home.file.".doom.d/packages.el".source = ./doom.d/packages.el;
   home.file.".doom.d/config.el".source = ./doom.d/config.el;
+  home.file.".doom.d/doom.svg".source = ./doom.d/doom.svg;
   home.file.".doom.d/snippets/org-mode/project".source =
     ./doom.d/snippets/org-mode/project;
   home.file.".emacs.d/profiles.el".source = ./emacs.d/profiles.el;

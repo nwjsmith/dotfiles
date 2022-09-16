@@ -113,6 +113,7 @@
       "karabiner-elements"
       "kindle"
       "mochi"
+      "pritunl"
       "raycast"
       "reflect"
       "screenflow"

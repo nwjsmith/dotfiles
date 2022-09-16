@@ -49,7 +49,44 @@
       upgrade = true;
     };
     global.brewfile = true;
-    brews = [ "watchman" ];
+    brews = [
+      "watchman"
+      {
+        name = "emacs-mac";
+        args = [
+          "with-starter"
+          "with-native-comp"
+          "with-mac-metal"
+          "with-xwidgets"
+        ];
+      }
+      # emacs-mac deps are explicitly listed so that others can be removed
+      "m4"
+      "autoconf"
+      "automake"
+      "bdw-gc"
+      "gmp"
+      "isl"
+      "mpfr"
+      "libmpc"
+      "gcc"
+      "gettext"
+      "libtool"
+      "libunistring"
+      "pkg-config"
+      "guile"
+      "libidn2"
+      "libnghttp2"
+      "libtasn1"
+      "nettle"
+      "p11-kit"
+      "unbound"
+      "gnutls"
+      "jansson"
+      "libgccjit"
+      "libxml2"
+      "texinfo"
+    ];
     taps = [
       "homebrew/bundle"
       "homebrew/cask"
@@ -68,7 +105,6 @@
       "dash"
       "deckset"
       "docker"
-      "emacs-mac"
       "firefox"
       "google-chrome"
       "grammarly"

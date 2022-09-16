@@ -1,4 +1,4 @@
-(setq doom-theme 'doom-gruvbox-light
+(setq doom-theme 'doom-dracula
       doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
       doom-variable-pitch-font (font-spec :family "Inter"))
 

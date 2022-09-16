@@ -35,7 +35,7 @@
     };
     delta = {
       enable = true;
-      options = { syntax-theme = "gruvbox-light"; };
+      options = { syntax-theme = "Dracula"; };
     };
     ignores = [ ".#*" ".DS_Store" ".dir-locals.el" ".idea/" ".vscode/" ];
     includes = [{

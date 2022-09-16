@@ -1,6 +1,11 @@
 (setq doom-theme 'doom-dracula
       doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
-      doom-variable-pitch-font (font-spec :family "Inter"))
+      doom-variable-pitch-font (font-spec :family "Inter")
+
+      comp-num-cpus (max 1 (/ (num-processors) 2))
+      display-line-numbers nil)
+
+(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
 (after! company
   ;; Only complete when asked

@@ -28,10 +28,19 @@
   (setq clojure-thread-all-but-last t))
 
 (after! lispy
-  (lispy-set-key-theme '(lispy c-digits))
-  (define-key lispy-mode-map-lispy "[" #'lispy-brackets)
-  (define-key lispy-mode-map-lispy "]" #'lispy-close-square)
-  (define-key lispy-mode-map-lispy "}" #'lispy-close-curly))
+  (lispyville-set-key-theme
+   '(additional
+     additional-insert
+     (additional-movement normal visual motion)
+     (additional-wrap normal insert)
+     (atom-movement normal visual)
+     c-w
+     c-u
+     (commentary normal visual)
+     escape
+     (operators normal)
+     (prettify insert)
+     slurp/barf-cp)))
 
 (after! lsp-ui
   (setq lsp-ui-sideline-enable nil

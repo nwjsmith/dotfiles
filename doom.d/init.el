@@ -165,7 +165,7 @@
        rest              ; Emacs as a REST client
        ;;rst               ; ReST in peace
        (ruby +rails +tree-sitter) ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-       ;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       (rust +lsp +tree-sitter) ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
        ;;(scheme +guile)   ; a fully conniving family of lisps
        (sh +tree-sitter) ; she sells {ba,z,fi}sh shells on the C xor

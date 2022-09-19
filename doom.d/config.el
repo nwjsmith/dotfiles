@@ -2,7 +2,7 @@
       doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
       fancy-splash-image (concat doom-user-dir "doom.svg")
       doom-variable-pitch-font (font-spec :family "Inter")
-
+      display-line-numbers-type nil
       comp-num-cpus (max 1 (/ (num-processors) 2)))
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)

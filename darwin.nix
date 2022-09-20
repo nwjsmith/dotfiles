@@ -54,9 +54,10 @@
       {
         name = "emacs-mac";
         args = [
-          "with-starter"
-          "with-native-comp"
           "with-mac-metal"
+          "with-native-comp"
+          "with-natural-title-bar"
+          "with-starter"
           "with-xwidgets"
         ];
       }

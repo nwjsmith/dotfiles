@@ -8,13 +8,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils.url = "github:numtide/flake-utils";
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nix-darwin, home-manager, nixpkgs, ... }:
+  outputs = { self, nix-darwin, emacs-overlay, home-manager, nixpkgs, ... }:
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -29,6 +34,7 @@
           ({ ... }: {
             nixpkgs = {
               config.allowUnfree = true;
+              overlays = [ emacs-overlay.overlay ];
             };
             users.users.nsmith.home = "/Users/nsmith";
             home-manager = {

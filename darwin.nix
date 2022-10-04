@@ -37,7 +37,6 @@
     shells = with pkgs; [ bashInteractive zsh ];
     variables = {
       SHELL = "${pkgs.zsh}/bin/zsh";
-      TERMINFO_DIRS = "${pkgs.kitty.terminfo.outPath}/share/terminfo";
     };
   };
 

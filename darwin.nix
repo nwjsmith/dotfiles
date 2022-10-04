@@ -127,6 +127,7 @@
       "thingsmacsandboxhelper"
       "tla-plus-toolbox"
       "tuple"
+      "utm"
       "vlc"
       "zoom"
       "zsa-wally"

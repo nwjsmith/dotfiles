@@ -27,20 +27,21 @@
 (after! clojure-mode
   (setq clojure-thread-all-but-last t))
 
-(after! lispy
-  (lispyville-set-key-theme
-   '(additional
-     additional-insert
-     (additional-movement normal visual motion)
-     (additional-wrap normal insert)
-     (atom-movement normal visual)
-     c-w
-     c-u
-     (commentary normal visual)
-     escape
-     (operators normal)
-     (prettify insert)
-     slurp/barf-cp)))
+(use-package! evil-cleverparens
+  :hook ((lisp-mode . evil-cleverparens-mode)
+         (emacs-lisp-mode . evil-cleverparens-mode)
+         (ielm-mode . evil-cleverparens-mode)
+         (scheme-mode . evil-cleverparens-mode)
+         (racket-mode . evil-cleverparens-mode)
+         (hy-mode . evil-cleverparens-mode)
+         (lfe-mode . evil-cleverparens-mode)
+         (dune-mode . evil-cleverparens-mode)
+         (clojure-mode . evil-cleverparens-mode)
+         (fennel-mode . evil-cleverparens-mode))
+  :config
+  (evil-define-key '(normal visual) evil-cleverparens-mode-map
+    "s" nil
+    "S" nil))
 
 (after! lsp-ui
   (setq lsp-ui-sideline-enable nil

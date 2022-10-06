@@ -37,7 +37,15 @@
       enable = true;
       options = { syntax-theme = "Dracula"; };
     };
-    ignores = [ ".#*" ".DS_Store" ".dir-locals.el" ".idea/" ".vscode/" ];
+    ignores = [
+      ".#*"
+      ".DS_Store"
+      ".dir-locals.el"
+      ".idea/"
+      ".vscode/"
+      ".clj-kondo/"
+      ".lsp/"
+    ];
     includes = [{
       path = "${config.xdg.configHome}/git/wealthsimple.gitconfig";
       condition = "gitdir:~/Code/wealthsimple/";

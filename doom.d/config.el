@@ -58,11 +58,11 @@
   (set-popup-rule! "^\\*\\(rspec-\\)?compilation" :size 0.3 :ttl nil :select t)
   (map! (:localleader
          (:map (typescript-mode-map js-mode-map typescript-tsx-mode-map)
-          (:prefix ("t" . "jest")
-           "a" #'jest-test-run-all-tests
-           "t" #'jest-test-run-at-point
-           "f" #'jest-test-run
-           "r" #'jest-test-rerun-test)))))
+               (:prefix ("t" . "jest")
+                        "a" #'jest-test-run-all-tests
+                        "t" #'jest-test-run-at-point
+                        "f" #'jest-test-run
+                        "r" #'jest-test-rerun-test)))))
 
 (after! org
   (setq org-directory "~/org"

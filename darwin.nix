@@ -113,6 +113,7 @@
       "karabiner-elements"
       "kindle"
       "mochi"
+      "monodraw"
       "pritunl"
       "raycast"
       "reflect"

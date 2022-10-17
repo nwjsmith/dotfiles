@@ -20,7 +20,6 @@ in {
       direnv-vim
       (configuredVimPlugin fzf-vim)
       (configuredVimPlugin gitsigns-nvim)
-      (configuredVimPlugin gruvbox-nvim)
       (configuredVimPlugin lualine-nvim)
       nvim-colorizer-lua
       (configuredVimPlugin nvim-lspconfig)

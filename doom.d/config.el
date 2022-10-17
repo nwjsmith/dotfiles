@@ -1,4 +1,4 @@
-(setq doom-theme 'doom-dracula
+(setq doom-theme 'doom-alabaster
       doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
       fancy-splash-image (concat doom-user-dir "doom.svg")
       doom-variable-pitch-font (font-spec :family "Inter")

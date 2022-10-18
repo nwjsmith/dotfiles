@@ -35,7 +35,7 @@
     };
     delta = {
       enable = true;
-      options = { syntax-theme = "Dracula"; };
+      options = { syntax-theme = "ansi"; };
     };
     ignores = [
       ".#*"

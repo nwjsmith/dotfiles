@@ -41,6 +41,7 @@
       ".#*"
       ".DS_Store"
       ".dir-locals.el"
+      ".direnv/"
       ".idea/"
       ".vscode/"
       ".clj-kondo/"

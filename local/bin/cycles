@@ -1,0 +1,67 @@
+#!/usr/bin/env ruby
+
+# Generate cycles
+#
+# Dependency: This script requires Ruby
+# Install Ruby: http://www.ruby-lang.org/
+#
+# Required parameters:
+# @raycast.schemaVersion 1
+# @raycast.title Generate cycles
+# @raycast.mode compact
+# @raycast.packageName Raycast Scripts
+#
+# Optional parameters:
+# @raycast.icon ⏱
+# @raycast.currentDirectoryPath ~
+# @raycast.needsConfirmation false
+# @raycast.argument1 { "type": "text", "placeholder": "Cycles (default 4)", "optional": true }
+# @raycast.argument2 { "type": "text", "placeholder": "Duration (default 30)", "optional": true }
+# @raycast.argument3 { "type": "text", "placeholder": "Break (default 5)", "optional": true }
+#
+# Documentation:
+# @raycast.description Generate Markdown for my work cycles
+# @raycast.author Nate Smith
+# @raycast.authorURL https://github.com/nwjsmith
+
+# If accepting an argument:
+require 'open3'
+
+cycle_count = (ARGV[0].empty? ? "4" : ARGV[0]).to_i
+cycle_minutes = (ARGV[1].empty? ? "30" : ARGV[1]).to_i
+break_minutes = (ARGV[2].empty? ? "5" : ARGV[2]).to_i
+
+TEMPLATE = <<~MARKDOWN
+  ### %s
+  #### What am I trying to accomplish?
+
+  #### How will I get started?
+
+  #### Any hazards present?
+
+  #### Completed?
+
+  #### Anything noteworthy?
+
+  #### Any distractions?
+
+  #### How can you improve next cycle?
+
+  MARKDOWN
+
+now = Time.now
+offset = (1..5).find { |n| ((now.min + n) % 5).zero? } * 60
+interval = (cycle_minutes + break_minutes) * 60
+markdown = (0...cycle_count)
+             .map { |cycle| now + offset + (cycle * interval) }
+             .map { |interval_start| interval_start.strftime("%l:%M %p") }
+             .map { |heading| TEMPLATE % heading }
+             .join("\n")
+
+_, status = Open3.capture2('pbcopy', stdin_data: markdown)
+
+if status.success?
+  puts "Cycles copied to clipboard"
+else
+  exit status.exitstatus
+end

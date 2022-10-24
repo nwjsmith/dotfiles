@@ -72,4 +72,8 @@
     executable = true;
   };
 
+  home.file.".local/bin/cycles" = {
+    source = ./local/bin/cycles;
+    executable = true;
+  };
 }

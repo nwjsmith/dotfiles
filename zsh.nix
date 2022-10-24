@@ -13,7 +13,6 @@
   programs.zoxide.enable = true;
   home.sessionVariables = {
     EDITOR = "nvim";
-    MANPAGER = "nvim +Man!";
     PAGER = "less -FR";
   };
 
@@ -39,6 +38,15 @@
   programs.bat = {
     enable = true;
     config = { theme = "gruvbox-light"; };
+  };
+
+  programs.starship = {
+    enable = true;
+    settings = {
+      add_newline = false;
+      aws.disabled = true;
+      nix_shell.disabled = true;
+    };
   };
 
   home.file.".local/bin/gem-constraint" = {

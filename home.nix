@@ -23,7 +23,6 @@
     ngrok
     niv
     nodejs
-    pure-prompt
     (ripgrep.override { withPCRE2 = true; })
     scc
     sqlite

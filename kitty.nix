@@ -23,37 +23,7 @@
       shell_integration = "disabled";
       window_padding_width = "0 1";
       window_border_width = "0";
-
-      foreground = "#000000";
-      background = "#f7f7f7";
-      selection_foreground = "#000000";
-      selection_background = "#bfdbfe";
-      cursor = "#007acc";
-      cursor_text_color = "#bfdbfe";
-      url_color = "#325cc0";
-      color0 = "#000000";
-      color8 = "#777777";
-      color1 = "#aa3731";
-      color9 = "#f05050";
-      color2 = "#448c37";
-      color10 = "#60cb00";
-      color3 = "#cb9000";
-      color11 = "#ffbc5d";
-      color4 = "#325cc0";
-      color12 = "#007acc";
-      color5 = "#7a3e9d";
-      color13 = "#e64ce6";
-      color6 = "#0083b2";
-      color14 = "#00aacb";
-      color7 = "#f7f7f7";
-      color15 = "#f7f7f7";
-      active_border_color = "#777777";
-      inactive_border_color = "#cccccc";
-      bell_border_color = "#e97e57";
-      active_tab_foreground = "#000000";
-      active_tab_background = "#f7f7f7";
-      inactive_tab_foreground = "#444444";
-      inactive_tab_background = "#dedede";
     };
+    theme = "Gruvbox Light";
   };
 }

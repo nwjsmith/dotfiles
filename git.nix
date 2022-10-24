@@ -35,7 +35,7 @@
     };
     delta = {
       enable = true;
-      options = { syntax-theme = "ansi"; };
+      options = { syntax-theme = "gruvbox-light"; };
     };
     ignores = [
       ".#*"

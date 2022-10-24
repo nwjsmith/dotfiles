@@ -20,4 +20,4 @@ macOS, Homebrew and Nix installed with Flakes enabled.
 
 ### Slack theme
 
-    #282a36,#44475a,#44475a,#8be9fd,#6272a4,#ffffff,#50fa7b,#ff5555
+    #fbf1c7,#ebdbb2,#d79921,#665c54,#d5c4a1,#3c3836,#98971a,#9d0006,#ebdbb2,#282828

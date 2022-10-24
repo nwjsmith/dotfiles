@@ -29,11 +29,16 @@
     defaultCommand = "${pkgs.fd}/bin/fd --type f";
     changeDirWidgetCommand = "${pkgs.fd}/bin/fd --type d";
     fileWidgetCommand = "${pkgs.fd}/bin/fd --type f";
+    defaultOptions = [
+      "--color=bg+:#ebdbb2,bg:#fbf1c7,spinner:#b57614,hl:#b57614"
+      "--color=fg:#3c3836,header:#bdae93,info:#076678,pointer:#076678"
+      "--color=marker:#af3a03,fg+:#3c3836,prompt:#7c6f64,hl+:#b57614"
+    ];
   };
 
   programs.bat = {
     enable = true;
-    config = { theme = "ansi"; };
+    config = { theme = "gruvbox-light"; };
   };
 
   home.file.".local/bin/gem-constraint" = {

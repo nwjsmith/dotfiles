@@ -115,6 +115,7 @@
       "kindle"
       "mochi"
       "monodraw"
+      "obsidian"
       "pritunl"
       "raycast"
       "reflect"

@@ -43,10 +43,6 @@
     "s" nil
     "S" nil))
 
-(after! lsp-ui
-  (setq lsp-ui-sideline-enable nil
-        lsp-ui-doc-enable nil))
-
 (after! typescript-mode
   (setq typescript-indent-level 2)
   (setq-hook! 'typescript-mode-hook +format-with-lsp nil))

@@ -31,7 +31,18 @@ cycle_count = (ARGV[0].empty? ? "4" : ARGV[0]).to_i
 cycle_minutes = (ARGV[1].empty? ? "30" : ARGV[1]).to_i
 break_minutes = (ARGV[2].empty? ? "5" : ARGV[2]).to_i
 
-TEMPLATE = <<~MARKDOWN
+PREPARE_TEMPLATE = <<~MARKDOWN
+  # ⏱ Cycles starting at %s
+  ## Prepare
+  ### What am I trying to accomplish?
+  ### Why is it important and valuable?
+  ### How will I know this is complete?
+  ### Any risks, hazards or potential distractions?
+  ### Is it concrete and measurable or ambiguous?
+  ## Work
+  MARKDOWN
+
+CYCLE_TEMPLATE = <<~MARKDOWN
   ### %s
   #### What am I trying to accomplish?
   #### How will I get started?
@@ -42,15 +53,22 @@ TEMPLATE = <<~MARKDOWN
   #### How can you improve next cycle?
   MARKDOWN
 
+DEBRIEF = <<~MARKDOWN
+  ## Debrief
+  ### What did I accomplish?
+  ### How did this compare to my normal output?
+  ### Did I get bogged down? Where?
+  ### What went well?
+  MARKDOWN
+
 now = Time.now
 offset = (1..5).find { |n| ((now.min + n) % 5).zero? } * 60
 interval = (cycle_minutes + break_minutes) * 60
-markdown = (0...cycle_count)
-             .map { |cycle| now + offset + (cycle * interval) }
-             .map { |interval_start| interval_start.strftime("%l:%M %p").strip }
-             .map { |heading| TEMPLATE % heading }
-             .join("\n")
-             .prepend("# ⏱ Cycles starting at #{(now + offset).strftime("%l:%M %p").strip}\n")
+cycle_titles = (0...cycle_count)
+                 .map { |cycle| now + offset + (cycle * interval) }
+                 .map { |interval_start| interval_start.strftime("%l:%M %p").strip }
+
+markdown = "#{PREPARE_TEMPLATE % cycle_titles.first}#{cycle_titles.map { |title| CYCLE_TEMPLATE % title }.join}#{DEBRIEF}"
 
 _, status = Open3.capture2('pbcopy', stdin_data: markdown)
 

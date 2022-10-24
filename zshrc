@@ -6,28 +6,12 @@ if test -n "${KITTY_INSTALLATION_DIR}"; then
   autoload -Uz -- "${KITTY_INSTALLATION_DIR}/shell-integration/zsh/kitty-integration"
   kitty-integration
   unfunction kitty-integration
-
-  # Sitting at the prompt sets the window title to 'cwd'
-  function window-title:precmd() {
-    local title="$(print -P "%3~")"
-    echo -ne "\033]0;${title}\007"
-  }
-
-  # Running a command sets window title to 'cwd | command'
-  function window-title:preexec() {
-    local title="$(print -P "%3~ | ${1[(w)1]}")"
-    echo -ne "\033]0;$title\007"
-  }
-
-  add-zsh-hook precmd window-title:precmd
-  add-zsh-hook preexec window-title:preexec
 fi
 
 # Some of the most useful features in emacs-libvterm require shell-side
 # configurations. The main goal of these additional functions is to enable the
 # shell to send information to `vterm` via properly escaped sequences. A
 # function that helps in this task, `vterm_printf`, is defined below.
-
 function vterm_printf(){
   if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ] ); then
     # Tell tmux to pass the escape sequences through

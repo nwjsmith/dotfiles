@@ -34,19 +34,12 @@ break_minutes = (ARGV[2].empty? ? "5" : ARGV[2]).to_i
 TEMPLATE = <<~MARKDOWN
   ### %s
   #### What am I trying to accomplish?
-
   #### How will I get started?
-
   #### Any hazards present?
-
   #### Completed?
-
   #### Anything noteworthy?
-
   #### Any distractions?
-
   #### How can you improve next cycle?
-
   MARKDOWN
 
 now = Time.now
@@ -54,9 +47,10 @@ offset = (1..5).find { |n| ((now.min + n) % 5).zero? } * 60
 interval = (cycle_minutes + break_minutes) * 60
 markdown = (0...cycle_count)
              .map { |cycle| now + offset + (cycle * interval) }
-             .map { |interval_start| interval_start.strftime("%l:%M %p") }
+             .map { |interval_start| interval_start.strftime("%l:%M %p").strip }
              .map { |heading| TEMPLATE % heading }
              .join("\n")
+             .prepend("# ⏱ Cycles starting at #{(now + offset).strftime("%l:%M %p").strip}\n")
 
 _, status = Open3.capture2('pbcopy', stdin_data: markdown)
 

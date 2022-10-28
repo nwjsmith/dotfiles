@@ -102,7 +102,6 @@
       "1password-cli"
       "alloy"
       "bartender"
-      "camo-studio"
       "chromium"
       "cleanshot"
       "dash"
@@ -117,7 +116,6 @@
       "mochi"
       "monodraw"
       "obsidian"
-      "pritunl"
       "raycast"
       "reflect"
       "screenflow"
@@ -125,16 +123,12 @@
       "slack"
       "sonos"
       "soulver"
-      "syncthing"
-      "timing"
       "the-unarchiver"
-      "thingsmacsandboxhelper"
       "tla-plus-toolbox"
       "tuple"
       "utm"
       "vlc"
       "zoom"
-      "zsa-wally"
     ];
     masApps = {
       # "Craft" = 1487937127;
@@ -143,7 +137,6 @@
       "Fantastical" = 975937182;
       "Flow" = 1423210932;
       "Grammarly for Safari" = 1462114288;
-      "Tailscale" = 1475387142;
       "Things" = 904280696;
     };
   };

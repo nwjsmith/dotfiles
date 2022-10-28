@@ -25,7 +25,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       devShell.${system} = pkgs.mkShell { };
-      darwinConfigurations.nsmith165b = nix-darwin.lib.darwinSystem {
+      darwinConfigurations.workbook = nix-darwin.lib.darwinSystem {
         inherit system;
 
         modules = [

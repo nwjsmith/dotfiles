@@ -13,7 +13,7 @@ macOS, Homebrew and Nix installed with Flakes enabled.
 
     $ git clone https://github.com/nwjsmith/dotfiles.git ~/.dotfiles
     $ cd ~/.dotfiles
-    $ nix build .#darwinConfigurations.$(hostname).system
+    $ nix build .#darwinConfigurations.workbook.system
     $ ./result/sw/bin/darwin-rebuild switch --flake .
 
 ## etc.

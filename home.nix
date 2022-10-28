@@ -16,7 +16,9 @@
     asciinema
     amazon-ecr-credential-helper
     awscli2
+    colima
     curl
+    docker-client
     fd
     gh
     jq

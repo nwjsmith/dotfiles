@@ -12,7 +12,7 @@
   };
   programs.zoxide.enable = true;
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "emacs";
     PAGER = "less -FR";
   };
 

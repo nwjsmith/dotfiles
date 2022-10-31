@@ -7,7 +7,6 @@
     ./git.nix
     ./gpg.nix
     ./kitty.nix
-    ./overlays
     ./neovim.nix
     ./zsh.nix
   ];

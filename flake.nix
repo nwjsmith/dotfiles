@@ -8,11 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils.url = "github:numtide/flake-utils";
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,7 +29,6 @@
           ({ ... }: {
             nixpkgs = {
               config.allowUnfree = true;
-              overlays = [ emacs-overlay.overlay ];
             };
             users.users.nsmith.home = "/Users/nsmith";
             home-manager = {

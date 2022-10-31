@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./overlays ];
   # Have nix-darwin manage the Nix daemon
   services.nix-daemon.enable = true;
 

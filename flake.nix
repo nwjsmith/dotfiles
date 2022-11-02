@@ -14,7 +14,7 @@
     };
   };
 
-  outputs = { self, nix-darwin, emacs-overlay, home-manager, nixpkgs, ... }:
+  outputs = { self, nix-darwin, home-manager, nixpkgs, ... }:
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -27,9 +27,7 @@
           home-manager.darwinModules.home-manager
           ./darwin.nix
           ({ ... }: {
-            nixpkgs = {
-              config.allowUnfree = true;
-            };
+            nixpkgs.config.allowUnfree = true;
             users.users.nsmith.home = "/Users/nsmith";
             home-manager = {
               useGlobalPkgs = true;

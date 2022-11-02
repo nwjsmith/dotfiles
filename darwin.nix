@@ -51,50 +51,12 @@
     global.brewfile = true;
     brews = [
       "watchman"
-      {
-        name = "emacs-mac";
-        args = [
-          "with-emacs-big-sur-icon"
-          "with-mac-metal"
-          "with-native-comp"
-          "with-natural-title-bar"
-          "with-starter"
-          "with-xwidgets"
-        ];
-      }
-      # emacs-mac deps are explicitly listed so that others can be removed
-      "m4"
-      "autoconf"
-      "automake"
-      "bdw-gc"
-      "gmp"
-      "isl"
-      "mpfr"
-      "libmpc"
-      "gcc"
-      "gettext"
-      "libtool"
-      "libunistring"
-      "pkg-config"
-      "guile"
-      "libidn2"
-      "libnghttp2"
-      "libtasn1"
-      "nettle"
-      "p11-kit"
-      "unbound"
-      "gnutls"
-      "jansson"
-      "libgccjit"
-      "libxml2"
-      "texinfo"
     ];
     taps = [
       "homebrew/bundle"
       "homebrew/cask"
       "homebrew/cask-drivers"
       "homebrew/core"
-      "railwaycat/emacsmacport"
     ];
     casks = [
       "1password"

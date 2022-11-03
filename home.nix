@@ -25,6 +25,12 @@
 
   programs.emacs = {
     enable = true;
+    package = pkgs.emacs.overrideAttrs(original: {
+      patches = (original.patches or []) ++ [
+        ./emacs/patches/fix-window-role.patch
+        ./emacs/patches/system-appearance.patch
+      ];
+    });
     extraPackages = (epkgs:
       (with epkgs; [ vterm ]) ++ (with pkgs; [
         cmake

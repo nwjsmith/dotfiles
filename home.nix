@@ -29,6 +29,7 @@
       patches = (original.patches or []) ++ [
         ./emacs/patches/fix-window-role.patch
         ./emacs/patches/system-appearance.patch
+        ./emacs/patches/increase-block-alignment.patch
       ];
     });
     extraPackages = (epkgs:

@@ -78,7 +78,6 @@
       "monodraw"
       "obsidian"
       "raycast"
-      "reflect"
       "screenflow"
       "signal"
       "slack"

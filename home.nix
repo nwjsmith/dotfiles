@@ -40,7 +40,7 @@
         editorconfig-core-c
         fontconfig
         gnuplot
-        nixfmt
+        alejandra
         nodePackages.js-beautify
         nodePackages.mermaid-cli
         nodePackages.stylelint

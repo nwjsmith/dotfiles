@@ -127,3 +127,4 @@
 
 (after! evil-org
   (remove-hook 'org-tab-first-hook #'+org-cycle-only-current-subtree-h))
+(set-formatter! 'alejandra "alejandra --quiet" :modes '(nix-mode))

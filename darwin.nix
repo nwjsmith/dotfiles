@@ -91,7 +91,6 @@
       "zoom"
     ];
     masApps = {
-      # "Craft" = 1487937127;
       # "DaisyDisk" = 411643860;
       # "Deliveries" = 290986013;
       "Fantastical" = 975937182;

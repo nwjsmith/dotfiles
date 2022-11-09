@@ -14,15 +14,12 @@
 (after! cider
   (setq cider-clojure-cli-aliases "dev"
         cider-save-file-on-load nil
-        cider-font-lock-dynamically nil
-        cider-eldoc-display-for-symbol-at-point nil
-        cider-prompt-for-symbol nil))
+        cider-repl-pop-to-buffer-on-connect nil))
 
 (after! clj-refactor
   (setq cljr-warn-on-eval nil
         cljr-add-ns-to-blank-clj-files nil
-        cljr-eagerly-build-asts-on-startup nil)
-  (set-lookup-handlers! 'clj-refactor-mode nil))
+        cljr-eagerly-build-asts-on-startup nil))
 
 (after! clojure-mode
   (setq clojure-thread-all-but-last t))

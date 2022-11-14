@@ -40,11 +40,19 @@
     "s" nil
     "S" nil))
 
+(defun nwjsmith/org-save-all-agenda-buffers ()
+  "Save `org-agenda-files' buffers without user confirmation.
+See also `org-save-all-org-buffers'"
+  (interactive)
+  (message "Saving all Org agenda buffers... done")
+  (save-some-buffers t (lambda () (and (member (buffer-file-name) org-agenda-files) t)))
+  (message "Saving all Org agenda buffers... done"))
+
 (after! org
   (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAIT(w@)" "|" "DONE(d)" "KILL(k!)"))
         org-directory (expand-file-name "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents")
         org-log-done 'time
-        org-agenda-files '("inbox.org" "someday.org" "projects.org")
+        org-agenda-files '("inbox.org" "someday.org" "projects.org" "schedule.org")
         org-capture-templates '(("i" "Inbox" entry (file "inbox.org")
                                  "* TODO %?")
                                 ("m" "Meeting" entry (file "schedule.org")
@@ -71,7 +79,11 @@
                        ((org-agenda-prefix-format "  %?-12t% s")
                         (org-agenda-overriding-header "\nInbox\n")))
             (tags "CLOSED>=\"<today>\""
-                  ((org-agenda-overriding-header "\nCompleted today\n"))))))))
+                  ((org-agenda-overriding-header "\nCompleted today\n")))))))
+
+  (advice-add 'org-refile :after
+              (lambda (&rest _)
+                (nwjsmith/org-save-all-agenda-buffers))))
 
 (after! org-roam
   (setq org-roam-directory (concat org-directory "/roam")))

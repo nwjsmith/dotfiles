@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     asciinema
     amazon-ecr-credential-helper
+    docker-credential-helpers
     awscli2
     colima
     curl
@@ -25,8 +26,8 @@
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs.overrideAttrs(original: {
-      patches = (original.patches or []) ++ [
+    package = pkgs.emacs.overrideAttrs (original: {
+      patches = (original.patches or [ ]) ++ [
         ./emacs/patches/fix-window-role.patch
         ./emacs/patches/system-appearance.patch
         ./emacs/patches/increase-block-alignment.patch
@@ -62,6 +63,13 @@
   home.file.".doom.d/config.el".source = ./doom.d/config.el;
   home.file.".doom.d/doom.svg".source = ./doom.d/doom.svg;
   home.file.".emacs.d/profiles.el".source = ./emacs.d/profiles.el;
+  home.file.".docker/config.json".text = builtins.toJSON {
+    currentContext = "colima";
+    credHelpers = {
+      "526316940316.dkr.ecr.ca-central-1.amazonaws.com" = "ecr-login";
+      "526316940316.dkr.ecr.us-east-1.amazonaws.com" = "ecr-login";
+    };
+  };
 
   xdg.configFile."emacs/init.el".source = ./config/emacs/init.el;
 

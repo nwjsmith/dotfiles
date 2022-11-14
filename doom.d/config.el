@@ -3,7 +3,9 @@
       fancy-splash-image (concat doom-user-dir "doom.svg")
       doom-variable-pitch-font (font-spec :family "Inter")
       display-line-numbers-type nil
-      comp-num-cpus (max 1 (/ (num-processors) 2)))
+      comp-num-cpus (max 1 (/ (num-processors) 2))
+      org-directory (expand-file-name "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents")
+      org-roam-directory (concat org-directory "/roam"))
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
@@ -50,7 +52,6 @@ See also `org-save-all-org-buffers'"
 
 (after! org
   (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAIT(w@)" "|" "DONE(d)" "KILL(k!)"))
-        org-directory (expand-file-name "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents")
         org-log-done 'time
         org-agenda-files '("inbox.org" "someday.org" "projects.org" "schedule.org")
         org-capture-templates '(("i" "Inbox" entry (file "inbox.org")
@@ -84,9 +85,6 @@ See also `org-save-all-org-buffers'"
   (advice-add 'org-refile :after
               (lambda (&rest _)
                 (nwjsmith/org-save-all-agenda-buffers))))
-
-(after! org-roam
-  (setq org-roam-directory (concat org-directory "/roam")))
 
 (after! typescript-mode
   (setq typescript-indent-level 2)

@@ -40,6 +40,42 @@
     "s" nil
     "S" nil))
 
+(after! org
+  (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAIT(w@)" "|" "DONE(d)" "KILL(k!)"))
+        org-directory (expand-file-name "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents")
+        org-log-done 'time
+        org-agenda-files '("inbox.org" "someday.org" "projects.org")
+        org-capture-templates '(("i" "Inbox" entry (file "inbox.org")
+                                 "* TODO %?")
+                                ("m" "Meeting" entry (file "schedule.org")
+                                 "* %? :meeting:\n<%<%Y-%m-%d %a %H:00+00:25>>"))
+        org-agenda-custom-commands
+        '(("g" "Get Things Done (GTD)"
+           ((agenda ""
+                    ((org-agenda-skip-function
+                      '(org-agenda-skip-entry-if 'deadline))
+                     (org-deadline-warning-days 0)))
+            (todo "NEXT"
+                  ((org-agenda-skip-function
+                    '(org-agenda-skip-entry-if 'deadline))
+                   (org-agenda-prefix-format "  %i %-12:c [%e] ")
+                   (org-agenda-overriding-header "\nTasks\n")))
+            (agenda nil
+                    ((org-agenda-entry-types '(:deadline))
+                     (org-agenda-format-date "")
+                     (org-deadline-warning-days 7)
+                     (org-agenda-skip-function
+                      '(org-agenda-skip-entry-if 'notregexp "\\* NEXT"))
+                     (org-agenda-overriding-header "\nDeadlines")))
+            (tags-todo "inbox"
+                       ((org-agenda-prefix-format "  %?-12t% s")
+                        (org-agenda-overriding-header "\nInbox\n")))
+            (tags "CLOSED>=\"<today>\""
+                  ((org-agenda-overriding-header "\nCompleted today\n"))))))))
+
+(after! org-roam
+  (setq org-roam-directory (concat org-directory "/roam")))
+
 (after! typescript-mode
   (setq typescript-indent-level 2)
   (setq-hook! 'typescript-mode-hook +format-with-lsp nil))

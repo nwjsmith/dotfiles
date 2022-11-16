@@ -3,9 +3,7 @@
       fancy-splash-image (concat doom-user-dir "doom.svg")
       doom-variable-pitch-font (font-spec :family "Inter")
       display-line-numbers-type nil
-      comp-num-cpus (max 1 (/ (num-processors) 2))
-      org-directory (expand-file-name "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents")
-      org-roam-directory (concat org-directory "/roam"))
+      comp-num-cpus (max 1 (/ (num-processors) 2)))
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
@@ -27,6 +25,7 @@
   (setq clojure-thread-all-but-last t))
 
 (use-package! evil-cleverparens
+  :init (setq evil-cleverparens-use-s-and-S nil)
   :hook ((lisp-mode . evil-cleverparens-mode)
          (emacs-lisp-mode . evil-cleverparens-mode)
          (ielm-mode . evil-cleverparens-mode)
@@ -36,11 +35,7 @@
          (lfe-mode . evil-cleverparens-mode)
          (dune-mode . evil-cleverparens-mode)
          (clojure-mode . evil-cleverparens-mode)
-         (fennel-mode . evil-cleverparens-mode))
-  :config
-  (evil-define-key '(normal visual) evil-cleverparens-mode-map
-    "s" nil
-    "S" nil))
+         (fennel-mode . evil-cleverparens-mode)))
 
 (defun nwjsmith/org-save-all-agenda-buffers ()
   "Save `org-agenda-files' buffers without user confirmation.
@@ -50,8 +45,11 @@ See also `org-save-all-org-buffers'"
   (save-some-buffers t (lambda () (and (member (buffer-file-name) org-agenda-files) t)))
   (message "Saving all Org agenda buffers... done"))
 
-(after! org
-  (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAIT(w@)" "|" "DONE(d)" "KILL(k!)"))
+(use-package! org
+  :init
+  (setq org-directory (expand-file-name "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents"))
+  :config
+  (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAIT(w@)" "|" "DONE(d)" "KILL(k@)"))
         org-log-done 'time
         org-agenda-files '("inbox.org" "someday.org" "projects.org" "schedule.org")
         org-capture-templates '(("i" "Inbox" entry (file "inbox.org")
@@ -81,14 +79,20 @@ See also `org-save-all-org-buffers'"
                         (org-agenda-overriding-header "\nInbox\n")))
             (tags "CLOSED>=\"<today>\""
                   ((org-agenda-overriding-header "\nCompleted today\n")))))))
-
   (advice-add 'org-refile :after
               (lambda (&rest _)
                 (nwjsmith/org-save-all-agenda-buffers))))
 
+(use-package! org-roam
+  :init
+  (setq org-roam-directory (concat org-directory "/roam")))
+
 (after! typescript-mode
   (setq typescript-indent-level 2)
   (setq-hook! 'typescript-mode-hook +format-with-lsp nil))
+
+(after! projectile
+  (setq projectile-project-search-path '(("~/Code" . 2))))
 
 (use-package! jest-test-mode
   :hook (typescript-mode js-mode typescript-tsx-mode)

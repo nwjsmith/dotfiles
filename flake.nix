@@ -19,7 +19,9 @@
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      devShell.${system} = pkgs.mkShell { };
+      devShell.${system} = pkgs.mkShell {
+        buildInputs = with pkgs; [ nil ];
+      };
       darwinConfigurations.workbook = nix-darwin.lib.darwinSystem {
         inherit system;
 

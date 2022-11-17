@@ -24,6 +24,11 @@
 (after! clojure-mode
   (setq clojure-thread-all-but-last t))
 
+(after! eglot
+  (dolist (server-program '((java-mode "jdt-language-server")
+                            (nix-mode "nil")))
+    (add-to-list 'eglot-server-programs server-program)))
+
 (use-package! evil-cleverparens
   :init (setq evil-cleverparens-use-s-and-S nil)
   :hook ((lisp-mode . evil-cleverparens-mode)

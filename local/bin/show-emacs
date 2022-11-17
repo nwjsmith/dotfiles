@@ -1,0 +1,12 @@
+#!/bin/bash
+set -euo pipefail
+
+emacs_app_path() {
+  dirname "$(readlink -f "$(command -v emacs)" )"
+}
+
+main() {
+  open "$(emacs_app_path)/../Applications"
+}
+
+main

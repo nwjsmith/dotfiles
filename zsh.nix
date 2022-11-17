@@ -58,6 +58,11 @@
     executable = true;
   };
 
+  home.file.".local/bin/show-emacs" = {
+    source = ./local/bin/show-emacs;
+    executable = true;
+  };
+
   home.file.".local/bin/git-churn" = {
     source = ./local/bin/git-churn;
     executable = true;

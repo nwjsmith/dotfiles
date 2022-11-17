@@ -1,9 +1,10 @@
-(setq doom-theme 'doom-gruvbox-light
-      doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
-      fancy-splash-image (concat doom-user-dir "doom.svg")
-      doom-variable-pitch-font (font-spec :family "Inter")
+(setq auth-sources '("~/.authinfo.gpg")
+      comp-num-cpus (max 1 (/ (num-processors) 2))
       display-line-numbers-type nil
-      comp-num-cpus (max 1 (/ (num-processors) 2)))
+      doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
+      doom-theme 'doom-gruvbox-light
+      doom-variable-pitch-font (font-spec :family "Inter")
+      fancy-splash-image (concat doom-user-dir "doom.svg"))
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 

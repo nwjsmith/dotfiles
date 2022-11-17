@@ -19,6 +19,7 @@
       yolo = "push --force-with-lease";
     };
     extraConfig = {
+      github.user = "nwjsmith";
       commit = {
         gpgsign = true;
         template = "${config.xdg.configHome}/git/gitmessage";

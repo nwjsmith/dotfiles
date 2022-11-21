@@ -9,7 +9,6 @@
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
 (after! company
-  ;; Only complete when asked
   (setq company-idle-delay nil))
 
 (after! cider

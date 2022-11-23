@@ -12,6 +12,7 @@
     colima
     curl
     docker-client
+    docker-compose
     fd
     gh
     jq

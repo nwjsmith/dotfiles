@@ -26,6 +26,7 @@
 
 (after! eglot
   (dolist (server-program '((java-mode "jdt-language-server")
+                            (typescript-tsx-mode "typescript-language-server" "--stdio")
                             (nix-mode "nil")))
     (add-to-list 'eglot-server-programs server-program)))
 
@@ -94,7 +95,8 @@ See also `org-save-all-org-buffers'"
 
 (after! typescript-mode
   (setq typescript-indent-level 2)
-  (setq-hook! 'typescript-mode-hook +format-with-lsp nil))
+  (setq-hook! '(typescript-mode-hook typescript-tsx-mode-hook)
+    +format-with-lsp nil))
 
 (after! projectile
   (setq projectile-project-search-path '(("~/Code" . 2))))

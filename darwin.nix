@@ -91,6 +91,7 @@
       "zoom"
     ];
     masApps = {
+      "ColorSlurp" = 1287239339;
       # "DaisyDisk" = 411643860;
       # "Deliveries" = 290986013;
       "Fantastical" = 975937182;

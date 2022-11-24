@@ -28,6 +28,9 @@
                             (nix-mode "nil")))
     (add-to-list 'eglot-server-programs server-program)))
 
+(after! magit
+  (setq magit-section-visibility-indicator '("..." . t)))
+
 (use-package! evil-cleverparens
   :init (setq evil-cleverparens-use-s-and-S nil)
   :hook ((lisp-mode . evil-cleverparens-mode)

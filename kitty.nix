@@ -4,8 +4,8 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "JetBrainsMono Nerd Font Mono";
-      size = 13;
+      name = "Berkeley Mono";
+      size = 14;
     };
     keybindings = {
       "cmd+enter" = "launch --cwd=current";

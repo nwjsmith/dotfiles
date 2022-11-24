@@ -1,9 +1,9 @@
 (setq auth-sources '("~/.authinfo.gpg")
       comp-num-cpus (max 1 (/ (num-processors) 2))
       display-line-numbers-type nil
-      doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
+      doom-font (font-spec :family "Berkeley Mono" :size 14)
       doom-theme 'modus-operandi
-      doom-variable-pitch-font (font-spec :family "Inter")
+      doom-variable-pitch-font (font-spec :family "Berkeley Mono Variable")
       fancy-splash-image (concat doom-user-dir "doom.svg"))
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)

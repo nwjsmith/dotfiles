@@ -1,5 +1,4 @@
 (setq auth-sources '("~/.authinfo.gpg")
-      comp-num-cpus (max 1 (/ (num-processors) 2))
       display-line-numbers-type nil
       doom-font (font-spec :family "Berkeley Mono" :size 14)
       doom-variable-pitch-font (font-spec :family "Berkeley Mono Variable")

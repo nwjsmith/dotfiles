@@ -2,7 +2,6 @@
       comp-num-cpus (max 1 (/ (num-processors) 2))
       display-line-numbers-type nil
       doom-font (font-spec :family "Berkeley Mono" :size 14)
-      doom-theme 'modus-operandi
       doom-variable-pitch-font (font-spec :family "Berkeley Mono Variable")
       fancy-splash-image (concat doom-user-dir "doom.svg"))
 
@@ -92,6 +91,12 @@ See also `org-save-all-org-buffers'"
 (use-package! org-roam
   :init
   (setq org-roam-directory (concat org-directory "/roam")))
+
+(use-package! modus-themes
+  :init
+  (modus-themes-load-themes)
+  :config
+  (modus-themes-load-operandi))
 
 (after! typescript-mode
   (setq typescript-indent-level 2)

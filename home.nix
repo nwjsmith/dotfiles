@@ -72,8 +72,6 @@
     };
   };
 
-  xdg.configFile."emacs/init.el".source = ./config/emacs/init.el;
-
   xdg.configFile = {
     "shellcheckrc".source = ./shellcheckrc;
 

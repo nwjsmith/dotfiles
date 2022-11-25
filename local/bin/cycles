@@ -20,7 +20,7 @@
 # @raycast.argument3 { "type": "text", "placeholder": "Break (default 5)", "optional": true }
 #
 # Documentation:
-# @raycast.description Generate Markdown for my work cycles
+# @raycast.description Generate Org for my work cycles
 # @raycast.author Nate Smith
 # @raycast.authorURL https://github.com/nwjsmith
 
@@ -31,35 +31,35 @@ cycle_count = (ARGV[0].empty? ? "4" : ARGV[0]).to_i
 cycle_minutes = (ARGV[1].empty? ? "30" : ARGV[1]).to_i
 break_minutes = (ARGV[2].empty? ? "5" : ARGV[2]).to_i
 
-PREPARE_TEMPLATE = <<~MARKDOWN
-  # ⏱ Cycles starting at %s
-  ## Prepare
-  ### What am I trying to accomplish?
-  ### Why is it important and valuable?
-  ### How will I know this is complete?
-  ### Any risks, hazards or potential distractions?
-  ### Is it concrete and measurable or ambiguous?
-  ## Work
-  MARKDOWN
+PREPARE_TEMPLATE = <<~ORG
+  * ⏱ Cycles starting at %s
+  ** Prepare
+  *** What am I trying to accomplish?
+  *** Why is it important and valuable?
+  *** How will I know this is complete?
+  *** Any risks, hazards or potential distractions?
+  *** Is it concrete and measurable or ambiguous?
+  ** Work
+  ORG
 
-CYCLE_TEMPLATE = <<~MARKDOWN
-  ### %s
-  #### What am I trying to accomplish?
-  #### How will I get started?
-  #### Any hazards present?
-  #### Completed?
-  #### Anything noteworthy?
-  #### Any distractions?
-  #### How can you improve next cycle?
-  MARKDOWN
+CYCLE_TEMPLATE = <<~ORG
+  *** %s
+  **** What am I trying to accomplish?
+  **** How will I get started?
+  **** Any hazards present?
+  **** Completed?
+  **** Anything noteworthy?
+  **** Any distractions?
+  **** How can you improve next cycle?
+  ORG
 
-DEBRIEF = <<~MARKDOWN
-  ## Debrief
-  ### What did I accomplish?
-  ### How did this compare to my normal output?
-  ### Did I get bogged down? Where?
-  ### What went well?
-  MARKDOWN
+DEBRIEF = <<~ORG
+  ** Debrief
+  *** What did I accomplish?
+  *** How did this compare to my normal output?
+  *** Did I get bogged down? Where?
+  *** What went well?
+  ORG
 
 now = Time.now
 offset = (1..5).find { |n| ((now.min + n) % 5).zero? } * 60

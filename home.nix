@@ -23,6 +23,14 @@
     scc
     sqlite
     yt-dlp
+
+    # Doom Emacs stuff
+    coreutils
+    discount
+    editorconfig-core-c
+    fontconfig
+    gnuplot
+    (tree-sitter.withPlugins (_: tree-sitter.allGrammars))
   ];
 
   programs.emacs = {
@@ -34,20 +42,7 @@
         ./emacs/patches/increase-block-alignment.patch
       ];
     });
-    extraPackages = (epkgs:
-      (with epkgs; [ vterm ]) ++ (with pkgs; [
-        cmake
-        coreutils
-        discount
-        editorconfig-core-c
-        fontconfig
-        gnuplot
-        alejandra
-        nodePackages.js-beautify
-        nodePackages.mermaid-cli
-        nodePackages.stylelint
-        tree-sitter.allGrammars
-      ]));
+    extraPackages = (epkgs: [ epkgs.vterm ]);
   };
 
   home.sessionPath = [ "${config.home.homeDirectory}/.emacs.d/bin" ];

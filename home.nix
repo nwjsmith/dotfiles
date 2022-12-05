@@ -22,6 +22,7 @@
     (ripgrep.override { withPCRE2 = true; })
     scc
     sqlite
+    tarsnap
     yt-dlp
 
     # Doom Emacs stuff
@@ -44,6 +45,16 @@
       ];
     });
     extraPackages = (epkgs: [ epkgs.vterm ]);
+  };
+
+  home.file.".local/bin/tarsnap-backup" = {
+    executable = true;
+    text = ''
+      #!/bin/sh
+      ${pkgs.tarsnap}/bin/tarsnap -c \
+        -f "$(uname -n)-$(date +%Y-%m-%d_%H-%M-%S)" \
+        ${config.home.homeDirectory}/Documents/org
+    '';
   };
 
   home.sessionPath = [ "${config.home.homeDirectory}/.emacs.d/bin" ];

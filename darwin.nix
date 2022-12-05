@@ -76,6 +76,7 @@
       "mochi"
       "monodraw"
       "obsidian"
+      "qmk-toolbox"
       "raycast"
       "screenflow"
       "signal"

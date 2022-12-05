@@ -30,6 +30,7 @@
     editorconfig-core-c
     fontconfig
     gnuplot
+    pandoc
     (tree-sitter.withPlugins (_: tree-sitter.allGrammars))
   ];
 

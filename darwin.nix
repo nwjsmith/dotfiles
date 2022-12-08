@@ -94,7 +94,6 @@
       "ColorSlurp" = 1287239339;
       # "DaisyDisk" = 411643860;
       # "Deliveries" = 290986013;
-      "Fantastical" = 975937182;
       "Flow" = 1423210932;
       "Grammarly for Safari" = 1462114288;
       "Things" = 904280696;

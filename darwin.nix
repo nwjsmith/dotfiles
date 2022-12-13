@@ -66,6 +66,7 @@
       "cleanshot"
       "dash"
       "deckset"
+      "eclipse-ide"
       "firefox"
       "google-chrome"
       "grammarly"

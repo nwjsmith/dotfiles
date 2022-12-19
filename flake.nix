@@ -33,10 +33,7 @@
             users.users.nsmith.home = "/Users/nsmith";
             home-manager = {
               useGlobalPkgs = true;
-              users.nsmith = {
-                home.stateVersion = "22.05";
-                imports = [ ./home.nix ];
-              };
+              users.nsmith = import ./home.nix;
             };
           })
         ];

@@ -1,18 +1,20 @@
 { config, lib, pkgs, ... }:
 
 {
+  home.stateVersion = "22.05";
+
   imports =
     [ ./clojure.nix ./git.nix ./gpg.nix ./kitty.nix ./neovim.nix ./zsh.nix ];
 
   home.packages = with pkgs; [
-    asciinema
     amazon-ecr-credential-helper
-    docker-credential-helpers
+    asciinema
     awscli2
     colima
     curl
     docker-client
     docker-compose
+    docker-credential-helpers
     fd
     gh
     jq

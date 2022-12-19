@@ -76,6 +76,7 @@
       "kindle"
       "mochi"
       "monodraw"
+      "notion"
       "obsidian"
       "qmk-toolbox"
       "raycast"

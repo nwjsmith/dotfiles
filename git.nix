@@ -34,10 +34,6 @@
       };
       merge.conflictStyle = "diff3";
     };
-    delta = {
-      enable = true;
-      options = { syntax-theme = "gruvbox-light"; };
-    };
     ignores = [
       ".#*"
       ".DS_Store"

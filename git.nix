@@ -47,6 +47,7 @@
       ".vscode/"
       ".clj-kondo/"
       ".lsp/"
+      "*.iml"
     ];
     includes = [{
       path = "${config.xdg.configHome}/git/wealthsimple.gitconfig";

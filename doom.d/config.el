@@ -96,9 +96,12 @@ See also `org-save-all-org-buffers'"
 
 (use-package! modus-themes
   :init
-  (modus-themes-load-themes)
+  (setq modus-themes-italic-constructs t
+        modus-themes-bold-constructs nil
+        modus-themes-mixed-fonts t
+        modus-themes-variable-pitch-ui nil)
   :config
-  (modus-themes-load-operandi))
+  (load-theme 'modus-operandi :no-confim))
 
 (after! typescript-mode
   (setq typescript-indent-level 2)

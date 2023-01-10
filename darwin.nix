@@ -85,6 +85,8 @@
       "slack"
       "sonos"
       "soulver"
+      "sublime-merge"
+      "sublime-text"
       "the-unarchiver"
       "tla-plus-toolbox"
       "tuple"

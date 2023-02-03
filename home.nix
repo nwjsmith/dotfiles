@@ -18,6 +18,7 @@
     fd
     gh
     jq
+    nodePackages.mermaid-cli
     ngrok
     # niv
     nodejs

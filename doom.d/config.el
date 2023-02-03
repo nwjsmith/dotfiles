@@ -22,12 +22,6 @@
 (after! clojure-mode
   (setq clojure-thread-all-but-last t))
 
-(after! eglot
-  (dolist (server-program '((java-mode "jdt-language-server")
-                            (typescript-tsx-mode "typescript-language-server" "--stdio")
-                            (nix-mode "nil")))
-    (add-to-list 'eglot-server-programs server-program)))
-
 (after! magit
   (setq magit-section-visibility-indicator '("..." . t)))
 

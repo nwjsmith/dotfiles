@@ -80,6 +80,7 @@
       "obsidian"
       "qmk-toolbox"
       "raycast"
+      "reflect"
       "screenflow"
       "signal"
       "slack"

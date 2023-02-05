@@ -36,6 +36,13 @@
     gnuplot
     pandoc
     (tree-sitter.withPlugins (_: tree-sitter.allGrammars))
+
+    # Mac apps
+    _1password
+    jetbrains.idea-ultimate
+    slack
+    utm
+    zoom-us
   ];
 
   programs.emacs = {

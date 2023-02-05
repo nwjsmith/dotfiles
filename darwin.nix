@@ -18,8 +18,6 @@
   # We use Nix flakes
   nix.extraOptions = "experimental-features = nix-command flakes";
 
-  networking.hostName = "nsmith165b";
-
   # Ensure nix-darwin configures ZSH with a Nix-aware PATH
   programs.zsh = {
     enable = true;
@@ -40,6 +38,34 @@
     };
   };
 
+  system = {
+    defaults = {
+      dock = {
+        autohide = true;
+        show-recents = false;
+        static-only = true;
+      };
+
+      NSGlobalDomain = {
+        "com.apple.trackpad.scaling" = 3.0;
+        AppleFontSmoothing = 0;
+        AppleKeyboardUIMode = 3;
+        AppleMeasurementUnits = "Centimeters";
+        AppleMetricUnits = 1;
+        AppleTemperatureUnit = "Celsius";
+        InitialKeyRepeat = 15;
+        KeyRepeat = 2;
+      };
+
+      trackpad = {
+        Clicking = true;
+        TrackpadRightClick = true;
+      };
+    };
+  };
+
+  services.karabiner-elements.enable = true;
+
   homebrew = {
     enable = true;
     onActivation = {
@@ -59,7 +85,6 @@
     ];
     casks = [
       "1password"
-      "1password-cli"
       "alloy"
       "bartender"
       "chromium"
@@ -71,8 +96,6 @@
       "google-chrome"
       "grammarly"
       "hey"
-      "intellij-idea"
-      "karabiner-elements"
       "kindle"
       "mochi"
       "monodraw"
@@ -83,22 +106,15 @@
       "reflect"
       "screenflow"
       "signal"
-      "slack"
       "sonos"
       "soulver"
       "sublime-merge"
       "sublime-text"
       "the-unarchiver"
-      "tla-plus-toolbox"
       "tuple"
-      "utm"
       "vlc"
-      "zoom"
     ];
     masApps = {
-      "ColorSlurp" = 1287239339;
-      # "DaisyDisk" = 411643860;
-      # "Deliveries" = 290986013;
       "Flow" = 1423210932;
       "Grammarly for Safari" = 1462114288;
       "Things" = 904280696;

@@ -82,4 +82,9 @@
     source = ./local/bin/cycles;
     executable = true;
   };
+
+  home.file.".local/bin/git-run-branch" = {
+    source = ./local/bin/git-run-branch;
+    executable = true;
+  };
 }

@@ -1,0 +1,44 @@
+#!/bin/bash
+
+while getopts "h" opt; do
+  case ${opt} in
+  h)
+    echo "Usage: $0 [-h] COMMAND [ARGUMENTS...]"
+    echo "Runs COMMAND with ARGUMENTS for each commit between the upstream and the tip of the current branch."
+    echo ""
+    echo "Options:"
+    echo "  -h: Print this usage message and exit."
+    exit 0
+    ;;
+  *)
+    echo "Invalid option: -${OPTARG}"
+    echo "Use the -h option for usage information."
+    exit 1
+    ;;
+  esac
+done
+
+shift $((OPTIND - 1))
+
+CMD=("$@")
+
+if [[ ${#CMD[@]} -eq 0 ]]; then
+  echo "Please provide a command to run as an argument."
+  exit 1
+fi
+
+CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+
+UPSTREAM_BRANCH="$(git rev-parse --abbrev-ref @\{u\})"
+
+for COMMIT in $(git rev-list --reverse "${UPSTREAM_BRANCH}".."${CURRENT_BRANCH}"); do
+  git checkout "${COMMIT}"
+
+  if ! "${CMD[@]}"; then
+    echo "Command failed for commit ${COMMIT}"
+    git checkout "${CURRENT_BRANCH}"
+    exit 1
+  fi
+done
+
+git checkout "${CURRENT_BRANCH}"

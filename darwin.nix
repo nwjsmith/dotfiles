@@ -38,6 +38,8 @@
     };
   };
 
+  security.pam.enableSudoTouchIdAuth = true;
+
   system = {
     defaults = {
       dock = {

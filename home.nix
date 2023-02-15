@@ -27,6 +27,7 @@
     sqlite
     tarsnap
     yt-dlp
+    watchman
 
     # Doom Emacs stuff
     coreutils

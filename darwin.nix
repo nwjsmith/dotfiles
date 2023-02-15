@@ -74,9 +74,6 @@
       upgrade = true;
     };
     global.brewfile = true;
-    brews = [
-      "watchman"
-    ];
     taps = [
       "homebrew/bundle"
       "homebrew/cask"

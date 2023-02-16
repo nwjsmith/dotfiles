@@ -2,7 +2,7 @@
       display-line-numbers-type nil
       doom-font (font-spec :family "Berkeley Mono" :size 14)
       doom-variable-pitch-font (font-spec :family "Berkeley Mono Variable")
-      fancy-splash-image (concat doom-user-dir "doom.svg"))
+      fancy-splash-image (concat doom-user-dir "w.svg"))
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 

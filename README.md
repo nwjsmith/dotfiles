@@ -6,17 +6,8 @@ These are my dotfiles. They work on macOS.
 
 macOS, Homebrew and Nix installed with Flakes enabled.
 
-    $ sh <(curl -L https://nixos.org/nix/install) \
-      --nix-extra-conf-file <(echo "experimental-features = nix-command flakes")
-
-## Install Nix
-
-Install Nix using Determinate System's installer
-
-Ensure the `/run` directory exists.
-
-    $ printf 'run\tprivate/var/run\n' | sudo tee -a /etc/synthetic.conf
-    $ /System/Library/Filesystems/apfs.fs/Contents/Resources/apfs.util -t
+    $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    $ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 
 ## Installation
 

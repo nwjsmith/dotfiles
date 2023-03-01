@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ lib, pkgs, config, ... }:
 
 {
   programs.direnv.enable = true;
@@ -44,9 +44,12 @@
   programs.starship = {
     enable = true;
     settings = {
-      add_newline = false;
-      aws.disabled = true;
-      nix_shell.disabled = true;
+      format = lib.concatStrings [
+        "$directory"
+        "$cmd_duration"
+        "$line_break"
+        "$character"
+      ];
     };
   };
 

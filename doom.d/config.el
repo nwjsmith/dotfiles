@@ -1,6 +1,6 @@
 (setq auth-sources '("~/.authinfo.gpg")
       display-line-numbers-type nil
-      doom-font (font-spec :family "Berkeley Mono" :size 14)
+      doom-font (font-spec :family "Berkeley Mono" :size 16.0)
       doom-variable-pitch-font (font-spec :family "Berkeley Mono Variable")
       fancy-splash-image (concat doom-user-dir "w.svg"))
 

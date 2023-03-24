@@ -5,7 +5,7 @@
     enable = true;
     font = {
       name = "Berkeley Mono";
-      size = 14;
+      size = 16;
     };
     keybindings = {
       "cmd+enter" = "launch --cwd=current";
@@ -24,6 +24,6 @@
       window_padding_width = "0 1";
       window_border_width = "0";
     };
-    theme = "Modus Operandi";
+    theme = "Gruvbox Light";
   };
 }

@@ -1,0 +1,9 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ','
+vim.o.background = 'light'
+vim.o.backup = false
+vim.o.mouse = 'a'
+vim.o.swapfile = false
+vim.o.termguicolors = true
+vim.o.title = true
+vim.o.writebackup = false

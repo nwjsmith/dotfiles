@@ -85,6 +85,8 @@
     casks = [
       "1password"
       "alloy"
+      "amythest"
+      "balenaetcher"
       "bartender"
       "chromium"
       "cleanshot"
@@ -95,16 +97,19 @@
       "google-chrome"
       "grammarly"
       "hey"
+      "intellij-idea"
       "kindle"
       "mochi"
       "monodraw"
       "notion"
       "obsidian"
       "qmk-toolbox"
+      "utm"
       "raycast"
       "reflect"
       "screenflow"
       "signal"
+      "slack"
       "sonos"
       "soulver"
       "sublime-merge"
@@ -112,6 +117,7 @@
       "the-unarchiver"
       "tuple"
       "vlc"
+      "zoom"
     ];
     masApps = {
       "Flow" = 1423210932;

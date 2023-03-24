@@ -4,7 +4,7 @@
   home.stateVersion = "22.05";
 
   imports =
-    [ ./clojure.nix ./git.nix ./gpg.nix ./kitty.nix ./neovim.nix ./zsh.nix ];
+    [ ./alacritty.nix ./clojure.nix ./git.nix ./gpg.nix ./kitty.nix ./neovim.nix ./zsh.nix ];
 
   home.packages = with pkgs; [
     amazon-ecr-credential-helper
@@ -36,13 +36,6 @@
     gnuplot
     pandoc
     (tree-sitter.withPlugins (_: tree-sitter.allGrammars))
-
-    # Mac apps
-    _1password
-    jetbrains.idea-ultimate
-    slack
-    utm
-    zoom-us
   ];
 
   programs.emacs = {

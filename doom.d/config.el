@@ -1,6 +1,7 @@
 (setq auth-sources '("~/.authinfo.gpg")
       display-line-numbers-type nil
       doom-font (font-spec :family "Berkeley Mono" :size 16.0)
+      doom-theme 'doom-gruvbox-light
       doom-variable-pitch-font (font-spec :family "Berkeley Mono Variable")
       fancy-splash-image (concat doom-user-dir "w.svg"))
 
@@ -87,15 +88,6 @@ See also `org-save-all-org-buffers'"
 (use-package! org-roam
   :init
   (setq org-roam-directory (concat org-directory "/roam")))
-
-(use-package! modus-themes
-  :init
-  (setq modus-themes-italic-constructs t
-        modus-themes-bold-constructs nil
-        modus-themes-mixed-fonts t
-        modus-themes-variable-pitch-ui nil)
-  :config
-  (load-theme 'modus-operandi :no-confim))
 
 (after! typescript-mode
   (setq typescript-indent-level 2)

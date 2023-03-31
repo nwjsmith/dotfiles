@@ -85,7 +85,7 @@
     casks = [
       "1password"
       "alloy"
-      "amythest"
+      "amethyst"
       "balenaetcher"
       "bartender"
       "chromium"

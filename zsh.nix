@@ -89,4 +89,9 @@
     source = ./local/bin/git-run-branch;
     executable = true;
   };
+
+  home.file.".local/bin/gpt-prepare-commit-msg" = {
+    source = ./local/bin/gpt-prepare-commit-msg;
+    executable = true;
+  };
 }

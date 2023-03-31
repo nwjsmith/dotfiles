@@ -1,0 +1,75 @@
+#!/usr/bin/env python3
+
+# Execute this as a prepare-commit-msg hook in your Git repository.
+
+import os
+import sys
+import json
+import subprocess
+from http.client import HTTPSConnection
+from urllib.parse import urlparse
+from pathlib import Path
+
+commit_message_file = sys.argv[1]
+template_path = Path("~/.config/git/gitmessage").expanduser()
+with template_path.open() as f:
+    template = f.read()
+
+def fail(reason):
+    with open(commit_message_file, 'w') as f:
+        f.write(f"# Not auto-generated: {reason}\n{template}")
+    sys.exit(0)
+
+def hard_wrap(text, width):
+    lines = []
+    line = ''
+    for word in text.split():
+        if len(line) + len(word) + 1 > width:
+            lines.append(line)
+            line = ''
+        line += ' ' + word if line else word
+    lines.append(line)
+    return '\n'.join(lines)
+
+api_key = os.environ.get('OPENAI_API_KEY')
+if not api_key:
+    fail("No OpenAI API key")
+
+try:
+    diff = subprocess.check_output(["git", "diff", "--staged", "--no-color"], text=True)
+except subprocess.CalledProcessError:
+    fail("git diff failed")
+
+uri = urlparse('https://api.openai.com/v1/chat/completions')
+headers = {
+    'Authorization': f'Bearer {api_key}',
+    'Content-Type': 'application/json',
+}
+data = json.dumps({
+    'model': 'gpt-3.5-turbo',
+    'messages': [
+        {
+            'role': 'user',
+            'content': f"Write a Git commit message with a subject line that does not exceed 50 characters in length. Don't tag the subject. The subject should be followed by a blank line and a concise description.\nDo not describe the changes, but instead why they are valuable and how they address the problem.\nWrite in the imperative, as if this were a request. Format it as Markdown. Base it on the following Git diff: {diff}."
+        }
+    ],
+})
+
+conn = HTTPSConnection(uri.hostname, uri.port)
+conn.request("POST", uri.path, body=data, headers=headers)
+response = conn.getresponse()
+
+if response.status != 200:
+    fail(f"OpenAI API request failed with {response.status}")
+
+response_data = json.loads(response.read())
+content = response_data.get('choices', [{}])[0].get('message', {}).get('content', '')
+
+if not content:
+    fail("OpenAI API response did not contain a message")
+
+subject, description = content.split("\n", 1)
+wrapped_description = hard_wrap(description.strip(), 72)
+
+with open(commit_message_file, 'w') as f:
+    f.write(f"{subject}\n\n{wrapped_description}{template}")

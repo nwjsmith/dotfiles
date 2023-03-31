@@ -25,11 +25,6 @@
       }
       copilot-vim
       {
-        plugin = gruvbox-nvim;
-        type = "lua";
-        config = builtins.readFile ./config/nvim/after/plugin/gruvbox.lua;
-      }
-      {
         plugin = nvim-lspconfig;
         type = "lua";
         config = builtins.readFile ./config/nvim/after/plugin/lspconfig.lua;

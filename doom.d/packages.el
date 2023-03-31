@@ -1,6 +1,6 @@
 (package! jest-test-mode)
 (package! evil-cleverparens)
 (package! jarchive)
-
-(package! transient :pin "c2bdf7e12c53")
-(package! with-editor :pin "391e76a256ae")
+(package! modus-themes)
+(package! copilot
+  :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))

@@ -24,6 +24,6 @@
       window_padding_width = "0 1";
       window_border_width = "0";
     };
-    theme = "Gruvbox Light";
+    theme = "Modus Operandi";
   };
 }

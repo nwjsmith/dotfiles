@@ -89,6 +89,23 @@ See also `org-save-all-org-buffers'"
   :init
   (setq org-roam-directory (concat org-directory "/roam")))
 
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)))
+
+(use-package! modus-themes
+  :init
+  (setq modus-themes-italic-constructs t
+        modus-themes-bold-constructs nil
+        modus-themes-mixed-fonts t
+        modus-themes-variable-pitch-ui nil)
+  :config
+  (load-theme 'modus-operandi :no-confim))
+
 (after! typescript-mode
   (setq typescript-indent-level 2)
   (setq-hook! '(typescript-mode-hook typescript-tsx-mode-hook)

@@ -1,3 +1,4 @@
 clojure/deptools.cp
 result
 .direnv
+.envrc

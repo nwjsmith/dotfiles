@@ -50,6 +50,8 @@
     extraPackages = (epkgs: [ epkgs.vterm ]);
   };
 
+  programs.home-manager.enable = true;
+
   home.file.".local/bin/tarsnap-backup" = {
     executable = true;
     text = ''

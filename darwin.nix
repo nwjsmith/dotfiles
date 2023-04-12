@@ -92,6 +92,7 @@
       "cleanshot"
       "dash"
       "deckset"
+      "discord"
       "eclipse-ide"
       "firefox"
       "google-chrome"

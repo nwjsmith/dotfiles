@@ -48,15 +48,28 @@
         static-only = true;
       };
 
+      LaunchServices.LSQuarantine = false;
+
       NSGlobalDomain = {
         "com.apple.trackpad.scaling" = 3.0;
         AppleFontSmoothing = 0;
         AppleKeyboardUIMode = 3;
         AppleMeasurementUnits = "Centimeters";
         AppleMetricUnits = 1;
+        ApplePressAndHoldEnabled = false;
         AppleTemperatureUnit = "Celsius";
         InitialKeyRepeat = 15;
         KeyRepeat = 2;
+        NSAutomaticCapitalizationEnabled = false;
+        NSAutomaticDashSubstitutionEnabled = false;
+        NSAutomaticPeriodSubstitutionEnabled = false;
+        NSAutomaticQuoteSubstitutionEnabled = false;
+        NSAutomaticSpellingCorrectionEnabled = false;
+        NSDisableAutomaticTermination = true;
+        NSNavPanelExpandedStateForSaveMode = true;
+        NSNavPanelExpandedStateForSaveMode2 = true;
+        PMPrintingExpandedStateForPrint = true;
+        PMPrintingExpandedStateForPrint2 = true;
       };
 
       trackpad = {

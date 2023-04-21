@@ -20,7 +20,7 @@
     jq
     nodePackages.mermaid-cli
     ngrok
-    # niv
+    niv
     nodejs
     (ripgrep.override { withPCRE2 = true; })
     scc

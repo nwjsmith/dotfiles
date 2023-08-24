@@ -12,6 +12,7 @@
     awscli2
     colima
     curl
+    d2
     docker-client
     docker-compose
     docker-credential-helpers
@@ -26,6 +27,7 @@
     scc
     sqlite
     tarsnap
+    tmux
     yt-dlp
 
     # Doom Emacs stuff
@@ -40,7 +42,7 @@
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs.overrideAttrs (original: {
+    package = pkgs.emacs29.overrideAttrs (original: {
       patches = (original.patches or [ ]) ++ [
         ./emacs/patches/fix-window-role.patch
         ./emacs/patches/system-appearance.patch

@@ -15,7 +15,6 @@
       jdt-language-server
       nodePackages.typescript-language-server
       ripgrep
-      sumneko-lua-language-server
     ];
     plugins = with pkgs.vimPlugins; [
       {
@@ -47,6 +46,7 @@
         config = builtins.readFile ./config/nvim/after/plugin/telescope.lua;
       }
       vim-fugitive
+      vim-gnupg
       vim-surround
       vim-vinegar
     ];

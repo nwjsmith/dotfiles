@@ -116,6 +116,7 @@
       "mochi"
       "monodraw"
       "notion"
+      "obs"
       "obsidian"
       "qmk-toolbox"
       "utm"

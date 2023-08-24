@@ -3,12 +3,12 @@
 {
   programs.direnv.enable = true;
   programs.zsh = {
+    defaultKeymap = "viins";
     enable = true;
     enableAutosuggestions = false;
     enableCompletion = true;
-    enableSyntaxHighlighting = true;
-    defaultKeymap = "viins";
     initExtra = builtins.readFile ./zshrc;
+    syntaxHighlighting.enable = true;
   };
   programs.zoxide.enable = true;
   home.sessionVariables = {

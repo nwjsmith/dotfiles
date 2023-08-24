@@ -22,7 +22,7 @@ function set_bindings(client, buffer)
 end
 
 local flags = { debounce_text_changes = 150 }
-local servers = { "clojure_lsp", "solargraph", "jdtls", "lua_ls" }
+local servers = { "clojure_lsp", "solargraph", "jdtls" }
 for _, server in ipairs(servers) do
   lspconfig[server].setup({
     on_attach = set_bindings,
